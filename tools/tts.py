@@ -1,6 +1,7 @@
 """逐段合成旁白（edge-tts），记录时长与逐词时间戳。
-用法：python3 tools/tts.py [--force]
-输出：narration/audio/<id>.mp3，narration/tts.json {id: {dur, words:[[text, t0, t1]]}}
+用法：python3 tools/tts.py <who> [--force]
+输出：narration/<who>/audio/<id>.mp3，narration/<who>/tts.json {id: {dur, words:[[text, t0, t1]]}}
+声线按人物区分（见 VOICES）。
 文本变化会自动重合成（按文本哈希缓存）。
 """
 import asyncio
@@ -13,8 +14,12 @@ from pathlib import Path
 import edge_tts
 
 ROOT = Path(__file__).resolve().parent.parent
-NAR = ROOT / 'narration'
-VOICE, RATE, PITCH = 'zh-CN-YunyangNeural', '-6%', '-2Hz'
+# 人物 → (声线, 语速, 音调)：毛泽东用庄重的云扬；诸葛亮用云健，压低语速与音调显得沉郁；苏轼用云希，洒脱明快
+VOICES = {
+    'mao': ('zh-CN-YunyangNeural', '-6%', '-2Hz'),
+    'zhuge': ('zh-CN-YunjianNeural', '-10%', '-4Hz'),
+    'sushi': ('zh-CN-YunxiNeural', '-6%', '-1Hz'),
+}
 
 
 def duration(p: Path) -> float:
@@ -23,8 +28,8 @@ def duration(p: Path) -> float:
     return float(out)
 
 
-async def synth(text: str, path: Path) -> list:
-    comm = edge_tts.Communicate(text, VOICE, rate=RATE, pitch=PITCH, boundary='WordBoundary')
+async def synth(text: str, path: Path, voice: tuple) -> list:
+    comm = edge_tts.Communicate(text, voice[0], rate=voice[1], pitch=voice[2], boundary='WordBoundary')
     words = []
     with path.open('wb') as f:
         async for ch in comm.stream():
@@ -36,7 +41,9 @@ async def synth(text: str, path: Path) -> list:
     return words
 
 
-async def main(force: bool) -> None:
+async def main(who: str, force: bool) -> None:
+    VOICE, RATE, PITCH = VOICES[who]
+    NAR = ROOT / 'narration' / who
     (NAR / 'audio').mkdir(exist_ok=True)
     cache_p = NAR / 'tts.json'
     cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
@@ -49,7 +56,7 @@ async def main(force: bool) -> None:
             continue
         for attempt in range(3):
             try:
-                words = await synth(seg['text'], mp3)
+                words = await synth(seg['text'], mp3, (VOICE, RATE, PITCH))
                 break
             except Exception as e:  # 网络抖动重试
                 print('retry', seg['id'], e)
@@ -63,4 +70,7 @@ async def main(force: bool) -> None:
 
 
 if __name__ == '__main__':
-    asyncio.run(main('--force' in sys.argv))
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    if len(args) != 1 or args[0] not in VOICES:
+        sys.exit(__doc__)
+    asyncio.run(main(args[0], '--force' in sys.argv))

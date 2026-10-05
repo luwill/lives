@@ -160,3 +160,80 @@ def riser(dur: float, vol: float = 1.0) -> np.ndarray:
         fc = 300 + 5000 * k[i] ** 2
         out[i:i + seg] = bp(n[i:i + seg], fc * 0.7, min(fc * 1.4, 16000))
     return vol * 0.25 * out * k ** 2
+
+
+# ---------- 民族乐器音色（原创合成） ----------
+def pluck(m: float, dur: float = 2.5, vol: float = 1.0, bright: float = 0.6, decay: float = 0.996) -> np.ndarray:
+    """Karplus-Strong 拨弦：古筝/琵琶。bright 越大音色越亮。"""
+    f = mtof(m)
+    n = int(dur * SR)
+    p = max(2, int(SR / f))
+    buf = RNG.uniform(-1, 1, p)
+    buf = lp(buf, 1200 + 6000 * bright)
+    out = np.empty(n)
+    idx = 0
+    for i in range(n):
+        out[i] = buf[idx]
+        nxt = (idx + 1) % p
+        buf[idx] = decay * 0.5 * (buf[idx] + buf[nxt])
+        idx = nxt
+    env = adsr(n, 0.002, 1, 1, 0.08)
+    return vol * 0.45 * out * env
+
+
+def guqin(m: float, dur: float = 4.0, vol: float = 1.0) -> np.ndarray:
+    """古琴：低沉、长余音，带轻微滑音（吟猱）。"""
+    t = tt(dur)
+    f = mtof(m) * (1 + 0.006 * np.sin(2 * np.pi * 4.5 * t) * np.clip(t - 0.4, 0, 1))
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = sum(a * np.sin(k * ph) * np.exp(-t * (0.8 + 0.7 * k)) for k, a in enumerate((1, 0.45, 0.3, 0.12, 0.08), 1))
+    thump = lp(RNG.standard_normal(len(t)), 900) * np.exp(-t * 80) * 0.15
+    return vol * 0.32 * (x + thump) * adsr(len(t), 0.004, 1, 1, 0.3)
+
+
+def flute(m: float, dur: float, vol: float = 1.0, breath: float = 0.12) -> np.ndarray:
+    """笛/箫：正弦为主 + 气声 + 渐入颤音。"""
+    t = tt(dur + 0.25)
+    vib = 1 + 0.007 * np.sin(2 * np.pi * 5.3 * t) * np.clip(t / 0.5, 0, 1)
+    ph = 2 * np.pi * np.cumsum(mtof(m) * vib) / SR
+    tone = np.sin(ph) + 0.22 * np.sin(2 * ph) + 0.06 * np.sin(3 * ph)
+    air = bp(RNG.standard_normal(len(t)), mtof(m) * 0.8, min(mtof(m) * 4, 16000)) * breath
+    return vol * 0.2 * (tone + air) * adsr(len(t), 0.07, 0.3, 0.85, 0.25)
+
+
+def erhu(m: float, dur: float, vol: float = 1.0, slide_from: float | None = None) -> np.ndarray:
+    """二胡：锯齿 + 共鸣峰滤波 + 揉弦，可从前一音滑入。"""
+    t = tt(dur + 0.3)
+    mm = np.full(len(t), float(m))
+    if slide_from is not None:
+        k = np.clip(t / 0.12, 0, 1)
+        mm = slide_from + (m - slide_from) * (1 - (1 - k) ** 2)
+    vib = 0.18 * np.sin(2 * np.pi * 6 * t) * np.clip((t - 0.15) / 0.4, 0, 1)
+    f = 440.0 * 2 ** ((mm + vib - 69) / 12)
+    x = _saw_bl(f, t)
+    x = bp(x, 400, 3500) + 0.4 * bp(x, 900, 1400)
+    return vol * 0.16 * np.tanh(1.3 * x) * adsr(len(t), 0.08, 0.5, 0.85, 0.25)
+
+
+def gong(vol: float = 1.0, dur: float = 6.0) -> np.ndarray:
+    """锣：非谐分音 + 慢起的“嗡”声。"""
+    t = tt(dur)
+    x = sum(a * np.sin(2 * np.pi * f * t + RNG.random() * 6) * np.exp(-t * d)
+            for f, a, d in ((92, 1, 0.5), (147, 0.7, 0.7), (211, 0.5, 0.9), (287, 0.4, 1.1), (433, 0.3, 1.5), (611, 0.2, 2.0)))
+    shimmer = bp(RNG.standard_normal(len(t)), 1500, 6000) * np.exp(-t * 1.5) * np.clip(t / 0.3, 0, 1) * 0.15
+    hit = lp(RNG.standard_normal(len(t)), 2500) * np.exp(-t * 40) * 0.3
+    return vol * 0.35 * (x + shimmer + hit)
+
+
+def woodblock(vol: float = 1.0, m: float = 79) -> np.ndarray:
+    t = tt(0.18)
+    return vol * 0.35 * np.sin(2 * np.pi * mtof(m) * t) * np.exp(-t * 45)
+
+
+def chimes(m: float, vol: float = 1.0) -> np.ndarray:
+    """编钟：两个相距小三度左右的分音。"""
+    t = tt(5.0)
+    f = mtof(m)
+    x = sum(a * np.sin(2 * np.pi * f * r * t) * np.exp(-t * d) for r, a, d in ((1, 1, 0.7), (1.19, 0.6, 0.9), (2.9, 0.3, 2.2), (5.1, 0.12, 3.5)))
+    hit = lp(RNG.standard_normal(len(t)), 4000) * np.exp(-t * 90) * 0.1
+    return vol * 0.16 * (x + hit)
