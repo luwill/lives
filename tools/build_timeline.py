@@ -31,6 +31,7 @@ MS_TAIL = 1.0         # 旁白结束后到离开
 MS_MIN_HOLD = 3.0
 TRAVEL_MIN_PLACES = 6  # 途经点多或路程远的里程碑按“边走边讲”处理
 TRAVEL_KM = 1200
+TRAVEL_PLACE_SET_MIN = 8
 TRAVEL_SPEED = 450    # km/s
 TRAVEL_MIN, TRAVEL_MAX = 3.0, 30.0
 SPAN_PAD = 0.7
@@ -155,7 +156,11 @@ def build(who: str) -> dict:
             seg = by_ms[st['id']]
             t0 = t
             # 远途判定看整步：途经点多或路程远的里程碑（如长征）整步边走边讲，place 只决定星标位置
-            is_travel = len(st['places']) >= TRAVEL_MIN_PLACES or path_km(prev_end, st['places'], P) > TRAVEL_KM
+            # 指定了 place 的，只有真正的长途行军（≥8 个途经点，如长征）才整步边走边讲
+            if m.get('place'):
+                is_travel = len(st['places']) >= TRAVEL_PLACE_SET_MIN
+            else:
+                is_travel = len(st['places']) >= TRAVEL_MIN_PLACES or path_km(prev_end, st['places'], P) > TRAVEL_KM
             cut = len(st['places']) if is_travel or not m.get('place') else st['places'].index(m['place']) + 1
             pre, post = st['places'][:cut], st['places'][cut:]
             km_pre = path_km(prev_end, pre, P)

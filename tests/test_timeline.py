@@ -112,3 +112,17 @@ def test_validate_rejects_span_across_stage():
     script = [{'id': 'm', 'kind': 'milestone', 'step': '1001H1'}, {'id': 'p', 'kind': 'span', 'from': '1001H2', 'to': '1002H1'}]
     with pytest.raises(AssertionError, match='stage boundary'):
         BT.validate(script, STEPS)
+
+
+def test_milestone_stays_at_its_place(who):
+    """指定了 place 的里程碑：只有 ≥8 个途经点才按远途处理；其余必须停在 place（防止庐山会议停到杭州）。"""
+    tl, steps = timeline(who), load(who, 'steps.json')['steps']
+    by = {s['id']: s for s in tl['steps']}
+    for s in steps:
+        m = s.get('milestone')
+        if not m or not m.get('place'):
+            continue
+        ent = by[s['id']]
+        assert ent['ms']['travel'] == (len(s['places']) >= 8), (s['id'], ent['ms']['travel'])
+        if not ent['ms']['travel']:
+            assert s['places'][ent['split'] - 1] == m['place'], (s['id'], s['places'][ent['split'] - 1], m['place'])
