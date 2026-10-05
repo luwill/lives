@@ -1,8 +1,8 @@
 # 三人人生轨迹视频：毛泽东 · 诸葛亮 · 苏轼
 
-- status: planned <!-- planned → flying → landed -->
+- status: flying <!-- planned → flying → landed -->
 - workspace: lives/ (git, autopilot/three-lives)
-- base: <待 git init 后填写>
+- base: 8d63ddd
 - contract: docs/autopilot.md
 
 ## Goal
@@ -28,7 +28,7 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 
 ## Stages
 
-1. [ ] 骨架：git init、复制引擎和工具、合约生效、测试框架 — 无
+1. [x] 骨架：git init、复制引擎和工具、合约生效、测试框架 — 无（8d63ddd）
 2. [ ] 史料数据（三人并行子代理）+ 事实核查 — owns C1, C2
 3. [ ] 中国 DEM 与地形贴图（全国底图 + 各人活动区细节）、河流/山脉标注数据 — owns C4（数据部分）
 4. [ ] 解说词、TTS、时间轴（半年步 + 里程碑停留）— owns C3, C5, C7（时间轴部分）
@@ -43,6 +43,14 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 
 | id | stage | chose | rejected | wrong if |
 |---|---|---|---|---|
+| D1 | 起飞 | 配音按人物分声线（人类在起飞时选定）：毛=云扬 -6%/-2Hz，诸葛=云健 -10%/-4Hz，苏=云希 -6%/-1Hz | 统一使用云扬 | 云健、云希的 WordBoundary 粒度不足以切分字幕（已测试：按短语返回，字幕切分按字数映射，可用） |
+| D2 | 3 | 河流、湖泊烘焙进地形贴图（Natural Earth 10m） | 用 3D 线绘制河流 | 垂直夸张随镜头动态变化时，3D 线会浮离或钻入地面 |
+| D3 | 3 | 垂直夸张随镜头距离变化：近景 3.5 倍，全国俯瞰 14 倍 | 固定夸张倍数 | 全国俯瞰时 4 倍看不出地形起伏，近景用 14 倍又过于夸张 |
+| D4 | 3 | 三级地形：east z8（97–124E/17.5–42.5N）+ china z7（70–138E/15–55N）+ world z4 兜底 | 每人单独做细节层 | 里程碑近景（相机距离约 260 km）下 east 层的贴图明显发糊（审片时判断） |
+| D5 | 5 | 境外地点（莫斯科）画在“出发点朝目的地方向 900 km 处”，标注“图外 · 距北京约 N 公里” | 扩大地图范围到欧洲 | 观众把代理点误认为真实位置（已用“图外”字样和箭头说明） |
+| D6 | 5 | 不画国界和省界，只标注地形区、山脉、河流、海域和时代政权的文字（魏/蜀/吴、辽/西夏/大理），片尾注明“地图仅示意地形与行迹” | 使用 Natural Earth 国界 | 合约红线 |
+| D7 | 4 | 时间轴由旁白驱动：普通半年步 0.55 s，跨越 500 km 以上的步 0.95 s；里程碑先推近 1.7 s，再停留到旁白结束，至少 3 s；概述旁白覆盖一段连续的非里程碑步，并把这些步均匀拉长 | 每步固定时长 | 详略关系由旁白长度决定，通过测试 test_narration_balance 约束 |
+| D8 | 6 | 配乐全部用 numpy 原创合成，加入五声调式和民族音色（古筝/古琴/笛箫/二胡/锣/编钟） | 使用现成曲目 | 合约红线；本次运行无法试听，审美好坏列入“未验证” |
 
 ### Review findings
 
