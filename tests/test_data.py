@@ -72,4 +72,5 @@ def test_milestones(who):
     for s in ms:
         m = s['milestone']
         assert m['title'] and m['importance'] in (1, 2), s['id']
+        assert m.get('place', s['places'][-1]) in s['places'], s['id']
         assert s['confidence'] != 'traditional' or s.get('note'), s['id']

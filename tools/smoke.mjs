@@ -16,15 +16,15 @@ for (const who of people) {
     await page.evaluate(t => window.renderAt(t), total / 2);
     const std = await page.evaluate(() => {
       const c = document.getElementById('gl'), g = c.getContext('webgl2') || c.getContext('webgl');
-      const px = new Uint8Array(4 * 64 * 64);
-      g.readPixels(928, 508, 64, 64, g.RGBA, g.UNSIGNED_BYTE, px);
-      let s = 0, s2 = 0;
-      for (let i = 0; i < px.length; i += 4) { s += px[i]; s2 += px[i] * px[i]; }
-      const n = px.length / 4;
+      // 整帧抽样（每 16 像素取一点）：地形应有明暗变化
+      const px = new Uint8Array(4 * 1920 * 1080);
+      g.readPixels(0, 0, 1920, 1080, g.RGBA, g.UNSIGNED_BYTE, px);
+      let s = 0, s2 = 0, n = 0;
+      for (let i = 0; i < px.length; i += 4 * 16) { s += px[i]; s2 += px[i] * px[i]; n++; }
       return Math.sqrt(s2 / n - (s / n) ** 2);
     });
     if (std < 2) errors.push(`terrain looks blank (std=${std.toFixed(2)})`);
-    console.log(`${who}: total ${total.toFixed(1)}s, ${ts.length} samples, center std ${std.toFixed(1)}, errors ${errors.length}`);
+    console.log(`${who}: total ${total.toFixed(1)}s, ${ts.length} samples, frame std ${std.toFixed(1)}, errors ${errors.length}`);
   } catch (e) {
     errors.push(`load failed: ${e.message}`);
   }

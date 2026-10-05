@@ -29,7 +29,7 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 ## Stages
 
 1. [x] 骨架：git init、复制引擎和工具、合约生效、测试框架 — 无（8d63ddd）
-2. [ ] 史料数据（三人并行子代理）+ 事实核查 — owns C1, C2
+2. [~] 史料数据（三人并行子代理）+ 事实核查 — owns C1, C2（数据已交付：zhuge a6d226c、sushi 7b8faa3、mao 已提交；事实核查待做）
 3. [ ] 中国 DEM 与地形贴图（全国底图 + 各人活动区细节）、河流/山脉标注数据 — owns C4（数据部分）
 4. [ ] 解说词、TTS、时间轴（半年步 + 里程碑停留）— owns C3, C5, C7（时间轴部分）
 5. [ ] 引擎场景：轨迹生长、HUD、里程碑高亮、标注 — owns C3, C4, C5

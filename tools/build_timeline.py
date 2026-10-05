@@ -29,6 +29,10 @@ MS_APPROACH = 1.7     # 里程碑：推镜头、抵达
 MS_LEAD = 0.5         # 抵达后到旁白开始
 MS_TAIL = 1.0         # 旁白结束后到离开
 MS_MIN_HOLD = 3.0
+TRAVEL_MIN_PLACES = 6  # 途经点多或路程远的里程碑按“边走边讲”处理
+TRAVEL_KM = 1200
+TRAVEL_SPEED = 450    # km/s
+TRAVEL_MIN, TRAVEL_MAX = 3.0, 16.0
 SPAN_PAD = 0.7
 OUTRO_PAD = 1.0
 END_CARD = 6.0
@@ -147,13 +151,34 @@ def build(who: str) -> dict:
             chapters.append(dict(stage=st['stage'], t0=round(t, 3), t1=round(t + CHAPTER, 3)))
             t += CHAPTER
         if st['id'] in by_ms:
+            m = st['milestone']
+            cut = st['places'].index(m['place']) + 1 if m.get('place') else len(st['places'])
+            pre, post = st['places'][:cut], st['places'][cut:]
+            km_pre = path_km(prev_end, pre, P)
+            seg = by_ms[st['id']]
             t0 = t
-            ms0 = t + MS_APPROACH
-            end = say(by_ms[st['id']], ms0 + MS_LEAD)
-            ms1 = max(end + MS_TAIL, ms0 + MS_MIN_HOLD)
-            out_steps.append(dict(id=st['id'], t0=round(t0, 3), t1=round(ms1 + 0.3, 3), move=round(MS_APPROACH * 0.85, 3),
-                                  ms=dict(t0=round(ms0, 3), t1=round(ms1, 3))))
+            if len(pre) >= TRAVEL_MIN_PLACES or km_pre > TRAVEL_KM:
+                # 远途里程碑（如长征）：边走边讲，走完再定格
+                move = min(TRAVEL_MAX, max(TRAVEL_MIN, tts[seg['id']]['dur'] * 0.85, km_pre / TRAVEL_SPEED))
+                ms0 = t + 0.6
+                end = say(seg, ms0 + 0.4)
+                ms1 = max(end + MS_TAIL, t + move + 1.5, ms0 + MS_MIN_HOLD)
+                travel = True
+            else:
+                move = min(4.0, max(MS_APPROACH * 0.85, km_pre / 600))
+                ms0 = t + move + 0.25
+                end = say(seg, ms0 + MS_LEAD)
+                ms1 = max(end + MS_TAIL, ms0 + MS_MIN_HOLD)
+                travel = False
+            ent = dict(id=st['id'], t0=round(t0, 3), move=round(move, 3),
+                       ms=dict(t0=round(ms0, 3), t1=round(ms1, 3), travel=travel), split=cut)
             t = ms1 + 0.3
+            if post:
+                amove = min(3.0, max(0.9, path_km(pre[-1], post, P) / 1500))
+                ent['after'] = dict(t0=round(ms1 + 0.2, 3), move=round(amove, 3))
+                t = ms1 + 0.2 + amove + 0.4
+            ent['t1'] = round(t, 3)
+            out_steps.append(ent)
             prev_end = st['places'][-1]
             i += 1
             continue

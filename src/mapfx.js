@@ -73,7 +73,8 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
   const stayCount = {};
   steps.forEach(s => { const k = s.places[s.places.length - 1]; stayCount[k] = (stayCount[k] || 0) + 1; });
   const msPlace = {};
-  steps.forEach((s, i) => { if (s.milestone) msPlace[s.places[s.places.length - 1]] = msPlace[s.places[s.places.length - 1]] || i; });
+  const msKey = s => s.milestone.place || s.places[s.places.length - 1];
+  steps.forEach((s, i) => { if (s.milestone) msPlace[msKey(s)] = msPlace[msKey(s)] ?? i; });
   const firstAt = {}, firstPos = {};
   journey.arrivals.forEach(a => { if (!(a.key in firstAt)) { firstAt[a.key] = a.t; firstPos[a.key] = a.pos; } });
   const lastAt = {};

@@ -23,10 +23,10 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
   const verts = [];          // [lon, lat, t]
   const arrivals = [];       // {key, t, step, pos}
   let prev = null, lastIn = null;   // lastIn：最近一个图内地点（图外代理点的出发参照）
-  steps.forEach((st, i) => {
-    const ts = tlSteps[i];
-    const seq = (prev ? [prev] : []).concat(st.places).filter((k, j, a) => j === 0 || k !== a[j - 1]);
-    // 第一个点就是上一步的终点：直接沿用（图外代理点不能重复外推）
+  // 一段行程：keys 依次经过，在 [t0, t1] 内按距离匀速（首尾缓动）走完
+  function leg(keys, t0, t1, i) {
+    const seq = (prev ? [prev] : []).concat(keys).filter((k, j, a) => j === 0 || k !== a[j - 1]);
+    // 第一个点就是上一段的终点：直接沿用（图外代理点不能重复外推）
     const pts = [];
     seq.forEach((k, j) => {
       if (j === 0 && prev) { pts.push(verts[verts.length - 1].slice(0, 2)); return; }
@@ -34,19 +34,17 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
       if (!isOffMap(places[k])) lastIn = q;
       pts.push(q);
     });
-    const lens = pts.slice(1).map((p, j) => KM(pts[j], p));
-    const total = lens.reduce((a, b) => a + b, 0);
-    const t0 = ts.t0, t1 = ts.t0 + ts.move;
     if (!prev) {
       verts.push([...pts[0], t0]);
       arrivals.push({ key: seq[0], t: t0, step: i, pos: pts[0] });
     }
+    const lens = pts.slice(1).map((p, j) => KM(pts[j], p));
+    const total = lens.reduce((a, b) => a + b, 0);
     let acc = 0;
     for (let j = 0; j < pts.length - 1; j++) {
       const a = pts[j], b = pts[j + 1], n = Math.max(1, Math.ceil(lens[j] / stepKm));
       for (let k = 1; k <= n; k++) {
         const f = k / n, d = acc + lens[j] * f;
-        // 行进按距离匀速，首尾缓动
         const u = total > 0 ? d / total : 1;
         const e = u < 0.5 ? 2 * u * u : 1 - (-2 * u + 2) ** 2 / 2;
         verts.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, t0 + (t1 - t0) * e]);
@@ -54,7 +52,13 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
       acc += lens[j];
       arrivals.push({ key: seq[j + 1], t: t0 + (t1 - t0) * (total > 0 ? acc / total : 1), step: i, pos: pts[j + 1] });
     }
-    prev = st.places[st.places.length - 1];
+    prev = keys[keys.length - 1];
+  }
+  steps.forEach((st, i) => {
+    const ts = tlSteps[i];
+    const cut = ts.split ?? st.places.length;
+    leg(st.places.slice(0, cut), ts.t0, ts.t0 + ts.move, i);
+    if (ts.after) leg(st.places.slice(cut), ts.after.t0, ts.after.t0 + ts.after.move, i);
   });
   const cum = [0];
   for (let i = 1; i < verts.length; i++) cum.push(cum[i - 1] + KM(verts[i - 1], verts[i]));

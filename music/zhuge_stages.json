@@ -1,0 +1,50 @@
+{
+ "title": {
+  "mood": "title",
+  "root": 57,
+  "mode": "yu",
+  "why": "片头：锣声与长音铺底，羽调式的苍凉"
+ },
+ "st1": {
+  "mood": "contemplative",
+  "root": 57,
+  "mode": "yu",
+  "why": "乱世少年：古琴与箫，低回不安，史料空白处留白"
+ },
+ "st2": {
+  "mood": "pastoral",
+  "root": 62,
+  "mode": "gong",
+  "why": "隆中躬耕：古筝分解和弦与竹笛，田园隐逸而胸怀天下"
+ },
+ "st3": {
+  "mood": "battle",
+  "root": 57,
+  "mode": "yu",
+  "why": "出山与赤壁：鼓与铜管，危局中急促昂扬"
+ },
+ "st4": {
+  "mood": "aspire",
+  "root": 60,
+  "mode": "zhi",
+  "why": "经营荆益：钢琴与弦乐稳步推进，明朗而克制"
+ },
+ "st5": {
+  "mood": "grand",
+  "root": 55,
+  "mode": "yu",
+  "why": "丞相辅政：庄严、悲怆中带坚毅（托孤）"
+ },
+ "st6": {
+  "mood": "epic",
+  "root": 57,
+  "mode": "yu",
+  "why": "北伐中原：太鼓、铜管旋律与锣，悲壮苍凉"
+ },
+ "outro": {
+  "mood": "outro",
+  "root": 57,
+  "mode": "yu",
+  "why": "片尾：二胡旋律收束，寂灭"
+ }
+}

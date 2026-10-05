@@ -5,6 +5,7 @@ import { positionAt } from './journey.js';
 const FPS = 30;
 const OVERVIEW = { lon: 106.5, lat: 33.0, dist: 4800 };
 const MS_DIST = 260;
+const CARD_SHIFT = 0.17;   // 里程碑停留时目标点东移（×距离），把地点让到信息卡左边
 const MIN_D = 520, MAX_D = 3600;
 
 function bboxDist(pts) {
@@ -25,6 +26,14 @@ export function buildCamera(tl, journey) {
     const b = bboxDist(pts);
     return { lon: b.lon, lat: b.lat, dist: Math.min(MAX_D, Math.max(MIN_D, b.ext * 2.3 + 380)) };
   });
+  // 远途里程碑：整段路线的取景
+  const travelFrame = steps.map(s => {
+    if (!s.ms || !s.ms.travel) return null;
+    const pts = [];
+    for (let k = 0; k <= 40; k++) pts.push(positionAt(verts, s.t0 + s.move * k / 40));
+    const b = bboxDist(pts);
+    return { lon: b.lon, lat: b.lat, dist: Math.min(MAX_D, Math.max(MIN_D, b.ext * 2.0 + 300)) };
+  });
   const lifeBox = bboxDist(verts.map(v => [v[0], v[1]]));
   const outro = { lon: lifeBox.lon, lat: lifeBox.lat - 1.5, dist: Math.min(5200, lifeBox.ext * 2.1 + 600) };
   const first = positionAt(verts, steps[0].t0);
@@ -41,12 +50,25 @@ export function buildCamera(tl, journey) {
     let i = 0;
     while (i + 1 < steps.length && steps[i + 1].t0 <= t) i++;
     const s = steps[i];
+    if (s.ms && s.ms.travel && t <= s.ms.t1) {
+      // 先俯瞰整段路线，走到终点后推近
+      const arrive = s.t0 + s.move;
+      if (t < arrive) return travelFrame[i];
+      const p = positionAt(verts, arrive), k = Math.min(1, (t - arrive) / 1.5);
+      const tf = travelFrame[i];
+      return { lon: tf.lon + (p[0] - tf.lon) * k, lat: tf.lat + (p[1] - tf.lat) * k, dist: Math.exp(Math.log(tf.dist) + (Math.log(MS_DIST * 1.6) - Math.log(tf.dist)) * k) };
+    }
+    if (s.after && t > s.ms.t1) {   // 讲完后继续行程：镜头跟随
+      const p = positionAt(verts, t + 0.4);
+      return { lon: p[0], lat: p[1], dist: Math.max(frame[i].dist, 700) };
+    }
     if (s.ms && t <= s.ms.t1) {
       // 抵达途中：镜头跟随人物并逐渐推近；抵达后定在里程碑地点
       const p = positionAt(verts, Math.min(t, s.ms.t0));
       const k = Math.min(1, (t - s.t0) / (s.ms.t0 - s.t0));
       const from = i > 0 ? frame[i - 1].dist : frame[i].dist;
-      return { lon: p[0], lat: p[1], dist: Math.exp(Math.log(from) + (Math.log(MS_DIST) - Math.log(from)) * k * k) };
+      const d = Math.exp(Math.log(from) + (Math.log(MS_DIST) - Math.log(from)) * k * k);
+      return { lon: p[0] + CARD_SHIFT * d * k / (111.32 * Math.cos(p[1] * Math.PI / 180)), lat: p[1], dist: d };
     }
     return frame[i];
   }

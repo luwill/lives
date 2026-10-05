@@ -42,7 +42,9 @@ export function makeHud(person, data, places, tl, journey) {
   const BAR_W = 1700;
   const bar = mk('lifebar', `<div class="track">${stages.map(s => {
     const a = steps.findIndex(x => x.stage === s.id), b = steps.length - 1 - [...steps].reverse().findIndex(x => x.stage === s.id);
-    return `<div class="seg" style="left:${a / n * BAR_W}px;width:${(b - a + 1) / n * BAR_W}px"><span>${esc(s.title)}</span></div>`;
+    const w = (b - a + 1) / n * BAR_W;
+    // 太短的阶段放不下名字：不显示（章节卡和身份卡里仍有阶段名）
+    return `<div class="seg" style="left:${a / n * BAR_W}px;width:${w}px"><span>${w >= s.title.length * 17 + 12 ? esc(s.title) : ''}</span></div>`;
   }).join('')}</div>${steps.map((s, i) => s.milestone ? `<i class="tick${s.milestone.importance === 1 ? ' big' : ''}" style="left:${(i + 0.5) / n * BAR_W}px"></i>` : '').join('')}
     <div class="cursor"></div><div class="fill"></div><span class="y0">${steps[0].id.replace(/H\d/, '')}</span><span class="y1">${steps[n - 1].id.replace(/H\d/, '')}</span>`);
   const cursor = bar.querySelector('.cursor'), fill = bar.querySelector('.fill');
@@ -85,9 +87,14 @@ export function makeHud(person, data, places, tl, journey) {
       evBadge.textContent = lab;
       evBadge.className = `badge ${cls}`;
       evTx.textContent = st.event;
-      const end = places[st.places[st.places.length - 1]];
-      evPl.textContent = `📍 ${end.name}${end.modern && end.modern !== end.name ? `（今${end.modern}）` : ''}`;
       lastStep = i;
+    }
+    // 里程碑讲解期间显示停留地点，其余时候显示本半年的终点
+    const stopKey = st.milestone?.place && !(tl.steps[i].after && t > tl.steps[i].after.t0) ? st.milestone.place : st.places[st.places.length - 1];
+    if (evPl.dataset.k !== stopKey) {
+      const end = places[stopKey];
+      evPl.textContent = `📍 ${end.name}${end.modern && end.modern !== end.name ? `（今${end.modern}）` : ''}`;
+      evPl.dataset.k = stopKey;
     }
     year.classList.toggle('pulse', t - tl.steps[i].t0 < 0.25);
     show(stats, lifeOp);
@@ -107,7 +114,7 @@ export function makeHud(person, data, places, tl, journey) {
     // 里程碑卡
     if (ms) {
       if (lastMs !== i) {
-        const m = st.milestone, pl = places[st.places[st.places.length - 1]];
+        const m = st.milestone, pl = places[m.place || st.places[st.places.length - 1]];
         cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${person.era(y, h)} · ${y - by} 岁`;
         cH.textContent = m.title;
         cWhere.textContent = `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
@@ -115,6 +122,7 @@ export function makeHud(person, data, places, tl, journey) {
         cQ.innerHTML = m.quote ? `${esc(m.quote.text)}<cite>—— ${esc(m.quote.source)}</cite>` : '';
         cQ.style.display = m.quote ? '' : 'none';
         card.classList.toggle('lv1', m.importance === 1);
+        card.classList.toggle('long', m.title.length > 6);
         lastMs = i;
       }
       const k = win(t, ms.t0, ms.t1, 0.6);
