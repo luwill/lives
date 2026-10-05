@@ -1,0 +1,324 @@
+{
+ "yangdu": {
+  "name": "阳都",
+  "modern": "山东临沂沂南县砖埠镇一带",
+  "lat": 35.3749,
+  "lon": 118.4564,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 2136830411（砖埠镇）",
+  "note": "东汉琅琊国阳都县，故城通行说法在今沂南县砖埠镇一带"
+ },
+ "nanchang": {
+  "name": "豫章（南昌）",
+  "modern": "江西南昌",
+  "lat": 28.7015,
+  "lon": 115.8982,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3170007（南昌东湖区，老城）",
+  "note": "豫章郡治南昌县"
+ },
+ "xiangyang": {
+  "name": "襄阳",
+  "modern": "湖北襄阳襄城区",
+  "lat": 32.0118,
+  "lon": 112.128,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216586（襄城区）",
+  "note": "刘表荆州治所"
+ },
+ "longzhong": {
+  "name": "隆中",
+  "modern": "湖北襄阳古隆中",
+  "lat": 31.9967,
+  "lon": 112.0204,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 781979921（隆中景区）；《汉晋春秋》\"在襄阳城西二十里，号曰隆中\"",
+  "note": "躬耕地另有\"南阳卧龙岗\"一说，见 contested"
+ },
+ "xinye": {
+  "name": "新野",
+  "modern": "河南南阳新野县",
+  "lat": 32.5258,
+  "lon": 112.3633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3248959540"
+ },
+ "fancheng": {
+  "name": "樊城",
+  "modern": "湖北襄阳樊城区",
+  "lat": 32.0467,
+  "lon": 112.1296,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216582"
+ },
+ "changban": {
+  "name": "当阳长坂",
+  "modern": "湖北宜昌当阳市",
+  "lat": 30.831,
+  "lon": 111.7914,
+  "kind": "battle",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 8660442（当阳玉阳街道）；Nominatim 无\"长坂坡\"条目",
+  "note": "长坂确切位置无定论，取当阳城区"
+ },
+ "xiakou": {
+  "name": "夏口",
+  "modern": "湖北武汉汉阳（汉水入江口）",
+  "lat": 30.5575,
+  "lon": 114.2696,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 988991396（龟山公园）",
+  "note": "汉末\"夏口\"指汉水（夏水）入江处，后孙吴筑夏口城于今武昌蛇山；此取汉阳龟山"
+ },
+ "chaisang": {
+  "name": "柴桑",
+  "modern": "江西九江柴桑区",
+  "lat": 29.6125,
+  "lon": 115.9051,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3451759881（柴桑区）",
+  "note": "汉柴桑县故城在今九江西南"
+ },
+ "chibi": {
+  "name": "赤壁",
+  "modern": "湖北咸宁赤壁市赤壁镇",
+  "lat": 29.8819,
+  "lon": 113.6248,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 1462190588（三国赤壁古战场）",
+  "note": "战场位置有蒲圻（今赤壁市）、嘉鱼、黄州等说，取蒲圻说"
+ },
+ "linzheng": {
+  "name": "临烝",
+  "modern": "湖南衡阳",
+  "lat": 26.947,
+  "lon": 112.5929,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3156151（衡阳石鼓区）",
+  "note": "汉临烝县治今衡阳市区"
+ },
+ "gongan": {
+  "name": "公安",
+  "modern": "湖北荆州公安县",
+  "lat": 30.0609,
+  "lon": 112.2241,
+  "kind": "city",
+  "confidence": "low",
+  "source": "OSM Nominatim node 244080038（公安县）",
+  "note": "刘备改油江口为公安，故城具体位置有争议，取今县城"
+ },
+ "baidi": {
+  "name": "白帝",
+  "modern": "重庆奉节白帝城",
+  "lat": 31.0434,
+  "lon": 109.5705,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2411108613",
+  "note": "鱼复县白帝城，章武二年改名永安"
+ },
+ "jiangzhou": {
+  "name": "江州",
+  "modern": "重庆渝中区",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525",
+  "note": "巴郡治所"
+ },
+ "chengdu": {
+  "name": "成都",
+  "modern": "四川成都",
+  "lat": 30.6599,
+  "lon": 104.0633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2110264"
+ },
+ "yongan": {
+  "name": "永安（白帝城）",
+  "modern": "重庆奉节白帝城",
+  "lat": 31.0434,
+  "lon": 109.5705,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2411108613",
+  "note": "即白帝城，刘备崩于永安宫"
+ },
+ "yuexi": {
+  "name": "越巂（邛都）",
+  "modern": "四川凉山西昌",
+  "lat": 27.8985,
+  "lon": 102.2627,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 6546353839（西昌市）",
+  "note": "越巂郡治邛都，今西昌"
+ },
+ "lushui": {
+  "name": "泸水",
+  "modern": "金沙江（四川攀枝花拉鲊一带）",
+  "lat": 26.3686,
+  "lon": 101.9212,
+  "kind": "river",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1558444920（拉鲊）",
+  "note": "泸水即今金沙江一段，渡口有拉鲊、会理、巧家等说，无定论，取拉鲊仅示意"
+ },
+ "dianchi": {
+  "name": "滇池",
+  "modern": "云南昆明晋宁区晋城",
+  "lat": 24.7062,
+  "lon": 102.7481,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 6878162（晋城街道）",
+  "note": "汉滇池县治今晋宁晋城，濒滇池"
+ },
+ "mianyang": {
+  "name": "汉中（沔阳）",
+  "modern": "陕西汉中勉县",
+  "lat": 33.1551,
+  "lon": 106.6695,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 1964024153（勉县城区）",
+  "note": "汉沔阳县故城在今勉县东郊一带；后主传\"营沔北阳平石马\""
+ },
+ "qishan": {
+  "name": "祁山",
+  "modern": "甘肃陇南礼县祁山镇",
+  "lat": 34.2306,
+  "lon": 105.3941,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim way 456781827（祁山堡）"
+ },
+ "xixian": {
+  "name": "西县",
+  "modern": "甘肃陇南礼县东北红河一带",
+  "lat": 34.4099,
+  "lon": 105.3914,
+  "kind": "city",
+  "confidence": "low",
+  "source": "OSM Nominatim node 6053097461（红河镇）",
+  "note": "汉西县故城一般认为在今礼县东北至天水西南间，确址未定"
+ },
+ "sanguan": {
+  "name": "散关",
+  "modern": "陕西宝鸡大散关",
+  "lat": 34.2721,
+  "lon": 107.0112,
+  "kind": "pass",
+  "confidence": "high",
+  "source": "OSM Nominatim way 1233229309（古大散关遗址）"
+ },
+ "chencang": {
+  "name": "陈仓",
+  "modern": "陕西宝鸡陈仓区",
+  "lat": 34.3513,
+  "lon": 107.3639,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3048908（陈仓区）",
+  "note": "郝昭所守陈仓城在今宝鸡市东"
+ },
+ "jianwei": {
+  "name": "建威",
+  "modern": "甘肃陇南西和县",
+  "lat": 34.0116,
+  "lon": 105.2978,
+  "kind": "town",
+  "confidence": "low",
+  "source": "OSM Nominatim node 3409841528（西和县）",
+  "note": "建威城址一般定在今西和县境，确址未定"
+ },
+ "chenggu": {
+  "name": "城固",
+  "modern": "陕西汉中城固县",
+  "lat": 33.1586,
+  "lon": 107.3291,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 2967706（城固县）",
+  "note": "乐城在城固"
+ },
+ "chiban": {
+  "name": "赤阪",
+  "modern": "陕西汉中洋县龙亭镇一带",
+  "lat": 33.2114,
+  "lon": 107.6489,
+  "kind": "mountain",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1964024150（龙亭镇）",
+  "note": "赤阪（赤坂）旧说在洋县东二十里龙亭山，确址未定"
+ },
+ "shanggui": {
+  "name": "上邽",
+  "modern": "甘肃天水秦州区",
+  "lat": 34.5798,
+  "lon": 105.7063,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082074（天水市）"
+ },
+ "lucheng": {
+  "name": "卤城",
+  "modern": "甘肃陇南礼县盐官镇",
+  "lat": 34.2635,
+  "lon": 105.4664,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3365707498（盐官镇）",
+  "note": "卤城即盐官，通行说法在今礼县盐官镇"
+ },
+ "huangsha": {
+  "name": "黄沙",
+  "modern": "陕西汉中勉县黄沙",
+  "lat": 33.133,
+  "lon": 106.7869,
+  "kind": "town",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 1964024133"
+ },
+ "xiegu": {
+  "name": "斜谷",
+  "modern": "陕西宝鸡眉县斜峪关",
+  "lat": 34.1794,
+  "lon": 107.6623,
+  "kind": "pass",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 14051254166（斜峪关村）",
+  "note": "褒斜道北口"
+ },
+ "wuzhangyuan": {
+  "name": "五丈原",
+  "modern": "陕西宝鸡岐山县五丈原",
+  "lat": 34.2619,
+  "lon": 107.6255,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim node 14051023480（五丈原村）"
+ },
+ "dingjunshan": {
+  "name": "定军山",
+  "modern": "陕西汉中勉县定军山（武侯墓）",
+  "lat": 33.1256,
+  "lon": 106.6483,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 11934737268（武侯墓）",
+  "note": "亮遗命葬定军山"
+ }
+}

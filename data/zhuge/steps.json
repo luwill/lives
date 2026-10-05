@@ -1,0 +1,1756 @@
+{
+ "meta": {
+  "person": "诸葛亮",
+  "birth": "181",
+  "birth_note": "汉灵帝光和四年生，月份不详。由本传\"其年八月，亮疾病，卒于军，时年五十四\"（建兴十二年，234）逆推；按任务约定从 181H1 起。",
+  "death": "234",
+  "death_note": "蜀汉建兴十二年（魏青龙二年）八月卒于五丈原军中，日不详；农历八月约当公历 9—10 月，归入 234H2。",
+  "calendar_note": "H1=公历 1—6 月、H2=7—12 月（儒略历）。史料多只记农历季节或月份：按\"农历 1—6 月→H1、7—12 月→H2\"近似；只记\"春/夏\"者归 H1，\"秋/冬\"者归 H2；只记年份、无月份者按上下文推断并在 note 中说明。",
+  "sources": [
+   {
+    "id": "S1",
+    "title": "陈寿《三国志·蜀书·诸葛亮传》及裴松之注",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "primary"
+   },
+   {
+    "id": "S2",
+    "title": "陈寿《三国志·蜀书·先主传》及裴注",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷32",
+    "kind": "primary"
+   },
+   {
+    "id": "S3",
+    "title": "陈寿《三国志·蜀书·后主传》",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷33",
+    "kind": "primary"
+   },
+   {
+    "id": "S4",
+    "title": "陈寿《三国志·蜀书·马良传（附马谡）》及裴注引《襄阳记》",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷39",
+    "kind": "primary"
+   },
+   {
+    "id": "S5",
+    "title": "司马光《资治通鉴》卷六十至七十二",
+    "url": "https://zh.wikisource.org/wiki/資治通鑑",
+    "kind": "primary"
+   },
+   {
+    "id": "S6",
+    "title": "常璩《华阳国志·南中志》",
+    "url": "https://zh.wikisource.org/wiki/華陽國志/卷四",
+    "kind": "primary"
+   },
+   {
+    "id": "S7",
+    "title": "常璩《华阳国志·刘先主志》",
+    "url": "https://zh.wikisource.org/wiki/華陽國志/卷六",
+    "kind": "primary"
+   },
+   {
+    "id": "S8",
+    "title": "裴注引习凿齿《汉晋春秋》（东晋）",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "secondary"
+   },
+   {
+    "id": "S9",
+    "title": "裴注引习凿齿《襄阳记》（东晋；见诸葛亮传、庞统传卷37、马谡传卷39 注）",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "secondary"
+   },
+   {
+    "id": "S10",
+    "title": "裴注引鱼豢《魏略》（曹魏）",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "secondary"
+   },
+   {
+    "id": "S11",
+    "title": "裴注引袁晔《献帝春秋》（东吴）",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "secondary"
+   },
+   {
+    "id": "S12",
+    "title": "裴注引《零陵先贤传》",
+    "url": "https://zh.wikisource.org/wiki/三國志/卷35",
+    "kind": "secondary"
+   },
+   {
+    "id": "S13",
+    "title": "OpenStreetMap Nominatim 今地名坐标（见 places.json 各条 source）",
+    "url": "https://nominatim.openstreetmap.org/",
+    "kind": "secondary"
+   }
+  ]
+ },
+ "stages": [
+  {
+   "id": "st1",
+   "title": "乱世少年",
+   "from": "181H1",
+   "to": "195H1",
+   "summary": "生于琅琊阳都，早年失怙，徐州兵祸中随叔父诸葛玄南下豫章。",
+   "mood_hint": "幼年孤苦、颠沛流离；北方战火的阴影下，少年沉静早慧，旋律低回而带不安。"
+  },
+  {
+   "id": "st2",
+   "title": "隆中躬耕",
+   "from": "195H2",
+   "to": "207H1",
+   "summary": "依刘表寓居襄阳，叔父卒后躬耕隆中，好为《梁父吟》，自比管仲、乐毅。",
+   "mood_hint": "田园隐逸而胸怀天下；从容、自负、蓄势待时，旋律舒缓开阔，暗含抱负。"
+  },
+  {
+   "id": "st3",
+   "title": "出山与赤壁",
+   "from": "207H2",
+   "to": "208H2",
+   "summary": "刘备三顾，草庐定策；随刘备南撤，出使柴桑联吴，赤壁破曹。",
+   "mood_hint": "知遇之感与临危受命；节奏由沉郁转为急促昂扬，危局中显出果决与辩才。"
+  },
+  {
+   "id": "st4",
+   "title": "经营荆益",
+   "from": "209H1",
+   "to": "220H2",
+   "summary": "督三郡赋税以充军实，镇守荆州，溯江入蜀；坐镇成都，足食足兵。",
+   "mood_hint": "务实干练、勤勉持重；建设与积累的稳定推进感，基调明朗而克制。"
+  },
+  {
+   "id": "st5",
+   "title": "丞相辅政",
+   "from": "221H1",
+   "to": "226H2",
+   "summary": "刘备称帝拜丞相；白帝城受托孤，独掌国政，联吴、南征，安定南中。",
+   "mood_hint": "受命于危难之间，责任沉重；庄严、悲怆中带坚毅，托孤一节尤显哀痛。"
+  },
+  {
+   "id": "st6",
+   "title": "北伐中原",
+   "from": "227H1",
+   "to": "234H2",
+   "summary": "上《出师表》进驻汉中，五次出兵秦陇，屯田渭滨，终卒于五丈原。",
+   "mood_hint": "鞠躬尽瘁、明知难为而为之；悲壮苍凉，铁血与疲惫交织，终章寂灭。"
+  }
+ ],
+ "steps": [
+  {
+   "id": "181H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "生于琅琊阳都，汉司隶校尉诸葛丰之后，父圭为太山郡丞",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1",
+   "milestone": {
+    "title": "生于阳都",
+    "subtitle": "琅琊阳都人，诸葛丰之后",
+    "importance": 2,
+    "quote": {
+     "text": "諸葛亮字孔明，琅邪陽都人也。",
+     "source": "《三国志·诸葛亮传》"
+    }
+   },
+   "note": "生年由卒年\"时年五十四\"逆推；月份不详，按约定置于 181H1。"
+  },
+  {
+   "id": "181H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "182H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "182H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "183H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "183H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "184H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "黄巾起事，天下大乱（背景）；亮仍居阳都",
+   "confidence": "inferred",
+   "sources": [
+    "S5"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "184H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "185H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "185H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "186H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "186H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "187H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "187H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "188H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "188H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "亮早孤，父诸葛圭卒年不详；仍居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "189H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "居阳都，幼年事迹史料空白",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "189H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "董卓入洛阳，关东州郡起兵（背景）；亮居阳都",
+   "confidence": "inferred",
+   "sources": [
+    "S5"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "190H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "190H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "191H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "191H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "192H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "192H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "193H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "徐州尚安，亮随家人居阳都（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "193H2",
+   "places": [
+    "yangdu"
+   ],
+   "event": "秋，曹操攻徐州陶谦，坑杀泗水，徐土残破（背景）",
+   "confidence": "inferred",
+   "sources": [
+    "S5"
+   ],
+   "stage": "st1",
+   "note": "阳都属徐州琅琊国；亮此时是否仍在阳都，史无明文。"
+  },
+  {
+   "id": "194H1",
+   "places": [
+    "yangdu"
+   ],
+   "event": "夏，曹操再攻陶谦，略地至琅琊、东海，所过残灭（背景）",
+   "confidence": "inferred",
+   "sources": [
+    "S5"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "194H2",
+   "places": [
+    "yangdu",
+    "nanchang"
+   ],
+   "event": "叔父诸葛玄为豫章太守，携亮与弟均南下赴任",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S11",
+    "S5"
+   ],
+   "stage": "st1",
+   "milestone": {
+    "title": "南迁豫章",
+    "subtitle": "随叔父诸葛玄离开故乡，远赴江南",
+    "importance": 2
+   },
+   "note": "本传未系年；通鉴系朱皓攻玄于兴平二年（195），据此推定南下在 194—195 年间。另见 contested。"
+  },
+  {
+   "id": "195H1",
+   "places": [
+    "nanchang"
+   ],
+   "event": "朝廷改任朱皓为豫章太守，刘繇助皓攻玄，玄退保西城",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S5",
+    "S11"
+   ],
+   "stage": "st1",
+   "note": "事见《资治通鉴》兴平二年；亮当随玄在豫章，属推断。"
+  },
+  {
+   "id": "195H2",
+   "places": [
+    "nanchang",
+    "xiangyang"
+   ],
+   "event": "玄素与荆州牧刘表有旧，携亮往依之，寓居襄阳",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2",
+   "note": "本传只言\"往依之\"，未系年；《献帝春秋》则谓玄退保西城后被杀，未至荆州，见 contested。"
+  },
+  {
+   "id": "196H1",
+   "places": [
+    "xiangyang"
+   ],
+   "event": "依刘表寓居襄阳（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "196H2",
+   "places": [
+    "xiangyang"
+   ],
+   "event": "建安初与石广元、徐元直、孟公威游学，独观其大略",
+   "confidence": "inferred",
+   "sources": [
+    "S10"
+   ],
+   "stage": "st2",
+   "note": "《魏略》作\"建安初\"，具体年份不详。"
+  },
+  {
+   "id": "197H1",
+   "places": [
+    "xiangyang",
+    "longzhong"
+   ],
+   "event": "叔父玄卒；亮躬耕陇亩于隆中，好为《梁父吟》",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S8",
+    "S11"
+   ],
+   "stage": "st2",
+   "milestone": {
+    "title": "躬耕隆中",
+    "subtitle": "叔父卒后自立门户，耕读于襄阳城西隆中",
+    "importance": 2,
+    "quote": {
+     "text": "臣本布衣，躬耕於南陽，苟全性命於亂世，不求聞達於諸侯。",
+     "source": "《出师表》"
+    }
+   },
+   "note": "玄卒年仅《献帝春秋》作建安二年（197）正月；隆中地望据《汉晋春秋》\"在襄阳城西二十里\"。"
+  },
+  {
+   "id": "197H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "198H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "每自比于管仲、乐毅，时人莫之许",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2",
+   "note": "时间泛指。"
+  },
+  {
+   "id": "198H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "惟崔州平、徐庶与亮友善，谓为信然（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "199H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "199H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "每晨夜从容，常抱膝长啸（《魏略》，时间泛指）",
+   "confidence": "traditional",
+   "sources": [
+    "S10"
+   ],
+   "stage": "st2",
+   "note": "轶事见裴注引《魏略》，无确切年份。"
+  },
+  {
+   "id": "200H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "200H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "201H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "201H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "刘备自汝南奔荆州，刘表使屯新野（背景）；亮仍在隆中",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "202H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "202H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "娶沔南名士黄承彦之女（《襄阳记》，时间不详）",
+   "confidence": "traditional",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st2",
+   "note": "婚事仅见裴注引《襄阳记》，未系年，暂置于此，不作时间依据。"
+  },
+  {
+   "id": "203H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "203H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "204H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "204H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "与庞德公、司马徽等襄阳名士往来（《襄阳记》，时间泛指）",
+   "confidence": "traditional",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st2",
+   "note": "交游事见裴注引《襄阳记》，无确切年份。"
+  },
+  {
+   "id": "205H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "205H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "206H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "躬耕陇亩，好为《梁父吟》（时间泛指）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "206H2",
+   "places": [
+    "longzhong"
+   ],
+   "event": "徐庶见刘备于新野，荐亮为\"卧龙\"（约 206—207 年）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S5"
+   ],
+   "stage": "st2",
+   "note": "通鉴系于建安十二年（207），具体月份不详。"
+  },
+  {
+   "id": "207H1",
+   "places": [
+    "longzhong"
+   ],
+   "event": "刘备访士于司马徽，徽称\"伏龙、凤雏\"（《襄阳记》）",
+   "confidence": "traditional",
+   "sources": [
+    "S9",
+    "S5"
+   ],
+   "stage": "st2",
+   "note": "语出裴注引《襄阳记》，通鉴采入建安十二年；月份不详。"
+  },
+  {
+   "id": "207H2",
+   "places": [
+    "longzhong",
+    "xinye"
+   ],
+   "event": "刘备三往隆中乃见，亮陈\"隆中对\"，遂出山辅佐，随备至新野",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S5"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "三顾茅庐·隆中对",
+    "subtitle": "跨有荆益、外结孙权、内修政理",
+    "importance": 1,
+    "quote": {
+     "text": "誠如是，則霸業可成，漢室可興矣。",
+     "source": "《三国志·诸葛亮传》（隆中对）"
+    }
+   },
+   "note": "年份据通鉴建安十二年；月份不详，置于下半年。《魏略》称亮先北行诣备于樊城，裴松之据《出师表》驳之。"
+  },
+  {
+   "id": "208H1",
+   "places": [
+    "xinye"
+   ],
+   "event": "刘琦登楼问计，亮以申生、重耳喻之；黄祖死，琦出为江夏太守",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st3",
+   "note": "黄祖死于建安十三年春孙权西征，故置于 208H1。"
+  },
+  {
+   "id": "208H2",
+   "places": [
+    "fancheng",
+    "changban",
+    "xiakou",
+    "chaisang",
+    "chibi"
+   ],
+   "event": "刘琮降曹，随备自樊南撤，长坂败后至夏口；出使柴桑说孙权，冬赤壁破曹",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2",
+    "S5"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "出使东吴·赤壁之战",
+    "subtitle": "柴桑说孙权，孙刘联军火攻破曹",
+    "importance": 1,
+    "quote": {
+     "text": "事急矣，請奉命求救於孫將軍。",
+     "source": "《三国志·诸葛亮传》"
+    }
+   },
+   "note": "曹操七月南征、九月至新野、刘琮降；赤壁之战在是年冬。草船借箭、借东风为演义情节，非史实。"
+  },
+  {
+   "id": "209H1",
+   "places": [
+    "linzheng"
+   ],
+   "event": "刘备收江南四郡，以亮为军师中郎将，督三郡，住临烝",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S12",
+    "S2"
+   ],
+   "stage": "st4",
+   "note": "住临烝出自裴注引《零陵先贤传》；具体月份不详。"
+  },
+  {
+   "id": "209H2",
+   "places": [
+    "linzheng"
+   ],
+   "event": "以军师中郎将住临烝，督零陵、桂阳、长沙三郡赋税，以充军实",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S12"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "210H1",
+   "places": [
+    "linzheng"
+   ],
+   "event": "以军师中郎将住临烝，督零陵、桂阳、长沙三郡赋税，以充军实",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S12"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "210H2",
+   "places": [
+    "linzheng"
+   ],
+   "event": "以军师中郎将住临烝，督零陵、桂阳、长沙三郡赋税，以充军实",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S12"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "211H1",
+   "places": [
+    "linzheng"
+   ],
+   "event": "以军师中郎将住临烝，督零陵、桂阳、长沙三郡赋税，以充军实",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S12"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "211H2",
+   "places": [
+    "linzheng",
+    "gongan"
+   ],
+   "event": "刘璋遣法正迎刘备入蜀，亮与关羽镇荆州",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4",
+   "note": "自临烝移驻公安的时间史无明文；刘备治公安，故推定亮留镇公安。"
+  },
+  {
+   "id": "212H1",
+   "places": [
+    "gongan"
+   ],
+   "event": "与关羽镇守荆州（推断驻公安）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "212H2",
+   "places": [
+    "gongan"
+   ],
+   "event": "与关羽镇守荆州（推断驻公安）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "213H1",
+   "places": [
+    "gongan"
+   ],
+   "event": "与关羽镇守荆州（推断驻公安）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "213H2",
+   "places": [
+    "gongan"
+   ],
+   "event": "与关羽镇守荆州（推断驻公安）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "214H1",
+   "places": [
+    "gongan",
+    "baidi",
+    "jiangzhou",
+    "chengdu"
+   ],
+   "event": "留关羽守荆州，与张飞、赵云溯江克巴东、江州，会围成都",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2",
+    "S5"
+   ],
+   "stage": "st4",
+   "milestone": {
+    "title": "溯江入蜀",
+    "subtitle": "分定郡县，与刘备会师成都",
+    "importance": 2
+   },
+   "note": "先主传\"十九年夏…围成都数十日，璋出降\"；通鉴将溯江事系于是年闰五月后。亮自江州至成都的具体路线不详。"
+  },
+  {
+   "id": "214H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "成都平，以亮为军师将军，署左将军府事",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "215H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "215H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "216H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "216H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "217H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "217H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "刘备争汉中，亮常镇守成都，足食足兵",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "218H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "刘备争汉中，亮常镇守成都，足食足兵",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "218H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "刘备争汉中，亮常镇守成都，足食足兵",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "219H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "刘备争汉中，亮常镇守成都，足食足兵",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "219H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "刘备称汉中王（背景）；冬关羽败亡，荆州失守",
+   "confidence": "inferred",
+   "sources": [
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "220H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "坐镇成都，署左将军府事，足食足兵（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "220H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "曹丕代汉称帝；传闻汉帝遇害，群臣劝刘备即位",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "221H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "四月刘备即皇帝位，策亮为丞相，录尚书事，假节",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2",
+    "S7"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "刘备称帝·拜丞相",
+    "subtitle": "章武元年，位极人臣",
+    "importance": 2,
+    "quote": {
+     "text": "丞相亮其悉朕意，無怠輔朕之闕，助宣重光，以照明天下，君其勖哉！",
+     "source": "《三国志·诸葛亮传》（策文）"
+    }
+   }
+  },
+  {
+   "id": "221H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "七月刘备东征孙吴，亮留守成都；张飞卒后领司隶校尉",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "222H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "夷陵兵败，刘备退还鱼复，改名永安（背景）；亮留成都",
+   "confidence": "inferred",
+   "sources": [
+    "S2"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "222H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "留守成都，总理后方（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "223H1",
+   "places": [
+    "chengdu",
+    "yongan",
+    "chengdu"
+   ],
+   "event": "二月赴永安，刘备病笃托孤；四月备崩，亮奉梓宫还成都",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "白帝城托孤",
+    "subtitle": "先主遗诏：汝与丞相从事，事之如父",
+    "importance": 1,
+    "quote": {
+     "text": "臣敢竭股肱之力，效忠貞之節，繼之以死！",
+     "source": "《三国志·诸葛亮传》"
+    }
+   },
+   "note": "先主传：三年春二月丞相亮自成都到永安，夏四月癸巳先主殂于永安宫。"
+  },
+  {
+   "id": "223H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "封武乡侯，开府治事；遣邓芝使吴，与孙权复通好",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "224H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "务农殖谷，闭关息民",
+   "confidence": "documented",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "224H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "治理蜀中，筹备南征（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "225H1",
+   "places": [
+    "chengdu",
+    "yuexi",
+    "lushui"
+   ],
+   "event": "三月南征，由水路入越巂，斩高定元；五月渡泸，进征益州",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S6"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "南征",
+    "subtitle": "平定南中四郡",
+    "importance": 2,
+    "quote": {
+     "text": "五月渡瀘，深入不毛。",
+     "source": "《出师表》"
+    }
+   },
+   "note": "路线据《华阳国志·南中志》；永昌、牂牁两郡由吕凯固守、马忠讨平，亮本人未亲至。"
+  },
+  {
+   "id": "225H2",
+   "places": [
+    "dianchi",
+    "chengdu"
+   ],
+   "event": "相传七擒七纵孟获，遂至滇池；秋平四郡，十二月还成都",
+   "confidence": "traditional",
+   "sources": [
+    "S8",
+    "S6",
+    "S3"
+   ],
+   "stage": "st5",
+   "note": "\"七擒七纵\"出自裴注引《汉晋春秋》（《华阳国志》作\"七虏七赦\"），陈寿本传不载，属晚出记载；\"秋平四郡\"\"十二月亮还成都\"则见后主传，属史料明载。"
+  },
+  {
+   "id": "226H1",
+   "places": [
+    "chengdu"
+   ],
+   "event": "南中既平，治戎讲武，以俟大举",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "226H2",
+   "places": [
+    "chengdu"
+   ],
+   "event": "南中既平，治戎讲武，以俟大举",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "227H1",
+   "places": [
+    "chengdu",
+    "mianyang"
+   ],
+   "event": "三月率诸军北驻汉中，临发上《出师表》；屯沔阳，营沔北阳平石马",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "出师表",
+    "subtitle": "北定中原，兴复汉室",
+    "importance": 1,
+    "quote": {
+     "text": "庶竭駑鈍，攘除姦凶，興復漢室，還於舊都。",
+     "source": "《出师表》"
+    }
+   },
+   "note": "\"三月\"据通鉴；本传作\"五年\"，后主传作\"五年春\"。"
+  },
+  {
+   "id": "227H2",
+   "places": [
+    "mianyang"
+   ],
+   "event": "屯驻汉中，练兵筹粮，筹划北伐（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "228H1",
+   "places": [
+    "mianyang",
+    "qishan",
+    "xixian",
+    "mianyang"
+   ],
+   "event": "春出祁山，三郡响应；马谡败于街亭，拔西县千余家还汉中，戮谡，自贬三等",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S5"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "首出祁山·街亭之败",
+    "subtitle": "三郡叛魏应亮，马谡失街亭，挥泪斩谡",
+    "importance": 1,
+    "quote": {
+     "text": "孫武所以能制勝於天下者，用法明也。",
+     "source": "《三国志·马谡传》裴注引《襄阳记》"
+    }
+   },
+   "note": "亮本人未至街亭。\"挥泪斩马谡\"为后世概括：马谡传作\"谡下狱物故，亮为之流涕\"，《襄阳记》称\"戮谡\"。"
+  },
+  {
+   "id": "228H2",
+   "places": [
+    "mianyang",
+    "sanguan",
+    "chencang",
+    "mianyang"
+   ],
+   "event": "冬出散关，围陈仓，郝昭固守，粮尽而还，斩追将王双",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "陈仓之役",
+    "subtitle": "二十余日不克，粮尽退军",
+    "importance": 2
+   },
+   "note": "通鉴系于十二月。《后出师表》出张俨《默记》，亮集不载，真伪有争议，见 contested。空城计为演义情节，非史实。"
+  },
+  {
+   "id": "229H1",
+   "places": [
+    "mianyang",
+    "jianwei",
+    "mianyang"
+   ],
+   "event": "遣陈式取武都、阴平，亮自出至建威，郭淮退走；复拜丞相",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "229H2",
+   "places": [
+    "mianyang"
+   ],
+   "event": "冬，徙府营于南山下原上，筑汉、乐二城",
+   "confidence": "documented",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "230H1",
+   "places": [
+    "mianyang"
+   ],
+   "event": "驻汉中，休整备战（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "230H2",
+   "places": [
+    "mianyang",
+    "chenggu",
+    "chiban"
+   ],
+   "event": "秋，魏三路攻汉中，亮待之于城固、赤阪；大雨道绝，魏军退还",
+   "confidence": "documented",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st6",
+   "note": "半年末是否返回沔阳史无明文，暂以赤阪为终点。"
+  },
+  {
+   "id": "231H1",
+   "places": [
+    "mianyang",
+    "qishan",
+    "shanggui",
+    "lucheng",
+    "mianyang"
+   ],
+   "event": "二月复围祁山，以木牛运；上邽芟麦，五月卤城大破魏军；六月粮尽退，射杀张郃",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S8"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "卤城之战",
+    "subtitle": "司马懿据营不战，蜀军大破张郃、司马懿",
+    "importance": 2
+   },
+   "note": "上邽、卤城战况出自裴注引《汉晋春秋》；张郃追至青封（木门）中箭死，见后主传。"
+  },
+  {
+   "id": "231H2",
+   "places": [
+    "mianyang"
+   ],
+   "event": "还汉中；八月李严因运粮不继诿过，废徙梓潼",
+   "confidence": "documented",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "232H1",
+   "places": [
+    "huangsha"
+   ],
+   "event": "休士劝农于黄沙，作流马木牛毕，教兵讲武",
+   "confidence": "documented",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st6",
+   "note": "后主传仅系于建兴十年（232），未记月份。"
+  },
+  {
+   "id": "232H2",
+   "places": [
+    "huangsha"
+   ],
+   "event": "黄沙劝农、讲武（承上年记载）",
+   "confidence": "inferred",
+   "sources": [
+    "S3"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "233H1",
+   "places": [
+    "huangsha"
+   ],
+   "event": "息民休士，积谷备战（推断）",
+   "confidence": "inferred",
+   "sources": [
+    "S5"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "233H2",
+   "places": [
+    "huangsha"
+   ],
+   "event": "冬，使诸军运米集于斜谷口，治斜谷邸阁",
+   "confidence": "documented",
+   "sources": [
+    "S3",
+    "S5"
+   ],
+   "stage": "st6",
+   "note": "亮本人所在地史无明文，推断仍在汉中。"
+  },
+  {
+   "id": "234H1",
+   "places": [
+    "huangsha",
+    "xiegu",
+    "wuzhangyuan"
+   ],
+   "event": "二月悉大众由斜谷出，以流马运，据武功五丈原，分兵屯田",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st6",
+   "note": "通鉴称\"悉大众十万\"，并遣使约吴同时大举。"
+  },
+  {
+   "id": "234H2",
+   "places": [
+    "wuzhangyuan",
+    "dingjunshan"
+   ],
+   "event": "与司马懿相持百余日，八月病卒于军，年五十四；遗命葬定军山",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "五丈原星落",
+    "subtitle": "出师未捷身先死，归葬汉中定军山",
+    "importance": 1,
+    "quote": {
+     "text": "亮遺命葬漢中定軍山，因山為墳，塚足容棺，斂以時服，不須器物。",
+     "source": "《三国志·诸葛亮传》"
+    }
+   },
+   "note": "卒地：本传\"卒于军\"，《汉晋春秋》作\"卒于郭氏坞\"；《晋阳秋》\"有星赤而芒角…投于亮营\"属传说。七星灯禳星为演义情节，非史实。归葬定军山的具体时间不详。"
+  }
+ ],
+ "contested": [
+  {
+   "topic": "南下豫章的时间与诸葛玄的任命者",
+   "views": [
+    "袁术署玄为豫章太守，玄将亮及均之官（《三国志·诸葛亮传》，未系年）",
+    "刘表上玄为豫章太守，治南昌（裴注引《献帝春秋》）",
+    "朱皓攻玄事系于兴平二年/195（《资治通鉴》卷六十一），故南下当在 194—195 年间"
+   ],
+   "adopted": "采用 194H2 南下、195H1 在豫章；本传未系年，标 inferred。"
+  },
+  {
+   "topic": "诸葛玄的结局与亮入荆州的经过",
+   "views": [
+    "玄往依刘表，后卒（《三国志·诸葛亮传》）",
+    "玄退保西城，建安二年正月为西城民所杀，首级送刘繇（裴注引《献帝春秋》；裴松之谓\"与本传不同\"）"
+   ],
+   "adopted": "行踪采本传（195H2 往依刘表至襄阳），玄卒年借用《献帝春秋》的建安二年（197）作为躬耕隆中的起点。"
+  },
+  {
+   "topic": "躬耕地：襄阳隆中还是南阳卧龙岗",
+   "views": [
+    "\"亮家于南阳之邓县，在襄阳城西二十里，号曰隆中\"（裴注引《汉晋春秋》），即今湖北襄阳古隆中",
+    "《出师表》\"躬耕于南阳\"，后世据此以今河南南阳卧龙岗为躬耕地（元明以后地方说法）"
+   ],
+   "adopted": "采用襄阳隆中：汉南阳郡辖邓县，《出师表》\"南阳\"指郡名，与隆中说不矛盾；卧龙岗说出现较晚。"
+  },
+  {
+   "topic": "三顾茅庐的真实性与时间",
+   "views": [
+    "刘备\"凡三往，乃见\"（本传、《出师表》\"三顾臣于草庐之中\"），通鉴系于建安十二年（207）",
+    "亮先北行至樊城见刘备（裴注引《魏略》《九州春秋》），裴松之以《出师表》驳之"
+   ],
+   "adopted": "采用三顾说，系于 207H2；具体月份无载。"
+  },
+  {
+   "topic": "赤壁之战的战场位置",
+   "views": [
+    "湖北蒲圻（今赤壁市）赤矶山",
+    "湖北嘉鱼、武昌、汉川、黄州等说（黄州\"东坡赤壁\"为文赤壁）"
+   ],
+   "adopted": "采用学界较通行的蒲圻（今赤壁市赤壁镇）说，坐标取三国赤壁古战场。"
+  },
+  {
+   "topic": "亮驻临烝与移镇公安的时间",
+   "views": [
+    "209 年起以军师中郎将督三郡，\"时住临烝\"（裴注引《零陵先贤传》）",
+    "211 年刘备入蜀后\"亮与关羽镇荆州\"（本传），何时离临烝至公安无明文"
+   ],
+   "adopted": "209H1—211H1 置于临烝，211H2 起置于公安（inferred）。"
+  },
+  {
+   "topic": "南征渡泸的地点",
+   "views": [
+    "今四川会理—云南永仁间金沙江拉鲊渡口一带",
+    "今云南巧家、四川会东等渡口",
+    "今四川宜宾附近（较少见）"
+   ],
+   "adopted": "泸水即今金沙江，渡口无定论，坐标取拉鲊仅示意，places 中 confidence=low。"
+  },
+  {
+   "topic": "\"七擒七纵\"孟获",
+   "views": [
+    "裴注引《汉晋春秋》\"七纵七禽\"，《华阳国志·南中志》\"七虏七赦\"",
+    "陈寿本传、后主传均不载；近代学者多认为有夸饰成分"
+   ],
+   "adopted": "写入 225H2 并将该步 confidence 标为 traditional，note 说明。"
+  },
+  {
+   "topic": "《后出师表》真伪",
+   "views": [
+    "亮集不载，出吴人张俨《默记》（裴注），清人袁枚、钱大昕等疑为伪作或他人所拟",
+    "亦有学者认为确为亮所作"
+   ],
+   "adopted": "不作为里程碑引文；仅在 228H2 note 提及。"
+  },
+  {
+   "topic": "诸葛亮卒地与死因",
+   "views": [
+    "\"其年八月，亮疾病，卒于军\"（本传）",
+    "\"亮卒于郭氏坞\"（裴注引《汉晋春秋》）",
+    "\"糧尽势穷，忧恚欧血…入谷，道发病卒\"（裴注引《魏书》，裴松之驳之）"
+   ],
+   "adopted": "采用本传：卒于五丈原军中，234H2。"
+  }
+ ]
+}
