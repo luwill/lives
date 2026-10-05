@@ -74,3 +74,4 @@ def test_milestones(who):
         assert m['title'] and m['importance'] in (1, 2), s['id']
         assert m.get('place', s['places'][-1]) in s['places'], s['id']
         assert s['confidence'] != 'traditional' or s.get('note'), s['id']
+        assert len(set(s['sources'])) >= 2, f"{s['id']}: milestone needs ≥2 sources, has {s['sources']}"
