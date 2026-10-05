@@ -16,7 +16,7 @@ function el(cls, html) {
 
 // ---------- 轨迹线 ----------
 export function makeTrail(scene, journey, person) {
-  const past = makeLine(person.color, 2.6, { opacity: 0.55, renderOrder: 10 });
+  const past = makeLine(person.color, 2.0, { opacity: 0.4, renderOrder: 10 });
   const glow = makeLine(person.glow, 12, { opacity: 0.22, renderOrder: 11 });
   const recent = makeLine(person.color, 5, { renderOrder: 12 });
   const core = makeLine('#fffaf0', 1.6, { opacity: 0.9, renderOrder: 13 });
@@ -30,7 +30,7 @@ export function makeTrail(scene, journey, person) {
     setLinePts(glow, rec, lift);
     setLinePts(recent, rec, lift);
     setLinePts(core, rec, lift);
-    past.material.opacity = 0.6 * fadeAll;
+    past.material.opacity = 0.4 * fadeAll;
     glow.material.opacity = 0.22 * fadeAll;
     recent.material.opacity = fadeAll;
     core.material.opacity = 0.85 * fadeAll;

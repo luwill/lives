@@ -22,6 +22,8 @@ MODES = {'gong': [0, 2, 4, 7, 9], 'shang': [0, 2, 5, 7, 10], 'jue': [0, 3, 5, 8,
 BPM = {'pastoral': 76, 'contemplative': 58, 'aspire': 88, 'tension': 84, 'march': 100, 'epic': 76, 'elegy': 56, 'triumph': 96,
        'grand': 66, 'wander': 92, 'joyful': 104, 'battle': 112, 'serene': 60, 'title': 70, 'outro': 62}
 MOODS = set(BPM)
+STAGE_DB = -21.0
+MOOD_DB = {'battle': 2, 'epic': 2, 'triumph': 2, 'march': 1, 'contemplative': -2, 'elegy': -2, 'serene': -2, 'title': -1}
 
 
 class Buf:
@@ -251,6 +253,9 @@ def main(who: str) -> None:
         assert c['mood'] in MOODS, c
         dur = seg['t1'] - seg['t0']
         x = gen_mood(c['mood'], dur + 1.5, c['root'], c['mode'], seed=zlib.crc32(f"{who}:{seg['stage']}".encode()))
+        # 段间响度统一：目标 RMS（激烈情绪 +2 dB，安静情绪 -2 dB）
+        rms = np.sqrt(np.mean(x[:, :int(dur * SR)] ** 2)) + 1e-9
+        x = x * (10 ** ((STAGE_DB + MOOD_DB.get(c['mood'], 0)) / 20) / rms)
         env = fade_env(x.shape[1], 1.2 if k else 0.3, 2.4)
         i = int(max(0.0, seg['t0'] - 0.6) * SR)
         n = min(x.shape[1], N - i)

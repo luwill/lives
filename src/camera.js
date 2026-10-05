@@ -32,7 +32,8 @@ export function buildCamera(tl, journey) {
     const pts = [];
     for (let k = 0; k <= 40; k++) pts.push(positionAt(verts, s.t0 + s.move * k / 40));
     const b = bboxDist(pts);
-    return { lon: b.lon, lat: b.lat, dist: Math.min(MAX_D, Math.max(MIN_D, b.ext * 2.0 + 300)) };
+    // 底部 HUD 遮住画面下缘：取景中心南移、视距放宽
+    return { lon: b.lon, lat: b.lat - b.ext * 0.18 / 110.57, dist: Math.min(MAX_D * 1.2, Math.max(MIN_D, b.ext * 2.5 + 300)) };
   });
   const lifeBox = bboxDist(verts.map(v => [v[0], v[1]]));
   const outro = { lon: lifeBox.lon, lat: lifeBox.lat - 1.5, dist: Math.min(5200, lifeBox.ext * 2.1 + 600) };

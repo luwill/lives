@@ -1,0 +1,56 @@
+{
+ "title": {
+  "mood": "title",
+  "root": 55,
+  "mode": "gong",
+  "why": "片头：锣与编钟，宫调的明亮"
+ },
+ "st1": {
+  "mood": "pastoral",
+  "root": 62,
+  "mode": "gong",
+  "why": "眉山少年：古筝与竹笛，川西田园的温暖明亮"
+ },
+ "st2": {
+  "mood": "aspire",
+  "root": 60,
+  "mode": "gong",
+  "why": "名动京师：钢琴与弦乐，少年得志、意气风发"
+ },
+ "st3": {
+  "mood": "wander",
+  "root": 62,
+  "mode": "zhi",
+  "why": "外任州郡：琵琶般的拨弦与笛子，江湖行旅的潇洒"
+ },
+ "st4": {
+  "mood": "contemplative",
+  "root": 57,
+  "mode": "yu",
+  "why": "乌台与黄州：古琴与箫，低谷中的内省与超然"
+ },
+ "st5": {
+  "mood": "joyful",
+  "root": 60,
+  "mode": "gong",
+  "why": "元祐沉浮：古筝与木鱼，从容自嘲、西湖明丽"
+ },
+ "st6": {
+  "mood": "elegy",
+  "root": 57,
+  "mode": "yu",
+  "why": "岭海万里：二胡旋律，苍凉而坚韧"
+ },
+ "st7": {
+  "mood": "serene",
+  "root": 55,
+  "mode": "gong",
+  "why": "北归：编钟与稀疏拨弦，夕照般的释然"
+ },
+ "outro": {
+  "mood": "outro",
+  "root": 55,
+  "mode": "gong",
+  "why": "片尾：二胡收束"
+ }
+}
