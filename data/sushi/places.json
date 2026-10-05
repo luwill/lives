@@ -1,0 +1,589 @@
+{
+ "meishan": {
+  "name": "眉山",
+  "modern": "四川眉山东坡区",
+  "lat": 30.0791,
+  "lon": 103.8458,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244083479（查询：东坡区, 眉山市）",
+  "note": "宋眉州治眉山县，今眉山市东坡区；纱縠行故居即今三苏祠"
+ },
+ "chengdu": {
+  "name": "成都",
+  "modern": "四川成都",
+  "lat": 30.6599,
+  "lon": 104.0633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2110264（查询：成都市）"
+ },
+ "langzhong": {
+  "name": "阆中",
+  "modern": "四川阆中",
+  "lat": 31.59,
+  "lon": 106.0813,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2787930（查询：阆中市）"
+ },
+ "baoxie": {
+  "name": "褒斜道",
+  "modern": "陕西汉中石门（褒谷口）",
+  "lat": 33.2743,
+  "lon": 106.9363,
+  "kind": "pass",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 1923639（查询：石门水库 汉中）",
+  "note": "褒斜道南口褒谷口石门，今为石门水库；取谷口代表整条栈道"
+ },
+ "fengxiang": {
+  "name": "凤翔",
+  "modern": "陕西宝鸡凤翔区",
+  "lat": 34.56,
+  "lon": 107.4206,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3048910（查询：凤翔区, 宝鸡）",
+  "note": "宋凤翔府治天兴县，即今凤翔区"
+ },
+ "changan": {
+  "name": "长安",
+  "modern": "陕西西安",
+  "lat": 34.261,
+  "lon": 108.9423,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3226004（查询：西安市）",
+  "note": "宋京兆府"
+ },
+ "mianchi": {
+  "name": "渑池",
+  "modern": "河南渑池",
+  "lat": 34.8341,
+  "lon": 111.7834,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2992281（查询：渑池县）"
+ },
+ "kaifeng": {
+  "name": "汴京",
+  "modern": "河南开封",
+  "lat": 34.6042,
+  "lon": 114.4972,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3283913（查询：开封市）",
+  "note": "北宋东京开封府"
+ },
+ "jiazhou": {
+  "name": "嘉州",
+  "modern": "四川乐山",
+  "lat": 29.2233,
+  "lon": 103.5966,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2789892（查询：乐山市）"
+ },
+ "rongzhou": {
+  "name": "戎州",
+  "modern": "四川宜宾",
+  "lat": 28.5869,
+  "lon": 104.7187,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2791229（查询：宜宾市）"
+ },
+ "yuzhou": {
+  "name": "渝州",
+  "modern": "重庆渝中",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525（查询：渝中区, 重庆）",
+  "note": "宋恭州（旧称渝州），苏轼诗题仍称渝州"
+ },
+ "zhongzhou": {
+  "name": "忠州",
+  "modern": "重庆忠县",
+  "lat": 30.3375,
+  "lon": 107.9104,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2692021（查询：忠县）"
+ },
+ "kuizhou": {
+  "name": "夔州",
+  "modern": "重庆奉节",
+  "lat": 30.9646,
+  "lon": 109.399,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2692014（查询：奉节县）",
+  "note": "白帝城、永安宫、八阵碛均在奉节"
+ },
+ "xiazhou": {
+  "name": "峡州",
+  "modern": "湖北宜昌",
+  "lat": 30.6941,
+  "lon": 111.2804,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2983923（查询：宜昌市）",
+  "note": "治夷陵县，即今宜昌"
+ },
+ "jiangling": {
+  "name": "江陵",
+  "modern": "湖北荆州荆州区",
+  "lat": 30.3552,
+  "lon": 112.1843,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2709809（查询：荆州区, 荆州市）",
+  "note": "宋江陵府（荆州）"
+ },
+ "xiangyang": {
+  "name": "襄阳",
+  "modern": "湖北襄阳",
+  "lat": 32.011,
+  "lon": 112.1164,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216590（查询：襄阳市）"
+ },
+ "zhengzhou": {
+  "name": "郑州",
+  "modern": "河南郑州",
+  "lat": 34.7473,
+  "lon": 113.6193,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3283765（查询：郑州市）"
+ },
+ "zhouzhi": {
+  "name": "盩厔",
+  "modern": "陕西西安周至县",
+  "lat": 34.1632,
+  "lon": 108.2041,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3226099（查询：周至县）",
+  "note": "楼观、仙游潭所在"
+ },
+ "chenzhou": {
+  "name": "陈州",
+  "modern": "河南周口淮阳区",
+  "lat": 33.733,
+  "lon": 114.8842,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 14371762（查询：淮阳区）",
+  "note": "宛丘，苏辙时任陈州学官"
+ },
+ "yingzhou": {
+  "name": "颍州",
+  "modern": "安徽阜阳颍州区",
+  "lat": 32.8856,
+  "lon": 115.8015,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3246003（查询：颍州区, 阜阳）",
+  "note": "汝阴，欧阳修致仕居此"
+ },
+ "shouzhou": {
+  "name": "寿州",
+  "modern": "安徽寿县",
+  "lat": 32.5475,
+  "lon": 116.7929,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3243390（查询：寿县）"
+ },
+ "haozhou": {
+  "name": "濠州",
+  "modern": "安徽滁州凤阳县",
+  "lat": 32.7777,
+  "lon": 117.6071,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3231581（查询：凤阳县）",
+  "note": "宋濠州治钟离县，在今凤阳县临淮关一带；坐标取凤阳县"
+ },
+ "chuzhou": {
+  "name": "楚州",
+  "modern": "江苏淮安淮安区",
+  "lat": 33.5072,
+  "lon": 119.1393,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5669085（查询：淮安区, 淮安）",
+  "note": "治山阳县"
+ },
+ "yangzhou": {
+  "name": "扬州",
+  "modern": "江苏扬州",
+  "lat": 32.3969,
+  "lon": 119.4078,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4430826（查询：扬州市）",
+  "note": "广陵"
+ },
+ "runzhou": {
+  "name": "润州",
+  "modern": "江苏镇江",
+  "lat": 32.1894,
+  "lon": 119.42,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3429680（查询：镇江市）",
+  "note": "金山、焦山、甘露寺所在"
+ },
+ "hangzhou": {
+  "name": "杭州",
+  "modern": "浙江杭州",
+  "lat": 30.249,
+  "lon": 120.2052,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3221112（查询：杭州市）"
+ },
+ "huzhou": {
+  "name": "湖州",
+  "modern": "浙江湖州",
+  "lat": 30.8943,
+  "lon": 120.0851,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3149738（查询：湖州市）",
+  "note": "吴兴"
+ },
+ "changzhou": {
+  "name": "常州",
+  "modern": "江苏常州",
+  "lat": 31.8123,
+  "lon": 119.9692,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3429666（查询：常州市）",
+  "note": "毗陵；宜兴（阳羡）属常州"
+ },
+ "suzhou": {
+  "name": "苏州",
+  "modern": "江苏苏州",
+  "lat": 31.3111,
+  "lon": 120.6213,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4430941（查询：苏州市）"
+ },
+ "haizhou": {
+  "name": "海州",
+  "modern": "江苏连云港海州区",
+  "lat": 34.5724,
+  "lon": 119.1579,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4574684（查询：海州区, 连云港）"
+ },
+ "mizhou": {
+  "name": "密州",
+  "modern": "山东潍坊诸城",
+  "lat": 35.9957,
+  "lon": 119.4041,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3468769（查询：诸城市）",
+  "note": "超然台所在"
+ },
+ "weizhou": {
+  "name": "潍州",
+  "modern": "山东潍坊潍城区",
+  "lat": 36.7278,
+  "lon": 119.0191,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3468768（查询：潍城区, 潍坊）"
+ },
+ "qingzhou": {
+  "name": "青州",
+  "modern": "山东青州",
+  "lat": 36.6843,
+  "lon": 118.4738,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3468766（查询：青州市）"
+ },
+ "jinan": {
+  "name": "齐州",
+  "modern": "山东济南",
+  "lat": 36.652,
+  "lon": 117.1138,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3486449（查询：济南市）",
+  "note": "宋齐州（历城），苏辙时任齐州掌书记"
+ },
+ "xuzhou": {
+  "name": "徐州",
+  "modern": "江苏徐州",
+  "lat": 34.2665,
+  "lon": 117.181,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218572（查询：徐州市）",
+  "note": "彭城"
+ },
+ "sizhou": {
+  "name": "泗州",
+  "modern": "江苏淮安盱眙县",
+  "lat": 33.014,
+  "lon": 118.5387,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 5669090（查询：盱眙县）",
+  "note": "宋泗州城在淮河北岸与盱眙相对，清代没入洪泽湖；坐标取盱眙县"
+ },
+ "wuxi": {
+  "name": "无锡",
+  "modern": "江苏无锡",
+  "lat": 31.5777,
+  "lon": 120.2953,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4430942（查询：无锡市）",
+  "note": "惠山所在"
+ },
+ "caizhou": {
+  "name": "蔡州",
+  "modern": "河南驻马店汝南县",
+  "lat": 32.9048,
+  "lon": 114.3038,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3259359（查询：汝南县）",
+  "note": "宋蔡州治汝阳县，即今汝南"
+ },
+ "qiting": {
+  "name": "岐亭",
+  "modern": "湖北麻城歧亭镇",
+  "lat": 31.0198,
+  "lon": 114.7484,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 8620064044（查询：歧亭镇）",
+  "note": "陈慥（季常）隐居处"
+ },
+ "huangzhou": {
+  "name": "黄州",
+  "modern": "湖北黄冈黄州区",
+  "lat": 30.437,
+  "lon": 114.8751,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3144165（查询：黄州区, 黄冈）",
+  "note": "东坡、雪堂、赤壁（东坡赤壁）所在"
+ },
+ "lushan": {
+  "name": "庐山",
+  "modern": "江西九江庐山（牯岭）",
+  "lat": 29.5716,
+  "lon": 115.9766,
+  "kind": "mountain",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 4783941（查询：牯岭镇）",
+  "note": "取山中牯岭镇为代表点；东林寺、西林寺在山北麓"
+ },
+ "yunzhou": {
+  "name": "筠州",
+  "modern": "江西宜春高安",
+  "lat": 28.3442,
+  "lon": 115.2897,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3182915（查询：高安市）",
+  "note": "苏辙时监筠州盐酒税"
+ },
+ "hukou": {
+  "name": "湖口",
+  "modern": "江西九江湖口县",
+  "lat": 29.6541,
+  "lon": 116.2814,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3190443（查询：湖口县）",
+  "note": "石钟山在县城鄱阳湖口"
+ },
+ "jinling": {
+  "name": "金陵",
+  "modern": "江苏南京",
+  "lat": 32.0438,
+  "lon": 118.7789,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2131524（查询：南京市）",
+  "note": "宋江宁府"
+ },
+ "zhenzhou": {
+  "name": "真州",
+  "modern": "江苏扬州仪征",
+  "lat": 32.2751,
+  "lon": 119.1791,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5669512（查询：仪征市）"
+ },
+ "nandu": {
+  "name": "南都",
+  "modern": "河南商丘睢阳区",
+  "lat": 34.24,
+  "lon": 115.5917,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218280（查询：睢阳区, 商丘）",
+  "note": "宋南京应天府"
+ },
+ "dengzhou": {
+  "name": "登州",
+  "modern": "山东烟台蓬莱区",
+  "lat": 37.7949,
+  "lon": 120.8243,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 11246458（查询：蓬莱区, 烟台）"
+ },
+ "laizhou": {
+  "name": "莱州",
+  "modern": "山东莱州",
+  "lat": 37.1773,
+  "lon": 119.9371,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5654336（查询：莱州市）"
+ },
+ "dingzhou": {
+  "name": "定州",
+  "modern": "河北定州",
+  "lat": 38.5112,
+  "lon": 114.997,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3560111（查询：定州市）",
+  "note": "中山府"
+ },
+ "lincheng": {
+  "name": "临城",
+  "modern": "河北邢台临城县",
+  "lat": 37.4427,
+  "lon": 114.4963,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3383301（查询：临城县）"
+ },
+ "ruzhou": {
+  "name": "汝州",
+  "modern": "河南汝州",
+  "lat": 34.1678,
+  "lon": 112.8393,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3259442（查询：汝州市）",
+  "note": "苏辙时知汝州"
+ },
+ "ganzhou": {
+  "name": "虔州",
+  "modern": "江西赣州",
+  "lat": 25.7039,
+  "lon": 115.3482,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3180745（查询：赣州市）",
+  "note": "郁孤台所在"
+ },
+ "dayuling": {
+  "name": "大庾岭",
+  "modern": "江西大余与广东南雄交界梅关",
+  "lat": 25.3368,
+  "lon": 114.3403,
+  "kind": "pass",
+  "confidence": "high",
+  "source": "OSM Nominatim way 1340418446（查询：梅关古道 大余县）",
+  "note": "梅关古道"
+ },
+ "guangzhou": {
+  "name": "广州",
+  "modern": "广东广州",
+  "lat": 23.1288,
+  "lon": 113.259,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3287346（查询：广州市）"
+ },
+ "huizhou": {
+  "name": "惠州",
+  "modern": "广东惠州",
+  "lat": 23.1125,
+  "lon": 114.4127,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3209912（查询：惠州市）",
+  "note": "合江楼、白鹤峰所在"
+ },
+ "tengzhou": {
+  "name": "藤州",
+  "modern": "广西梧州藤县",
+  "lat": 23.6395,
+  "lon": 110.7312,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2044153（查询：藤县）"
+ },
+ "leizhou": {
+  "name": "雷州",
+  "modern": "广东湛江雷州",
+  "lat": 20.7611,
+  "lon": 110.028,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3484516（查询：雷州市）",
+  "note": "渡海前与苏辙分别处"
+ },
+ "qiongzhou": {
+  "name": "琼州",
+  "modern": "海南海口琼山区",
+  "lat": 19.9859,
+  "lon": 110.3802,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5402022（查询：琼山区, 海口）"
+ },
+ "danzhou": {
+  "name": "儋州",
+  "modern": "海南儋州中和镇",
+  "lat": 19.7458,
+  "lon": 109.3452,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 18320771（查询：中和镇, 儋州）",
+  "note": "宋昌化军（故儋耳）治宜伦，今中和镇，东坡书院所在"
+ },
+ "lianzhou": {
+  "name": "廉州",
+  "modern": "广西北海合浦县",
+  "lat": 21.7471,
+  "lon": 109.3491,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3241955（查询：合浦县）"
+ },
+ "shaozhou": {
+  "name": "韶州",
+  "modern": "广东韶关",
+  "lat": 24.8309,
+  "lon": 113.8155,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3203994（查询：韶关市）"
+ }
+}

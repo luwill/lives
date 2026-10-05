@@ -3,6 +3,7 @@
 - curl 子进程请求（避免 urllib 证书问题），带 User-Agent，请求间隔 ≥1.1 秒；
 - 响应缓存在 data/_build/cache/mao/nominatim/；
 - 以 '!' 开头的查询是县城级兜底：先查兜底作参照，精确查询结果离参照 >60 km 视为误匹配丢弃；
+- 结果中 class=place 的节点优先于行政边界质心（质心可能偏离城区数十公里）；
 - 只写出 steps.json 中实际引用到的地点（steps.json 不存在时写出全部）。
 用法：python3 data/_build/mao_geocode.py
 """
@@ -29,12 +30,13 @@ _last_call = [0.0]
 
 def nominatim(q: str, foreign: bool) -> list[dict]:
     CACHE.mkdir(parents=True, exist_ok=True)
-    f = CACHE / (hashlib.md5(f'{q}|{foreign}'.encode()).hexdigest() + '.json')
+    f = CACHE / (hashlib.md5(f'{q}|{foreign}|5'.encode()).hexdigest() + '.json')
     if f.exists():
-        return json.loads(f.read_text())
-    params = {'format': 'json', 'q': q, 'limit': 3, 'accept-language': 'zh'}
+        return prefer_place(json.loads(f.read_text()))
+    params = {'format': 'json', 'q': q, 'limit': 5, 'accept-language': 'zh'}
     if not foreign:
         params['countrycodes'] = 'cn'
+    # 不论是否命中缓存，都把 place 节点（城镇点位）排在行政区划边界质心之前
     url = 'https://nominatim.openstreetmap.org/search?' + urllib.parse.urlencode(params)
     wait = 1.1 - (time.time() - _last_call[0])
     if wait > 0:
@@ -50,7 +52,12 @@ def nominatim(q: str, foreign: bool) -> list[dict]:
         print(f'  ! 非 JSON 响应 {q}: {r.stdout[:120]}', file=sys.stderr)
         return []
     f.write_text(json.dumps(data, ensure_ascii=False))
-    return data
+    return prefer_place(data)
+
+
+def prefer_place(hits: list[dict]) -> list[dict]:
+    """行政区 relation 的坐标是边界质心，常偏离城区；同名 place 节点（城市/县城/镇）优先。"""
+    return sorted(hits, key=lambda h: 0 if h.get('class') == 'place' else 1)
 
 
 def km(a: dict, b: dict) -> float:

@@ -17,7 +17,7 @@ PAUSE_S = 1.2
 # key -> 今地名查询串（古地名取学界公认今址）
 QUERIES: dict[str, str] = {
     'meishan': '东坡区, 眉山市', 'chengdu': '成都市', 'langzhong': '阆中市',
-    'baoxie': '褒河镇, 汉中', 'fengxiang': '凤翔区, 宝鸡', 'changan': '西安市',
+    'baoxie': '石门水库 汉中', 'fengxiang': '凤翔区, 宝鸡', 'changan': '西安市',
     'mianchi': '渑池县', 'kaifeng': '开封市', 'jiazhou': '乐山市', 'rongzhou': '宜宾市',
     'yuzhou': '渝中区, 重庆', 'zhongzhou': '忠县', 'kuizhou': '奉节县', 'xiazhou': '宜昌市',
     'jiangling': '荆州区, 荆州市', 'xiangyang': '襄阳市', 'zhengzhou': '郑州市',
@@ -26,10 +26,10 @@ QUERIES: dict[str, str] = {
     'hangzhou': '杭州市', 'huzhou': '湖州市', 'changzhou': '常州市', 'suzhou': '苏州市',
     'haizhou': '海州区, 连云港', 'mizhou': '诸城市', 'weizhou': '潍城区, 潍坊', 'qingzhou': '青州市',
     'jinan': '济南市', 'xuzhou': '徐州市', 'sizhou': '盱眙县', 'wuxi': '无锡市',
-    'caizhou': '汝南县', 'qiting': '岐亭镇, 麻城', 'huangzhou': '黄州区, 黄冈', 'lushan': '庐山',
+    'caizhou': '汝南县', 'qiting': '歧亭镇', 'huangzhou': '黄州区, 黄冈', 'lushan': '牯岭镇',
     'yunzhou': '高安市', 'hukou': '湖口县', 'jinling': '南京市', 'zhenzhou': '仪征市',
     'nandu': '睢阳区, 商丘', 'dengzhou': '蓬莱区, 烟台', 'laizhou': '莱州市', 'dingzhou': '定州市',
-    'lincheng': '临城县', 'ruzhou': '汝州市', 'ganzhou': '赣州市', 'dayuling': '梅关',
+    'lincheng': '临城县', 'ruzhou': '汝州市', 'ganzhou': '赣州市', 'dayuling': '梅关古道 大余县',
     'guangzhou': '广州市', 'huizhou': '惠州市', 'tengzhou': '藤县', 'leizhou': '雷州市',
     'qiongzhou': '琼山区, 海口', 'danzhou': '中和镇, 儋州', 'lianzhou': '合浦县', 'shaozhou': '韶关市',
 }

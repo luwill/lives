@@ -62,6 +62,7 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 
 | id | needs | exact action | unblocks | verify afterward |
 |---|---|---|---|---|
+| P1 | 你决定是否保留 | 苏轼史料子代理在 23:06 执行了 `pip install lunar_python`（1.4.8，安装到 ~/Library/Python/3.14 的用户 site-packages），合约未预授权这一操作。只有 `data/_build/sushi_lunar.py`（农历→公历换算）用到它，渲染、测试、成片管线都不依赖它。不想保留就执行 `pip3 uninstall lunar_python` | 无（成片不依赖） | `python3 -c "import lunar_python"` 报 ModuleNotFoundError，且 `python3 -m pytest -q tests` 结果不变 |
 
 ### Not verified
 
