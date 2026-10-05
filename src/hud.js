@@ -118,8 +118,8 @@ export function makeHud(person, data, places, tl, journey) {
         cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${person.era(y, h)} · ${person.age(y, h)}`;
         cH.textContent = m.title;
         // 远途里程碑显示路线起止，其余显示停留地点
-        const p0 = places[st.places[0]];
-        cWhere.textContent = tl.steps[i].ms.travel ? `${p0.name} → ${pl.name}（今${pl.modern}）`
+        const p0 = places[st.places[0]], p1 = places[st.places[st.places.length - 1]];
+        cWhere.textContent = tl.steps[i].ms.travel ? `${p0.name} → ${p1.name}（今${p1.modern}）`
           : `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
         cSub.textContent = m.subtitle || '';
         cQ.innerHTML = m.quote ? `${esc(m.quote.text)}<cite>—— ${esc(m.quote.source)}</cite>` : '';

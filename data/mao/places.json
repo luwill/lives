@@ -796,12 +796,12 @@
  "yuanjiagou": {
   "name": "袁家沟",
   "modern": "陕西清涧县高杰村镇袁家沟",
-  "lat": 37.0918,
-  "lon": 110.1141,
+  "lat": 37.1091,
+  "lon": 110.4496,
   "kind": "village",
-  "confidence": "low",
-  "source": "OSM Nominatim node 1794059052（查询：清涧县）",
-  "note": "《沁园春·雪》写作地；未查到场所级坐标，取所属县/市（清涧县）"
+  "confidence": "medium",
+  "source": "OSM Overpass 高杰村镇驻地（袁家沟村在镇域内，毛泽东东征旧居）",
+  "note": "原坐标取清涧县城，偏差约 30 km；事实核查后改为高杰村镇（docs/evidence/factcheck-mao.md）"
  },
  "shilou": {
   "name": "石楼",

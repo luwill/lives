@@ -69,11 +69,11 @@
  "kaifeng": {
   "name": "汴京",
   "modern": "河南开封",
-  "lat": 34.6042,
-  "lon": 114.4972,
+  "lat": 34.797,
+  "lon": 114.348,
   "kind": "city",
   "confidence": "high",
-  "source": "OSM Nominatim relation 3283913（查询：开封市）",
+  "source": "OSM Nominatim relation 3283913（查询：开封市）；事实核查后改取宋东京城核心（龙亭一带）",
   "note": "北宋东京开封府"
  },
  "jiazhou": {

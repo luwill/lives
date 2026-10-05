@@ -152,12 +152,14 @@ def build(who: str) -> dict:
             t += CHAPTER
         if st['id'] in by_ms:
             m = st['milestone']
-            cut = st['places'].index(m['place']) + 1 if m.get('place') else len(st['places'])
-            pre, post = st['places'][:cut], st['places'][cut:]
-            km_pre = path_km(prev_end, pre, P)
             seg = by_ms[st['id']]
             t0 = t
-            if len(pre) >= TRAVEL_MIN_PLACES or km_pre > TRAVEL_KM:
+            # 远途判定看整步：途经点多或路程远的里程碑（如长征）整步边走边讲，place 只决定星标位置
+            is_travel = len(st['places']) >= TRAVEL_MIN_PLACES or path_km(prev_end, st['places'], P) > TRAVEL_KM
+            cut = len(st['places']) if is_travel or not m.get('place') else st['places'].index(m['place']) + 1
+            pre, post = st['places'][:cut], st['places'][cut:]
+            km_pre = path_km(prev_end, pre, P)
+            if is_travel:
                 # 远途里程碑（如长征）：边走边讲，走完再定格
                 move = min(TRAVEL_MAX, max(TRAVEL_MIN, tts[seg['id']]['dur'] * 0.85, km_pre / TRAVEL_SPEED))
                 ms0 = t + 0.6
