@@ -1,0 +1,10 @@
+node_modules/
+out/
+*.mp4
+assets/terrain/tiles/
+assets/terrain/*.npy
+assets/terrain/*_h.png
+narration/*/audio/
+__pycache__/
+.DS_Store
+data/_build/cache/
