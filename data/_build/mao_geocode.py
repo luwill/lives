@@ -2,7 +2,8 @@
 
 - curl 子进程请求（避免 urllib 证书问题），带 User-Agent，请求间隔 ≥1.1 秒；
 - 响应缓存在 data/_build/cache/mao/nominatim/；
-- 以 '!' 开头的查询是县城级兜底：先查兜底作参照，精确查询结果离参照 >60 km 视为误匹配丢弃；
+- 以 '!' 开头的查询是县城级兜底：先查兜底作参照，精确查询结果离参照 >100 km 视为误匹配丢弃；
+- 次选查询命中或命中同名车站/景区时 confidence=medium；
 - 结果中 class=place 的节点优先于行政边界质心（质心可能偏离城区数十公里）；
 - 只写出 steps.json 中实际引用到的地点（steps.json 不存在时写出全部）。
 用法：python3 data/_build/mao_geocode.py
@@ -24,15 +25,17 @@ CACHE = ROOT / 'data' / '_build' / 'cache' / 'mao' / 'nominatim'
 OUT = ROOT / 'data' / 'mao' / 'places.json'
 STEPS = ROOT / 'data' / 'mao' / 'steps.json'
 UA = 'lives-documentary-data/0.1 (research; contact via project maintainer)'
-MAX_DIST_KM = 60
+MAX_DIST_KM = 100
+SETTLEMENT_KINDS = {'city', 'town', 'village'}
 _last_call = [0.0]
 
 
-def nominatim(q: str, foreign: bool) -> list[dict]:
+def nominatim(q: str, foreign: bool, settlement: bool = True) -> list[dict]:
     CACHE.mkdir(parents=True, exist_ok=True)
     f = CACHE / (hashlib.md5(f'{q}|{foreign}|5'.encode()).hexdigest() + '.json')
     if f.exists():
-        return prefer_place(json.loads(f.read_text()))
+        data = json.loads(f.read_text())
+        return prefer_place(data) if settlement else data
     params = {'format': 'json', 'q': q, 'limit': 5, 'accept-language': 'zh'}
     if not foreign:
         params['countrycodes'] = 'cn'
@@ -52,7 +55,7 @@ def nominatim(q: str, foreign: bool) -> list[dict]:
         print(f'  ! 非 JSON 响应 {q}: {r.stdout[:120]}', file=sys.stderr)
         return []
     f.write_text(json.dumps(data, ensure_ascii=False))
-    return prefer_place(data)
+    return prefer_place(data) if settlement else data
 
 
 def prefer_place(hits: list[dict]) -> list[dict]:
@@ -76,12 +79,16 @@ def resolve(key: str) -> dict:
         hits = nominatim(fallback, foreign)
         ref = hits[0] if hits else None
     hit, used, conf = None, None, 'high'
-    for q in precise:
-        for h in nominatim(q, foreign):
+    settle = kind in SETTLEMENT_KINDS or foreign
+    for qi, q in enumerate(precise):
+        for h in nominatim(q, foreign, settle):
             if ref is None or km(h, ref) <= MAX_DIST_KM:
                 hit, used = h, q
                 break
         if hit:
+            # 退而用次选查询（如乡镇代替村）或命中的是同名车站/景区，精度降为 medium
+            if qi > 0 or h.get('class') in ('railway', 'leisure'):
+                conf = 'medium'
             break
     notes = [note] if note else []
     if hit is None and ref is not None:

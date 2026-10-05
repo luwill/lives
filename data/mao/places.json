@@ -1,0 +1,1196 @@
+{
+ "shaoshan": {
+  "name": "韶山冲",
+  "modern": "湖南韶山市韶山冲",
+  "lat": 27.9116,
+  "lon": 112.4895,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 18699425（查询：毛泽东同志故居）"
+ },
+ "dongshan": {
+  "name": "湘乡东山学堂",
+  "modern": "湖南湘乡市东山学校",
+  "lat": 27.7326,
+  "lon": 112.5486,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim way 1097842053（查询：东山学校）"
+ },
+ "changsha": {
+  "name": "长沙",
+  "modern": "湖南长沙市",
+  "lat": 28.2001,
+  "lon": 112.9717,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2277730366（查询：长沙市）"
+ },
+ "ningxiang": {
+  "name": "宁乡",
+  "modern": "湖南宁乡市",
+  "lat": 28.2794,
+  "lon": 112.5466,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081309（查询：宁乡市）"
+ },
+ "anhua": {
+  "name": "安化",
+  "modern": "湖南安化县",
+  "lat": 28.3778,
+  "lon": 111.2074,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 4643776803（查询：安化县）"
+ },
+ "yiyang": {
+  "name": "益阳",
+  "modern": "湖南益阳市",
+  "lat": 28.5562,
+  "lon": 112.3498,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082340（查询：益阳市）"
+ },
+ "yuanjiang": {
+  "name": "沅江",
+  "modern": "湖南沅江市",
+  "lat": 28.8479,
+  "lon": 112.3488,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082354（查询：沅江市）"
+ },
+ "beijing": {
+  "name": "北京",
+  "modern": "北京市",
+  "lat": 39.9057,
+  "lon": 116.3913,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 912940（查询：北京市）"
+ },
+ "shanghai": {
+  "name": "上海",
+  "modern": "上海市",
+  "lat": 31.2323,
+  "lon": 121.4691,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 778910398（查询：上海市）"
+ },
+ "wuhan": {
+  "name": "武汉",
+  "modern": "湖北武汉市",
+  "lat": 30.5789,
+  "lon": 114.2921,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3076268（查询：武汉市）",
+  "note": "1927 年时称武汉三镇（汉口、武昌、汉阳）"
+ },
+ "tianjin": {
+  "name": "天津",
+  "modern": "天津市",
+  "lat": 39.0844,
+  "lon": 117.1957,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082077（查询：天津市）"
+ },
+ "taishan": {
+  "name": "泰山",
+  "modern": "山东泰安市泰山",
+  "lat": 36.257,
+  "lon": 117.1033,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2338427466（查询：玉皇顶）"
+ },
+ "qufu": {
+  "name": "曲阜",
+  "modern": "山东曲阜市",
+  "lat": 35.5957,
+  "lon": 116.9875,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3286952（查询：曲阜市）"
+ },
+ "nanjing": {
+  "name": "南京",
+  "modern": "江苏南京市",
+  "lat": 32.0438,
+  "lon": 118.7789,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2131524（查询：南京市）"
+ },
+ "jiaxing": {
+  "name": "嘉兴南湖",
+  "modern": "浙江嘉兴市南湖",
+  "lat": 30.7568,
+  "lon": 120.756,
+  "kind": "lake",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3808151（查询：南湖 嘉兴）"
+ },
+ "anyuan": {
+  "name": "安源",
+  "modern": "江西萍乡市安源区",
+  "lat": 27.6189,
+  "lon": 113.8672,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3189979（查询：安源区）"
+ },
+ "guangzhou": {
+  "name": "广州",
+  "modern": "广东广州市",
+  "lat": 23.1288,
+  "lon": 113.259,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3287346（查询：广州市）"
+ },
+ "xiangtan": {
+  "name": "湘潭",
+  "modern": "湖南湘潭县",
+  "lat": 27.7827,
+  "lon": 112.9456,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082152（查询：湘潭县）"
+ },
+ "xiangxiang": {
+  "name": "湘乡",
+  "modern": "湖南湘乡市",
+  "lat": 27.7518,
+  "lon": 112.5256,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3202621（查询：湘乡市）"
+ },
+ "hengshan": {
+  "name": "衡山",
+  "modern": "湖南衡山县",
+  "lat": 27.2337,
+  "lon": 112.863,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5365559335（查询：衡山县）"
+ },
+ "liling": {
+  "name": "醴陵",
+  "modern": "湖南醴陵市",
+  "lat": 27.6501,
+  "lon": 113.4923,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081121（查询：醴陵市）"
+ },
+ "tonggu": {
+  "name": "铜鼓",
+  "modern": "江西铜鼓县",
+  "lat": 28.5153,
+  "lon": 114.3499,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3016121533（查询：铜鼓县）"
+ },
+ "wenjiashi": {
+  "name": "文家市",
+  "modern": "湖南浏阳市文家市镇",
+  "lat": 28.1664,
+  "lon": 113.6376,
+  "kind": "town",
+  "confidence": "low",
+  "source": "OSM Nominatim node 5773610960（查询：浏阳市）",
+  "note": "未查到场所级坐标，取所属县/市（浏阳市）"
+ },
+ "sanwan": {
+  "name": "三湾",
+  "modern": "江西永新县三湾乡",
+  "lat": 26.8457,
+  "lon": 113.97,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 12630649（查询：三湾乡）"
+ },
+ "maoping": {
+  "name": "茅坪",
+  "modern": "江西井冈山市茅坪乡",
+  "lat": 26.6635,
+  "lon": 114.0436,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 8444545572（查询：茅坪乡）"
+ },
+ "jinggangshan": {
+  "name": "井冈山",
+  "modern": "江西井冈山市茨坪",
+  "lat": 26.5702,
+  "lon": 114.1628,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5715181（查询：茨坪镇）"
+ },
+ "guidong": {
+  "name": "桂东",
+  "modern": "湖南桂东县",
+  "lat": 26.0814,
+  "lon": 113.9398,
+  "kind": "town",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 2095170（查询：桂东县）",
+  "note": "未查到场所级坐标，取所属县/市（桂东县）"
+ },
+ "longshi": {
+  "name": "砻市",
+  "modern": "江西井冈山市龙市镇",
+  "lat": 26.723,
+  "lon": 113.9629,
+  "kind": "town",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3362903230（查询：龙市镇）"
+ },
+ "dayu": {
+  "name": "大余",
+  "modern": "江西大余县",
+  "lat": 25.403,
+  "lon": 114.3567,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244078541（查询：大余县）"
+ },
+ "dabaidi": {
+  "name": "大柏地",
+  "modern": "江西瑞金市大柏地乡",
+  "lat": 26.102,
+  "lon": 116.0416,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2539776685（查询：大柏地乡）"
+ },
+ "donggu": {
+  "name": "东固",
+  "modern": "江西吉安市青原区东固畲族乡",
+  "lat": 26.7263,
+  "lon": 115.3917,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 6709498（查询：东固畲族乡）"
+ },
+ "changting": {
+  "name": "长汀",
+  "modern": "福建长汀县",
+  "lat": 25.8365,
+  "lon": 116.3529,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244077101（查询：长汀县）",
+  "note": "旧称汀州"
+ },
+ "xingguo": {
+  "name": "兴国",
+  "modern": "江西兴国县",
+  "lat": 26.3412,
+  "lon": 115.358,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3798208904（查询：兴国县）"
+ },
+ "longyan": {
+  "name": "龙岩",
+  "modern": "福建龙岩市",
+  "lat": 25.101,
+  "lon": 117.0323,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244085118（查询：新罗区）"
+ },
+ "shanghang": {
+  "name": "上杭",
+  "modern": "福建上杭县",
+  "lat": 25.0512,
+  "lon": 116.415,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081666（查询：上杭县）"
+ },
+ "gutian": {
+  "name": "古田",
+  "modern": "福建上杭县古田镇",
+  "lat": 25.2196,
+  "lon": 116.8215,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim way 856577077（查询：古田会议会址）"
+ },
+ "guangchang": {
+  "name": "广昌",
+  "modern": "江西广昌县",
+  "lat": 26.8454,
+  "lon": 116.331,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3101796927（查询：广昌县）"
+ },
+ "pitou": {
+  "name": "陂头",
+  "modern": "江西吉安县陂头村",
+  "lat": 27.0431,
+  "lon": 114.9034,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim node 4460114689（查询：吉安县）",
+  "note": "未查到场所级坐标，取所属县/市（吉安县）"
+ },
+ "xunwu": {
+  "name": "寻乌",
+  "modern": "江西寻乌县",
+  "lat": 24.9716,
+  "lon": 115.6348,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5062082864（查询：寻乌县）"
+ },
+ "liuyang": {
+  "name": "浏阳",
+  "modern": "湖南浏阳市",
+  "lat": 28.1664,
+  "lon": 113.6376,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5773610960（查询：浏阳市）"
+ },
+ "jian": {
+  "name": "吉安",
+  "modern": "江西吉安市",
+  "lat": 27.0937,
+  "lon": 114.9614,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2950516（查询：吉安市）"
+ },
+ "longgang": {
+  "name": "龙冈",
+  "modern": "江西永丰县龙冈畲族乡",
+  "lat": 26.7361,
+  "lon": 115.5814,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6746098836（查询：龙冈畲族乡）"
+ },
+ "ningdu": {
+  "name": "宁都",
+  "modern": "江西宁都县",
+  "lat": 26.4746,
+  "lon": 116.007,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3006326986（查询：宁都县）"
+ },
+ "jianning": {
+  "name": "建宁",
+  "modern": "福建建宁县",
+  "lat": 26.8343,
+  "lon": 116.8414,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2703828555（查询：建宁县）"
+ },
+ "ruijin": {
+  "name": "瑞金",
+  "modern": "江西瑞金市",
+  "lat": 25.9057,
+  "lon": 116.0697,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2539776885（查询：叶坪）",
+  "note": "中华苏维埃共和国临时中央政府驻地（叶坪、沙洲坝）"
+ },
+ "ganzhou": {
+  "name": "赣州",
+  "modern": "江西赣州市",
+  "lat": 25.8211,
+  "lon": 114.916,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3180946（查询：章贡区）"
+ },
+ "zhangzhou": {
+  "name": "漳州",
+  "modern": "福建漳州市",
+  "lat": 24.5165,
+  "lon": 117.6425,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082898（查询：漳州市）"
+ },
+ "yihuang": {
+  "name": "宜黄",
+  "modern": "江西宜黄县",
+  "lat": 27.5566,
+  "lon": 116.2314,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 856909616（查询：宜黄县）"
+ },
+ "changgang": {
+  "name": "长冈乡",
+  "modern": "江西兴国县长冈乡",
+  "lat": 26.366,
+  "lon": 115.3663,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6746098807（查询：长冈乡）"
+ },
+ "caixi": {
+  "name": "才溪乡",
+  "modern": "福建上杭县才溪镇",
+  "lat": 25.264,
+  "lon": 116.4162,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2540079371（查询：才溪镇）"
+ },
+ "huichang": {
+  "name": "会昌",
+  "modern": "江西会昌县",
+  "lat": 25.589,
+  "lon": 115.8043,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5062077281（查询：会昌县）"
+ },
+ "yudu": {
+  "name": "于都",
+  "modern": "江西于都县",
+  "lat": 25.9547,
+  "lon": 115.4103,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5062092507（查询：于都县）",
+  "note": "中央红军长征出发地之一"
+ },
+ "rucheng": {
+  "name": "汝城",
+  "modern": "湖南汝城县",
+  "lat": 25.5358,
+  "lon": 113.6814,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081685（查询：汝城县）"
+ },
+ "daoxian": {
+  "name": "道县",
+  "modern": "湖南道县",
+  "lat": 25.5295,
+  "lon": 111.5953,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5132267207（查询：道县）"
+ },
+ "jieshou": {
+  "name": "湘江界首渡口",
+  "modern": "广西兴安县界首镇",
+  "lat": 25.7247,
+  "lon": 110.7623,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3811038357（查询：界首镇）",
+  "note": "中央纵队渡湘江处"
+ },
+ "tongdao": {
+  "name": "通道",
+  "modern": "湖南通道侗族自治县县溪镇",
+  "lat": 26.3197,
+  "lon": 109.6263,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 20368603（查询：县溪镇）",
+  "note": "通道会议在原县城县溪恭城书院"
+ },
+ "liping": {
+  "name": "黎平",
+  "modern": "贵州黎平县",
+  "lat": 26.2355,
+  "lon": 109.1308,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3257805953（查询：黎平县）"
+ },
+ "houchang": {
+  "name": "猴场",
+  "modern": "贵州瓮安县猴场镇",
+  "lat": 27.1816,
+  "lon": 107.565,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 4572599985（查询：猴场镇）"
+ },
+ "zunyi": {
+  "name": "遵义",
+  "modern": "贵州遵义市红花岗区",
+  "lat": 27.6915,
+  "lon": 106.9161,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim way 670711049（查询：遵义会议会址）"
+ },
+ "tucheng": {
+  "name": "土城",
+  "modern": "贵州习水县土城镇",
+  "lat": 28.2792,
+  "lon": 105.9972,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3615443001（查询：土城镇）",
+  "note": "青杠坡战斗，一渡赤水"
+ },
+ "jimingsansheng": {
+  "name": "鸡鸣三省",
+  "modern": "云南威信县水田镇（川滇黔交界）",
+  "lat": 27.7124,
+  "lon": 105.2827,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 729458178（查询：鸡鸣三省）"
+ },
+ "zhaxi": {
+  "name": "扎西",
+  "modern": "云南威信县扎西镇",
+  "lat": 27.8466,
+  "lon": 105.0442,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 7001646422（查询：扎西镇）"
+ },
+ "loushanguan": {
+  "name": "娄山关",
+  "modern": "贵州遵义市汇川区娄山关",
+  "lat": 28.0372,
+  "lon": 106.8964,
+  "kind": "pass",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 6170790719（查询：娄山关）"
+ },
+ "gouba": {
+  "name": "苟坝",
+  "modern": "贵州遵义市播州区枫香镇苟坝村",
+  "lat": 27.6092,
+  "lon": 106.5314,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3426200215（查询：枫香镇）"
+ },
+ "maotai": {
+  "name": "茅台",
+  "modern": "贵州仁怀市茅台镇",
+  "lat": 27.8547,
+  "lon": 106.3717,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3471125991（查询：茅台镇）",
+  "note": "三渡赤水处"
+ },
+ "jiaopingdu": {
+  "name": "皎平渡",
+  "modern": "四川会东县/云南禄劝县金沙江皎平渡",
+  "lat": 26.1271,
+  "lon": 102.449,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3945436074（查询：皎平渡）",
+  "note": "金沙江渡口"
+ },
+ "huili": {
+  "name": "会理",
+  "modern": "四川会理市",
+  "lat": 26.66,
+  "lon": 102.2439,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2189949（查询：会理市）"
+ },
+ "mianning": {
+  "name": "冕宁",
+  "modern": "四川冕宁县",
+  "lat": 28.5335,
+  "lon": 102.0896,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 7044367171（查询：冕宁县）"
+ },
+ "anshunchang": {
+  "name": "安顺场",
+  "modern": "四川石棉县安顺场",
+  "lat": 29.2736,
+  "lon": 102.2833,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6248870772（查询：安顺场）",
+  "note": "强渡大渡河处"
+ },
+ "luding": {
+  "name": "泸定桥",
+  "modern": "四川泸定县泸定桥",
+  "lat": 29.9145,
+  "lon": 102.2302,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim way 877739922（查询：泸定桥）",
+  "note": "飞夺泸定桥"
+ },
+ "jiajinshan": {
+  "name": "夹金山",
+  "modern": "四川宝兴县/小金县夹金山",
+  "lat": 30.5876,
+  "lon": 102.1686,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 8221240127（查询：夹金山）"
+ },
+ "dawei": {
+  "name": "达维",
+  "modern": "四川小金县达维镇",
+  "lat": 30.9665,
+  "lon": 102.6341,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 1703112537（查询：达维镇）",
+  "note": "一、四方面军会师处"
+ },
+ "maogong": {
+  "name": "懋功",
+  "modern": "四川小金县",
+  "lat": 30.9994,
+  "lon": 102.3582,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 1703112576（查询：美兴镇）",
+  "note": "懋功即今小金县"
+ },
+ "lianghekou": {
+  "name": "两河口",
+  "modern": "四川小金县两河口镇",
+  "lat": 31.4899,
+  "lon": 102.4889,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 1703112567（查询：两河口镇 小金）"
+ },
+ "maoergai": {
+  "name": "毛儿盖",
+  "modern": "四川松潘县毛儿盖",
+  "lat": 32.601,
+  "lon": 103.0627,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 4345333754（查询：毛儿盖）"
+ },
+ "caodi": {
+  "name": "草地",
+  "modern": "四川若尔盖、红原一带沼泽草地",
+  "lat": 33.5759,
+  "lon": 102.964,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 4793482642（查询：若尔盖湿地）",
+  "note": "草地为松潘—若尔盖间大片沼泽，取若尔盖县示意"
+ },
+ "banyou": {
+  "name": "班佑",
+  "modern": "四川若尔盖县班佑",
+  "lat": 33.56,
+  "lon": 103.112,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 11295521992（查询：班佑）",
+  "note": "过草地后的出口"
+ },
+ "baxi": {
+  "name": "巴西",
+  "modern": "四川若尔盖县巴西镇",
+  "lat": 33.607,
+  "lon": 103.234,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 4192123265（查询：巴西镇）"
+ },
+ "ejie": {
+  "name": "俄界",
+  "modern": "甘肃迭部县达拉乡高吉村",
+  "lat": 33.8667,
+  "lon": 103.3392,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 16421540（查询：达拉乡）",
+  "note": "俄界即今高吉村"
+ },
+ "lazikou": {
+  "name": "腊子口",
+  "modern": "甘肃迭部县腊子口",
+  "lat": 34.1095,
+  "lon": 103.8942,
+  "kind": "pass",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2304889808（查询：腊子口）"
+ },
+ "hadapu": {
+  "name": "哈达铺",
+  "modern": "甘肃宕昌县哈达铺镇",
+  "lat": 34.2313,
+  "lon": 104.223,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 1706632222（查询：哈达铺镇）"
+ },
+ "bangluo": {
+  "name": "榜罗镇",
+  "modern": "甘肃通渭县榜罗镇",
+  "lat": 35.0359,
+  "lon": 104.9385,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 10221841（查询：榜罗镇）"
+ },
+ "liupanshan": {
+  "name": "六盘山",
+  "modern": "宁夏六盘山",
+  "lat": 35.6635,
+  "lon": 106.2872,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3186021473（查询：六盘山）"
+ },
+ "wuqi": {
+  "name": "吴起镇",
+  "modern": "陕西吴起县",
+  "lat": 36.9232,
+  "lon": 108.1746,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2360222032（查询：吴起县）",
+  "note": "长征落脚点"
+ },
+ "zhiluo": {
+  "name": "直罗镇",
+  "modern": "陕西富县直罗镇",
+  "lat": 35.9585,
+  "lon": 109.0014,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5311664239（查询：直罗镇）"
+ },
+ "wayaobu": {
+  "name": "瓦窑堡",
+  "modern": "陕西子长市瓦窑堡",
+  "lat": 37.1382,
+  "lon": 109.6674,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 7821632（查询：瓦窑堡街道）"
+ },
+ "yuanjiagou": {
+  "name": "袁家沟",
+  "modern": "陕西清涧县高杰村镇袁家沟",
+  "lat": 37.0918,
+  "lon": 110.1141,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1794059052（查询：清涧县）",
+  "note": "《沁园春·雪》写作地；未查到场所级坐标，取所属县/市（清涧县）"
+ },
+ "shilou": {
+  "name": "石楼",
+  "modern": "山西石楼县",
+  "lat": 36.9978,
+  "lon": 110.8289,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3147284088（查询：石楼县）"
+ },
+ "baoan": {
+  "name": "保安",
+  "modern": "陕西志丹县",
+  "lat": 36.824,
+  "lon": 108.7616,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3574682102（查询：志丹县）",
+  "note": "保安即今志丹县"
+ },
+ "yanan": {
+  "name": "延安",
+  "modern": "陕西延安市宝塔区",
+  "lat": 36.5853,
+  "lon": 109.4838,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3019989（查询：宝塔区）"
+ },
+ "luochuan": {
+  "name": "洛川",
+  "modern": "陕西洛川县",
+  "lat": 35.7624,
+  "lon": 109.427,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3027319550（查询：洛川县）"
+ },
+ "chongqing": {
+  "name": "重庆",
+  "modern": "重庆市渝中区",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525（查询：渝中区）"
+ },
+ "zaolingou": {
+  "name": "枣林沟",
+  "modern": "陕西子洲县枣林沟",
+  "lat": 37.609,
+  "lon": 110.0306,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1791777373（查询：子洲县）",
+  "note": "未查到场所级坐标，取所属县/市（子洲县）"
+ },
+ "wangjiawan": {
+  "name": "王家湾",
+  "modern": "陕西延安市安塞区王家湾（1947年属靖边县）",
+  "lat": 36.8632,
+  "lon": 109.3218,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1608571840（查询：安塞区）",
+  "note": "1947年4月12日中共中央转移至靖边县王家湾，今属安塞；未查到场所级坐标，取所属县/市（安塞区）"
+ },
+ "xiaohe": {
+  "name": "小河村",
+  "modern": "陕西靖边县小河村",
+  "lat": 37.3702,
+  "lon": 109.0433,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3478059979（查询：小河乡）"
+ },
+ "liangjiacha": {
+  "name": "梁家岔",
+  "modern": "陕西佳县梁家岔",
+  "lat": 38.0191,
+  "lon": 110.4892,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 3016345（查询：佳县）",
+  "note": "未查到场所级坐标，取所属县/市（佳县）"
+ },
+ "zhuguanzhai": {
+  "name": "朱官寨",
+  "modern": "陕西佳县朱官寨",
+  "lat": 38.0191,
+  "lon": 110.4892,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 3016345（查询：佳县）",
+  "note": "未查到场所级坐标，取所属县/市（佳县）"
+ },
+ "shenquanbao": {
+  "name": "神泉堡",
+  "modern": "陕西佳县神泉堡",
+  "lat": 38.0191,
+  "lon": 110.4892,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 3016345（查询：佳县）",
+  "note": "未查到场所级坐标，取所属县/市（佳县）"
+ },
+ "yangjiagou": {
+  "name": "杨家沟",
+  "modern": "陕西米脂县杨家沟",
+  "lat": 37.7203,
+  "lon": 110.3041,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 4539997918（查询：杨家沟镇）",
+  "note": "十二月会议旧址"
+ },
+ "chuankou": {
+  "name": "川口",
+  "modern": "陕西吴堡县川口",
+  "lat": 37.4518,
+  "lon": 110.7345,
+  "kind": "river",
+  "confidence": "low",
+  "source": "OSM Nominatim node 1794373303（查询：吴堡县）",
+  "note": "东渡黄河处；未查到场所级坐标，取所属县/市（吴堡县）"
+ },
+ "caijiaya": {
+  "name": "蔡家崖",
+  "modern": "山西兴县蔡家崖",
+  "lat": 38.4933,
+  "lon": 111.0155,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 13023075686（查询：蔡家崖）"
+ },
+ "wutaishan": {
+  "name": "五台山",
+  "modern": "山西五台县五台山",
+  "lat": 39.0007,
+  "lon": 113.5873,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 19978261（查询：台怀镇）"
+ },
+ "chengnanzhuang": {
+  "name": "城南庄",
+  "modern": "河北阜平县城南庄",
+  "lat": 38.7353,
+  "lon": 114.1676,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5489309606（查询：城南庄镇）"
+ },
+ "xibaipo": {
+  "name": "西柏坡",
+  "modern": "河北平山县西柏坡",
+  "lat": 38.353,
+  "lon": 113.9344,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5429535388（查询：西柏坡）"
+ },
+ "zhuoxian": {
+  "name": "涿县",
+  "modern": "河北涿州市",
+  "lat": 39.4834,
+  "lon": 115.9686,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3551920（查询：涿州市）"
+ },
+ "beiping": {
+  "name": "北平",
+  "modern": "北京市",
+  "lat": 39.9057,
+  "lon": 116.3913,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 912940（查询：北京市）",
+  "note": "1928—1949 年间称北平"
+ },
+ "xiangshan": {
+  "name": "北平香山",
+  "modern": "北京市海淀区香山双清别墅",
+  "lat": 39.9853,
+  "lon": 116.188,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim way 605472716（查询：双清别墅）"
+ },
+ "shenyang": {
+  "name": "沈阳",
+  "modern": "辽宁沈阳市",
+  "lat": 41.8026,
+  "lon": 123.4279,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2769604（查询：沈阳市）"
+ },
+ "harbin": {
+  "name": "哈尔滨",
+  "modern": "黑龙江哈尔滨市",
+  "lat": 45.7594,
+  "lon": 126.6276,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2755608（查询：哈尔滨市）"
+ },
+ "manzhouli": {
+  "name": "满洲里",
+  "modern": "内蒙古满洲里市",
+  "lat": 49.5914,
+  "lon": 117.4464,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 161724（查询：满洲里市）",
+  "note": "中苏边境口岸"
+ },
+ "moscow": {
+  "name": "莫斯科",
+  "modern": "俄罗斯莫斯科",
+  "lat": 55.7505,
+  "lon": 37.6175,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2555133（查询：Москва）"
+ },
+ "leningrad": {
+  "name": "列宁格勒",
+  "modern": "俄罗斯圣彼得堡",
+  "lat": 59.9387,
+  "lon": 30.3162,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 421007（查询：Санкт-Петербург）"
+ },
+ "shijiazhuang": {
+  "name": "石家庄",
+  "modern": "河北石家庄市",
+  "lat": 38.043,
+  "lon": 114.5088,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3009732（查询：石家庄市）"
+ },
+ "jinan": {
+  "name": "济南",
+  "modern": "山东济南市",
+  "lat": 36.652,
+  "lon": 117.1138,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3486449（查询：济南市）"
+ },
+ "xuzhou": {
+  "name": "徐州",
+  "modern": "江苏徐州市",
+  "lat": 34.2665,
+  "lon": 117.181,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218572（查询：徐州市）"
+ },
+ "lankao": {
+  "name": "兰考东坝头",
+  "modern": "河南兰考县东坝头",
+  "lat": 34.9279,
+  "lon": 114.7882,
+  "kind": "river",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6815406556（查询：东坝头镇）",
+  "note": "黄河九十度大拐弯处"
+ },
+ "kaifeng": {
+  "name": "开封",
+  "modern": "河南开封市",
+  "lat": 34.7991,
+  "lon": 114.3055,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244080911（查询：开封市）"
+ },
+ "zhengzhou": {
+  "name": "郑州",
+  "modern": "河南郑州市",
+  "lat": 34.7473,
+  "lon": 113.6193,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3283765（查询：郑州市）"
+ },
+ "xinxiang": {
+  "name": "新乡",
+  "modern": "河南新乡市",
+  "lat": 35.3021,
+  "lon": 113.9202,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082431（查询：新乡市）"
+ },
+ "hangzhou": {
+  "name": "杭州",
+  "modern": "浙江杭州市",
+  "lat": 30.249,
+  "lon": 120.2052,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3221112（查询：杭州市）"
+ },
+ "beidaihe": {
+  "name": "北戴河",
+  "modern": "河北秦皇岛市北戴河区",
+  "lat": 39.8219,
+  "lon": 119.4871,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6416740305（查询：北戴河区）"
+ },
+ "qingdao": {
+  "name": "青岛",
+  "modern": "山东青岛市",
+  "lat": 36.0663,
+  "lon": 120.3778,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3469133（查询：青岛市）"
+ },
+ "nanning": {
+  "name": "南宁",
+  "modern": "广西南宁市",
+  "lat": 22.8158,
+  "lon": 108.318,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2775778（查询：南宁市）"
+ },
+ "chengdu": {
+  "name": "成都",
+  "modern": "四川成都市",
+  "lat": 30.6599,
+  "lon": 104.0633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2110264（查询：成都市）"
+ },
+ "xushui": {
+  "name": "徐水",
+  "modern": "河北保定市徐水区",
+  "lat": 39.0167,
+  "lon": 115.65,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082448（查询：徐水区）"
+ },
+ "hefei": {
+  "name": "合肥",
+  "modern": "安徽合肥市",
+  "lat": 31.8666,
+  "lon": 117.2814,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3288965（查询：合肥市）"
+ },
+ "lushan": {
+  "name": "庐山",
+  "modern": "江西九江市庐山牯岭",
+  "lat": 29.5716,
+  "lon": 115.9766,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4783941（查询：牯岭镇）"
+ },
+ "dishuidong": {
+  "name": "滴水洞",
+  "modern": "湖南韶山市滴水洞",
+  "lat": 27.9183,
+  "lon": 112.5217,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 3202619（查询：韶山市）",
+  "note": "未查到场所级坐标，取所属县/市（韶山市）"
+ },
+ "nanchang": {
+  "name": "南昌",
+  "modern": "江西南昌市",
+  "lat": 28.6875,
+  "lon": 115.854,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081434（查询：南昌市）"
+ }
+}
