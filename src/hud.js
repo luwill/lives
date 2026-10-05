@@ -82,7 +82,7 @@ export function makeHud(person, data, places, tl, journey) {
       eraEl.textContent = person.era(y, h);
       yEl.textContent = `${y}`;
       hEl.textContent = h === 1 ? '上半年' : '下半年';
-      ageEl.textContent = `${y - by} 岁`;
+      ageEl.textContent = person.age(y, h);
       const [lab, cls] = CONF[st.confidence];
       evBadge.textContent = lab;
       evBadge.className = `badge ${cls}`;
@@ -115,9 +115,12 @@ export function makeHud(person, data, places, tl, journey) {
     if (ms) {
       if (lastMs !== i) {
         const m = st.milestone, pl = places[m.place || st.places[st.places.length - 1]];
-        cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${person.era(y, h)} · ${y - by} 岁`;
+        cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${person.era(y, h)} · ${person.age(y, h)}`;
         cH.textContent = m.title;
-        cWhere.textContent = `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
+        // 远途里程碑显示路线起止，其余显示停留地点
+        const p0 = places[st.places[0]];
+        cWhere.textContent = tl.steps[i].ms.travel ? `${p0.name} → ${pl.name}（今${pl.modern}）`
+          : `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
         cSub.textContent = m.subtitle || '';
         cQ.innerHTML = m.quote ? `${esc(m.quote.text)}<cite>—— ${esc(m.quote.source)}</cite>` : '';
         cQ.style.display = m.quote ? '' : 'none';

@@ -60,8 +60,8 @@ export function buildCamera(tl, journey) {
       return { lon: tf.lon + (p[0] - tf.lon) * k, lat: tf.lat + (p[1] - tf.lat) * k, dist: Math.exp(Math.log(tf.dist) + (Math.log(MS_DIST * 1.6) - Math.log(tf.dist)) * k) };
     }
     if (s.after && t > s.ms.t1) {   // 讲完后继续行程：镜头跟随
-      const p = positionAt(verts, t + 0.4);
-      return { lon: p[0], lat: p[1], dist: Math.max(frame[i].dist, 700) };
+      const p = positionAt(verts, t);
+      return { lon: p[0], lat: p[1], dist: Math.max(frame[i].dist, 900) };
     }
     if (s.ms && t <= s.ms.t1) {
       // 抵达途中：镜头跟随人物并逐渐推近；抵达后定在里程碑地点

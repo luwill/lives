@@ -18,8 +18,16 @@ function eraFrom(table, prefix) {
   };
 }
 
+// 年龄：古人按虚岁（农历出生年记为一岁），近人按周岁（以半年中点 4/1、10/1 计）
+const xusui = lunarBirthYear => (y) => `虚岁 ${y - lunarBirthYear + 1}`;
+const zhousui = (by, bm, bd) => (y, h) => {
+  const [m, d] = h === 1 ? [4, 1] : [10, 1];
+  return `${y - by - (m < bm || (m === bm && d < bd) ? 1 : 0)} 岁`;
+};
+
 export const PEOPLE = {
   mao: {
+    age: zhousui(1893, 12, 26),
     name: '毛泽东', life: '1893 — 1976', tagline: '一个人的八十二年 · 半年一步', color: '#e8473a', glow: '#ff8a5c',
     levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
     era: (y, h) => {
@@ -31,6 +39,7 @@ export const PEOPLE = {
     regions: [],
   },
   zhuge: {
+    age: xusui(181),
     name: '诸葛亮', life: '181 — 234', tagline: '鞠躬尽瘁 · 半年一步', color: '#4fc1b0', glow: '#9ff0e2',
     levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
     era: eraFrom([
@@ -44,6 +53,7 @@ export const PEOPLE = {
     ],
   },
   sushi: {
+    age: xusui(1036),   // 生于景祐三年十二月（农历 1036 年）
     name: '苏轼', life: '1037 — 1101', tagline: '一蓑烟雨任平生 · 半年一步', color: '#f0b84a', glow: '#ffe2a0',
     levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
     era: eraFrom([

@@ -1,0 +1,62 @@
+{
+ "title": {
+  "mood": "title",
+  "root": 50,
+  "mode": "gong",
+  "why": "片头：锣与长音，宫调庄重"
+ },
+ "st1": {
+  "mood": "pastoral",
+  "root": 62,
+  "mode": "gong",
+  "why": "韶山少年：湘中山村的宁静，古筝与竹笛"
+ },
+ "st2": {
+  "mood": "aspire",
+  "root": 60,
+  "mode": "gong",
+  "why": "求学长沙：书生意气、求知若渴，钢琴与弦乐上行"
+ },
+ "st3": {
+  "mood": "tension",
+  "root": 57,
+  "mode": "yu",
+  "why": "建党与农运：寻找出路的焦灼与坚定，低音弦乐断奏与二胡"
+ },
+ "st4": {
+  "mood": "march",
+  "root": 62,
+  "mode": "shang",
+  "why": "井冈山与中央苏区：艰苦而豪迈，军鼓与铜管"
+ },
+ "st5": {
+  "mood": "epic",
+  "root": 57,
+  "mode": "yu",
+  "why": "长征：悲壮与绝处逢生，太鼓、锣与铜管旋律"
+ },
+ "st6": {
+  "mood": "contemplative",
+  "root": 55,
+  "mode": "shang",
+  "why": "陕北与延安：窑洞岁月的从容沉稳，古琴与箫"
+ },
+ "st7": {
+  "mood": "triumph",
+  "root": 62,
+  "mode": "gong",
+  "why": "转战陕北·西柏坡：决战与胜利的豪情"
+ },
+ "st8": {
+  "mood": "grand",
+  "root": 55,
+  "mode": "gong",
+  "why": "建国之后：宏阔而复杂，晚年苍凉"
+ },
+ "outro": {
+  "mood": "outro",
+  "root": 50,
+  "mode": "yu",
+  "why": "片尾：二胡收束，苍凉"
+ }
+}

@@ -32,7 +32,7 @@ MS_MIN_HOLD = 3.0
 TRAVEL_MIN_PLACES = 6  # 途经点多或路程远的里程碑按“边走边讲”处理
 TRAVEL_KM = 1200
 TRAVEL_SPEED = 450    # km/s
-TRAVEL_MIN, TRAVEL_MAX = 3.0, 16.0
+TRAVEL_MIN, TRAVEL_MAX = 3.0, 30.0
 SPAN_PAD = 0.7
 OUTRO_PAD = 1.0
 END_CARD = 6.0
@@ -174,7 +174,7 @@ def build(who: str) -> dict:
                        ms=dict(t0=round(ms0, 3), t1=round(ms1, 3), travel=travel), split=cut)
             t = ms1 + 0.3
             if post:
-                amove = min(3.0, max(0.9, path_km(pre[-1], post, P) / 1500))
+                amove = min(6.0, max(1.2, path_km(pre[-1], post, P) / 700))
                 ent['after'] = dict(t0=round(ms1 + 0.2, 3), move=round(amove, 3))
                 t = ms1 + 0.2 + amove + 0.4
             ent['t1'] = round(t, 3)
