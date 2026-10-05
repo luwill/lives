@@ -8,3 +8,6 @@ narration/*/audio/
 __pycache__/
 .DS_Store
 data/_build/cache/
+data/demo/
+src/demo/
+narration/demo/
