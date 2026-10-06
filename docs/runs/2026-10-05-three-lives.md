@@ -1,6 +1,7 @@
 # 三人人生轨迹视频：毛泽东 · 诸葛亮 · 苏轼
 
-- status: flying <!-- planned → flying → landed -->
+- status: landed <!-- planned → flying → landed -->
+- final render commit: eb42007（三部 mp4 均由此提交渲染）
 - workspace: lives/ (git, autopilot/three-lives)
 - base: 8d63ddd
 - contract: docs/autopilot.md
@@ -34,7 +35,7 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 4. [x] 解说词、TTS、时间轴（半年步 + 里程碑停留）— owns C3, C5, C7（时间轴部分）
 5. [x] 引擎场景：轨迹生长、HUD、里程碑高亮、标注 — owns C3, C4, C5
 6. [x] 配乐：三人分阶段情绪设计与合成 — owns C6
-7. [x] 渲染、混音、总装与审片 — owns C8（最终成片对应提交 fc89e5b）
+7. [x] 渲染、混音、总装与审片 — owns C8（最终成片对应提交 eb42007）
 8. [x] 落地：整体评审、验收清单
 
 ## Ledger
@@ -85,6 +86,11 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 | R11 | 整体评审 r1 | 对抗复查 | 远途里程碑的停留时长把行进时间也算了进去；字幕有 22 处重叠（最长 0.06 s） | minor-fixed | fc89e5b（抵达后至少停 3 s，字幕去重叠，两项都有测试） |
 | R12 | 整体评审 r1 | 对抗复查 | test_milestone_stays_at_its_place 只是照抄实现里的常量 8 | dispute | 审查方：测试复述了实现。我方：“≥8 个途经点才按远途处理”本身就是规格，测试的作用是锁住规格；mutations.md 证明停留点被改到杭州时它会变红 |
 | R13 | 自查·审片 | 主线程 | 远途镜头期间，事件条的 📍 显示星标所在地（遵义），而不是标记当前所在的位置 | minor-open | 1935H1 本身就是“遵义会议”这一步，这样显示也说得通；未改 |
+| R14 | 整体评审 r2 | 对抗复查 | 莫斯科、列宁格勒的代理点落在内蒙古，1949 年那段轨迹从满洲里掉头向西南 | fixed-unreviewed | 改为沿北京方向延伸到地图边缘，并新增 test_offmap_proxy_points_toward_moscow（恢复旧算法后该测试变红）；截图显示路线向西越过巴尔喀什湖。此修复未经评审复看 |
+| R15 | 整体评审 r2 | 对抗复查 | HUD 每条字幕多显示 0.1 s，抵消了构建器的去重叠，画面上下一句最多晚出 0.08 s | fixed-unreviewed | hud.js 按字幕原始时间窗显示。只做了代码阅读核对，没有画面层面的测试 |
+| R16 | 整体评审 r2 | 对抗复查 | 删掉出生步特判后 47 项测试仍全绿（test_js 只核对常量） | minor-open | 出生卡已在截图 out/verify.jpg 中目视确认；HUD 的 DOM 测试未补 |
+| R17 | 整体评审 r2 | 对抗复查 | 221H1 时“蜀汉”地图注记晚于卡片出现；诸葛亮 181H1 的 note 文字重复 | fixed-unreviewed | people.js 改为从 221H1 起显示；note 已清理 |
+| R18 | 整体评审 r2 | 对抗复查 | 228H1 卡片写“戮谡以谢众”，旁白说“下狱而死”，两者同屏 | dispute | 审查方：措辞不一致。我方：两者分别出自本传与《马谡传》，都是正史原文，同屏可以互补；未改 |
 | F12 | 自查·审片 | 主线程 | 年龄按年份差计算，毛泽东多算一岁；卡片上写“七十三岁” | blocking-fixed | 85cd963 |
 
 ### Parked

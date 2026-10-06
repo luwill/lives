@@ -1,6 +1,6 @@
 # 配乐分阶段指标 — mao
 
-命令：`python3 tools/audio_report.py mao`（out/mao/music.wav，由 `music/score.py mao` 在 fc89e5b 生成）
+命令：`python3 tools/audio_report.py mao`（out/mao/music.wav，由 `music/score.py mao` 在 eb42007 生成）
 
 ```
 stage     mood                t0      t1    dBFS  centroid  onsets/s

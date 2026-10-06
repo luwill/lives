@@ -1,6 +1,6 @@
 # 配乐分阶段指标 — sushi
 
-命令：`python3 tools/audio_report.py sushi`（out/sushi/music.wav，由 `music/score.py sushi` 在 fc89e5b 生成）
+命令：`python3 tools/audio_report.py sushi`（out/sushi/music.wav，由 `music/score.py sushi` 在 eb42007 生成）
 
 ```
 stage     mood                t0      t1    dBFS  centroid  onsets/s
