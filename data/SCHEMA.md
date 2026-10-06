@@ -1,6 +1,6 @@
 # 人生轨迹数据规范
 
-每个人物一个目录：`data/<who>/`，`who` ∈ `mao` | `zhuge` | `sushi`。坐标一律为 WGS84 十进制度。
+每个人物一个目录：`data/<who>/`，`who` ∈ `mao` | `zhuge` | `sushi` | `libai` | `zhuyz` | `jiang`。坐标一律为 WGS84 十进制度。
 
 ## 半年步的定义
 

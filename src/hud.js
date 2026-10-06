@@ -116,10 +116,10 @@ export function makeHud(person, data, places, tl, journey) {
       if (lastMs !== i) {
         const m = st.milestone, pl = places[m.place || st.places[st.places.length - 1]];
         const b0 = i === 0 && person.birth;
-        cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${b0 ? b0.era : person.era(y, h)} · ${b0 ? b0.age : person.age(y, h)}`;
+        cWhen.textContent = [`${y} 年${h === 1 ? '上半年' : '下半年'}`, b0 ? b0.era : person.era(y, h), b0 ? b0.age : person.age(y, h)].filter(Boolean).join(' · ');
         cH.textContent = m.title;
-        // 远途里程碑显示路线起止，其余显示停留地点
-        const p0 = places[st.places[0]], p1 = places[st.places[st.places.length - 1]];
+        // 远途里程碑显示“起点 → 事件地”（未指定 place 时为终点），其余显示停留地点
+        const p0 = places[st.places[0]], p1 = pl;
         cWhere.textContent = tl.steps[i].ms.travel && p0 !== p1 ? `${p0.name} → ${p1.name}（今${p1.modern}）`
           : `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
         cSub.textContent = m.subtitle || '';

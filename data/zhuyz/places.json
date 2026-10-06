@@ -1,0 +1,326 @@
+{
+ "dongxiang": {
+  "name": "钟离东乡",
+  "modern": "安徽凤阳县小溪河镇燃灯社区金桥村一带",
+  "lat": 32.8495,
+  "lon": 117.8189,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 12402685（查询：小溪河镇, 凤阳县）；今址据陈梧桐《社会科学辑刊》2010年第1期",
+  "note": "《皇陵碑记》太祖自述“居鍾離之東鄉，而朕生焉”；维基百科「朱元璋」定为今小溪河镇燃灯寺村，OSM 无该村点位，取小溪河镇政区坐标"
+ },
+ "guzhuang": {
+  "name": "太平乡孤庄村",
+  "modern": "安徽凤阳县（明皇陵一带）",
+  "lat": 32.8141,
+  "lon": 117.5191,
+  "kind": "village",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 396053121（查询：明皇陵, 凤阳县）",
+  "note": "《皇陵碑记》：十年后迁钟离西乡，再迁太平乡孤庄村；父母即葬于同里刘大秀（《明史》作刘继祖）所与之地，即今明皇陵。村落今址无公认定点，取明皇陵坐标；西乡今址亦不详，一并以此代表"
+ },
+ "huangjue": {
+  "name": "皇觉寺",
+  "modern": "安徽凤阳县（於皇寺原址，明皇陵附近）",
+  "lat": 32.8141,
+  "lon": 117.5191,
+  "kind": "village",
+  "confidence": "low",
+  "source": "OSM Nominatim way 396053121（查询：明皇陵, 凤阳县）",
+  "note": "《皇陵碑记》称“里之皇觉寺”，即同乡之寺；原寺毁于元末兵火，洪武十六年另建龙兴寺于凤阳城北，原址无确切定点，暂取明皇陵坐标"
+ },
+ "haozhou": {
+  "name": "濠州",
+  "modern": "安徽凤阳县临淮关镇",
+  "lat": 32.8993,
+  "lon": 117.6064,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 12402687（查询：临淮关镇, 凤阳县）",
+  "note": "元濠州治钟离县，城址在今凤阳县东北临淮关一带（明初移治中都）"
+ },
+ "hefei": {
+  "name": "合肥",
+  "modern": "安徽合肥",
+  "lat": 31.8666,
+  "lon": 117.2814,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3288965（查询：合肥市）",
+  "note": "元庐州路治合肥；《皇陵碑记》作“南历金斗”"
+ },
+ "luan": {
+  "name": "六安",
+  "modern": "安徽六安",
+  "lat": 31.7383,
+  "lon": 116.5142,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3243393（查询：六安市）",
+  "note": "合肥西行至光州的必经之地；史书未明载其到六安，为路线推断"
+ },
+ "guangzhou": {
+  "name": "光州",
+  "modern": "河南潢川县",
+  "lat": 32.1176,
+  "lon": 115.1512,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218098（查询：潢川县）",
+  "note": "元光州治定城，即今潢川"
+ },
+ "gushi": {
+  "name": "固始",
+  "modern": "河南固始县",
+  "lat": 32.1712,
+  "lon": 115.6489,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2418140（查询：固始县）"
+ },
+ "ruzhou": {
+  "name": "汝州",
+  "modern": "河南汝州",
+  "lat": 34.1678,
+  "lon": 112.8393,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3259442（查询：汝州市）"
+ },
+ "yingzhou": {
+  "name": "颍州",
+  "modern": "安徽阜阳颍州区",
+  "lat": 32.8856,
+  "lon": 115.8015,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3246003（查询：颍州区, 阜阳市）",
+  "note": "元颍州治汝阴，即今阜阳"
+ },
+ "dingyuan": {
+  "name": "定远",
+  "modern": "安徽定远县",
+  "lat": 32.4618,
+  "lon": 117.6823,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3231580（查询：定远县）",
+  "note": "驴牌寨（定远张家堡）、横涧山均在定远境内，具体位置无公认今址，以县城代表"
+ },
+ "chuzhou": {
+  "name": "滁州",
+  "modern": "安徽滁州琅琊区",
+  "lat": 32.3344,
+  "lon": 118.3157,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3231583（查询：琅琊区, 滁州市）"
+ },
+ "liuhe": {
+  "name": "六合（瓦梁垒）",
+  "modern": "江苏南京六合区",
+  "lat": 32.3253,
+  "lon": 118.8165,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 2131458（查询：六合区, 南京市）",
+  "note": "瓦梁垒在六合附近，确切位置不详，取六合城区"
+ },
+ "chaohu": {
+  "name": "巢湖",
+  "modern": "安徽巢湖",
+  "lat": 31.5748,
+  "lon": 117.448,
+  "kind": "lake",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 1284411（查询：巢湖）",
+  "note": "取湖面中心；廖永安、俞通海水军原泊巢湖"
+ },
+ "hezhou": {
+  "name": "和州",
+  "modern": "安徽和县",
+  "lat": 31.7443,
+  "lon": 118.3481,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3260813（查询：和县）",
+  "note": "又称和阳"
+ },
+ "caishi": {
+  "name": "采石",
+  "modern": "安徽马鞍山采石矶（翠螺山）",
+  "lat": 31.6516,
+  "lon": 118.4545,
+  "kind": "battle",
+  "confidence": "high",
+  "source": "OSM Nominatim way 377260161（查询：翠螺山）",
+  "note": "牛渚矶即采石矶，在翠螺山临江处"
+ },
+ "taiping": {
+  "name": "太平",
+  "modern": "安徽当涂县姑孰镇",
+  "lat": 31.5658,
+  "lon": 118.4983,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 10745227（查询：姑孰镇, 当涂县）",
+  "note": "元太平路治当涂（姑孰），改太平府"
+ },
+ "yingtian": {
+  "name": "应天（集庆）",
+  "modern": "江苏南京",
+  "lat": 32.0438,
+  "lon": 118.7789,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2131524（查询：南京市）",
+  "note": "元集庆路，至正十六年改应天府，洪武元年称南京；1356 年以前不出现于行程"
+ },
+ "zhenjiang": {
+  "name": "镇江",
+  "modern": "江苏镇江",
+  "lat": 32.1894,
+  "lon": 119.42,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3429680（查询：镇江市）"
+ },
+ "ningguo": {
+  "name": "宁国",
+  "modern": "安徽宣城宣州区",
+  "lat": 30.9487,
+  "lon": 118.7514,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3222247（查询：宣州区, 宣城市）",
+  "note": "元宁国路治宣城，非今宁国市"
+ },
+ "wuzhou": {
+  "name": "婺州",
+  "modern": "浙江金华婺城区",
+  "lat": 29.0897,
+  "lon": 119.5667,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4483296（查询：婺城区, 金华市）",
+  "note": "克后改宁越府，后称金华府"
+ },
+ "longwan": {
+  "name": "龙湾（卢龙山）",
+  "modern": "江苏南京狮子山（阅江楼）",
+  "lat": 32.0962,
+  "lon": 118.7413,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 461035531（查询：阅江楼）",
+  "note": "太祖“亲督军卢龙山”，卢龙山即今狮子山；龙湾在其西北江岸，取阅江楼代表"
+ },
+ "anqing": {
+  "name": "安庆",
+  "modern": "安徽安庆迎江区",
+  "lat": 30.5469,
+  "lon": 117.1384,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3220383（查询：迎江区, 安庆市）"
+ },
+ "hukou": {
+  "name": "湖口",
+  "modern": "江西湖口县",
+  "lat": 29.7332,
+  "lon": 116.2474,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2703829094（查询：双钟镇, 湖口县）",
+  "note": "鄱阳湖入江口"
+ },
+ "jiangzhou": {
+  "name": "江州",
+  "modern": "江西九江",
+  "lat": 29.6654,
+  "lon": 115.9475,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244080937（查询：浔阳区, 九江市）",
+  "note": "元江州路治德化，即今九江"
+ },
+ "hongdu": {
+  "name": "洪都（龙兴）",
+  "modern": "江西南昌",
+  "lat": 28.7015,
+  "lon": 115.8982,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3170007（查询：东湖区, 南昌市）",
+  "note": "元龙兴路，至正二十二年改洪都府"
+ },
+ "anfeng": {
+  "name": "安丰",
+  "modern": "安徽寿县",
+  "lat": 32.5475,
+  "lon": 116.7929,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3243390（查询：寿县）",
+  "note": "元安丰路治寿春，即今寿县"
+ },
+ "kanglangshan": {
+  "name": "康郎山",
+  "modern": "江西余干县康山",
+  "lat": 28.9494,
+  "lon": 116.4381,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 5762188（查询：康山, 余干县）",
+  "note": "鄱阳湖东南湖中之山，今余干县康山乡；取乡政区坐标"
+ },
+ "zuoli": {
+  "name": "左蠡",
+  "modern": "江西都昌县左里镇",
+  "lat": 29.4245,
+  "lon": 116.1981,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 5836992（查询：左里镇, 都昌县）",
+  "note": "鄱阳湖西北岸，太祖移军扼左蠡"
+ },
+ "wuchang": {
+  "name": "武昌",
+  "modern": "湖北武汉武昌区",
+  "lat": 30.5567,
+  "lon": 114.311,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3076297（查询：武昌区, 武汉市）"
+ },
+ "kaifeng": {
+  "name": "汴梁",
+  "modern": "河南开封",
+  "lat": 34.7991,
+  "lon": 114.3055,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244080911（查询：龙亭区, 开封市）",
+  "note": "洪武元年八月以开封为北京"
+ },
+ "zhongdu": {
+  "name": "中都",
+  "modern": "安徽凤阳县府城镇（明中都皇故城）",
+  "lat": 32.8736,
+  "lon": 117.5549,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 12402686（查询：府城镇, 凤阳县）",
+  "note": "洪武二年以临濠为中都，营建于凤阳城北；八年罢营"
+ },
+ "xiaoling": {
+  "name": "孝陵",
+  "modern": "江苏南京钟山明孝陵",
+  "lat": 32.0623,
+  "lon": 118.8347,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim way 380923041（查询：明孝陵）",
+  "note": "洪武十五年马皇后先葬于此"
+ }
+}

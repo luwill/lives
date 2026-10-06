@@ -55,3 +55,22 @@ def test_offmap_proxy_points_toward_moscow():
 console.log(JSON.stringify([proxyOf({lon: 37.62, lat: 55.75}), proxyOf({lon: 30.32, lat: 59.94})]));""")
     for lon, lat in pts:
         assert lon <= 80 and 44 <= lat <= 52, (lon, lat)
+
+
+def test_age_and_era_anchors_second_batch():
+    """第二批：李白（虚岁 701 起、天宝三载起称“载”）、朱元璋（虚岁、龙凤/洪武）、蒋介石（周岁、1949H2 起不用民国纪年）。"""
+    l, z, j = ages('libai'), ages('zhuyz'), ages('jiang')
+    assert l['701H1'][0] == '虚岁 1' and l['762H2'][0] == '虚岁 62'
+    assert l['743H1'][1].endswith('天宝二年') and l['744H1'][1].endswith('天宝三载') and l['758H1'][1].endswith('乾元元年')
+    assert z['1328H2'] == ['虚岁 1', '元 · 天历元年'] and z['1398H1'][0] == '虚岁 71'
+    assert z['1355H1'][1].startswith('龙凤元年') and z['1368H1'][1] == '明 · 洪武元年'
+    assert j['1887H2'][0] == '0 岁' and j['1975H1'][0] == '87 岁'
+    assert j['1949H1'][1] == '民国三十八年' and all(v[1] == '' for k, v in j.items() if k != 'birth' and k >= '1949H2')
+
+
+def test_offmap_proxy_points_east_and_west():
+    """东京代理点在地图东缘、开罗在西缘（防止轨迹掉头或落在内陆）。"""
+    tokyo, cairo = node("""import { proxyOf } from './journey.js';
+console.log(JSON.stringify([proxyOf({lon: 139.69, lat: 35.69}), proxyOf({lon: 31.24, lat: 30.04})]));""")
+    assert tokyo[0] >= 130 and 33 <= tokyo[1] <= 40, tokyo
+    assert cairo[0] <= 80 and 30 <= cairo[1] <= 40, cairo

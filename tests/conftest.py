@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-PEOPLE = ['mao', 'zhuge', 'sushi']
+PEOPLE = ['mao', 'zhuge', 'sushi', 'libai', 'zhuyz', 'jiang']
 
 
 def load(who: str, name: str):

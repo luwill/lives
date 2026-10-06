@@ -1,0 +1,12 @@
+{
+ "title": {"mood": "title", "root": 55, "mode": "gong", "why": "片头：锣与编钟，宫调的明亮"},
+ "st1": {"mood": "pastoral", "root": 62, "mode": "zhi", "why": "碎叶·蜀中少年：好剑慕仙，明亮清新，带一点西域的苍茫，笛与古筝"},
+ "st2": {"mood": "joyful", "root": 62, "mode": "gong", "why": "仗剑出蜀：初出夔门的开阔，意气风发、挥金如土"},
+ "st3": {"mood": "wander", "root": 59, "mode": "shang", "why": "酒隐安陆：安居与不甘并存，干谒失意，郁愤与狂放交替"},
+ "st4": {"mood": "serene", "root": 57, "mode": "gong", "why": "寓家东鲁：竹溪纵酒、求仙学道的疏放"},
+ "st5": {"mood": "triumph", "root": 60, "mode": "gong", "why": "长安待诏：仰天大笑出门去的狂喜"},
+ "st6": {"mood": "aspire", "root": 58, "mode": "zhi", "why": "漫游天下：狂放飘逸而怀才不遇，豪情下愈见苍凉"},
+ "st7": {"mood": "tension", "root": 55, "mode": "yu", "why": "乱世浮沉：乱离悲慨，下狱流放之辱"},
+ "st8": {"mood": "elegy", "root": 53, "mode": "yu", "why": "当涂终老：大鹏中天摧的悲凉"},
+ "outro": {"mood": "outro", "root": 50, "mode": "yu", "why": "片尾：箫与二胡收束"}
+}

@@ -1,0 +1,2217 @@
+{
+ "meta": {
+  "person": "李白",
+  "birth": "701",
+  "birth_note": "武后长安元年。据李华《故翰林学士李君墓志》“年六十有二”及卒于宝应元年逆推；生月日无一手史料（流行的“正月十六日”说无据）。出生地采碎叶说，见 contested",
+  "death": "762",
+  "death_note": "代宗宝应元年冬卒于当涂。李阳冰《草堂集序》署“宝应元年十一月乙酉”（≈762-11-30），时李白“疾亟”，卒当在此前后；宝应元年十一月≈公历762-11-21至12-19，落在762H2",
+  "calendar_note": "H1=公历1–6月，H2=7–12月（儒略历）。唐代史料为农历：有日期的用 lunar_python（寿星历法）换算（脚本 data/_build/libai_lunar.py，已用“天宝十四载十一月甲子安禄山起兵=755-12-16”校验）；只知季节或月份的，按农历1–6月→H1、7–12月→H2近似，并在 note 注明。关键跨年案例：永王“十二月甲辰擅引舟师东巡”（≈757-01-19），故李白入幕系于757H1；乾元二年三月大赦≈759-04；李白年谱多为推定，无明文的半年标 inferred。",
+  "sources": [
+   {
+    "id": "S1",
+    "title": "李阳冰《草堂集序》（宝应元年）",
+    "url": "https://zh.wikisource.org/wiki/唐李翰林草堂集序",
+    "kind": "primary"
+   },
+   {
+    "id": "S2",
+    "title": "魏颢《李翰林集序》",
+    "url": "https://zh.wikisource.org/wiki/李翰林集序",
+    "kind": "primary"
+   },
+   {
+    "id": "S3",
+    "title": "范传正《唐左拾遗翰林学士李公新墓碑并序》",
+    "url": "https://zh.wikisource.org/wiki/贈左拾遺翰林學士李公新墓碑",
+    "kind": "primary"
+   },
+   {
+    "id": "S4",
+    "title": "《旧唐书·文苑传下·李白》（卷一百九十下）",
+    "url": "https://zh.wikisource.org/wiki/舊唐書/卷190下",
+    "kind": "primary"
+   },
+   {
+    "id": "S5",
+    "title": "《新唐书·文艺传中·李白》（卷二百二）",
+    "url": "https://zh.wikisource.org/wiki/新唐書/卷202",
+    "kind": "primary"
+   },
+   {
+    "id": "S6",
+    "title": "王琦《李太白年谱》（《李太白集注》卷三十五，四库本）",
+    "url": "https://zh.wikisource.org/wiki/李太白集注_(四庫全書本)/卷35",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S7",
+    "title": "李白诗文原文（全唐诗/维基文库：上安州裴长史书、与韩荆州书、峨眉山月歌、南陵别儿童入京、行路难、将进酒、梦游天姥吟留别、北风行、独坐敬亭山、永王东巡歌、早发白帝城、临路歌等）",
+    "url": "https://zh.wikisource.org/wiki/作者:李白",
+    "kind": "primary"
+   },
+   {
+    "id": "S8",
+    "title": "曾巩《李白诗集后序》（北宋，最早的李白行迹编次）",
+    "url": "https://zh.wikisource.org/wiki/李白詩集後序",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S9",
+    "title": "江油李白故里网《李白简介》所附逐年年谱（安旗年谱体系）",
+    "url": "http://libaiguli.com.cn/show.asp?id=1",
+    "kind": "popular"
+   },
+   {
+    "id": "S10",
+    "title": "维基百科「李白」条（引李长之、郁贤皓等）",
+    "url": "https://zh.wikipedia.org/wiki/李白",
+    "kind": "secondary"
+   },
+   {
+    "id": "S11",
+    "title": "郭勉愈《新时期李白生平研究综述》（出生地、出蜀、入长安、卒年诸说）",
+    "url": "https://www.aisixiang.com/data/92617.html",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S12",
+    "title": "李定广《李白出蜀时间及寓居夔州、江陵考实》",
+    "url": "https://www.sohu.com/a/821920709_121119369",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S13",
+    "title": "《资治通鉴》卷二百一十九（至德元载十二月甲辰永王东巡；二载二月戊戌璘败死）",
+    "url": "https://zh.wikisource.org/wiki/資治通鑑/卷219",
+    "kind": "primary"
+   },
+   {
+    "id": "S14",
+    "title": "李华《故翰林学士李君墓志并序》（《李太白集注》卷三十一附录，“年六十有二不偶，赋临终歌而卒”）",
+    "url": "https://zh.wikisource.org/wiki/李太白集注_(四庫全書本)/卷31",
+    "kind": "primary"
+   }
+  ]
+ },
+ "stages": [
+  {
+   "id": "st1",
+   "title": "碎叶·蜀中少年",
+   "from": "701H1",
+   "to": "724H1",
+   "summary": "生于西域碎叶，五岁随父潜还绵州昌隆；匡山读书，学剑任侠，谒苏颋于成都，游峨眉。",
+   "mood_hint": "西域风沙到蜀中青山：少年任侠、好剑术、慕神仙，天真而有凌云之志，明亮清新带一点异域苍茫。"
+  },
+  {
+   "id": "st2",
+   "title": "仗剑出蜀",
+   "from": "724H2",
+   "to": "726H2",
+   "summary": "仗剑去国，辞亲远游：峨眉月下发清溪，出三峡渡荆门，江陵遇司马承祯，洞庭、庐山、金陵、扬州。",
+   "mood_hint": "初出夔门的开阔与新奇，“山随平野尽，江入大荒流”，意气风发、挥金如土，间有客中病卧与思乡。"
+  },
+  {
+   "id": "st3",
+   "title": "酒隐安陆",
+   "from": "727H1",
+   "to": "740H1",
+   "summary": "入赘许相公家，“酒隐安陆，蹉跎十年”；一入长安无成，谒韩荆州、游太原、访元丹丘于嵩山。",
+   "mood_hint": "安居与不甘并存：桃花岩的闲适、干谒的屈辱、一入长安的失意，“行路难”的郁愤与“将进酒”的狂放交替。"
+  },
+  {
+   "id": "st4",
+   "title": "寓家东鲁",
+   "from": "740H2",
+   "to": "742H1",
+   "summary": "移家东鲁，与孔巢父等隐徂徕山，号“竹溪六逸”；四月上泰山。",
+   "mood_hint": "齐鲁山水间纵酒高歌、求仙访道，疏放闲逸中暗蓄待时而起的雄心。"
+  },
+  {
+   "id": "st5",
+   "title": "长安待诏",
+   "from": "742H2",
+   "to": "744H1",
+   "summary": "天宝元年奉诏入京，玄宗降辇步迎，供奉翰林；遭谗见疏，天宝三载赐金放还。",
+   "mood_hint": "“仰天大笑出门去”的狂喜，宫廷的华美与醉态的不羁，转而为谗毁中的孤傲与失落。"
+  },
+  {
+   "id": "st6",
+   "title": "漫游天下",
+   "from": "744H2",
+   "to": "755H2",
+   "summary": "与杜甫、高适游梁宋，东鲁别杜甫；南游吴越、北上幽州、往来宣城秋浦金陵，十年飘泊。",
+   "mood_hint": "狂放飘逸而怀才不遇：天姥梦游的瑰丽、幽州边塞的寒凛、敬亭独坐的孤寂，豪情底下愈见苍凉。"
+  },
+  {
+   "id": "st7",
+   "title": "乱世浮沉",
+   "from": "756H1",
+   "to": "760H2",
+   "summary": "安史乱起南奔，隐庐山；入永王幕获罪，系浔阳狱，长流夜郎，溯江至巫山遇赦东还。",
+   "mood_hint": "乱离悲慨：避乱的惶急、从军报国的热望、下狱与流放的屈辱；遇赦时“轻舟已过万重山”的狂喜一闪而过。"
+  },
+  {
+   "id": "st8",
+   "title": "当涂终老",
+   "from": "761H1",
+   "to": "762H2",
+   "summary": "欲从李光弼军半道病还，依族叔李阳冰于当涂，枕上授简，赋《临路歌》而卒。",
+   "mood_hint": "晚年苍凉：老病漂泊，壮志未酬，“大鹏飞兮振八裔，中天摧兮力不济”，悲壮而终归旷远。"
+  }
+ ],
+ "steps": [
+  {
+   "id": "701H1",
+   "places": [
+    "suiye"
+   ],
+   "event": "生于西域碎叶；母梦长庚星，因名白，字太白",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S5",
+    "S14",
+    "S11"
+   ],
+   "stage": "st1",
+   "milestone": {
+    "title": "长庚入梦",
+    "subtitle": "生于碎叶，其先隋末流寓西域",
+    "importance": 2,
+    "place": "suiye"
+   },
+   "note": "生年由卒年与“年六十有二”逆推；生月不详，暂系H1。出生地另有绵州昌隆说，见 contested"
+  },
+  {
+   "id": "701H2",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "702H1",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "702H2",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "703H1",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "703H2",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "704H1",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "704H2",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "705H1",
+   "places": [
+    "suiye"
+   ],
+   "event": "随父李客居西域碎叶",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S11"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "705H2",
+   "places": [
+    "suiye",
+    "changlong"
+   ],
+   "event": "神龙初，随父潜还蜀中，客居绵州昌隆县青莲乡",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st1",
+   "note": "“神龙之始，逃归于蜀”（S1）、“神龙初，潜还广汉”（S3）；神龙元年正月改元，月份不详，系于H2为近似"
+  },
+  {
+   "id": "706H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆发蒙，自述“五岁诵六甲”",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1",
+   "note": "《上安州裴长史书》“五岁诵六甲，十岁观百家”"
+  },
+  {
+   "id": "706H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "707H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "707H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "708H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "708H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "709H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "709H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居绵州昌隆青莲乡读书",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "710H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "十岁通诗书、观百家",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S7"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "710H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "711H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "711H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "712H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "712H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "713H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "713H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "714H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "714H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "居昌隆读书，兼习剑术",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "715H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "“十五好剑术，遍干诸侯”“十五观奇书，作赋凌相如”",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S6"
+   ],
+   "stage": "st1",
+   "note": "语出《与韩荆州书》《赠张相镐》；具体月份不详"
+  },
+  {
+   "id": "715H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆，喜纵横术、击剑任侠",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "716H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆，喜纵横术、击剑任侠",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "716H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆，喜纵横术、击剑任侠",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "717H1",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆，喜纵横术、击剑任侠",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "717H2",
+   "places": [
+    "changlong"
+   ],
+   "event": "在昌隆，喜纵横术、击剑任侠",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "718H1",
+   "places": [
+    "changlong",
+    "kuangshan"
+   ],
+   "event": "隐居戴天大匡山读书，往来旁郡",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S5"
+   ],
+   "stage": "st1",
+   "note": "新唐书“既长，隐岷山”；匡山读书据安旗系年（S9）"
+  },
+  {
+   "id": "718H2",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "与逸人东严子隐于匡山，巢居养奇禽",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1",
+   "note": "《上安州裴长史书》“与逸人东严子隐于岷山之阳……巢居数年”，地望或谓匡山"
+  },
+  {
+   "id": "719H1",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "与逸人东严子隐于匡山，巢居养奇禽",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1",
+   "note": "《上安州裴长史书》“与逸人东严子隐于岷山之阳……巢居数年”，地望或谓匡山"
+  },
+  {
+   "id": "719H2",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "与逸人东严子隐于匡山，巢居养奇禽",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st1",
+   "note": "《上安州裴长史书》“与逸人东严子隐于岷山之阳……巢居数年”，地望或谓匡山"
+  },
+  {
+   "id": "720H1",
+   "places": [
+    "kuangshan",
+    "chengdu"
+   ],
+   "event": "游成都，路中投刺谒益州长史苏颋，颋誉为“天才英丽”",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S5",
+    "S6"
+   ],
+   "stage": "st1",
+   "note": "苏颋开元八年出为益州长史（王琦谱系于太白年二十）；月份不详"
+  },
+  {
+   "id": "720H2",
+   "places": [
+    "chengdu",
+    "emei"
+   ],
+   "event": "游峨眉山",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st1",
+   "note": "有《登峨眉山》诗，系年据安旗谱"
+  },
+  {
+   "id": "721H1",
+   "places": [
+    "emei",
+    "changlong"
+   ],
+   "event": "春归昌明家中",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "721H2",
+   "places": [
+    "changlong",
+    "kuangshan"
+   ],
+   "event": "返匡山读书",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "722H1",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "复在匡山读书，州举有道不应",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "722H2",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "复在匡山读书，州举有道不应",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "723H1",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "复在匡山读书，州举有道不应",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "723H2",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "复在匡山读书，州举有道不应",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "724H1",
+   "places": [
+    "kuangshan"
+   ],
+   "event": "复在匡山读书，州举有道不应",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S9"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "724H2",
+   "places": [
+    "kuangshan",
+    "chengdu",
+    "emei",
+    "yuzhou"
+   ],
+   "event": "仗剑去国，辞亲远游：再游成都、峨眉，秋夜发清溪，舟下渝州",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S11",
+    "S9"
+   ],
+   "stage": "st2",
+   "milestone": {
+    "title": "仗剑去国",
+    "subtitle": "辞亲远游，秋夜发清溪向三峡",
+    "importance": 1,
+    "place": "emei",
+    "quote": {
+     "text": "峨眉山月半輪秋，影入平羌江水流。",
+     "source": "《峨眉山月歌》"
+    }
+   },
+   "note": "出蜀之年有开元十二年（郁贤皓）与十三年（王琦、詹锳、李定广）之争，此从十二年秋，见 contested"
+  },
+  {
+   "id": "725H1",
+   "places": [
+    "yuzhou",
+    "baidi",
+    "jingmen",
+    "jiangling"
+   ],
+   "event": "春出三峡，渡荆门至江陵，遇司马承祯，誉其“有仙风道骨”",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S12",
+    "S9"
+   ],
+   "stage": "st2",
+   "note": "《大鹏赋序》“余昔于江陵见天台司马子微”；《渡荆门送别》作于此行。李定广考承祯开元十三年春夏在江陵"
+  },
+  {
+   "id": "725H2",
+   "places": [
+    "jiangling",
+    "yuezhou",
+    "lushan",
+    "jinling"
+   ],
+   "event": "南游洞庭，友人吴指南死于湖上，权殡湖侧；游庐山，秋至金陵",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st2",
+   "note": "《上安州裴长史书》“指南死于洞庭之上……炎月伏尸……遂权殡于湖侧，便之金陵”；庐山之游据安旗谱，月份推定"
+  },
+  {
+   "id": "726H1",
+   "places": [
+    "jinling",
+    "yangzhou"
+   ],
+   "event": "春往扬州，“东游维扬，不逾一年，散金三十余万”",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "726H2",
+   "places": [
+    "yangzhou",
+    "anlu"
+   ],
+   "event": "秋病卧扬州；冬离扬州，经汝海一带西归，至安州安陆",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st2",
+   "note": "途经路线（汝州、陈州）据安旗谱，从略；至安陆在冬，近似归入H2"
+  },
+  {
+   "id": "727H1",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆寿山，故相许圉师家招婿，娶其孙女，遂家于安陆",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S2",
+    "S8"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "酒隐安陆",
+    "subtitle": "入赘许相公家，憩迹安陆",
+    "importance": 1,
+    "place": "anlu",
+    "quote": {
+     "text": "許相公家見招，妻以孫女，便憩跡於此，至移三霜焉。",
+     "source": "《上安州裴长史书》"
+    }
+   },
+   "note": "婚事见S7、S2“白始娶于许”、S8“因留云梦者三年”；年份据安旗谱，月份不详"
+  },
+  {
+   "id": "727H2",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆，与许氏同住寿山、白兆山一带",
+   "confidence": "inferred",
+   "sources": [
+    "S8",
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "728H1",
+   "places": [
+    "anlu",
+    "jiangxia",
+    "anlu"
+   ],
+   "event": "早春游江夏，与孟浩然相会，黄鹤楼送孟浩然之广陵",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "note": "《黄鹤楼送孟浩然之广陵》“烟花三月下扬州”，系年据安旗谱"
+  },
+  {
+   "id": "728H2",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆，屡谒安州裴长史求荐不遂",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "729H1",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆，屡谒安州裴长史求荐不遂",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "729H2",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆，屡谒安州裴长史求荐不遂",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "730H1",
+   "places": [
+    "anlu",
+    "changan",
+    "zhongnan"
+   ],
+   "event": "春上书裴长史自白被拒；初夏首入长安，谒张说父子，寓终南山玉真公主别馆",
+   "confidence": "inferred",
+   "sources": [
+    "S11",
+    "S9",
+    "S10"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "一入长安",
+    "subtitle": "隐终南山，寓玉真公主别馆，干谒无成",
+    "importance": 2,
+    "place": "zhongnan"
+   },
+   "note": "从郁贤皓“两入长安”说系开元十八年；另有开元二十五/二十六年说，见 contested"
+  },
+  {
+   "id": "730H2",
+   "places": [
+    "zhongnan",
+    "binzhou",
+    "fangzhou"
+   ],
+   "event": "在长安干谒王公无果；暮秋游邠州，冬游坊州",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S6"
+   ],
+   "stage": "st3",
+   "note": "有《豳歌行上新平长史兄粲》《登新平楼》等诗"
+  },
+  {
+   "id": "731H1",
+   "places": [
+    "fangzhou",
+    "changan",
+    "kaifeng",
+    "songzhou"
+   ],
+   "event": "困顿长安，与市井斗鸡之徒交恶；初夏失意东归，经开封至宋城",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "note": "《行路难》其二“大道如青天，我独不得出”多系于此时"
+  },
+  {
+   "id": "731H2",
+   "places": [
+    "songzhou",
+    "songshan",
+    "luoyang"
+   ],
+   "event": "秋访元丹丘嵩山山居；暮秋滞留洛阳",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "732H1",
+   "places": [
+    "luoyang"
+   ],
+   "event": "在洛阳，与元演、崔成甫结识",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "732H2",
+   "places": [
+    "luoyang",
+    "nanyang",
+    "suizhou",
+    "anlu"
+   ],
+   "event": "秋自洛阳经南阳返安陆；冬与元演同游随州访胡紫阳，岁末归家",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "733H1",
+   "places": [
+    "anlu"
+   ],
+   "event": "构石室于安陆白兆山桃花岩，耕读为生",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "note": "《山中问答》“问余何意栖碧山”通常系于桃花岩"
+  },
+  {
+   "id": "733H2",
+   "places": [
+    "anlu"
+   ],
+   "event": "构石室于安陆白兆山桃花岩，耕读为生",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "note": "《山中问答》“问余何意栖碧山”通常系于桃花岩"
+  },
+  {
+   "id": "734H1",
+   "places": [
+    "anlu",
+    "xiangyang"
+   ],
+   "event": "至襄阳，上书荆州长史韩朝宗求荐（《与韩荆州书》）",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S2",
+    "S10"
+   ],
+   "stage": "st3",
+   "note": "魏颢序记“长揖韩荆州……荆州大悦”；韩朝宗开元二十二年兼襄州刺史、山南东道采访使，月份不详"
+  },
+  {
+   "id": "734H2",
+   "places": [
+    "xiangyang",
+    "anlu"
+   ],
+   "event": "谒韩无成，归安陆",
+   "confidence": "inferred",
+   "sources": [
+    "S10",
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "735H1",
+   "places": [
+    "anlu",
+    "taiyuan"
+   ],
+   "event": "五月应元演之邀北游太原",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "note": "据《忆旧游寄谯郡元参军》；新唐书“白游并州，见郭子仪”之事出晚唐裴敬碑，属传闻"
+  },
+  {
+   "id": "735H2",
+   "places": [
+    "taiyuan"
+   ],
+   "event": "滞留太原，元演之父太原尹款待",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "736H1",
+   "places": [
+    "taiyuan",
+    "yanmen",
+    "luoyang"
+   ],
+   "event": "春在太原，北游雁门关；南下洛阳与元丹丘相逢",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "736H2",
+   "places": [
+    "luoyang",
+    "songshan",
+    "xiangyang",
+    "anlu"
+   ],
+   "event": "秋至嵩山元丹丘处结识岑勋，置酒高会；南返经襄阳再会孟浩然",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "将进酒",
+    "subtitle": "与岑勋、元丹丘会饮嵩山",
+    "importance": 2,
+    "place": "songshan",
+    "quote": {
+     "text": "君不見黃河之水天上來，奔流到海不復回。",
+     "source": "《将进酒》"
+    }
+   },
+   "note": "《将进酒》系年安旗作开元二十四年，郁贤皓等作天宝十一载，见 contested"
+  },
+  {
+   "id": "737H1",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3",
+   "note": "安旗谱本年无事；或谓许氏约卒于此后（S10）"
+  },
+  {
+   "id": "737H2",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3",
+   "note": "安旗谱本年无事；或谓许氏约卒于此后（S10）"
+  },
+  {
+   "id": "738H1",
+   "places": [
+    "anlu",
+    "nanyang",
+    "songshan",
+    "chenzhou"
+   ],
+   "event": "春出游南阳、嵩山元丹丘居、陈州",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "738H2",
+   "places": [
+    "chenzhou",
+    "chuzhou"
+   ],
+   "event": "东游至楚州",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "739H1",
+   "places": [
+    "chuzhou",
+    "anyi",
+    "suzhou"
+   ],
+   "event": "春至初夏在安宜；入夏漫游吴中",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "739H2",
+   "places": [
+    "suzhou",
+    "dangtu",
+    "yuezhou",
+    "anlu"
+   ],
+   "event": "秋溯江西上，经当涂至巴陵，遇谪岭南的王昌龄；冬归安陆",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "740H1",
+   "places": [
+    "anlu"
+   ],
+   "event": "居安陆，筹划北迁",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "740H2",
+   "places": [
+    "anlu",
+    "yanzhou"
+   ],
+   "event": "携子女移家东鲁，寓居兖州，更客任城",
+   "confidence": "inferred",
+   "sources": [
+    "S5",
+    "S4",
+    "S10"
+   ],
+   "stage": "st4",
+   "milestone": {
+    "title": "移家东鲁",
+    "subtitle": "别安陆，寓家兖州",
+    "importance": 2,
+    "place": "yanzhou"
+   },
+   "note": "两唐书记寓居任城/山东，未系年；移家之年诸说不一（开元二十四至二十八年），此从开元二十八年（S10），见 contested"
+  },
+  {
+   "id": "741H1",
+   "places": [
+    "yanzhou",
+    "culai"
+   ],
+   "event": "与孔巢父、韩准、裴政、张叔明、陶沔隐徂徕山，号“竹溪六逸”",
+   "confidence": "documented",
+   "sources": [
+    "S4",
+    "S5",
+    "S9"
+   ],
+   "stage": "st4",
+   "note": "两唐书均载“竹溪六逸”，系年据安旗谱"
+  },
+  {
+   "id": "741H2",
+   "places": [
+    "culai",
+    "yanzhou"
+   ],
+   "event": "在东鲁纵酒酣歌，学道求仙",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S4"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "742H1",
+   "places": [
+    "yanzhou",
+    "taishan",
+    "yanzhou"
+   ],
+   "event": "天宝元年四月从故御道上泰山，作《游泰山》六首",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S9"
+   ],
+   "stage": "st4",
+   "note": "《游泰山》题一作“天宝元年四月从故御道上泰山”；农历四月≈742-05-09至06-06"
+  },
+  {
+   "id": "742H2",
+   "places": [
+    "yanzhou",
+    "changan"
+   ],
+   "event": "秋奉诏入京，玄宗召见金銮殿，降辇步迎、御手调羹，命供奉翰林",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5",
+    "S7"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "奉诏入京",
+    "subtitle": "玄宗降辇步迎，供奉翰林",
+    "importance": 1,
+    "place": "changan",
+    "quote": {
+     "text": "仰天大笑出門去，我輩豈是蓬蒿人。",
+     "source": "《南陵别儿童入京》"
+    }
+   },
+   "note": "“黄鸡啄黍秋正肥”示秋日启程；“南陵”在东鲁抑或宣州南陵，以及经会稽随吴筠入京之说，见 contested"
+  },
+  {
+   "id": "743H1",
+   "places": [
+    "changan"
+   ],
+   "event": "在翰林待诏，奉诏作《宫中行乐词》等；与贺知章等为“酒中八仙”之游",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5"
+   ],
+   "stage": "st5",
+   "note": "《清平调》沉香亭赏牡丹之事出晚唐李濬《松窗杂录》，属传闻"
+  },
+  {
+   "id": "743H2",
+   "places": [
+    "changan"
+   ],
+   "event": "醉中草诏，传有高力士脱靴之事；遭谗见疏",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S5",
+    "S2"
+   ],
+   "stage": "st5",
+   "note": "“丑正同列，害能成谤”（S1）；“以张垍谗逐”（S2）；脱靴事见新旧唐书，细节带传闻色彩"
+  },
+  {
+   "id": "744H1",
+   "places": [
+    "changan",
+    "luoyang"
+   ],
+   "event": "三月上疏还山，赐金放还；初夏至洛阳，与杜甫相识",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S5",
+    "S9"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "赐金放还",
+    "subtitle": "“天子知其不可留，乃赐金归之”",
+    "importance": 1,
+    "place": "changan",
+    "quote": {
+     "text": "長風破浪會有時，直挂雲帆濟滄海。",
+     "source": "《行路难》其一"
+    }
+   },
+   "note": "天宝三载三月≈744-04-18至05-16；李杜初会洛阳据安旗、闻一多说，另有初会梁宋之说。《行路难》其一系年有开元十九年、天宝三载两说"
+  },
+  {
+   "id": "744H2",
+   "places": [
+    "luoyang",
+    "kaifeng",
+    "songzhou",
+    "jizhou"
+   ],
+   "event": "秋与杜甫、高适同游梁宋；冬请北海高天师授道箓于齐州紫极宫",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S9",
+    "S10"
+   ],
+   "stage": "st6",
+   "note": "受箓见《草堂集序》；冬季月份或已入745年初，近似归H2"
+  },
+  {
+   "id": "745H1",
+   "places": [
+    "jizhou",
+    "rencheng"
+   ],
+   "event": "春在任城，杜甫来访同游；夏与杜甫、高适谒北海太守李邕",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "745H2",
+   "places": [
+    "rencheng",
+    "yanzhou"
+   ],
+   "event": "秋与杜甫复会于鲁郡，同游甚密；于鲁郡东石门送别杜甫，此后二人未再相见",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S9",
+    "S10"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "东鲁别杜甫",
+    "subtitle": "石门一别，李杜终身未再相见",
+    "importance": 2,
+    "place": "yanzhou",
+    "quote": {
+     "text": "飛蓬各自遠，且盡手中杯。",
+     "source": "《鲁郡东石门送杜二甫》"
+    }
+   },
+   "note": "诗有“秋波落泗水，海色明徂徕”，可证秋日在鲁郡"
+  },
+  {
+   "id": "746H1",
+   "places": [
+    "yanzhou",
+    "rencheng"
+   ],
+   "event": "卧病任城甚久",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "746H2",
+   "places": [
+    "rencheng",
+    "yanzhou",
+    "songzhou",
+    "yangzhou"
+   ],
+   "event": "秋病愈，作诗留别东鲁诸公，启程南游吴越，经宋城梁园至扬州",
+   "confidence": "inferred",
+   "sources": [
+    "S7",
+    "S9",
+    "S8"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "梦游天姥",
+    "subtitle": "留别东鲁诸公，南游吴越",
+    "importance": 2,
+    "place": "yanzhou",
+    "quote": {
+     "text": "安能摧眉折腰事權貴，使我不得開心顏。",
+     "source": "《梦游天姥吟留别》"
+    }
+   },
+   "note": "诗题一作《梦游天姥山别东鲁诸公》；系年有天宝四载、五载两说"
+  },
+  {
+   "id": "747H1",
+   "places": [
+    "yangzhou",
+    "jinling"
+   ],
+   "event": "春在扬州，旋至金陵，遇崔成甫",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "747H2",
+   "places": [
+    "jinling",
+    "kuaiji",
+    "tiantai",
+    "jinling"
+   ],
+   "event": "秋到越中，往会稽吊贺知章，登天台山；冬返金陵",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st6",
+   "note": "曾巩序“再入吴”；有《对酒忆贺监》诗"
+  },
+  {
+   "id": "748H1",
+   "places": [
+    "jinling",
+    "yangzhou"
+   ],
+   "event": "春在金陵，夏至扬州",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "748H2",
+   "places": [
+    "yangzhou",
+    "lujiang"
+   ],
+   "event": "秋游霍山，冬至庐江谒太守吴王李祗",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "749H1",
+   "places": [
+    "lujiang",
+    "jinling"
+   ],
+   "event": "自庐江返金陵，往来江南",
+   "confidence": "inferred",
+   "sources": [
+    "S10",
+    "S8"
+   ],
+   "stage": "st6",
+   "note": "安旗谱缺本年，据S10“在江南待至749年夏”"
+  },
+  {
+   "id": "749H2",
+   "places": [
+    "jinling"
+   ],
+   "event": "往来金陵一带",
+   "confidence": "inferred",
+   "sources": [
+    "S10",
+    "S8"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "750H1",
+   "places": [
+    "jinling"
+   ],
+   "event": "在金陵",
+   "confidence": "inferred",
+   "sources": [
+    "S10",
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "750H2",
+   "places": [
+    "jinling",
+    "songzhou"
+   ],
+   "event": "北至梁园，娶故相宗楚客孙女宗氏",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S10"
+   ],
+   "stage": "st6",
+   "note": "魏颢序“终娶于宋”，“宋”多校作“宗”；成婚年份诸说不一（约749–750）"
+  },
+  {
+   "id": "751H1",
+   "places": [
+    "songzhou",
+    "rencheng"
+   ],
+   "event": "春归东鲁任城省视子女",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "751H2",
+   "places": [
+    "rencheng",
+    "yexian",
+    "kaifeng"
+   ],
+   "event": "秋访元丹丘于叶县石门山；秋末自梁园启程北游",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "752H1",
+   "places": [
+    "kaifeng",
+    "weijun",
+    "guangping"
+   ],
+   "event": "北上途经魏郡、广平郡，沿途流连",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st6",
+   "note": "曾巩序“北抵赵魏燕晋”"
+  },
+  {
+   "id": "752H2",
+   "places": [
+    "guangping",
+    "youzhou"
+   ],
+   "event": "十月抵幽州范阳，目睹安禄山跋扈，颇感危殆，旋即离去",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10",
+    "S8"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "北上幽州",
+    "subtitle": "探边求仕，洞见安禄山之势",
+    "importance": 2,
+    "place": "youzhou",
+    "quote": {
+     "text": "燕山雪花大如席，片片吹落軒轅臺。",
+     "source": "《北风行》"
+    }
+   },
+   "note": "天宝十一载十月≈752-11-11起；幽州之行年份有天宝十载、十一载之说；《北风行》写幽州思妇，系年从安旗"
+  },
+  {
+   "id": "753H1",
+   "places": [
+    "youzhou",
+    "weijun",
+    "fenyang",
+    "huashan"
+   ],
+   "event": "早春自幽州南下魏郡，西游西河郡，沿汾水南下，登西岳华山",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st6",
+   "note": "曾巩序“北抵赵魏燕晋，西涉岐邠”"
+  },
+  {
+   "id": "753H2",
+   "places": [
+    "huashan",
+    "liyang",
+    "jingting",
+    "xuancheng"
+   ],
+   "event": "自历阳横江渡江，秋南游宣城，登敬亭山",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S7"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "独坐敬亭",
+    "subtitle": "初至宣城，与敬亭山相看",
+    "importance": 2,
+    "place": "jingting",
+    "quote": {
+     "text": "相看兩不厭，只有敬亭山。",
+     "source": "《独坐敬亭山》"
+    }
+   },
+   "note": "《独坐敬亭山》系年有天宝十二载、上元二年两说"
+  },
+  {
+   "id": "754H1",
+   "places": [
+    "xuancheng",
+    "jinling",
+    "yangzhou"
+   ],
+   "event": "往金陵；魏颢自王屋山南来追访，相见于广陵，托以编集",
+   "confidence": "documented",
+   "sources": [
+    "S2",
+    "S9"
+   ],
+   "stage": "st6",
+   "note": "魏颢序“游天台，还广陵见之……因尽出其文，命颢为集”"
+  },
+  {
+   "id": "754H2",
+   "places": [
+    "yangzhou",
+    "jinling",
+    "xuancheng"
+   ],
+   "event": "别魏颢，经金陵返宣城",
+   "confidence": "inferred",
+   "sources": [
+    "S10",
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "755H1",
+   "places": [
+    "xuancheng",
+    "dangtu"
+   ],
+   "event": "夏游当涂",
+   "confidence": "inferred",
+   "sources": [
+    "S9"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "755H2",
+   "places": [
+    "dangtu",
+    "qiupu",
+    "xuancheng",
+    "jinling"
+   ],
+   "event": "秋游秋浦作《秋浦歌》；冬返宣城，旋至金陵，闻安禄山反",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st6",
+   "note": "天宝十四载十一月甲子安禄山范阳起兵（≈755-12-16）"
+  },
+  {
+   "id": "756H1",
+   "places": [
+    "jinling",
+    "songzhou",
+    "dangtu",
+    "xuancheng",
+    "shanzhong"
+   ],
+   "event": "岁初北上宋城接宗氏南奔；春在当涂，闻洛阳陷，返宣城，避乱剡中",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "stage": "st7",
+   "note": "接宗氏南奔据安旗谱；或谓李白乱起时一直在南方，未北上（S10）"
+  },
+  {
+   "id": "756H2",
+   "places": [
+    "shanzhong",
+    "jinling",
+    "lushan"
+   ],
+   "event": "夏秋返金陵；闻玄宗奔蜀，西上入庐山屏风叠隐居，永王璘遣使辟召",
+   "confidence": "documented",
+   "sources": [
+    "S5",
+    "S8",
+    "S9"
+   ],
+   "stage": "st7",
+   "note": "新唐书“转侧宿松、匡庐间”；曾巩序“白时卧庐山，璘迫致之”"
+  },
+  {
+   "id": "757H1",
+   "places": [
+    "lushan",
+    "jinling",
+    "runzhou",
+    "pengze",
+    "xunyang"
+   ],
+   "event": "正月入永王幕随舟师东下；二月璘败丹阳，白奔亡至彭泽，系浔阳狱",
+   "confidence": "documented",
+   "sources": [
+    "S5",
+    "S8",
+    "S13",
+    "S7"
+   ],
+   "stage": "st7",
+   "milestone": {
+    "title": "应辟入永王幕",
+    "subtitle": "随永王舟师东巡，兵败获罪",
+    "importance": 1,
+    "place": "lushan",
+    "quote": {
+     "text": "三川北虜亂如麻，四海南奔似永嘉。但用東山謝安石，爲君談笑靜胡沙。",
+     "source": "《永王东巡歌》其二"
+    }
+   },
+   "note": "永王十二月甲辰东巡≈757-01-19，舟过浔阳在其后，故入幕系于757H1；璘败死于二月戊戌≈757-03-14"
+  },
+  {
+   "id": "757H2",
+   "places": [
+    "xunyang",
+    "ezhou",
+    "susong"
+   ],
+   "event": "秋宋若思、崔涣验治，释囚辟为参谋，随至武昌；病卧宿松；终坐从璘长流夜郎",
+   "confidence": "documented",
+   "sources": [
+    "S5",
+    "S8",
+    "S9"
+   ],
+   "stage": "st7",
+   "note": "新唐书“郭子仪请解官以赎”出晚唐裴敬碑，属传闻；判决时间或在乾元元年初（S8）"
+  },
+  {
+   "id": "758H1",
+   "places": [
+    "susong",
+    "xunyang",
+    "jiangxia"
+   ],
+   "event": "自浔阳启程流夜郎，宗氏、宗璟相送；五月过江夏，登黄鹤楼",
+   "confidence": "documented",
+   "sources": [
+    "S8",
+    "S9",
+    "S7"
+   ],
+   "stage": "st7",
+   "milestone": {
+    "title": "长流夜郎",
+    "subtitle": "溯江西上，迁客过江夏",
+    "importance": 2,
+    "place": "jiangxia",
+    "quote": {
+     "text": "黃鶴樓中吹玉笛，江城五月落梅花。",
+     "source": "《与史郎中钦听黄鹤楼上吹笛》"
+    }
+   },
+   "note": "乾元元年五月≈758-06-11至07-09，大部落在H1；此诗系年从流放途中说"
+  },
+  {
+   "id": "758H2",
+   "places": [
+    "jiangxia",
+    "yuezhou",
+    "jiangling",
+    "huangniu"
+   ],
+   "event": "泛洞庭，秋至江陵，冬溯江入三峡",
+   "confidence": "documented",
+   "sources": [
+    "S8",
+    "S9",
+    "S7"
+   ],
+   "stage": "st7",
+   "note": "曾巩序“遂泛洞庭，上峡江”；《上三峡》“三朝上黄牛，三暮行太迟”"
+  },
+  {
+   "id": "759H1",
+   "places": [
+    "huangniu",
+    "wushan",
+    "baidi",
+    "jiangling",
+    "jiangxia"
+   ],
+   "event": "溯江至巫山、白帝，三月逢关内旱灾大赦得释，即放舟东下江陵、江夏",
+   "confidence": "documented",
+   "sources": [
+    "S8",
+    "S5",
+    "S7",
+    "S9"
+   ],
+   "stage": "st7",
+   "milestone": {
+    "title": "白帝遇赦",
+    "subtitle": "流放未至夜郎，遇赦放舟东还",
+    "importance": 1,
+    "place": "baidi",
+    "quote": {
+     "text": "朝辭白帝彩雲間，千里江陵一日還。",
+     "source": "《早发白帝城》"
+    }
+   },
+   "note": "乾元二年三月≈759-04-02至04-30；曾巩序作“至巫山，以赦得释”。《早发白帝城》另有出蜀时作之说"
+  },
+  {
+   "id": "759H2",
+   "places": [
+    "jiangxia",
+    "yuezhou"
+   ],
+   "event": "秋往岳阳，与族叔李晔、贾至泛舟洞庭",
+   "confidence": "documented",
+   "sources": [
+    "S8",
+    "S9",
+    "S7"
+   ],
+   "stage": "st7",
+   "note": "有《陪族叔刑部侍郎晔及中书贾舍人至游洞庭》"
+  },
+  {
+   "id": "760H1",
+   "places": [
+    "yuezhou",
+    "jiangxia"
+   ],
+   "event": "春由洞庭返江夏",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "760H2",
+   "places": [
+    "jiangxia",
+    "xunyang",
+    "lushan"
+   ],
+   "event": "秋至浔阳，再登庐山，意欲游仙学道以度余年",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S8"
+   ],
+   "stage": "st7",
+   "note": "冬在建昌，岁末至豫章（农历十二月≈761年1月），故豫章归下一步"
+  },
+  {
+   "id": "761H1",
+   "places": [
+    "lushan",
+    "yuzhang",
+    "jinling"
+   ],
+   "event": "岁初至豫章宗氏寓所；后流落金陵一带，依人为生",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S10",
+    "S8"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "761H2",
+   "places": [
+    "jinling",
+    "dangtu"
+   ],
+   "event": "闻李光弼出镇临淮，请缨从军，半道病还；冬初往当涂依族叔县令李阳冰",
+   "confidence": "documented",
+   "sources": [
+    "S7",
+    "S1",
+    "S5",
+    "S9"
+   ],
+   "stage": "st8",
+   "note": "诗题《闻李太尉大举秦兵百万出征东南懦夫请缨冀申一割之用半道病还留别金陵崔侍御十九韵》；光弼上元二年五月出镇临淮（≈761-06），李白请缨当在其后"
+  },
+  {
+   "id": "762H1",
+   "places": [
+    "dangtu",
+    "xuancheng"
+   ],
+   "event": "卧病当涂；暮春曾游宣城",
+   "confidence": "inferred",
+   "sources": [
+    "S9",
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "762H2",
+   "places": [
+    "xuancheng",
+    "dangtu"
+   ],
+   "event": "秋归当涂，病笃，枕上授简托李阳冰编《草堂集》；冬卒于当涂，葬龙山东麓",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S14",
+    "S3",
+    "S5",
+    "S7"
+   ],
+   "stage": "st8",
+   "milestone": {
+    "title": "卒于当涂",
+    "subtitle": "枕上授简，赋《临路歌》而终",
+    "importance": 1,
+    "place": "dangtu",
+    "quote": {
+     "text": "大鵬飛兮振八裔，中天摧兮力不濟。",
+     "source": "《临路歌》"
+    }
+   },
+   "note": "序署宝应元年十一月乙酉（≈762-11-30）；李华墓志“赋临终歌而卒”，《临路歌》即《临终歌》；元和十二年范传正迁葬青山之阳。卒年另有广德元年、二年诸说"
+  }
+ ],
+ "contested": [
+  {
+   "topic": "出生地",
+   "views": [
+    "碎叶（今吉尔吉斯斯坦托克马克附近）：据范传正碑“隋末多难，一房被窜于碎叶”及“神龙初潜还”推算，郭沫若等（S3、S11）",
+    "绵州昌隆（今四川江油）：魏颢序“身既生蜀”，李阳冰序“复指李树而生伯阳”或解为入蜀后生，郑畅等（S2、S1、S11）",
+    "条支、焉耆碎叶、长安等少数说（S11）"
+   ],
+   "adopted": "按任务约定采碎叶为主说，705年随父迁绵州昌隆；生年由卒年逆推"
+  },
+  {
+   "topic": "出蜀时间",
+   "views": [
+    "开元十二年秋（郁贤皓）",
+    "开元十三年春（王琦、詹锳；李定广据司马承祯行踪考证，S12）",
+    "开元十年（薛仲邕）、十四年（黄锡珪）"
+   ],
+   "adopted": "采开元十二年秋出蜀，十三年春出峡至江陵，两说的江陵之会均落在725H1"
+  },
+  {
+   "topic": "首次入长安的时间（一入长安）",
+   "views": [
+    "开元十八年（郁贤皓“两入长安”说，S11）",
+    "开元二十五年（郭石山）、二十六年（稗山）、十九年底（李从军）等（S11、S10）",
+    "旧谱（王琦）只有天宝元年一次入京"
+   ],
+   "adopted": "采开元十八年说（730H1–731H1）"
+  },
+  {
+   "topic": "移家东鲁的时间",
+   "views": [
+    "开元二十八年（740）（S10 所据年谱）",
+    "开元二十四、二十五年（太原归来后即移家）等早说",
+    "《旧唐书》称“山东人，父为任城尉，因家焉”，已为王琦辨其误（S4、S6）"
+   ],
+   "adopted": "采开元二十八年；740H2 前仍以安陆为家"
+  },
+  {
+   "topic": "天宝初入京的路线（南陵何在）",
+   "views": [
+    "自东鲁启程：“南陵”为兖州曲阜附近地名",
+    "自宣州南陵县启程（安旗谱，S9）",
+    "两唐书：天宝初客游会稽，与吴筠隐剡中，筠被召而荐之（S4、S5）"
+   ],
+   "adopted": "采自东鲁启程说，以免无据的南北折返；吴筠推荐与玉真公主推荐并存不论"
+  },
+  {
+   "topic": "幽州之行",
+   "views": [
+    "天宝十载秋末北上、十一载十月抵幽州（安旗，S9）",
+    "天宝十一载初北上、同年冬离幽州（S10）"
+   ],
+   "adopted": "两说均以752年下半年在幽州，从之"
+  },
+  {
+   "topic": "永王幕的进退",
+   "views": [
+    "被迫胁从：曾巩“璘迫致之”、王琦“胁以偕行”（S8、S6）",
+    "主动应辟：新唐书“辟为府僚佐”，《永王东巡歌》颇见热望（S5、S7）"
+   ],
+   "adopted": "事件表述为“应辟入幕”，不判动机；入幕时间按换算系于757H1而非756"
+  },
+  {
+   "topic": "流夜郎是否到达",
+   "views": [
+    "未至夜郎，行至巫山、白帝间遇乾元二年大赦（曾巩，S8；通行说）",
+    "少数地方传说称李白已至夜郎贬所，无可靠史料"
+   ],
+   "adopted": "采未至夜郎说"
+  },
+  {
+   "topic": "诗文系年",
+   "views": [
+    "《将进酒》：开元二十四年（安旗）／天宝十一载（郁贤皓等）",
+    "《行路难》其一：开元十九年一入长安后／天宝三载放还时",
+    "《早发白帝城》：乾元二年遇赦／开元十三年出蜀",
+    "《独坐敬亭山》：天宝十二载／上元二年",
+    "《梦游天姥吟留别》：天宝四载／五载"
+   ],
+   "adopted": "均从里程碑所在步的通行系年，并在 note 注明"
+  },
+  {
+   "topic": "卒年与死因",
+   "views": [
+    "宝应元年（762）病卒当涂（李阳冰序、李华墓志，传统说）",
+    "广德元年（阎琦）、广德二年（李从军）、大历元年等（S11）",
+    "《旧唐书》“饮酒过度，醉死于宣城”；捉月溺死采石为后世传说"
+   ],
+   "adopted": "采宝应元年冬病卒于当涂"
+  }
+ ]
+}

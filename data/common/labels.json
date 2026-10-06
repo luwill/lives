@@ -1,65 +1,549 @@
 {
-  "meta": "地理注记：近似标注位置（经纬度取自地物中部，用于文字摆放，不作测量用途）。kind: region 地形区 / mountain 山脉 / river 河流 / sea 海域 / lake 湖泊 / island 岛屿。dmin/dmax: 镜头距离（km）在此区间才显示。",
-  "labels": [
-    {"name": "青藏高原", "kind": "region", "lon": 88.5, "lat": 33.0, "dmin": 1400, "dmax": 99999},
-    {"name": "黄土高原", "kind": "region", "lon": 108.6, "lat": 37.0, "dmin": 900, "dmax": 99999},
-    {"name": "云贵高原", "kind": "region", "lon": 104.3, "lat": 25.6, "dmin": 900, "dmax": 99999},
-    {"name": "内蒙古高原", "kind": "region", "lon": 112.5, "lat": 43.0, "dmin": 1400, "dmax": 99999},
-    {"name": "四川盆地", "kind": "region", "lon": 105.6, "lat": 30.0, "dmin": 700, "dmax": 99999},
-    {"name": "华北平原", "kind": "region", "lon": 116.0, "lat": 36.6, "dmin": 900, "dmax": 99999},
-    {"name": "长江中下游平原", "kind": "region", "lon": 116.6, "lat": 31.0, "dmin": 1100, "dmax": 99999},
-    {"name": "东北平原", "kind": "region", "lon": 125.0, "lat": 45.3, "dmin": 1400, "dmax": 99999},
-    {"name": "塔里木盆地", "kind": "region", "lon": 83.0, "lat": 39.4, "dmin": 1800, "dmax": 99999},
-    {"name": "关中平原", "kind": "region", "lon": 108.6, "lat": 34.45, "dmin": 250, "dmax": 1100},
-    {"name": "汉中盆地", "kind": "region", "lon": 107.1, "lat": 33.1, "dmin": 200, "dmax": 800},
-    {"name": "江汉平原", "kind": "region", "lon": 113.0, "lat": 30.4, "dmin": 300, "dmax": 1300},
-    {"name": "秦岭", "kind": "mountain", "lon": 108.3, "lat": 33.85, "dmin": 250, "dmax": 4000},
-    {"name": "大巴山", "kind": "mountain", "lon": 108.2, "lat": 32.15, "dmin": 250, "dmax": 2600},
-    {"name": "太行山", "kind": "mountain", "lon": 113.6, "lat": 37.3, "dmin": 300, "dmax": 3600},
-    {"name": "武夷山", "kind": "mountain", "lon": 117.6, "lat": 27.4, "dmin": 300, "dmax": 3000},
-    {"name": "南岭", "kind": "mountain", "lon": 112.6, "lat": 25.15, "dmin": 300, "dmax": 3200},
-    {"name": "横断山脉", "kind": "mountain", "lon": 99.6, "lat": 28.2, "dmin": 500, "dmax": 4500},
-    {"name": "大娄山", "kind": "mountain", "lon": 106.7, "lat": 28.25, "dmin": 200, "dmax": 1600},
-    {"name": "武陵山", "kind": "mountain", "lon": 109.4, "lat": 28.9, "dmin": 250, "dmax": 1800},
-    {"name": "大别山", "kind": "mountain", "lon": 115.8, "lat": 31.15, "dmin": 250, "dmax": 2200},
-    {"name": "罗霄山脉", "kind": "mountain", "lon": 114.1, "lat": 26.7, "dmin": 200, "dmax": 1800},
-    {"name": "祁连山", "kind": "mountain", "lon": 98.8, "lat": 38.6, "dmin": 600, "dmax": 5000},
-    {"name": "昆仑山", "kind": "mountain", "lon": 86.0, "lat": 35.9, "dmin": 1000, "dmax": 99999},
-    {"name": "喜马拉雅山脉", "kind": "mountain", "lon": 85.8, "lat": 28.3, "dmin": 1000, "dmax": 99999},
-    {"name": "天山", "kind": "mountain", "lon": 84.0, "lat": 42.6, "dmin": 1000, "dmax": 99999},
-    {"name": "大兴安岭", "kind": "mountain", "lon": 121.6, "lat": 48.6, "dmin": 900, "dmax": 99999},
-    {"name": "岷山", "kind": "mountain", "lon": 103.8, "lat": 33.0, "dmin": 200, "dmax": 1600},
-    {"name": "巫山", "kind": "mountain", "lon": 109.9, "lat": 31.1, "dmin": 150, "dmax": 1000},
-    {"name": "长江", "kind": "river", "lon": 112.9, "lat": 29.95, "dmin": 400, "dmax": 99999},
-    {"name": "长江", "kind": "river", "lon": 118.4, "lat": 31.75, "dmin": 400, "dmax": 2400},
-    {"name": "长江", "kind": "river", "lon": 107.9, "lat": 30.0, "dmin": 300, "dmax": 2400},
-    {"name": "黄河", "kind": "river", "lon": 110.45, "lat": 36.5, "dmin": 400, "dmax": 99999},
-    {"name": "黄河", "kind": "river", "lon": 115.9, "lat": 35.75, "dmin": 400, "dmax": 2400},
-    {"name": "黄河", "kind": "river", "lon": 106.6, "lat": 39.6, "dmin": 600, "dmax": 99999},
-    {"name": "淮河", "kind": "river", "lon": 116.4, "lat": 32.75, "dmin": 300, "dmax": 2600},
-    {"name": "珠江", "kind": "river", "lon": 112.6, "lat": 23.25, "dmin": 300, "dmax": 2600},
-    {"name": "湘江", "kind": "river", "lon": 112.75, "lat": 27.35, "dmin": 150, "dmax": 1500},
-    {"name": "汉水", "kind": "river", "lon": 112.1, "lat": 31.6, "dmin": 200, "dmax": 1800},
-    {"name": "嘉陵江", "kind": "river", "lon": 106.2, "lat": 30.85, "dmin": 200, "dmax": 1600},
-    {"name": "赣江", "kind": "river", "lon": 115.45, "lat": 27.4, "dmin": 200, "dmax": 1600},
-    {"name": "渭河", "kind": "river", "lon": 108.2, "lat": 34.35, "dmin": 150, "dmax": 1500},
-    {"name": "金沙江", "kind": "river", "lon": 102.2, "lat": 26.15, "dmin": 200, "dmax": 2400},
-    {"name": "大渡河", "kind": "river", "lon": 102.45, "lat": 29.55, "dmin": 120, "dmax": 1200},
-    {"name": "乌江", "kind": "river", "lon": 107.55, "lat": 27.85, "dmin": 150, "dmax": 1400},
-    {"name": "岷江", "kind": "river", "lon": 103.95, "lat": 29.75, "dmin": 150, "dmax": 1400},
-    {"name": "赤水河", "kind": "river", "lon": 105.95, "lat": 28.1, "dmin": 80, "dmax": 700},
-    {"name": "钱塘江", "kind": "river", "lon": 119.9, "lat": 29.95, "dmin": 120, "dmax": 1200},
-    {"name": "渤海", "kind": "sea", "lon": 120.0, "lat": 38.9, "dmin": 500, "dmax": 99999},
-    {"name": "黄海", "kind": "sea", "lon": 123.2, "lat": 35.4, "dmin": 500, "dmax": 99999},
-    {"name": "东海", "kind": "sea", "lon": 125.0, "lat": 29.3, "dmin": 500, "dmax": 99999},
-    {"name": "南海", "kind": "sea", "lon": 114.5, "lat": 18.6, "dmin": 500, "dmax": 99999},
-    {"name": "琼州海峡", "kind": "sea", "lon": 110.3, "lat": 20.2, "dmin": 100, "dmax": 900},
-    {"name": "台湾岛", "kind": "island", "lon": 121.0, "lat": 23.75, "dmin": 400, "dmax": 99999},
-    {"name": "海南岛", "kind": "island", "lon": 109.75, "lat": 19.15, "dmin": 300, "dmax": 99999},
-    {"name": "洞庭湖", "kind": "lake", "lon": 112.85, "lat": 29.25, "dmin": 120, "dmax": 1800},
-    {"name": "鄱阳湖", "kind": "lake", "lon": 116.25, "lat": 29.05, "dmin": 120, "dmax": 1800},
-    {"name": "太湖", "kind": "lake", "lon": 120.2, "lat": 31.2, "dmin": 100, "dmax": 1500},
-    {"name": "滇池", "kind": "lake", "lon": 102.68, "lat": 24.83, "dmin": 80, "dmax": 1000},
-    {"name": "青海湖", "kind": "lake", "lon": 100.2, "lat": 36.88, "dmin": 300, "dmax": 99999}
-  ]
+ "meta": "地理注记：近似标注位置（经纬度取自地物中部，用于文字摆放，不作测量用途）。kind: region 地形区 / mountain 山脉 / river 河流 / sea 海域 / lake 湖泊 / island 岛屿。dmin/dmax: 镜头距离（km）在此区间才显示。",
+ "labels": [
+  {
+   "name": "青藏高原",
+   "kind": "region",
+   "lon": 88.5,
+   "lat": 33.0,
+   "dmin": 1400,
+   "dmax": 99999
+  },
+  {
+   "name": "黄土高原",
+   "kind": "region",
+   "lon": 108.6,
+   "lat": 37.0,
+   "dmin": 900,
+   "dmax": 99999
+  },
+  {
+   "name": "云贵高原",
+   "kind": "region",
+   "lon": 104.3,
+   "lat": 25.6,
+   "dmin": 900,
+   "dmax": 99999
+  },
+  {
+   "name": "内蒙古高原",
+   "kind": "region",
+   "lon": 112.5,
+   "lat": 43.0,
+   "dmin": 1400,
+   "dmax": 99999
+  },
+  {
+   "name": "四川盆地",
+   "kind": "region",
+   "lon": 105.6,
+   "lat": 30.0,
+   "dmin": 700,
+   "dmax": 99999
+  },
+  {
+   "name": "华北平原",
+   "kind": "region",
+   "lon": 116.0,
+   "lat": 36.6,
+   "dmin": 900,
+   "dmax": 99999
+  },
+  {
+   "name": "长江中下游平原",
+   "kind": "region",
+   "lon": 116.6,
+   "lat": 31.0,
+   "dmin": 1100,
+   "dmax": 99999
+  },
+  {
+   "name": "东北平原",
+   "kind": "region",
+   "lon": 125.0,
+   "lat": 45.3,
+   "dmin": 1400,
+   "dmax": 99999
+  },
+  {
+   "name": "塔里木盆地",
+   "kind": "region",
+   "lon": 83.0,
+   "lat": 39.4,
+   "dmin": 1800,
+   "dmax": 99999
+  },
+  {
+   "name": "关中平原",
+   "kind": "region",
+   "lon": 108.6,
+   "lat": 34.45,
+   "dmin": 250,
+   "dmax": 1100
+  },
+  {
+   "name": "汉中盆地",
+   "kind": "region",
+   "lon": 107.1,
+   "lat": 33.1,
+   "dmin": 200,
+   "dmax": 800
+  },
+  {
+   "name": "江汉平原",
+   "kind": "region",
+   "lon": 113.0,
+   "lat": 30.4,
+   "dmin": 300,
+   "dmax": 1300
+  },
+  {
+   "name": "秦岭",
+   "kind": "mountain",
+   "lon": 108.3,
+   "lat": 33.85,
+   "dmin": 250,
+   "dmax": 4000
+  },
+  {
+   "name": "大巴山",
+   "kind": "mountain",
+   "lon": 108.2,
+   "lat": 32.15,
+   "dmin": 250,
+   "dmax": 2600
+  },
+  {
+   "name": "太行山",
+   "kind": "mountain",
+   "lon": 113.6,
+   "lat": 37.3,
+   "dmin": 300,
+   "dmax": 3600
+  },
+  {
+   "name": "武夷山",
+   "kind": "mountain",
+   "lon": 117.6,
+   "lat": 27.4,
+   "dmin": 300,
+   "dmax": 3000
+  },
+  {
+   "name": "南岭",
+   "kind": "mountain",
+   "lon": 112.6,
+   "lat": 25.15,
+   "dmin": 300,
+   "dmax": 3200
+  },
+  {
+   "name": "横断山脉",
+   "kind": "mountain",
+   "lon": 99.6,
+   "lat": 28.2,
+   "dmin": 500,
+   "dmax": 4500
+  },
+  {
+   "name": "大娄山",
+   "kind": "mountain",
+   "lon": 106.7,
+   "lat": 28.25,
+   "dmin": 200,
+   "dmax": 1600
+  },
+  {
+   "name": "武陵山",
+   "kind": "mountain",
+   "lon": 109.4,
+   "lat": 28.9,
+   "dmin": 250,
+   "dmax": 1800
+  },
+  {
+   "name": "大别山",
+   "kind": "mountain",
+   "lon": 115.8,
+   "lat": 31.15,
+   "dmin": 250,
+   "dmax": 2200
+  },
+  {
+   "name": "罗霄山脉",
+   "kind": "mountain",
+   "lon": 114.1,
+   "lat": 26.7,
+   "dmin": 200,
+   "dmax": 1800
+  },
+  {
+   "name": "祁连山",
+   "kind": "mountain",
+   "lon": 98.8,
+   "lat": 38.6,
+   "dmin": 600,
+   "dmax": 5000
+  },
+  {
+   "name": "昆仑山",
+   "kind": "mountain",
+   "lon": 86.0,
+   "lat": 35.9,
+   "dmin": 1000,
+   "dmax": 99999
+  },
+  {
+   "name": "喜马拉雅山脉",
+   "kind": "mountain",
+   "lon": 85.8,
+   "lat": 28.3,
+   "dmin": 1000,
+   "dmax": 99999
+  },
+  {
+   "name": "天山",
+   "kind": "mountain",
+   "lon": 84.0,
+   "lat": 42.6,
+   "dmin": 1000,
+   "dmax": 99999
+  },
+  {
+   "name": "大兴安岭",
+   "kind": "mountain",
+   "lon": 121.6,
+   "lat": 48.6,
+   "dmin": 900,
+   "dmax": 99999
+  },
+  {
+   "name": "岷山",
+   "kind": "mountain",
+   "lon": 103.8,
+   "lat": 33.0,
+   "dmin": 200,
+   "dmax": 1600
+  },
+  {
+   "name": "巫山",
+   "kind": "mountain",
+   "lon": 109.9,
+   "lat": 31.1,
+   "dmin": 150,
+   "dmax": 1000
+  },
+  {
+   "name": "长江",
+   "kind": "river",
+   "lon": 112.9,
+   "lat": 29.95,
+   "dmin": 400,
+   "dmax": 99999
+  },
+  {
+   "name": "长江",
+   "kind": "river",
+   "lon": 118.4,
+   "lat": 31.75,
+   "dmin": 400,
+   "dmax": 2400
+  },
+  {
+   "name": "长江",
+   "kind": "river",
+   "lon": 107.9,
+   "lat": 30.0,
+   "dmin": 300,
+   "dmax": 2400
+  },
+  {
+   "name": "黄河",
+   "kind": "river",
+   "lon": 110.45,
+   "lat": 36.5,
+   "dmin": 400,
+   "dmax": 99999
+  },
+  {
+   "name": "黄河",
+   "kind": "river",
+   "lon": 115.9,
+   "lat": 35.75,
+   "dmin": 400,
+   "dmax": 2400
+  },
+  {
+   "name": "黄河",
+   "kind": "river",
+   "lon": 106.6,
+   "lat": 39.6,
+   "dmin": 600,
+   "dmax": 99999
+  },
+  {
+   "name": "淮河",
+   "kind": "river",
+   "lon": 116.4,
+   "lat": 32.75,
+   "dmin": 300,
+   "dmax": 2600
+  },
+  {
+   "name": "珠江",
+   "kind": "river",
+   "lon": 112.6,
+   "lat": 23.25,
+   "dmin": 300,
+   "dmax": 2600
+  },
+  {
+   "name": "湘江",
+   "kind": "river",
+   "lon": 112.75,
+   "lat": 27.35,
+   "dmin": 150,
+   "dmax": 1500
+  },
+  {
+   "name": "汉水",
+   "kind": "river",
+   "lon": 112.1,
+   "lat": 31.6,
+   "dmin": 200,
+   "dmax": 1800
+  },
+  {
+   "name": "嘉陵江",
+   "kind": "river",
+   "lon": 106.2,
+   "lat": 30.85,
+   "dmin": 200,
+   "dmax": 1600
+  },
+  {
+   "name": "赣江",
+   "kind": "river",
+   "lon": 115.45,
+   "lat": 27.4,
+   "dmin": 200,
+   "dmax": 1600
+  },
+  {
+   "name": "渭河",
+   "kind": "river",
+   "lon": 108.2,
+   "lat": 34.35,
+   "dmin": 150,
+   "dmax": 1500
+  },
+  {
+   "name": "金沙江",
+   "kind": "river",
+   "lon": 102.2,
+   "lat": 26.15,
+   "dmin": 200,
+   "dmax": 2400
+  },
+  {
+   "name": "大渡河",
+   "kind": "river",
+   "lon": 102.45,
+   "lat": 29.55,
+   "dmin": 120,
+   "dmax": 1200
+  },
+  {
+   "name": "乌江",
+   "kind": "river",
+   "lon": 107.55,
+   "lat": 27.85,
+   "dmin": 150,
+   "dmax": 1400
+  },
+  {
+   "name": "岷江",
+   "kind": "river",
+   "lon": 103.95,
+   "lat": 29.75,
+   "dmin": 150,
+   "dmax": 1400
+  },
+  {
+   "name": "赤水河",
+   "kind": "river",
+   "lon": 105.95,
+   "lat": 28.1,
+   "dmin": 80,
+   "dmax": 700
+  },
+  {
+   "name": "钱塘江",
+   "kind": "river",
+   "lon": 119.9,
+   "lat": 29.95,
+   "dmin": 120,
+   "dmax": 1200
+  },
+  {
+   "name": "渤海",
+   "kind": "sea",
+   "lon": 120.0,
+   "lat": 38.9,
+   "dmin": 500,
+   "dmax": 99999
+  },
+  {
+   "name": "黄海",
+   "kind": "sea",
+   "lon": 123.2,
+   "lat": 35.4,
+   "dmin": 500,
+   "dmax": 99999
+  },
+  {
+   "name": "东海",
+   "kind": "sea",
+   "lon": 125.0,
+   "lat": 29.3,
+   "dmin": 500,
+   "dmax": 99999
+  },
+  {
+   "name": "南海",
+   "kind": "sea",
+   "lon": 114.5,
+   "lat": 18.6,
+   "dmin": 500,
+   "dmax": 99999
+  },
+  {
+   "name": "琼州海峡",
+   "kind": "sea",
+   "lon": 110.3,
+   "lat": 20.2,
+   "dmin": 100,
+   "dmax": 900
+  },
+  {
+   "name": "台湾岛",
+   "kind": "island",
+   "lon": 121.0,
+   "lat": 23.75,
+   "dmin": 400,
+   "dmax": 99999
+  },
+  {
+   "name": "海南岛",
+   "kind": "island",
+   "lon": 109.75,
+   "lat": 19.15,
+   "dmin": 300,
+   "dmax": 99999
+  },
+  {
+   "name": "洞庭湖",
+   "kind": "lake",
+   "lon": 112.85,
+   "lat": 29.25,
+   "dmin": 120,
+   "dmax": 1800
+  },
+  {
+   "name": "鄱阳湖",
+   "kind": "lake",
+   "lon": 116.25,
+   "lat": 29.05,
+   "dmin": 120,
+   "dmax": 1800
+  },
+  {
+   "name": "太湖",
+   "kind": "lake",
+   "lon": 120.2,
+   "lat": 31.2,
+   "dmin": 100,
+   "dmax": 1500
+  },
+  {
+   "name": "滇池",
+   "kind": "lake",
+   "lon": 102.68,
+   "lat": 24.83,
+   "dmin": 80,
+   "dmax": 1000
+  },
+  {
+   "name": "青海湖",
+   "kind": "lake",
+   "lon": 100.2,
+   "lat": 36.88,
+   "dmin": 300,
+   "dmax": 99999
+  },
+  {
+   "name": "台湾海峡",
+   "kind": "sea",
+   "lon": 119.6,
+   "lat": 24.0,
+   "dmin": 100,
+   "dmax": 2500
+  },
+  {
+   "name": "中央山脉",
+   "kind": "mountain",
+   "lon": 121.1,
+   "lat": 23.7,
+   "dmin": 150,
+   "dmax": 1000
+  },
+  {
+   "name": "庐山",
+   "kind": "mountain",
+   "lon": 115.98,
+   "lat": 29.56,
+   "dmin": 150,
+   "dmax": 1000
+  },
+  {
+   "name": "峨眉山",
+   "kind": "mountain",
+   "lon": 103.33,
+   "lat": 29.52,
+   "dmin": 150,
+   "dmax": 1000
+  },
+  {
+   "name": "泰山",
+   "kind": "mountain",
+   "lon": 117.1,
+   "lat": 36.25,
+   "dmin": 150,
+   "dmax": 1000
+  },
+  {
+   "name": "巢湖",
+   "kind": "lake",
+   "lon": 117.55,
+   "lat": 31.58,
+   "dmin": 100,
+   "dmax": 1500
+  },
+  {
+   "name": "洪泽湖",
+   "kind": "lake",
+   "lon": 118.7,
+   "lat": 33.3,
+   "dmin": 100,
+   "dmax": 1500
+  },
+  {
+   "name": "伊塞克湖",
+   "kind": "lake",
+   "lon": 77.3,
+   "lat": 42.42,
+   "dmin": 600,
+   "dmax": 6000
+  }
+ ]
 }

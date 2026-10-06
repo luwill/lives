@@ -4,8 +4,9 @@ import re
 from conftest import load
 
 # 生卒所在半年（由史料确定，数据必须恰好覆盖此区间）
-SPAN = {'mao': ('1893H2', '1976H2'), 'zhuge': ('181H1', '234H2'), 'sushi': ('1037H1', '1101H2')}
-MIN_MILESTONES = {'mao': 15, 'zhuge': 10, 'sushi': 12}
+SPAN = {'mao': ('1893H2', '1976H2'), 'zhuge': ('181H1', '234H2'), 'sushi': ('1037H1', '1101H2'),
+        'libai': ('701H1', '762H2'), 'zhuyz': ('1328H2', '1398H1'), 'jiang': ('1887H2', '1975H1')}
+MIN_MILESTONES = {'mao': 15, 'zhuge': 10, 'sushi': 12, 'libai': 10, 'zhuyz': 10, 'jiang': 15}
 CONF = {'documented', 'inferred', 'traditional'}
 STEP_RE = re.compile(r'^(\d{3,4})H([12])$')
 

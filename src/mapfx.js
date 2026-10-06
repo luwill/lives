@@ -128,7 +128,10 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
       const on = t >= s.t && !ctx.hideMap;
       if (!on) { s.d.style.display = 'none'; continue; }
       const sp = project(camera, toWorld(s.lon, s.lat, cam.dist * 0.004));
-      s.d.style.display = sp.visible ? 'block' : 'none';
+      // 星标落在 HUD 区（年份块、统计、底栏、里程碑卡）里时隐藏，避免压住文字
+      const zones = [...HUD_ZONES, ...(ctx.ms ? [CARD_ZONE] : [])];
+      const covered = zones.some(z => sp.x >= z.x0 && sp.x <= z.x1 && sp.y >= z.y0 && sp.y <= z.y1);
+      s.d.style.display = sp.visible && !covered ? 'block' : 'none';
       s.d.style.opacity = clamp01((t - s.t) / 0.6);
       s.d.style.transform = `translate(${sp.x.toFixed(1)}px, ${sp.y.toFixed(1)}px) scale(${1 + 0.8 * Math.exp(-(t - s.t) * 2)})`;
     }
@@ -142,7 +145,7 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
       items.push({ d: g.d, x: sp.x, y: sp.y, pri, op: edge, rect: rectOf(sp.x, sp.y, g.w, g.kind === 'region' ? 40 : 30, 'c') });
     }
     for (const r of R) {
-      const k = ctx.halfIdx >= r.from && !ctx.hideMap && cam.dist > 900;
+      const k = ctx.halfIdx >= r.from && !(ctx.halfIdx > r.to) && !ctx.hideMap && cam.dist > 900;
       if (!k) { r.d.style.display = 'none'; continue; }
       const sp = project(camera, toWorld(r.lon, r.lat, 0.5));
       if (!sp.visible) { r.d.style.display = 'none'; continue; }

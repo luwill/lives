@@ -1,0 +1,670 @@
+{
+ "xikou": {
+  "name": "奉化溪口",
+  "modern": "浙江宁波市奉化区溪口镇",
+  "lat": 29.6923,
+  "lon": 121.2782,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 18186754（查询：溪口镇）",
+  "note": "蒋氏故居（玉泰盐铺、丰镐房）所在"
+ },
+ "yantou": {
+  "name": "奉化岩头",
+  "modern": "浙江宁波市奉化区溪口镇岩头村",
+  "lat": 29.599,
+  "lon": 121.2279,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim node 13953412262（查询：岩头村）",
+  "note": "毛福梅娘家，少年时从毛凤美读书处"
+ },
+ "fenghua": {
+  "name": "奉化县城",
+  "modern": "浙江宁波市奉化区",
+  "lat": 29.6576,
+  "lon": 121.4017,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3316384（查询：奉化区）",
+  "note": "凤麓学堂、龙津中学堂所在"
+ },
+ "ningbo": {
+  "name": "宁波",
+  "modern": "浙江宁波市",
+  "lat": 29.872,
+  "lon": 121.55,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3478607（查询：宁波市）",
+  "note": "箭金学堂所在"
+ },
+ "shanghai": {
+  "name": "上海",
+  "modern": "上海市",
+  "lat": 31.2323,
+  "lon": 121.4691,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 778910398（查询：上海市）"
+ },
+ "tokyo": {
+  "name": "东京",
+  "modern": "日本东京",
+  "lat": 35.6769,
+  "lon": 139.7639,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 1543125（查询：Tokyo）"
+ },
+ "hangzhou": {
+  "name": "杭州",
+  "modern": "浙江杭州市",
+  "lat": 30.249,
+  "lon": 120.2052,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3221112（查询：杭州市）"
+ },
+ "baoding": {
+  "name": "保定",
+  "modern": "河北保定市",
+  "lat": 38.858,
+  "lon": 115.4907,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3442995（查询：保定市）",
+  "note": "通国陆军速成学堂所在"
+ },
+ "takada": {
+  "name": "高田",
+  "modern": "日本新潟县上越市高田",
+  "lat": 37.1152,
+  "lon": 138.242,
+  "kind": "foreign",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 3412994273（查询：Takada, Joetsu）",
+  "note": "日本陆军第十三师团驻地"
+ },
+ "nagasaki": {
+  "name": "长崎",
+  "modern": "日本长崎",
+  "lat": 33.1155,
+  "lon": 129.7874,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 1842151（查询：Nagasaki）"
+ },
+ "dalian": {
+  "name": "大连",
+  "modern": "辽宁大连市",
+  "lat": 38.913,
+  "lon": 121.6098,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2280261249（查询：大连市）",
+  "note": "1923 年时为日本租借地"
+ },
+ "jiangyin": {
+  "name": "江阴要塞",
+  "modern": "江苏无锡市江阴市黄山炮台",
+  "lat": 31.9294,
+  "lon": 120.2732,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 1080235555（查询：黄山 江阴）",
+  "note": "1916 年 5 月蒋参与夺取江阴要塞；坐标取黄山炮台所在黄山脚下（OSM 命中黄山湖）"
+ },
+ "beijing": {
+  "name": "北京",
+  "modern": "北京市",
+  "lat": 39.9057,
+  "lon": 116.3913,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 912940（查询：北京市）",
+  "note": "1928 年以前称北京"
+ },
+ "guangzhou": {
+  "name": "广州",
+  "modern": "广东广州市",
+  "lat": 23.1288,
+  "lon": 113.259,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3287346（查询：广州市）"
+ },
+ "shantou": {
+  "name": "汕头",
+  "modern": "广东汕头市",
+  "lat": 23.3564,
+  "lon": 116.6776,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3282750（查询：汕头市）",
+  "note": "1918 年援闽粤军总司令部所在"
+ },
+ "zhangzhou": {
+  "name": "漳州",
+  "modern": "福建漳州市",
+  "lat": 24.5165,
+  "lon": 117.6425,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244082898（查询：漳州市）",
+  "note": "1918—1920 年援闽粤军驻地"
+ },
+ "yongtai": {
+  "name": "永泰",
+  "modern": "福建福州市永泰县",
+  "lat": 25.8706,
+  "lon": 118.9278,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 868609919（查询：永泰县）",
+  "note": "1918 年冬蒋率粤军第二支队进至此"
+ },
+ "guilin": {
+  "name": "桂林",
+  "modern": "广西桂林市",
+  "lat": 25.278,
+  "lon": 110.2911,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3471982（查询：桂林市）",
+  "note": "1922 年孙中山北伐大本营所在"
+ },
+ "hongkong": {
+  "name": "香港",
+  "modern": "香港特别行政区",
+  "lat": 22.2818,
+  "lon": 114.1583,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 20044132（查询：Hong Kong）",
+  "note": "时为英国殖民统治"
+ },
+ "fuzhou": {
+  "name": "福州",
+  "modern": "福建福州市",
+  "lat": 26.0775,
+  "lon": 119.2918,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3263977（查询：福州市）"
+ },
+ "harbin": {
+  "name": "哈尔滨",
+  "modern": "黑龙江哈尔滨市",
+  "lat": 45.7594,
+  "lon": 126.6276,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2755608（查询：哈尔滨市）"
+ },
+ "manzhouli": {
+  "name": "满洲里",
+  "modern": "内蒙古满洲里市",
+  "lat": 49.5914,
+  "lon": 117.4464,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 161724（查询：满洲里市）",
+  "note": "中苏边境口岸"
+ },
+ "moscow": {
+  "name": "莫斯科",
+  "modern": "俄罗斯莫斯科",
+  "lat": 55.7505,
+  "lon": 37.6175,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2555133（查询：Moscow）"
+ },
+ "petrograd": {
+  "name": "彼得格勒",
+  "modern": "俄罗斯圣彼得堡",
+  "lat": 59.9387,
+  "lon": 30.3162,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 421007（查询：Saint Petersburg）",
+  "note": "1924 年改称列宁格勒，今圣彼得堡"
+ },
+ "huangpu": {
+  "name": "黄埔",
+  "modern": "广东广州市黄埔区长洲岛",
+  "lat": 23.08,
+  "lon": 113.4227,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 6900820（查询：长洲岛）",
+  "note": "陆军军官学校（黄埔军校）校址"
+ },
+ "huizhou": {
+  "name": "惠州",
+  "modern": "广东惠州市",
+  "lat": 23.0871,
+  "lon": 114.3776,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244084515（查询：惠城区）",
+  "note": "1925 年第二次东征攻克惠州城"
+ },
+ "chaozhou": {
+  "name": "潮汕",
+  "modern": "广东潮州市",
+  "lat": 23.6566,
+  "lon": 116.6204,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3244431（查询：潮州市）",
+  "note": "1925 年东征军克潮汕"
+ },
+ "changsha": {
+  "name": "长沙",
+  "modern": "湖南长沙市",
+  "lat": 28.2001,
+  "lon": 112.9717,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2277730366（查询：长沙市）"
+ },
+ "wuchang": {
+  "name": "武昌",
+  "modern": "湖北武汉市武昌区",
+  "lat": 30.5567,
+  "lon": 114.311,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3076297（查询：武昌区）",
+  "note": "1926 年北伐军围攻武昌城"
+ },
+ "nanchang": {
+  "name": "南昌",
+  "modern": "江西南昌市",
+  "lat": 28.6875,
+  "lon": 115.854,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244081434（查询：南昌市）",
+  "note": "1930 年代“剿共”行营所在"
+ },
+ "nanjing": {
+  "name": "南京",
+  "modern": "江苏南京市",
+  "lat": 32.0438,
+  "lon": 118.7789,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2131524（查询：南京市）"
+ },
+ "kobe": {
+  "name": "神户",
+  "modern": "日本神户",
+  "lat": 34.6932,
+  "lon": 135.1944,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 900329（查询：Kobe）"
+ },
+ "xuzhou": {
+  "name": "徐州",
+  "modern": "江苏徐州市",
+  "lat": 34.2665,
+  "lon": 117.181,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218572（查询：徐州市）"
+ },
+ "jinan": {
+  "name": "济南",
+  "modern": "山东济南市",
+  "lat": 36.652,
+  "lon": 117.1138,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3486449（查询：济南市）"
+ },
+ "beiping": {
+  "name": "北平",
+  "modern": "北京市",
+  "lat": 39.9057,
+  "lon": 116.3913,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 912940（查询：北京市）",
+  "note": "1928—1949 年间称北平"
+ },
+ "wuhan": {
+  "name": "武汉",
+  "modern": "湖北武汉市",
+  "lat": 30.5789,
+  "lon": 114.2921,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3076268（查询：武汉市）",
+  "note": "时称武汉三镇（汉口、武昌、汉阳）"
+ },
+ "guide": {
+  "name": "归德",
+  "modern": "河南商丘市",
+  "lat": 34.3906,
+  "lon": 115.6478,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6811521142（查询：睢阳区）",
+  "note": "1930 年中原大战时蒋的前线指挥驻地"
+ },
+ "kaifeng": {
+  "name": "开封",
+  "modern": "河南开封市",
+  "lat": 34.7991,
+  "lon": 114.3055,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244080911（查询：开封市）"
+ },
+ "luoyang": {
+  "name": "洛阳",
+  "modern": "河南洛阳市",
+  "lat": 34.6197,
+  "lon": 112.4477,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3246491（查询：洛阳市）"
+ },
+ "zhengzhou": {
+  "name": "郑州",
+  "modern": "河南郑州市",
+  "lat": 34.7473,
+  "lon": 113.6193,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3283765（查询：郑州市）"
+ },
+ "lushan": {
+  "name": "庐山牯岭",
+  "modern": "江西九江市庐山牯岭镇",
+  "lat": 29.5716,
+  "lon": 115.9766,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4783941（查询：牯岭镇）",
+  "note": "夏都，庐山军官训练团、庐山谈话所在"
+ },
+ "xian": {
+  "name": "西安",
+  "modern": "陕西西安市",
+  "lat": 34.261,
+  "lon": 108.9423,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3226004（查询：西安市）"
+ },
+ "guisui": {
+  "name": "归绥",
+  "modern": "内蒙古呼和浩特市",
+  "lat": 40.8185,
+  "lon": 111.6602,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2752851（查询：呼和浩特市）",
+  "note": "1934 年绥远省会"
+ },
+ "chongqing": {
+  "name": "重庆",
+  "modern": "重庆市",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525（查询：渝中区）"
+ },
+ "guiyang": {
+  "name": "贵阳",
+  "modern": "贵州贵阳市",
+  "lat": 26.5878,
+  "lon": 106.7087,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2782246（查询：贵阳市）"
+ },
+ "kunming": {
+  "name": "昆明",
+  "modern": "云南昆明市",
+  "lat": 25.0399,
+  "lon": 102.7169,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2723597（查询：昆明市）"
+ },
+ "chengdu": {
+  "name": "成都",
+  "modern": "四川成都市",
+  "lat": 30.6599,
+  "lon": 104.0633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2110264（查询：成都市）"
+ },
+ "emei": {
+  "name": "峨眉山",
+  "modern": "四川乐山市峨眉山市",
+  "lat": 29.5705,
+  "lon": 103.4404,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim way 792902721（查询：报国寺）",
+  "note": "1935 年峨眉军官训练团"
+ },
+ "lintong": {
+  "name": "临潼华清池",
+  "modern": "陕西西安市临潼区华清池",
+  "lat": 34.3649,
+  "lon": 109.2075,
+  "kind": "battle",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 88216827（查询：华清宫）",
+  "note": "1936 年 12 月 12 日西安事变扣蒋处"
+ },
+ "nanyue": {
+  "name": "南岳衡山",
+  "modern": "湖南衡阳市南岳区",
+  "lat": 27.266,
+  "lon": 112.7062,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3156149（查询：南岳区）",
+  "note": "1938 年 11 月南岳军事会议"
+ },
+ "peidu": {
+  "name": "陪都重庆",
+  "modern": "重庆市",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525（查询：渝中区）",
+  "note": "1940 年 9 月国民政府定重庆为陪都"
+ },
+ "lashio": {
+  "name": "腊戍",
+  "modern": "缅甸腊戍",
+  "lat": 22.9419,
+  "lon": 97.7452,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 18739482（查询：Lashio）"
+ },
+ "calcutta": {
+  "name": "加尔各答",
+  "modern": "印度加尔各答",
+  "lat": 22.5726,
+  "lon": 88.3639,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 9381363（查询：Kolkata）"
+ },
+ "newdelhi": {
+  "name": "新德里",
+  "modern": "印度新德里",
+  "lat": 28.6139,
+  "lon": 77.209,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 21180662（查询：New Delhi）"
+ },
+ "cairo": {
+  "name": "开罗",
+  "modern": "埃及开罗",
+  "lat": 30.0444,
+  "lon": 31.2357,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5466227（查询：Cairo）"
+ },
+ "ramgarh": {
+  "name": "兰姆伽",
+  "modern": "印度贾坎德邦兰姆伽",
+  "lat": 23.6298,
+  "lon": 85.5013,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim node 6641860044（查询：Ramgarh Cantonment）",
+  "note": "中国驻印军训练基地"
+ },
+ "shenyang": {
+  "name": "沈阳",
+  "modern": "辽宁沈阳市",
+  "lat": 41.8026,
+  "lon": 123.4279,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2769604（查询：沈阳市）"
+ },
+ "taipei": {
+  "name": "台北",
+  "modern": "台湾台北市",
+  "lat": 25.0375,
+  "lon": 121.5637,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 1293250（查询：臺北市）"
+ },
+ "dinghai": {
+  "name": "定海",
+  "modern": "浙江舟山市定海区",
+  "lat": 30.0216,
+  "lon": 122.1026,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3308118（查询：定海区）"
+ },
+ "magong": {
+  "name": "澎湖马公",
+  "modern": "台湾澎湖县马公市",
+  "lat": 23.5664,
+  "lon": 119.5785,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3339737（查询：馬公市）"
+ },
+ "kaohsiung": {
+  "name": "高雄",
+  "modern": "台湾高雄市",
+  "lat": 22.6203,
+  "lon": 120.312,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2127079（查询：高雄市）"
+ },
+ "caoshan": {
+  "name": "草山",
+  "modern": "台湾台北市阳明山",
+  "lat": 25.1527,
+  "lon": 121.5491,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3517654145（查询：陽明山）",
+  "note": "1949 年 6 月入住草山宾馆"
+ },
+ "baguio": {
+  "name": "碧瑶",
+  "modern": "菲律宾碧瑶",
+  "lat": 16.412,
+  "lon": 120.5934,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 13946201（查询：Baguio）"
+ },
+ "xiamen": {
+  "name": "厦门",
+  "modern": "福建厦门市",
+  "lat": 24.4801,
+  "lon": 118.0853,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3242930（查询：厦门市）"
+ },
+ "jinhae": {
+  "name": "镇海",
+  "modern": "韩国昌原市镇海区",
+  "lat": 35.1319,
+  "lon": 128.7103,
+  "kind": "foreign",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 7224479（查询：Jinhae-gu）",
+  "note": "今韩国庆尚南道昌原市镇海区"
+ },
+ "sunmoonlake": {
+  "name": "日月潭",
+  "modern": "台湾南投县日月潭",
+  "lat": 23.8523,
+  "lon": 120.9286,
+  "kind": "lake",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3858334（查询：日月潭）",
+  "note": "涵碧楼行馆，晚年常往避暑"
+ },
+ "shilin": {
+  "name": "士林官邸",
+  "modern": "台湾台北市士林区",
+  "lat": 25.0945,
+  "lon": 121.5283,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2459652493（查询：士林官邸）",
+  "note": "1950 年起的寓所，1975 年卒于此"
+ },
+ "kinmen": {
+  "name": "金门",
+  "modern": "福建金门县",
+  "lat": 24.4328,
+  "lon": 118.3206,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3339698（查询：金城鎮）",
+  "note": "福建金门，台湾当局控制的前线岛屿"
+ },
+ "fengshan": {
+  "name": "凤山",
+  "modern": "台湾高雄市凤山区",
+  "lat": 22.6271,
+  "lon": 120.3628,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2106835（查询：鳳山區）",
+  "note": "陆军军官学校在台复校地"
+ },
+ "yangmingshan": {
+  "name": "阳明山",
+  "modern": "台湾台北市阳明山",
+  "lat": 25.1527,
+  "lon": 121.5491,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 3517654145（查询：陽明山）",
+  "note": "1950 年由草山改名；中兴宾馆为晚年夏居"
+ }
+}

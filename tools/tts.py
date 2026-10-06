@@ -19,6 +19,10 @@ VOICES = {
     'mao': ('zh-CN-YunyangNeural', '-6%', '-2Hz'),
     'zhuge': ('zh-CN-YunjianNeural', '-10%', '-4Hz'),
     'sushi': ('zh-CN-YunxiNeural', '-6%', '-1Hz'),
+    # 第二批：李白用云希但更快更亮，与苏轼区分；朱元璋用云健，低沉有力；蒋介石用庄重的云扬
+    'libai': ('zh-CN-YunxiNeural', '-4%', '+0Hz'),
+    'zhuyz': ('zh-CN-YunjianNeural', '-8%', '-5Hz'),
+    'jiang': ('zh-CN-YunyangNeural', '-6%', '-3Hz'),
 }
 
 

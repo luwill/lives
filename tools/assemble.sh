@@ -4,7 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 WHO=$1
-typeset -A NAME=(mao 毛泽东 zhuge 诸葛亮 sushi 苏轼)
+typeset -A NAME=(mao 毛泽东 zhuge 诸葛亮 sushi 苏轼 libai 李白 zhuyz 朱元璋 jiang 蒋介石)
 OUT="${NAME[$WHO]}_人生轨迹.mp4"
 TOTAL=$(python3 -c "import json;print(json.load(open('src/$WHO/timeline.json'))['total'])")
 python3 tools/mix.py "$WHO"

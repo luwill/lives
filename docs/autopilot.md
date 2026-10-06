@@ -2,11 +2,11 @@
 
 Standing rules for unattended runs (the `autopilot` skill). The human owns this file: a run reads it and never edits it.
 
-Status: in force since 2026-10-05 (confirmed by human at takeoff)
+Status: in force since 2026-10-05 (confirmed by human at takeoff); amended 2026-10-06 at takeoff of run three-more-lives (per-run branch)
 
 ## Workspace
 
-`opus5.5-video-test/` 本身不是 git 仓库。运行只拥有新目录 `opus5.5-video-test/lives/`，在其中 `git init`，分支 `autopilot/three-lives`。
+`opus5.5-video-test/` 本身不是 git 仓库。运行只拥有新目录 `opus5.5-video-test/lives/`，在其中 `git init`；每轮运行新建分支 `autopilot/<slug>`（第一轮 `autopilot/three-lives`，第二轮 `autopilot/three-more-lives` 从其末端分出）。
 不改动同级的 `sidu/`、`liaoshen/`、`src/`、`promo/` 等目录（只读，引擎和工具代码复制过来再改）。
 没有任何服务从该目录对外运行。大文件（`assets/terrain/tiles`、`out/`、`*.mp4`、`node_modules`、`narration/audio`）进 `.gitignore`。
 

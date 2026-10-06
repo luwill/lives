@@ -11,7 +11,7 @@ import build_timeline as BT  # noqa: E402
 
 MIN_STEP = 0.4
 MIN_HOLD = 3.0
-TARGET_MIN = {'mao': (9, 13), 'zhuge': (6, 9), 'sushi': (7, 10)}
+TARGET_MIN = {'mao': (9, 13), 'zhuge': (6, 9), 'sushi': (7, 10), 'libai': (7, 10), 'zhuyz': (8, 11), 'jiang': (9, 13)}
 
 
 def timeline(who: str) -> dict:

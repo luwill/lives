@@ -1,0 +1,12 @@
+{
+ "title": {"mood": "title", "root": 50, "mode": "shang", "why": "片头：锣与长音，商调的沉郁"},
+ "st1": {"mood": "pastoral", "root": 60, "mode": "gong", "why": "溪口少年：浙东山乡，孤儿寡母，倔强好斗"},
+ "st2": {"mood": "aspire", "root": 60, "mode": "shang", "why": "留日与辛亥：少年意气与军营纪律，冒险激进"},
+ "st3": {"mood": "wander", "root": 57, "mode": "yu", "why": "追随孙中山：漂泊不得志，进退无常"},
+ "st4": {"mood": "march", "root": 62, "mode": "shang", "why": "黄埔与北伐：军鼓与铜管，锋芒与权谋"},
+ "st5": {"mood": "tension", "root": 55, "mode": "yu", "why": "十年内战：刚愎与紧张，华清池之夜的惊惶"},
+ "st6": {"mood": "epic", "root": 55, "mode": "shang", "why": "抗日战争：民族存亡之际的悲壮"},
+ "st7": {"mood": "battle", "root": 53, "mode": "yu", "why": "解放战争与败退：由骄而颓，兵败如山倒"},
+ "st8": {"mood": "elegy", "root": 52, "mode": "yu", "why": "台湾晚年：孤岛暮年的悲凉与乡愁"},
+ "outro": {"mood": "outro", "root": 50, "mode": "yu", "why": "片尾：二胡收束"}
+}

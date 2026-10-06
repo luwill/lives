@@ -1,0 +1,585 @@
+{
+ "suiye": {
+  "name": "碎叶",
+  "modern": "吉尔吉斯斯坦托克马克西南阿克·贝希姆古城",
+  "lat": 42.8159,
+  "lon": 75.2522,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 175443585（查询：Ak-Beshim）",
+  "note": "唐安西都护府碎叶镇城，学界多定于阿克·贝希姆遗址（托克马克西南约8km）；坐标取该村，为出生地主说"
+ },
+ "changlong": {
+  "name": "绵州昌隆·青莲乡",
+  "modern": "四川江油青莲镇",
+  "lat": 31.6772,
+  "lon": 104.6777,
+  "kind": "village",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2172889（查询：青莲镇, 江油市）",
+  "note": "唐绵州昌隆县（先天元年避讳改昌明）清廉乡，今江油市青莲镇，有李白故里"
+ },
+ "kuangshan": {
+  "name": "大匡山（戴天山）",
+  "modern": "四川江油大康镇匡山",
+  "lat": 31.8875,
+  "lon": 104.7058,
+  "kind": "mountain",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 988031587（查询：匡山, 江油）",
+  "note": "匡山书院所在；Nominatim 无山体条目，取大康镇匡山隧道，与山体相距数公里"
+ },
+ "chengdu": {
+  "name": "益州·成都",
+  "modern": "四川成都",
+  "lat": 30.6599,
+  "lon": 104.0633,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2110264（查询：成都市）"
+ },
+ "emei": {
+  "name": "峨眉山",
+  "modern": "四川峨眉山金顶",
+  "lat": 29.5228,
+  "lon": 103.3371,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2902204708（查询：金顶, 峨眉山）"
+ },
+ "yuzhou": {
+  "name": "渝州",
+  "modern": "重庆渝中区",
+  "lat": 29.5556,
+  "lon": 106.5654,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4738525（查询：渝中区, 重庆）",
+  "note": "唐渝州治巴县，今重庆渝中半岛"
+ },
+ "baidi": {
+  "name": "白帝城",
+  "modern": "重庆奉节白帝城",
+  "lat": 31.0434,
+  "lon": 109.5705,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2411108613（查询：白帝城, 奉节县）",
+  "note": "夔州奉节县东白帝山上"
+ },
+ "wushan": {
+  "name": "巫山",
+  "modern": "重庆巫山县",
+  "lat": 31.1162,
+  "lon": 109.8975,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2692018（查询：巫山县）",
+  "note": "唐夔州巫山县"
+ },
+ "huangniu": {
+  "name": "黄牛峡",
+  "modern": "湖北宜昌夷陵区黄陵庙",
+  "lat": 30.8427,
+  "lon": 111.0761,
+  "kind": "pass",
+  "confidence": "medium",
+  "source": "OSM Nominatim way 1302217098（查询：黄陵庙, 宜昌）",
+  "note": "西陵峡中黄牛岩下，黄陵庙即古黄牛庙"
+ },
+ "jingmen": {
+  "name": "荆门",
+  "modern": "湖北宜都（荆门山）",
+  "lat": 30.382,
+  "lon": 111.4437,
+  "kind": "mountain",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 2983919（查询：宜都市）",
+  "note": "荆门山在宜都西北长江南岸，与虎牙山相对；Nominatim 未检得山体，取宜都市行政中心，偏差约10km"
+ },
+ "jiangling": {
+  "name": "江陵",
+  "modern": "湖北荆州荆州区",
+  "lat": 30.3552,
+  "lon": 112.1843,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2709809（查询：荆州区, 荆州市）",
+  "note": "唐荆州江陵府治，今荆州古城"
+ },
+ "yuezhou": {
+  "name": "巴陵·洞庭",
+  "modern": "湖南岳阳（岳阳楼）",
+  "lat": 29.3847,
+  "lon": 113.0883,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim way 230337579（查询：岳阳楼）",
+  "note": "唐岳州巴陵县，临洞庭湖"
+ },
+ "lushan": {
+  "name": "庐山",
+  "modern": "江西九江庐山牯岭",
+  "lat": 29.5716,
+  "lon": 115.9766,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4783941（查询：牯岭镇）",
+  "note": "屏风叠在五老峰下，距牯岭约5km"
+ },
+ "jinling": {
+  "name": "金陵",
+  "modern": "江苏南京",
+  "lat": 32.0438,
+  "lon": 118.7789,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 2131524（查询：南京市）",
+  "note": "唐润州江宁县/上元县，六朝故都"
+ },
+ "yangzhou": {
+  "name": "扬州（广陵）",
+  "modern": "江苏扬州",
+  "lat": 32.3969,
+  "lon": 119.4078,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4430826（查询：扬州市）"
+ },
+ "anlu": {
+  "name": "安陆",
+  "modern": "湖北安陆",
+  "lat": 31.3066,
+  "lon": 113.648,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216399（查询：安陆市）",
+  "note": "唐安州治安陆县；寿山、白兆山桃花岩均在县境"
+ },
+ "jiangxia": {
+  "name": "江夏（黄鹤楼）",
+  "modern": "湖北武汉武昌",
+  "lat": 30.5471,
+  "lon": 114.297,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim way 81641900（查询：黄鹤楼）",
+  "note": "唐鄂州治江夏县，黄鹤楼在城西黄鹄矶"
+ },
+ "changan": {
+  "name": "长安",
+  "modern": "陕西西安",
+  "lat": 34.261,
+  "lon": 108.9423,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3226004（查询：西安市）"
+ },
+ "zhongnan": {
+  "name": "终南山",
+  "modern": "陕西西安南终南山",
+  "lat": 33.9244,
+  "lon": 109.0455,
+  "kind": "mountain",
+  "confidence": "medium",
+  "source": "OSM Nominatim node 10313072026（查询：终南山）",
+  "note": "玉真公主别馆所在的终南山楼观一带，具体位置不详，取终南山主峰"
+ },
+ "binzhou": {
+  "name": "邠州",
+  "modern": "陕西彬州",
+  "lat": 35.0363,
+  "lon": 108.0798,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3221006（查询：彬州市）"
+ },
+ "fangzhou": {
+  "name": "坊州",
+  "modern": "陕西黄陵县",
+  "lat": 35.6655,
+  "lon": 108.9564,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3019992（查询：黄陵县）",
+  "note": "唐坊州治中部县，今黄陵县"
+ },
+ "songzhou": {
+  "name": "宋州·梁园",
+  "modern": "河南商丘睢阳区",
+  "lat": 34.24,
+  "lon": 115.5917,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3218280（查询：睢阳区, 商丘市）",
+  "note": "唐宋州宋城县；梁孝王梁园（兔园）故地"
+ },
+ "kaifeng": {
+  "name": "汴州（梁）",
+  "modern": "河南开封",
+  "lat": 34.6042,
+  "lon": 114.4972,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3283913（查询：开封市）"
+ },
+ "songshan": {
+  "name": "嵩山",
+  "modern": "河南登封嵩山",
+  "lat": 34.4727,
+  "lon": 112.9349,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 5914971049（查询：嵩山）",
+  "note": "元丹丘嵩山山居；坐标取太室山连天峰"
+ },
+ "luoyang": {
+  "name": "洛阳",
+  "modern": "河南洛阳",
+  "lat": 34.6197,
+  "lon": 112.4477,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3246491（查询：洛阳市）"
+ },
+ "nanyang": {
+  "name": "南阳",
+  "modern": "河南南阳",
+  "lat": 33.001,
+  "lon": 112.5293,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3206852（查询：南阳市）"
+ },
+ "suizhou": {
+  "name": "随州",
+  "modern": "湖北随州",
+  "lat": 31.9209,
+  "lon": 113.4658,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216520（查询：随州市）",
+  "note": "道士胡紫阳所居"
+ },
+ "xiangyang": {
+  "name": "襄阳",
+  "modern": "湖北襄阳",
+  "lat": 32.011,
+  "lon": 112.1164,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3216590（查询：襄阳市）",
+  "note": "唐襄州治襄阳县"
+ },
+ "taiyuan": {
+  "name": "太原",
+  "modern": "山西太原晋源区",
+  "lat": 37.7359,
+  "lon": 112.4426,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3441530（查询：晋源区, 太原市）",
+  "note": "唐太原府治晋阳，今晋源区古城营一带"
+ },
+ "yanmen": {
+  "name": "雁门关",
+  "modern": "山西代县雁门关",
+  "lat": 39.0841,
+  "lon": 112.871,
+  "kind": "pass",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 20029694（查询：雁门关）"
+ },
+ "chenzhou": {
+  "name": "陈州",
+  "modern": "河南周口淮阳区",
+  "lat": 33.733,
+  "lon": 114.8842,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 14371762（查询：淮阳区, 周口市）"
+ },
+ "chuzhou": {
+  "name": "楚州",
+  "modern": "江苏淮安淮安区",
+  "lat": 33.5072,
+  "lon": 119.1393,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5669085（查询：淮安区, 淮安市）",
+  "note": "唐楚州治山阳县"
+ },
+ "anyi": {
+  "name": "安宜",
+  "modern": "江苏宝应",
+  "lat": 33.2424,
+  "lon": 119.353,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5669507（查询：宝应县）",
+  "note": "唐楚州安宜县，上元三年改宝应"
+ },
+ "suzhou": {
+  "name": "吴郡·苏州",
+  "modern": "江苏苏州",
+  "lat": 31.3111,
+  "lon": 120.6213,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 4430941（查询：苏州市）"
+ },
+ "dangtu": {
+  "name": "当涂",
+  "modern": "安徽马鞍山当涂县",
+  "lat": 31.4644,
+  "lon": 118.64,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3260811（查询：当涂县）",
+  "note": "唐宣州当涂县（姑孰）；李白墓在县东南青山"
+ },
+ "yanzhou": {
+  "name": "东鲁·兖州",
+  "modern": "山东济宁兖州区",
+  "lat": 35.552,
+  "lon": 116.7781,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3286958（查询：兖州区, 济宁市）",
+  "note": "唐兖州（鲁郡）治瑕丘，李白寓家所在"
+ },
+ "rencheng": {
+  "name": "任城",
+  "modern": "山东济宁任城区",
+  "lat": 35.4422,
+  "lon": 116.6001,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3286953（查询：任城区, 济宁市）"
+ },
+ "culai": {
+  "name": "徂徕山",
+  "modern": "山东泰安徂徕山",
+  "lat": 36.0448,
+  "lon": 117.311,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 9694665453（查询：徂徕山）",
+  "note": "竹溪六逸隐居处"
+ },
+ "taishan": {
+  "name": "泰山",
+  "modern": "山东泰安泰山玉皇顶",
+  "lat": 36.257,
+  "lon": 117.1033,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim node 2338427466（查询：玉皇顶, 泰安）"
+ },
+ "jizhou": {
+  "name": "齐州",
+  "modern": "山东济南",
+  "lat": 36.652,
+  "lon": 117.1138,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3486449（查询：济南市）",
+  "note": "紫极宫受道箓处，天宝五载改济南郡"
+ },
+ "kuaiji": {
+  "name": "会稽（越州）",
+  "modern": "浙江绍兴越城区",
+  "lat": 29.9833,
+  "lon": 120.6127,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3316526（查询：越城区, 绍兴市）"
+ },
+ "tiantai": {
+  "name": "天台山",
+  "modern": "浙江天台县",
+  "lat": 29.1467,
+  "lon": 121.0025,
+  "kind": "mountain",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3478416（查询：天台县）",
+  "note": "取天台县城，距主峰华顶约15km"
+ },
+ "lujiang": {
+  "name": "庐江",
+  "modern": "安徽庐江县",
+  "lat": 31.2592,
+  "lon": 117.2828,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3288961（查询：庐江县）"
+ },
+ "yexian": {
+  "name": "叶县石门山",
+  "modern": "河南叶县",
+  "lat": 33.5491,
+  "lon": 113.3613,
+  "kind": "mountain",
+  "confidence": "low",
+  "source": "OSM Nominatim relation 3259447（查询：叶县）",
+  "note": "元丹丘石门山居具体位置不详，取叶县县城"
+ },
+ "weijun": {
+  "name": "魏郡",
+  "modern": "河北大名县",
+  "lat": 36.2823,
+  "lon": 115.1409,
+  "kind": "city",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 4437713（查询：大名县）",
+  "note": "唐魏州治贵乡，在今大名县东北"
+ },
+ "guangping": {
+  "name": "广平郡",
+  "modern": "河北邯郸永年区",
+  "lat": 36.7875,
+  "lon": 114.6399,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 5674433（查询：永年区, 邯郸市）",
+  "note": "唐洺州（广平郡）治永年"
+ },
+ "youzhou": {
+  "name": "幽州（范阳）",
+  "modern": "北京西城区",
+  "lat": 39.9109,
+  "lon": 116.3599,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 568660（查询：西城区, 北京市）",
+  "note": "唐幽州城在今北京西城区西南广安门一带"
+ },
+ "fenyang": {
+  "name": "西河郡",
+  "modern": "山西汾阳",
+  "lat": 37.2683,
+  "lon": 111.783,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3263815（查询：汾阳市）",
+  "note": "唐汾州（西河郡）治西河县，今汾阳"
+ },
+ "huashan": {
+  "name": "华山",
+  "modern": "陕西华阴华山",
+  "lat": 34.5675,
+  "lon": 110.0921,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3028617（查询：华阴市）",
+  "note": "取华阴市，距华山主峰约10km"
+ },
+ "liyang": {
+  "name": "历阳·横江",
+  "modern": "安徽和县",
+  "lat": 31.7443,
+  "lon": 118.3481,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3260813（查询：和县）",
+  "note": "唐和州历阳县，横江浦在县东南江岸"
+ },
+ "xuancheng": {
+  "name": "宣城",
+  "modern": "安徽宣城宣州区",
+  "lat": 30.9487,
+  "lon": 118.7514,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3222247（查询：宣州区, 宣城市）",
+  "note": "唐宣州治宣城县"
+ },
+ "jingting": {
+  "name": "敬亭山",
+  "modern": "安徽宣城敬亭山",
+  "lat": 30.9739,
+  "lon": 118.7395,
+  "kind": "mountain",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 12340647（查询：敬亭山）"
+ },
+ "qiupu": {
+  "name": "秋浦",
+  "modern": "安徽池州贵池区",
+  "lat": 30.5167,
+  "lon": 117.5002,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3164667（查询：贵池区, 池州市）",
+  "note": "唐池州秋浦县，今贵池"
+ },
+ "shanzhong": {
+  "name": "剡中",
+  "modern": "浙江嵊州",
+  "lat": 29.5644,
+  "lon": 120.8267,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3058331（查询：嵊州市）",
+  "note": "唐越州剡县"
+ },
+ "xunyang": {
+  "name": "浔阳",
+  "modern": "江西九江浔阳区",
+  "lat": 29.6654,
+  "lon": 115.9475,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim node 244080937（查询：浔阳区, 九江市）",
+  "note": "唐江州治浔阳县；李白系浔阳狱处"
+ },
+ "pengze": {
+  "name": "彭泽",
+  "modern": "江西彭泽县",
+  "lat": 29.8275,
+  "lon": 116.6092,
+  "kind": "town",
+  "confidence": "medium",
+  "source": "OSM Nominatim relation 3190446（查询：彭泽县）",
+  "note": "唐彭泽县治在今县境，今县城为后移"
+ },
+ "runzhou": {
+  "name": "丹阳（润州）",
+  "modern": "江苏镇江",
+  "lat": 32.1894,
+  "lon": 119.42,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3429680（查询：镇江市）",
+  "note": "润州丹阳郡治丹徒，永王兵败于此"
+ },
+ "susong": {
+  "name": "宿松",
+  "modern": "安徽宿松县",
+  "lat": 30.1384,
+  "lon": 116.2456,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3220379（查询：宿松县）"
+ },
+ "ezhou": {
+  "name": "武昌",
+  "modern": "湖北鄂州",
+  "lat": 30.3925,
+  "lon": 114.8899,
+  "kind": "town",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3086618（查询：鄂州市）",
+  "note": "唐鄂州武昌县，今鄂州市"
+ },
+ "yuzhang": {
+  "name": "豫章",
+  "modern": "江西南昌",
+  "lat": 28.6472,
+  "lon": 116.0348,
+  "kind": "city",
+  "confidence": "high",
+  "source": "OSM Nominatim relation 3169865（查询：南昌市）",
+  "note": "唐洪州（豫章郡）治钟陵，宗氏寓居处"
+ }
+}

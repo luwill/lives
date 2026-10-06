@@ -1,0 +1,2242 @@
+{
+ "meta": {
+  "person": "朱元璋",
+  "birth": "1328-10-21",
+  "birth_note": "天历元年九月十八日（丁丑）生于濠州钟离（《明史·太祖本纪》《明史纪事本末》）；儒略历 1328-10-21，维基百科等按格里历外推作 10-29",
+  "death": "1398-06-24",
+  "death_note": "洪武三十一年闰五月初十（乙酉）崩于南京西宫，年七十一；十六日（辛卯，6-30）葬孝陵（《明史·太祖本纪三》）",
+  "calendar_note": "H1=公历1–6月，H2=7–12月（1582年前用儒略历）。史料多记农历月与干支日，用 lunar_python（寿星历算法）逐日换算（脚本 data/_build/zhuyz_lunar.py；生卒两锚点及“闰三月甲戌朔”“六月乙卯朔”等朔日记载均吻合）；只知月份者按农历1–6月→H1、7–12月→H2 近似并在 note 注明。跨半年的例子：至正二十三年十二月自武昌还应天→1364-01；至正十八年十二月亲征婺州→1358-12-31 起，归 1359H1；洪武六年闰十一月颁《大明律》→1374-01。",
+  "sources": [
+   {
+    "id": "S1",
+    "title": "《明史·太祖本纪》一至三（卷1–3）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷1",
+    "kind": "primary"
+   },
+   {
+    "id": "S2",
+    "title": "朱元璋《御制皇陵碑》（维基文库题《重修皇陵碑记》，据《七修类稿》卷7）",
+    "url": "https://zh.wikisource.org/wiki/重修皇陵碑记",
+    "kind": "primary"
+   },
+   {
+    "id": "S3",
+    "title": "《皇陵碑记》（洪武初太祖手录家世、李善长等撰文，据《七修类稿》卷7）",
+    "url": "https://zh.wikisource.org/wiki/皇陵碑记",
+    "kind": "primary"
+   },
+   {
+    "id": "S4",
+    "title": "谷应泰《明史纪事本末》卷1 太祖起兵、卷3 太祖平汉、卷4 太祖平吴",
+    "url": "https://zh.wikisource.org/wiki/明史紀事本末/卷01",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S5",
+    "title": "《明史·朱升传》（卷136）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷136",
+    "kind": "primary"
+   },
+   {
+    "id": "S6",
+    "title": "《明史·奸臣传·胡惟庸》（卷308）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷308",
+    "kind": "primary"
+   },
+   {
+    "id": "S7",
+    "title": "《明史·蓝玉传》（卷132）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷132",
+    "kind": "primary"
+   },
+   {
+    "id": "S8",
+    "title": "《明史·刑法志二》（卷94）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷94",
+    "kind": "primary"
+   },
+   {
+    "id": "S9",
+    "title": "《明史·食货志一》（卷77，黄册、鱼鳞图册）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷77",
+    "kind": "primary"
+   },
+   {
+    "id": "S10",
+    "title": "《明史·兴宗孝康皇帝传》（卷115）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷115",
+    "kind": "primary"
+   },
+   {
+    "id": "S11",
+    "title": "《御定资治通鉴纲目三编》卷1（四库全书本，含地名注）",
+    "url": "https://zh.wikisource.org/wiki/御定資治通鑑綱目三編_(四庫全書本)/卷01",
+    "kind": "scholarly"
+   },
+   {
+    "id": "S12",
+    "title": "《明史·职官志五》（卷76，锦衣卫）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷76",
+    "kind": "primary"
+   },
+   {
+    "id": "S13",
+    "title": "《明史·郑士利传》（卷139，空印案）",
+    "url": "https://zh.wikisource.org/wiki/明史/卷139",
+    "kind": "primary"
+   },
+   {
+    "id": "S14",
+    "title": "维基百科「朱元璋」条",
+    "url": "https://zh.wikipedia.org/wiki/朱元璋",
+    "kind": "secondary"
+   }
+  ]
+ },
+ "stages": [
+  {
+   "id": "st1",
+   "title": "凤阳孤儿",
+   "from": "1328H2",
+   "to": "1344H1",
+   "summary": "生于钟离贫苦佃农之家，屡迁村落；十七岁遇旱蝗大疫，父母长兄相继死去，无地可葬。",
+   "mood_hint": "淮河平原的贫瘠乡村，童年清苦、沉默坚忍；末段饥荒与丧亲，悲怆压抑。"
+  },
+  {
+   "id": "st2",
+   "title": "游方僧",
+   "from": "1344H2",
+   "to": "1351H2",
+   "summary": "入皇觉寺为僧，不足两月寺中断粮，只身游食淮西、豫南三年，复归寺中。",
+   "mood_hint": "孤身漂泊、风餐露宿，凄凉而倔强；“身如蓬逐风”的流离感，渐生隐忍与见识。"
+  },
+  {
+   "id": "st3",
+   "title": "濠州从军",
+   "from": "1352H1",
+   "to": "1355H1",
+   "summary": "投郭子兴红巾军，娶马氏；还乡募兵，南略定远，取滁州、和州，渐成一军之主。",
+   "mood_hint": "乱世揭竿，由小卒崛起；隐忍果决、在派系夹缝中求生，节奏紧张上扬。"
+  },
+  {
+   "id": "st4",
+   "title": "渡江定鼎",
+   "from": "1355H2",
+   "to": "1359H2",
+   "summary": "渡江拔采石、太平，取集庆改应天府，称吴国公，经略江南、浙东。",
+   "mood_hint": "大江横渡、背水一战的豪壮，继而奠基立业的沉稳开阔。"
+  },
+  {
+   "id": "st5",
+   "title": "群雄逐鹿",
+   "from": "1360H1",
+   "to": "1367H2",
+   "summary": "龙湾诱败陈友谅，鄱阳湖决战灭汉；称吴王，平张士诚，遣将北伐中原。",
+   "mood_hint": "雄略果敢、以弱制强；水战烈火、鼓角连天的史诗感，胜局渐定。"
+  },
+  {
+   "id": "st6",
+   "title": "开国称帝",
+   "from": "1368H1",
+   "to": "1375H1",
+   "summary": "应天即皇帝位，国号大明；北巡汴梁，营建中都又罢之，定礼制律令、封诸王功臣。",
+   "mood_hint": "开国气象庄严恢宏，夹杂对故乡的眷恋与对功臣、制度的审慎经营。"
+  },
+  {
+   "id": "st7",
+   "title": "洪武治国",
+   "from": "1375H2",
+   "to": "1391H2",
+   "summary": "长居南京勤政：诛胡惟庸、废丞相，设锦衣卫，颁《大诰》，编黄册与鱼鳞图册，丧马皇后。",
+   "mood_hint": "勤政严苛、猜忌日深，宫廷肃杀压抑；铁腕之下亦有恤民之政，冷峻沉重。"
+  },
+  {
+   "id": "st8",
+   "title": "晚年孤寂",
+   "from": "1392H1",
+   "to": "1398H1",
+   "summary": "太子朱标早逝，立皇太孙；兴蓝玉案、诛宿将，立祖训，崩于南京，葬孝陵。",
+   "mood_hint": "白发丧子、故旧凋零，猜忌严酷与晚年孤寂交织，终归苍凉沉寂。"
+  }
+ ],
+ "steps": [
+  {
+   "id": "1328H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "九月十八日（公历10月21日）生于濠州钟离东乡，父朱世珍，排行第四",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S4"
+   ],
+   "stage": "st1",
+   "milestone": {
+    "title": "钟离降生",
+    "subtitle": "淮右佃农之家的第四子（按族中行第当为“重八”），后名元璋",
+    "importance": 2
+   },
+   "note": "出生地：《皇陵碑记》自述“居鍾離之東鄉，而朕生焉”；《明史纪事本末》作父徙太平乡后生（见 contested）。“重八”之名见于通行传记，本站所据史料未载"
+  },
+  {
+   "id": "1329H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1329H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1330H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1330H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1331H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1331H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1332H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1332H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1333H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1333H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1334H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1334H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1335H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1335H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1336H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1336H2",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1337H1",
+   "places": [
+    "dongxiang"
+   ],
+   "event": "幼年随父母居钟离东乡，佃田为生，家境贫寒",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1337H2",
+   "places": [
+    "dongxiang",
+    "guzhuang"
+   ],
+   "event": "约十岁前后随家迁钟离西乡；长兄侍亲，仲兄、三兄皆出赘",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S2"
+   ],
+   "stage": "st1",
+   "note": "《皇陵碑记》：“十年後，復遷鍾離之西鄉”，具体年份不详，约在1338年前后；西乡今址不详，以孤庄村代表"
+  },
+  {
+   "id": "1338H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1338H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1339H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1339H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1340H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1340H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1341H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1341H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1342H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1342H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1343H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居钟离西乡、太平乡孤庄村一带，为人放牧务农",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1343H2",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "居太平乡孤庄村；淮北连年灾荒，家计日艰",
+   "confidence": "inferred",
+   "sources": [
+    "S3",
+    "S1"
+   ],
+   "stage": "st1"
+  },
+  {
+   "id": "1344H1",
+   "places": [
+    "guzhuang"
+   ],
+   "event": "至正四年旱蝗大疫，父、母、长兄相继病亡，贫不能葬，同里刘继祖与地乃葬",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "stage": "st1",
+   "milestone": {
+    "title": "父母双亡",
+    "subtitle": "家贫无棺，以旧衣裹尸，草草掩埋于邻人所与之地",
+    "importance": 1,
+    "quote": {
+     "text": "殯無棺槨，被體惡裳；浮掩三尺，奠何肴漿？",
+     "source": "朱元璋《御制皇陵碑》"
+    }
+   },
+   "note": "史料只言“歲甲申”，入寺在九月，故丧事系于上半年（通行说为农历四月）。葬地即后来的明皇陵"
+  },
+  {
+   "id": "1344H2",
+   "places": [
+    "guzhuang",
+    "huangjue"
+   ],
+   "event": "九月乙巳（10月25日）入里中皇觉寺为僧；十一月丁酉（12月16日）寺中乏粮，僧众遣散",
+   "confidence": "documented",
+   "sources": [
+    "S3",
+    "S2",
+    "S1"
+   ],
+   "stage": "st2",
+   "milestone": {
+    "title": "皇觉寺为僧",
+    "subtitle": "投身空门不足两月，寺主封仓，众僧各自谋生",
+    "importance": 2,
+    "place": "huangjue",
+    "quote": {
+     "text": "居無兩月，寺主封倉；眾各為計，雲水飄颺",
+     "source": "朱元璋《御制皇陵碑》"
+    }
+   },
+   "note": "日期据《皇陵碑记》“九月乙巳”“十一月丁酉”换算"
+  },
+  {
+   "id": "1345H1",
+   "places": [
+    "huangjue",
+    "hefei",
+    "luan"
+   ],
+   "event": "离寺游食，西至合肥（金斗），再向西行乞",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1345H2",
+   "places": [
+    "luan",
+    "guangzhou",
+    "gushi"
+   ],
+   "event": "游食淮西，经光州、固始一带",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1346H1",
+   "places": [
+    "gushi",
+    "ruzhou"
+   ],
+   "event": "北上豫中，乞食于汝州一带",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1346H2",
+   "places": [
+    "ruzhou"
+   ],
+   "event": "流落汝州一带，风餐露宿",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1347H1",
+   "places": [
+    "ruzhou",
+    "yingzhou"
+   ],
+   "event": "东行至颍州一带游方",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1347H2",
+   "places": [
+    "yingzhou"
+   ],
+   "event": "仍在颍州一带乞食，淮北盗起，民生骚动",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "stage": "st2",
+   "note": "《明史》：“逾月，遊食合肥……凡歷光、固、汝、潁諸州三年，復還寺”；《皇陵碑记》作“南歷金斗……北至潁州，崎嶇二載”。各地先后次序与停留时间史无明文，按《明史》列举顺序与地理路线推排；六安为合肥至光州途经地，史书未载"
+  },
+  {
+   "id": "1348H1",
+   "places": [
+    "yingzhou",
+    "huangjue"
+   ],
+   "event": "游方三年后返回钟离，复入皇觉寺",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S2"
+   ],
+   "stage": "st2",
+   "note": "《御制皇陵碑》：“一浮雲乎又過三載，年方二十而強……已而既歸，仍復業於皇”；返寺年份约在至正七、八年间"
+  },
+  {
+   "id": "1348H2",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧，读书识字，留心时局",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1349H1",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧，读书识字，留心时局",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1349H2",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧，读书识字，留心时局",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1350H1",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧，读书识字，留心时局",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1350H2",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧，读书识字，留心时局",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1351H1",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧；五月颍州刘福通奉韩山童起兵，红巾军兴",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2"
+  },
+  {
+   "id": "1351H2",
+   "places": [
+    "huangjue"
+   ],
+   "event": "在皇觉寺为僧；徐寿辉起蕲水，李二、彭大等起徐州，天下大乱",
+   "confidence": "inferred",
+   "sources": [
+    "S2",
+    "S1"
+   ],
+   "stage": "st2",
+   "note": "《明史》本纪：“劉福通奉韓山童假宋後起潁，徐壽輝僭帝號起蘄……天下大亂”；以上皆至正十一年事"
+  },
+  {
+   "id": "1352H1",
+   "places": [
+    "huangjue",
+    "haozhou"
+   ],
+   "event": "二月郭子兴据濠州起兵；友人寄书相招，卜于神，闰三月初一（4月15日）入濠投军",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S2",
+    "S4"
+   ],
+   "stage": "st3",
+   "milestone": {
+    "title": "投奔郭子兴",
+    "subtitle": "二十五岁弃僧从军，被郭子兴留为亲兵",
+    "importance": 1,
+    "place": "haozhou",
+    "quote": {
+     "text": "得毋當舉大事乎？",
+     "source": "《明史·太祖本纪一》"
+    }
+   },
+   "note": "《御制皇陵碑》记有人欲告发其得友人书，遂“即起趨降而附城”"
+  },
+  {
+   "id": "1352H2",
+   "places": [
+    "haozhou"
+   ],
+   "event": "娶郭子兴养女马氏；九月救子兴脱孙德崖之械；冬与子兴力拒元将贾鲁围城",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st3",
+   "note": "娶马氏月份史无明文，系于本年"
+  },
+  {
+   "id": "1353H1",
+   "places": [
+    "haozhou",
+    "guzhuang",
+    "haozhou"
+   ],
+   "event": "春贾鲁死、濠州围解；还乡募兵七百人，徐达、汤和来归，署为镇抚",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S11"
+   ],
+   "stage": "st3"
+  },
+  {
+   "id": "1353H2",
+   "places": [
+    "haozhou"
+   ],
+   "event": "在濠州；彭大、赵均用暴横，郭子兴受制，遂谋自立一军",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st3",
+   "note": "南略定远的系年见 contested"
+  },
+  {
+   "id": "1354H1",
+   "places": [
+    "haozhou",
+    "dingyuan"
+   ],
+   "event": "以兵属他将，与徐达、汤和等二十四人南略定远，降驴牌寨，夜袭横涧山得众二万",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S4",
+    "S11"
+   ],
+   "stage": "st3",
+   "note": "《明史》本纪与《纲目三编》系于至正十三年，《明史纪事本末》系于十四年七月；折中系于1354年上半年。横涧山在定远县西北七十里（《纲目三编》注）"
+  },
+  {
+   "id": "1354H2",
+   "places": [
+    "dingyuan",
+    "chuzhou",
+    "liuhe",
+    "chuzhou"
+   ],
+   "event": "七月攻克滁州驻师；十月援六合守瓦梁垒，还滁设伏败元军",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st3",
+   "note": "至正十四年七月初一为1354-07-20，克滁州在下半年"
+  },
+  {
+   "id": "1355H1",
+   "places": [
+    "chuzhou",
+    "hezhou",
+    "chaohu",
+    "hezhou"
+   ],
+   "event": "正月取和州，总诸将兵；三月郭子兴卒；五月往巢湖收廖永安水军",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st3",
+   "note": "至正十五年正月初一为1355-01-14"
+  },
+  {
+   "id": "1355H2",
+   "places": [
+    "hezhou",
+    "caishi",
+    "taiping"
+   ],
+   "event": "六月初一（7月10日）渡江，常遇春先登拔采石；次日克太平，改太平府",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S3",
+    "S4"
+   ],
+   "stage": "st4",
+   "milestone": {
+    "title": "渡江取太平",
+    "subtitle": "断舟缆放流，示诸将有进无退",
+    "importance": 2,
+    "place": "caishi",
+    "quote": {
+     "text": "渡江幸捷，若舍而歸，江東非吾有也。",
+     "source": "《明史·太祖本纪一》"
+    }
+   }
+  },
+  {
+   "id": "1356H1",
+   "places": [
+    "taiping",
+    "yingtian"
+   ],
+   "event": "二月破元军于采石；三月十日（4月10日）攻克集庆，改为应天府",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S11"
+   ],
+   "stage": "st4",
+   "milestone": {
+    "title": "取集庆，改应天",
+    "subtitle": "定都金陵的根基由此奠定",
+    "importance": 1,
+    "place": "yingtian",
+    "quote": {
+     "text": "元政瀆擾，干戈蜂起，我來為民除亂耳，其各安堵如故。",
+     "source": "《明史·太祖本纪一》"
+    }
+   }
+  },
+  {
+   "id": "1356H2",
+   "places": [
+    "yingtian",
+    "zhenjiang",
+    "yingtian"
+   ],
+   "event": "七月诸将奉为吴国公，置江南行中书省；九月赴镇江谒孔子庙，旋还应天",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "1357H1",
+   "places": [
+    "yingtian",
+    "ningguo",
+    "yingtian"
+   ],
+   "event": "四月二十三（5月12日）亲征宁国路，克之，元将别不华降",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4",
+   "note": "还应天的日期史未明载"
+  },
+  {
+   "id": "1357H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；诸将克常熟、徽州、池州、扬州",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "1358H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；以康茂才为营田使兴屯田，邓愈克建德路",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "1358H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；陈友谅据龙兴，北方红巾军与元军相持",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "1359H1",
+   "places": [
+    "yingtian",
+    "wuzhou",
+    "yingtian"
+   ],
+   "event": "农历十二月亲征婺州，克之改宁越府，留驻经略浙东；六月初一（6月26日）还应天",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st4",
+   "note": "至正十八年十二月初一即1358-12-31，婺州降在十二月廿三前后（1359-01-23），故出征归入1359H1"
+  },
+  {
+   "id": "1359H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；常遇春克衢州，胡大海克处州，西与陈友谅接境",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st4"
+  },
+  {
+   "id": "1360H1",
+   "places": [
+    "yingtian",
+    "longwan",
+    "yingtian"
+   ],
+   "event": "三月征刘基、宋濂；闰五月陈友谅东下，初十（6月23日）亲督军卢龙山，龙湾大破之",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S11"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "龙湾之战",
+    "subtitle": "诈降诱敌，水陆夹击，陈友谅乘小舟遁走",
+    "importance": 2,
+    "place": "longwan",
+    "quote": {
+     "text": "天且雨，趣食，乘雨擊之。",
+     "source": "《明史·太祖本纪一》"
+    }
+   }
+  },
+  {
+   "id": "1360H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；袁州欧普祥来降，再遣使谕方国珍",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1361H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；立盐茶课，置宝源局，改枢密院为大都督府",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1361H2",
+   "places": [
+    "yingtian",
+    "anqing",
+    "hukou",
+    "jiangzhou"
+   ],
+   "event": "八月亲率舟师征陈友谅，克安庆，次湖口，追败友谅，克江州",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1362H1",
+   "places": [
+    "jiangzhou",
+    "hongdu",
+    "yingtian"
+   ],
+   "event": "正月龙兴守将胡廷瑞降，亲至改洪都府；二月还应天",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5",
+   "note": "正月乙卯为1362-02-03"
+  },
+  {
+   "id": "1362H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；七月平章邵荣谋逆伏诛，元遣使授官不受",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1363H1",
+   "places": [
+    "yingtian",
+    "anfeng",
+    "yingtian"
+   ],
+   "event": "吕珍破安丰杀刘福通；三月亲救安丰，以韩林儿归滁州，乃还应天",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1363H2",
+   "places": [
+    "yingtian",
+    "hukou",
+    "kanglangshan",
+    "zuoli",
+    "yingtian",
+    "wuchang"
+   ],
+   "event": "七月亲援洪都，鄱阳湖大战月余，友谅中流矢死；九月还应天，旋亲征武昌",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S11"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "鄱阳湖之战",
+    "subtitle": "以小舟火攻巨舰，三十六日决战灭陈友谅",
+    "importance": 1,
+    "place": "kanglangshan",
+    "quote": {
+     "text": "風烈火熾，烟焰漲天，湖水盡赤。",
+     "source": "《明史·太祖本纪一》"
+    }
+   },
+   "note": "七月丁亥（8月29日）遇于康郎山，八月壬戌（10月3日）友谅死于泾江口；十月围武昌"
+  },
+  {
+   "id": "1364H1",
+   "places": [
+    "wuchang",
+    "yingtian",
+    "wuchang",
+    "yingtian"
+   ],
+   "event": "自武昌还；正月初一（2月4日）即吴王位；二月再征武昌，陈理降；三月还",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4",
+    "S5"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "即吴王位",
+    "subtitle": "数年前朱升献策“缓称王”，至此始称王建百官",
+    "importance": 2,
+    "place": "yingtian",
+    "quote": {
+     "text": "高築牆，廣積糧，緩稱王。",
+     "source": "朱升语，《明史·朱升传》（献策年月不详，有学者质疑其史源）"
+    }
+   },
+   "note": "还应天：本纪作十二月丙申（1364-01-05），《明史纪事本末》作十二月甲寅（1364-01-23），均属本半年。朱升献策时间见 contested"
+  },
+  {
+   "id": "1364H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；徐达、常遇春等平定湖广、江西诸路",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1365H1",
+   "places": [
+    "yingtian",
+    "hongdu",
+    "yingtian"
+   ],
+   "event": "正月廿五（2月16日）至南昌，执侄大都督朱文正以归，安置桐城",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1365H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "坐镇应天；九月建国子学，十月下令讨张士诚，先取淮东",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1366H1",
+   "places": [
+    "yingtian",
+    "zhenjiang",
+    "yingtian",
+    "guzhuang",
+    "yingtian"
+   ],
+   "event": "正月亲援江阴，至镇江，士诚遁；四月归濠州省墓，宴父老；五月还",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "归乡省墓",
+    "subtitle": "离乡十余年后首次回钟离祭扫父母坟墓",
+    "importance": 2,
+    "place": "guzhuang",
+    "quote": {
+     "text": "吾去鄉十有餘年，艱難百戰，乃得歸省墳墓，與父老子弟復相見。",
+     "source": "《明史·太祖本纪一》"
+    }
+   },
+   "note": "四月甲子（5月22日）如濠州，五月壬午（6月9日）至自濠；“至镇江……追至巫子门”据《明史纪事本末》卷4"
+  },
+  {
+   "id": "1366H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "八月改筑应天城、作新宫；命徐达、常遇春率师二十万伐张士诚",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1367H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "称吴元年；三月始设文武科取士；徐达围平江",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5"
+  },
+  {
+   "id": "1367H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "九月徐达破平江，执张士诚；十月定律令，命徐达、常遇春北伐中原",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S4"
+   ],
+   "stage": "st5",
+   "milestone": {
+    "title": "平吴北伐",
+    "subtitle": "东南既定，于应天定“先取山东、次河洛”之策",
+    "importance": 2,
+    "place": "yingtian",
+    "quote": {
+     "text": "吾欲先取山東，撤彼屏蔽，移兵兩河，破其籓籬，拔潼關而守之，扼其戶檻。",
+     "source": "《明史·太祖本纪一》"
+    }
+   },
+   "note": "平江之役由徐达指挥，太祖坐镇应天未亲临；九月辛巳为1367-10-01"
+  },
+  {
+   "id": "1368H1",
+   "places": [
+    "yingtian",
+    "kaifeng"
+   ],
+   "event": "正月初四（1月23日）于应天南郊即皇帝位，国号大明，建元洪武；四月北幸汴梁",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S11"
+   ],
+   "stage": "st6",
+   "milestone": {
+    "title": "称帝建明",
+    "subtitle": "布衣出身，投军十六年而成帝业，立马氏为皇后、朱标为皇太子",
+    "importance": 1,
+    "place": "yingtian",
+    "quote": {
+     "text": "天下始定，民財力俱困，要在休養安息",
+     "source": "《明史·太祖本纪二》"
+    }
+   },
+   "note": "四月甲子（5月11日）幸汴梁"
+  },
+  {
+   "id": "1368H2",
+   "places": [
+    "kaifeng",
+    "yingtian",
+    "kaifeng",
+    "yingtian"
+   ],
+   "event": "闰七月还应天；八月徐达克元大都，以开封为北京，再幸北京；十月还",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6",
+   "note": "闰七月丁未（8月22日）至自开封；八月庚午（9月14日）徐达入元都；壬午（9月26日）幸北京；十月丁丑（11月20日）还"
+  },
+  {
+   "id": "1369H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；二月诏修《元史》，四月编《祖训录》，定封建诸王之制",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1369H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月诏以临濠为中都，营建城阙；十月诏天下郡县立学",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1370H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；四月封诸皇子为王，五月诏设科取士；大旱，素服草屦步祷",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1370H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；十一月大封功臣，李善长、徐达等为公；诏置户帖",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1371H1",
+   "places": [
+    "yingtian",
+    "zhongdu",
+    "yingtian"
+   ],
+   "event": "正月建郊庙于中都；二月幸中都视工，旬日还；三月首开廷试",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6",
+   "note": "二月甲戌（3月7日）幸中都，壬午（3月15日）至自中都"
+  },
+  {
+   "id": "1371H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；七月傅友德下成都，明昇降，四川平",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1372H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；徐达等三路北征，五月岭北之战失利；六月作铁榜诫功臣",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1372H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；汤和断头山战败；十二月命百官奏事启皇太子",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1373H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；二月诏暂罢科举，改行察举；三月颁《昭鉴录》训诫诸王",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1373H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；七月胡惟庸任右丞相；十一月冬至不豫，改卜郊",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S6"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1374H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；颁定《大明律》；修曲阜孔子庙，设三氏学",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6",
+   "note": "《大明律》颁于洪武六年闰十一月庚寅，换算为1374-01-06"
+  },
+  {
+   "id": "1374H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；诏官为存养阵亡军士家属；遣元嗣君之子北归",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6"
+  },
+  {
+   "id": "1375H1",
+   "places": [
+    "yingtian",
+    "zhongdu",
+    "yingtian"
+   ],
+   "event": "三月立钞法；四月幸中都，月底还京，下诏罢营中都；刘基卒",
+   "confidence": "documented",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st6",
+   "note": "四月辛卯（5月2日）幸中都，丁巳（5月28日）至自中都"
+  },
+  {
+   "id": "1375H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；七月改作太庙；十月命皇太子、诸王讲武中都",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1376H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；三月免多省租赋；六月改行中书省为承宣布政使司",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1376H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；闰九月因星变诏求直言；空印案约发于此时，郑士利上书讼冤",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S13"
+   ],
+   "stage": "st7",
+   "note": "空印案年份有九年、十五年两说，见 contested"
+  },
+  {
+   "id": "1377H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；五月命李善长、李文忠总议军国重事；六月命政事先启皇太子",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1377H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；七月置通政司，始遣御史巡按州县；九月胡惟庸升左丞相",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S6"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1378H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；正月封诸子为王；三月命奏事毋关白中书省",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1378H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月追封当年与地葬亲的刘继祖为义惠侯；十月大祀殿成",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1379H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；正月始合祀天地于南郊；二月汤和率列侯练兵临清",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1379H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月沐英大破西番；十一月封仇成、蓝玉等十二人为侯",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1380H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "正月初六（2月12日）以谋反诛左丞相胡惟庸，随即罢中书省、废丞相，权归六部",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S6",
+    "S8"
+   ],
+   "stage": "st7",
+   "milestone": {
+    "title": "胡惟庸案·废丞相",
+    "subtitle": "千余年的丞相制度就此废止；此案一再追究，至洪武二十三年李善长案，据《明史》坐诛者三万余人",
+    "importance": 1,
+    "place": "yingtian",
+    "quote": {
+     "text": "罷中書省，廢丞相等官，更定六部官秩",
+     "source": "《明史·太祖本纪二》"
+    }
+   },
+   "note": "右丞相汪广洋于洪武十二年十二月贬死，该月始于1380-01-08，亦属本半年 《明史·刑法志》称胡、蓝两案合计“且四万”，与两传数字相加不合，系《明史》自身出入；赵翼称洪武十三年当时被诛者“不过陈宁、涂节数人”。"
+  },
+  {
+   "id": "1380H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月置四辅官；宋濂因孙坐胡党，安置茂州",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1381H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；诏天下编赋役黄册，以一百一十户为一里；正月徐达北征",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S9"
+   ],
+   "stage": "st7",
+   "note": "黄册诏令只知在洪武十四年，系于上半年"
+  },
+  {
+   "id": "1381H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月命傅友德、蓝玉、沐英率师征云南",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1382H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；正月云南平；四月诏天下通祀孔子；是年罢仪鸾司，改置锦衣卫",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S12"
+   ],
+   "stage": "st7",
+   "note": "锦衣卫设置月份《明史·职官志》未载，系于本年上半年"
+  },
+  {
+   "id": "1382H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月复设科举；八月初十（9月17日）马皇后崩，九月葬孝陵",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1383H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；三月诏凤阳、临淮二县民世世免徭赋",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1383H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；分遣御史录囚；十二月刑部尚书开济有罪诛",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1384H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；三月颁科举取士式；曹国公李文忠卒",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1384H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；七月禁内官预外事，敕诸司毋与内官监通文移",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1385H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；二月徐达卒；三月户部侍郎郭桓坐盗官粮诛，据《明史》系死者数万人",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S8"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1385H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；十月初一（11月3日）颁《大诰》于天下",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1386H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；六月诏存问高年，贫民八十以上月给米肉",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1386H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月命皇太子修泗州盱眙祖陵",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1387H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；正月焚锦衣卫刑具，系囚付刑部；命国子生分行州县编鱼鳞图册",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S9"
+   ],
+   "stage": "st7",
+   "note": "鱼鳞图册据《食货志》在洪武二十年，月份不详，系于上半年"
+  },
+  {
+   "id": "1387H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月收冯胜将军印；九月命蓝玉为大将军北征沙漠",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1388H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；四月蓝玉袭破北元嗣君于捕鱼儿海",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S7"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1388H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月蓝玉师还；九月九王来朝；十二月进封蓝玉凉国公",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S7"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1389H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；正月改大宗正院为宗人府，以秦王为宗人令",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1389H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月更定《大明律》",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1390H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；四月吉安侯陆仲亨等坐胡惟庸党下狱，胡案再起",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S6"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1390H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；五月廿三（7月6日）赐李善长死；据《明史》，胡党坐诛者三万余人",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S6"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1391H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；四月封十皇子为王；燕王朱棣督诸将出塞",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1391H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月命皇太子巡抚陕西，十一月还京；天下赋役黄册成",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S9"
+   ],
+   "stage": "st7"
+  },
+  {
+   "id": "1392H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "四月廿五（5月17日）皇太子朱标薨，帝恸哭",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S10"
+   ],
+   "stage": "st8",
+   "milestone": {
+    "title": "太子朱标早逝",
+    "subtitle": "悉心培养的储君先父而逝，传承布局骤然落空",
+    "importance": 2,
+    "place": "yingtian"
+   }
+  },
+  {
+   "id": "1392H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月立皇孙朱允炆为皇太孙；靖宁侯叶昇坐胡党诛",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S10"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1393H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "二月以谋反诛凉国公蓝玉，株连侯伯将校甚众；颁《逆臣录》",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S7",
+    "S8"
+   ],
+   "stage": "st8",
+   "milestone": {
+    "title": "蓝玉案",
+    "subtitle": "开国宿将几被一网打尽；据《明史》，族诛者一万五千人",
+    "importance": 2,
+    "place": "yingtian",
+    "quote": {
+     "text": "藍賊為亂，謀泄，族誅者萬五千人。",
+     "source": "洪武二十六年九月诏，载《明史·蓝玉传》"
+    }
+   },
+   "note": "二月乙酉为1393-03-22；所引诏书下于同年九月。《刑法志》称胡、蓝两狱“株連死者且四萬”"
+  },
+  {
+   "id": "1393H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月下诏赦胡惟庸、蓝玉余党",
+   "confidence": "inferred",
+   "sources": [
+    "S1",
+    "S7"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1394H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；三月课民种桑枣木棉，以四方底平收藏甲兵",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1394H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；十一月颍国公傅友德、十二月定远侯王弼相继坐事诛",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1395H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；二月宋国公冯胜坐事诛；谕户部编民百户为里",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1395H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；六月谕后嗣止循律与大诰、不许复立丞相；九月颁《皇明祖训》",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8",
+   "note": "六月己丑为1395-07-14"
+  },
+  {
+   "id": "1396H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；二月命燕王朱棣帅师巡大宁",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1396H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；九月召致仕武臣二千五百余人入朝赏赉",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1397H1",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；三月、六月两度赐进士；驸马都尉欧阳伦有罪赐死",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1397H2",
+   "places": [
+    "yingtian"
+   ],
+   "event": "在南京；八月河决开封；十一月命沐春讨麓川刀干孟",
+   "confidence": "inferred",
+   "sources": [
+    "S1"
+   ],
+   "stage": "st8"
+  },
+  {
+   "id": "1398H1",
+   "places": [
+    "yingtian",
+    "xiaoling"
+   ],
+   "event": "五月不豫；闰五月初十（6月24日）崩于西宫，年七十一；十六日葬孝陵",
+   "confidence": "documented",
+   "sources": [
+    "S1",
+    "S14"
+   ],
+   "stage": "st8",
+   "milestone": {
+    "title": "崩于南京",
+    "subtitle": "遗诏传位皇太孙允炆，丧葬从俭",
+    "importance": 1,
+    "place": "yingtian",
+    "quote": {
+     "text": "朕膺天命三十有一年，憂危積心，日勤不怠，務有益於民。",
+     "source": "遗诏，载《明史·太祖本纪三》"
+    }
+   }
+  }
+ ],
+ "contested": [
+  {
+   "topic": "出生地",
+   "views": [
+    "钟离东乡（《皇陵碑记》太祖自述“居鍾離之東鄉，而朕生焉”，S3；维基百科定为今小溪河镇燃灯寺村，S14）",
+    "钟离太平乡（《明史纪事本末》“父又徙鍾離太平鄉……生四子”，S4；通行说法“太平乡孤庄村”）",
+    "盱眙说（今明光市赵府村一带）：据《朱氏世德碑记》异文“生迁盱眙后，戊辰年”；陈梧桐《社会科学辑刊》2010年第1期已驳此说，另一异文作“先迁钟离，后戊辰所生”"
+   ],
+   "adopted": "采用太祖自述的东乡说（一手史料），十年后迁西乡、再迁太平乡孤庄村；孤庄村以明皇陵一带代表"
+  },
+  {
+   "topic": "南略定远、克滁州的系年",
+   "views": [
+    "至正十三年（《明史·太祖本纪》、《纲目三编》）",
+    "至正十四年七月（《明史纪事本末》卷1）"
+   ],
+   "adopted": "还乡募兵在1353年春无争议；定远之役折中系于1354H1，克滁州依《纪事本末》系于1354年七月"
+  },
+  {
+   "topic": "空印案发生年份",
+   "views": [
+    "洪武十五年（《明史·刑法志二》“先是，十五年空印事發”，S8）",
+    "洪武九年（《明史·郑士利传》记郑士利借“星變求言”上书论空印，本纪载九年闰九月星变求言，S13）"
+   ],
+   "adopted": "两说并存，事件写入1376H2并注明另说十五年；不设里程碑"
+  },
+  {
+   "topic": "朱升献“高筑墙，广积粮，缓称王”的时间",
+   "views": [
+    "《明史·朱升传》只云“太祖下徽州，以鄧愈薦，召問時務”，徽州下于至正十七年七月",
+    "通俗读物多系于至正十七、十八年间，具体年月无一手记载",
+    "太祖本人经徽州在至正十八年十二月亲征婺州途中，故有1357、1358两说；夏玉润对九字策史源提出质疑"
+   ],
+   "adopted": "不单列行程，仅作为1364年即吴王位里程碑的引文，并注明出处"
+  },
+  {
+   "topic": "《御制皇陵碑》撰写年份",
+   "views": [
+    "洪武十一年（《名山藏》，维基文库校注）",
+    "洪武十六年（维基文库所据《七修类稿》本序文“洪武十六年夏四月”）"
+   ],
+   "adopted": "只用其自述内容，不涉及年份"
+  },
+  {
+   "topic": "皇觉寺原址",
+   "views": [
+    "原寺在钟离太平乡，与太祖家同“里”（《皇陵碑记》“里之皇覺寺”）",
+    "《纲目三编》注“皇覺寺在鳳陽府城北，明曰龍興寺”（指洪武十六年迁建后的龙兴寺）"
+   ],
+   "adopted": "行程取原址（明皇陵一带，低可信度），不取今龙兴寺"
+  }
+ ]
+}

@@ -70,4 +70,59 @@ export const PEOPLE = {
       { name: '大 理', lon: 100.4, lat: 25.4, from: 0 },
     ],
   },
+  libai: {
+    age: xusui(701),
+    name: '李白', life: '701 — 762', tagline: '仗剑去国 · 半年一步', color: '#7aa8ff', glow: '#c4d8ff',
+    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    // 天宝三载起改“年”为“载”，至乾元元年复称“年”
+    era: (y, h) => eraFrom([
+      ['大足', 701, idx(701, 1)], ['长安', 701, idx(702, 1)], ['神龙', 705, idx(705, 1)], ['景龙', 707, idx(707, 2)],
+      ['景云', 710, idx(710, 2)], ['太极', 712, idx(712, 1)], ['先天', 712, idx(712, 2)], ['开元', 713, idx(714, 1)],
+      ['天宝', 742, idx(742, 1)], ['至德', 756, idx(756, 2)], ['乾元', 758, idx(758, 1)], ['上元', 760, idx(760, 2)],
+      ['宝应', 762, idx(762, 1)],
+    ], e => (e[1] < 705 ? '武周 · ' : '唐 · '))(y, h).replace(/(天宝(?![元二])\S+|至德\S+)年$/, '$1载'),
+    regions: [
+      { name: '突 厥', lon: 104.0, lat: 46.0, from: 0, to: idx(744, 1) },
+      { name: '回 纥', lon: 104.0, lat: 46.0, from: idx(744, 2) },
+      { name: '吐 蕃', lon: 91.0, lat: 31.5, from: 0 },
+      { name: '南 诏', lon: 100.2, lat: 25.6, from: idx(738, 1) },
+    ],
+  },
+  zhuyz: {
+    age: xusui(1328),   // 生于天历元年九月十八日
+    name: '朱元璋', life: '1328 — 1398', tagline: '布衣天子 · 半年一步', color: '#e0a030', glow: '#ffd27a',
+    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    // 1355 年起郭子兴部奉韩林儿“龙凤”年号，1367 年称吴元年，1368 年改元洪武
+    era: (y, h) => {
+      const zz = eraFrom([
+        ['天历', 1328, idx(1328, 2)], ['至顺', 1330, idx(1330, 2)], ['元统', 1333, idx(1334, 1)],
+        ['至元', 1335, idx(1336, 1)], ['至正', 1341, idx(1341, 1)],
+      ], () => '元 · ')(y, h);
+      if (y < 1355) return zz;
+      if (y < 1367) return `龙凤${cnNum(y - 1354)}年 · 元至正${cnNum(y - 1340)}年`;
+      if (y === 1367) return '吴元年 · 元至正二十七年';
+      return `明 · 洪武${cnNum(y - 1367)}年`;
+    },
+    regions: [
+      { name: '元', lon: 112.5, lat: 41.2, from: 0, to: idx(1367, 2) },
+      { name: '陈友谅', lon: 115.0, lat: 30.3, from: idx(1360, 1), to: idx(1363, 2) },
+      { name: '张士诚', lon: 120.3, lat: 32.1, from: idx(1356, 1), to: idx(1367, 1) },
+      { name: '方国珍', lon: 121.3, lat: 28.8, from: idx(1356, 1), to: idx(1367, 2) },
+      { name: '明玉珍', lon: 106.6, lat: 30.2, from: idx(1362, 1), to: idx(1371, 1) },
+      { name: '北 元', lon: 110.5, lat: 44.5, from: idx(1368, 2) },
+    ],
+  },
+  jiang: {
+    age: zhousui(1887, 10, 31),
+    name: '蒋介石', life: '1887 — 1975', tagline: '一个人的八十七年 · 半年一步', color: '#5b8fd8', glow: '#a9c6f0',
+    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    // 1949 年下半年起只显示公元年（起飞时人类选定）
+    era: (y, h) => {
+      if (y < 1909) return `清 · 光绪${cnNum(y - 1874)}年`;
+      if (y < 1912) return `清 · 宣统${cnNum(y - 1908)}年`;
+      if (y < 1949 || (y === 1949 && h === 1)) return `民国${cnNum(y - 1911)}年`;
+      return '';
+    },
+    regions: [],
+  },
 };

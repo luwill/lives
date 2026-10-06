@@ -1,0 +1,12 @@
+{
+ "title": {"mood": "title", "root": 50, "mode": "shang", "why": "片头：锣与长音，商调的苍劲"},
+ "st1": {"mood": "elegy", "root": 57, "mode": "yu", "why": "凤阳孤儿：佃农之家的清苦，末段饥荒丧亲，二胡与箫的悲怆"},
+ "st2": {"mood": "wander", "root": 59, "mode": "jue", "why": "游方僧：托钵漂泊、凄凉而倔强，箫与木鱼般的木板"},
+ "st3": {"mood": "tension", "root": 57, "mode": "yu", "why": "濠州从军：乱世崛起、隐忍果决，低音断奏渐紧"},
+ "st4": {"mood": "aspire", "root": 60, "mode": "gong", "why": "渡江定鼎：背水渡江的豪壮，定都应天的开阔"},
+ "st5": {"mood": "battle", "root": 55, "mode": "shang", "why": "群雄逐鹿：龙湾、鄱阳湖水战烈火，鼓与锣的史诗感"},
+ "st6": {"mood": "grand", "root": 55, "mode": "gong", "why": "开国称帝：开国气象的庄严恢宏，编钟与弦乐"},
+ "st7": {"mood": "contemplative", "root": 53, "mode": "yu", "why": "洪武治国：勤政严苛、猜忌日深，古琴低回，冷峻沉重"},
+ "st8": {"mood": "elegy", "root": 52, "mode": "yu", "why": "晚年孤寂：白发丧子、故旧凋零，终归苍凉"},
+ "outro": {"mood": "outro", "root": 50, "mode": "yu", "why": "片尾：二胡收束"}
+}
