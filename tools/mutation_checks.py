@@ -92,6 +92,22 @@ def m_sub_overlap(r: Path) -> None:         # C7：字幕重叠
     jsave(p, d)
 
 
+def m_jiang_minguo(r: Path) -> None:      # D1：蒋介石 1949H2 以后仍显示民国纪年
+    p = r / 'src/people.js'
+    p.write_text(p.read_text().replace("if (y < 1949 || (y === 1949 && h === 1)) return `民国${cnNum(y - 1911)}年`;\n      return '';",
+                                       "return `民国${cnNum(y - 1911)}年`;"))
+
+
+def m_libai_zai(r: Path) -> None:          # C3：天宝三载起不改称“载”
+    p = r / 'src/people.js'
+    p.write_text(p.read_text().replace(".replace(/(天宝(?![元二])\\S+|至德\\S+)年$/, '$1载')", ''))
+
+
+def m_zhuyz_longfeng(r: Path) -> None:     # C3：龙凤纪年晚一年开始
+    p = r / 'src/people.js'
+    p.write_text(p.read_text().replace('if (y < 1355) return zz;', 'if (y < 1356) return zz;'))
+
+
 MUTANTS = [
     ('C1', '删除毛泽东 1935H1 一步', m_delete_step, 'test_data.py'),
     ('C1', '黄州经度改为 10°', m_bad_coord, 'test_data.py'),
@@ -105,6 +121,9 @@ MUTANTS = [
     ('C7', '诸葛亮第 11、12 条字幕重叠', m_sub_overlap, 'test_timeline.py'),
     ('C3', '去掉周岁下限（出生时 −1 岁）', m_negative_age, 'test_js.py'),
     ('C8', '片尾里程按图外代理点累计', m_proxy_km, 'test_js.py'),
+    ('C3', '蒋介石 1949H2 后仍用民国纪年', m_jiang_minguo, 'test_js.py'),
+    ('C3', '李白天宝三载不改称“载”', m_libai_zai, 'test_js.py'),
+    ('C3', '朱元璋龙凤纪年晚一年', m_zhuyz_longfeng, 'test_js.py'),
 ]
 
 
