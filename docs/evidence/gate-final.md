@@ -1,19 +1,19 @@
 # Machine gate — final
 
-- commit: 0ccacdd
+- commit: 1bc5029
 - working tree: clean (the gate refuses to start otherwise)
 - recorded by: /Users/louwill/.claude/skills/autopilot/scripts/run-gate.sh (sha256 f7df72490cb4216d)
-- started: 2026-10-06T00:49:31Z
+- started: 2026-10-06T01:14:18Z
 - workdir: /Users/louwill/Vibing/daily-test/opus5.5-video-test/lives
 
 ## 1. `python3 -m pytest -q tests`
 
-exit 0 · 2 s
+exit 0 · 1 s
 
 ```
-...............................................                          [100%]Running teardown with pytest sessionfinish...
+................................................                         [100%]Running teardown with pytest sessionfinish...
 
-47 passed in 0.21s
+48 passed in 0.21s
 ```
 
 ## 2. `node tools/smoke.mjs`
@@ -31,12 +31,12 @@ sushi: total 546.2s, 24 samples, frame std 15.7, errors 0
 exit 0 · 7 s
 
 ```
-mao: 648.9s (10.8 min) 1920x1080@30/1 h264+aac -16.3 LUFS, frame means 28-112
+mao: 648.9s (10.8 min) 1920x1080@30/1 h264+aac -16.3 LUFS, frame means 28-116
 zhuge: 537.8s (9.0 min) 1920x1080@30/1 h264+aac -16.0 LUFS, frame means 75-113
 sushi: 546.2s (9.1 min) 1920x1080@30/1 h264+aac -16.8 LUFS, frame means 26-106
 ```
 
-## 4. `python3 tools/mutation_checks.py`
+## 4. `python3 tools/mutation_checks.py docs/evidence/mutations.md`
 
 exit 0 · 17 s
 
@@ -58,5 +58,11 @@ exit 0 · 17 s
 | C8 | 片尾里程按图外代理点累计 | red ✔ | tests/test_js.py::test_mao_km_counts_real_moscow_distance |
 ```
 
-- finished: 2026-10-06T00:50:01Z
+- note: the gate itself changed tracked files:
+
+```
+ M docs/evidence/gate-final.md
+```
+
+- finished: 2026-10-06T01:14:47Z
 - result: passed
