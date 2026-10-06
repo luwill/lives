@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NAMES = {'mao': '毛泽东', 'zhuge': '诸葛亮', 'sushi': '苏轼', 'libai': '李白', 'zhuyz': '朱元璋', 'jiang': '蒋介石'}
-TARGET_MIN = {'mao': (9, 13), 'zhuge': (6, 9), 'sushi': (7, 10), 'libai': (7, 10), 'zhuyz': (8, 11), 'jiang': (9, 13)}
+TARGET_MIN = {'mao': (9, 13), 'zhuge': (13, 17), 'sushi': (7, 10), 'libai': (7, 10), 'zhuyz': (8, 11), 'jiang': (9, 13)}
 
 
 def probe(p: Path) -> dict:

@@ -1,5 +1,6 @@
 """由 DEM 生成地形贴图（分层设色 × 晕渲 + 烘焙河湖）与 three.js 用的高度网格。
-用法：python3 tools/make_texture.py <name> [grid_w]
+用法：python3 tools/make_texture.py <name> [grid_w] [--sat]
+--sat：以 <name>_sat.jpg（fetch_imagery.py 生成的 Sentinel-2 无云影像）为底色，叠多方向晕渲，代替分层设色
 输出：assets/terrain/<name>_tex.jpg、<name>_h.bin（uint16 网格）、<name>.json 追加 hmin/hmax/gw/gh
 河流与湖泊直接画进贴图：垂直夸张随镜头变化时，贴图上的河流始终贴合地面。
 """
@@ -9,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw
-from scipy.ndimage import gaussian_filter, label, median_filter
+from scipy.ndimage import binary_dilation, gaussian_filter, label, median_filter
 
 ROOT = Path(__file__).resolve().parent.parent
 T = ROOT / 'assets' / 'terrain'
@@ -35,6 +36,47 @@ def hillshade(dem: np.ndarray, cell_m: float, az: float = 315, alt: float = 40) 
     aspect = np.arctan2(-gx, gy)
     a, z = np.radians(az), np.radians(90 - alt)
     return np.clip(np.cos(z) * np.cos(slope) + np.sin(z) * np.sin(slope) * np.cos(a - aspect), 0, 1)
+
+
+def hillshade_md(dem: np.ndarray, cell_m: float) -> np.ndarray:
+    """多方向晕渲：西北主光加三个辅光，山体背光面不至于全黑，细节更立体。"""
+    w = {315: 0.45, 270: 0.2, 360: 0.2, 225: 0.15}
+    return sum(k * hillshade(dem, cell_m, az, 42) for az, k in w.items())
+
+
+def declutter_clouds(sat: np.ndarray, land: np.ndarray) -> np.ndarray:
+    """去云渣：2016 版无云影像在秦岭、川西等多云区残留白色碎云。
+    判据：亮（灰度 >150）、近乎无色（通道差 <28）、海拔 <3800 m（高山积雪不动）；
+    掩膜外扩 2 像素后，用周围非云像素的高斯加权平均（归一化卷积）填补。"""
+    lum = sat.mean(-1)
+    spread = sat.max(-1) - sat.min(-1)
+    cloud = (lum > 150) & (spread < 28) & (land < 3800)
+    cloud = binary_dilation(cloud, iterations=2)
+    keep = (~cloud).astype(np.float32)
+    out = sat.copy()
+    todo = cloud.copy()
+    for sigma in (8, 32, 96):          # 大片云区附近没有晴空像素：逐级放大半径，避免除以 0 填成黑块
+        w = gaussian_filter(keep, sigma)
+        ok = todo & (w > 0.05)
+        for c in range(3):
+            fill = gaussian_filter(sat[..., c] * keep, sigma) / np.maximum(w, 1e-6)
+            out[..., c] = np.where(ok, fill, out[..., c])
+        todo &= ~ok
+    print('clouds filled', f'{cloud.mean():.2%}')
+    return out
+
+
+def satellite(name: str, land: np.ndarray, ocean: np.ndarray, cell: float) -> np.ndarray:
+    """卫星底色 × 晕渲：平地亮度基本不变，山体按坡向明暗；海面与旧配色各半，保持统一色调。"""
+    sat = np.asarray(Image.open(T / f'{name}_sat.jpg').convert('RGB')).astype(np.float32)
+    assert sat.shape[:2] == land.shape, (sat.shape, land.shape)
+    sat = declutter_clouds(sat, land)
+    shade = hillshade_md(gaussian_filter(land, 0.7), cell)
+    flat = np.sin(np.radians(42))
+    lum = sat.mean(-1, keepdims=True)
+    sat = lum + (sat - lum) * 1.12                       # 略提饱和度
+    col = sat * np.clip(1 + 1.15 * (shade - flat), 0.35, 1.6)[..., None]
+    return np.where(ocean[..., None], col * 0.5 + OCEAN_SHALLOW * 0.5, col)
 
 
 def ocean_mask(dem: np.ndarray) -> np.ndarray:
@@ -63,7 +105,7 @@ def draw_water(img: Image.Image, meta: dict, cell_km: float) -> None:
                 dr.line(px(line), fill=RIVER, width=width, joint='curve')
 
 
-def main(name: str, grid_w: int) -> None:
+def main(name: str, grid_w: int, use_sat: bool = False) -> None:
     meta = json.loads((T / f'{name}.json').read_text())
     dem = np.load(T / f'{name}.npy')
     ocean = ocean_mask(dem)
@@ -72,12 +114,20 @@ def main(name: str, grid_w: int) -> None:
     dem = np.where(bad, median_filter(dem, 9), dem)
     land = np.clip(dem, 1, None)
     cell = (meta['lon1'] - meta['lon0']) * 111320 * np.cos(np.radians((meta['lat0'] + meta['lat1']) / 2)) / meta['w']
-    shade = hillshade(gaussian_filter(land, 0.8), cell)
-    col = tint(land) * (0.38 + 0.78 * shade[..., None])
-    k = (np.sqrt(depth / 4000))[..., None]
-    col = np.where(ocean[..., None], OCEAN_SHALLOW * (1 - k) + OCEAN_DEEP * k, col)
+    if use_sat:
+        col = satellite(name, land, ocean, cell)
+    else:
+        shade = hillshade(gaussian_filter(land, 0.8), cell)
+        col = tint(land) * (0.38 + 0.78 * shade[..., None])
+        k = (np.sqrt(depth / 4000))[..., None]
+        col = np.where(ocean[..., None], OCEAN_SHALLOW * (1 - k) + OCEAN_DEEP * k, col)
     img = Image.fromarray(np.clip(col, 0, 255).astype(np.uint8))
-    draw_water(img, meta, cell / 1000)
+    if use_sat:                       # 卫星上已有水体：河湖半透明叠加，保证可读又不抢真实地貌
+        water = img.copy()
+        draw_water(water, meta, cell / 1000)
+        img = Image.blend(img, water, 0.6)
+    else:
+        draw_water(img, meta, cell / 1000)
     img.save(T / f'{name}_tex.jpg', quality=90)
     # 网格：海面压平到 0，避免海底地形抬起
     hgt = np.where(ocean, 0, land)
@@ -91,6 +141,7 @@ def main(name: str, grid_w: int) -> None:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) not in (2, 3):
+    args = [a for a in sys.argv[1:] if a != '--sat']
+    if len(args) not in (1, 2):
         sys.exit(__doc__)
-    main(sys.argv[1], int(sys.argv[2]) if len(sys.argv) == 3 else 1024)
+    main(args[0], int(args[1]) if len(args) == 2 else 1024, '--sat' in sys.argv)

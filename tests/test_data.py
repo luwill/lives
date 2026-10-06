@@ -76,3 +76,14 @@ def test_milestones(who):
         assert m.get('place', s['places'][-1]) in s['places'], s['id']
         assert s['confidence'] != 'traditional' or s.get('note'), s['id']
         assert len(set(s['sources'])) >= 2, f"{s['id']}: milestone needs ≥2 sources, has {s['sources']}"
+
+
+# 用户要求诸葛亮卡片引文全部用简体；这些是原引文里出现过的繁体字
+TRAD = set('諸陽於亂聞誠則業漢興請將無輔闕節繼瀘駑鈍姦還舊孫勝遺墳塚斂須')
+
+
+def test_zhuge_quotes_simplified():
+    for s in load('zhuge', 'steps.json')['steps']:
+        q = (s.get('milestone') or {}).get('quote')
+        if q:
+            assert not set(q['text']) & TRAD, (s['id'], set(q['text']) & TRAD)

@@ -66,7 +66,7 @@ export function makeHud(person, data, places, tl, journey) {
   const end = mk('endcard', `<div class="nm">${person.name}</div><div class="life">${person.life}</div>
     <div class="nums"><div><b>${(Math.round(journey.totalKm / 100) * 100).toLocaleString('en-US')}</b><em>公里行程（直线距离累计）</em></div><div><b>${placesSeen.size}</b><em>处足迹</em></div><div><b>${msIdx.length}</b><em>个人生节点</em></div></div>
     <div class="src">史料：${data.meta.sources.filter(s => s.kind === 'primary' || s.kind === 'scholarly').slice(0, 6).map(s => esc(s.title)).join(' · ')}</div>
-    <div class="note">地图仅示意地形与行迹，不表示任何行政或国家界线</div>`);
+    <div class="note">地图仅示意地形与行迹，不表示任何行政或国家界线<br>卫星影像：EOxCloudless by EOX IT Services GmbH（含经修改的 Copernicus Sentinel 2022 数据）· 高程：AWS Terrain Tiles</div>`);
   const flash = mk('flash');
 
   let lastStep = -1, lastCh = null, lastMs = null;

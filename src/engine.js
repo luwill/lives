@@ -44,8 +44,12 @@ async function loadGrid(name) {
   return { name, meta, data };
 }
 
-function terrainMesh(g, tex, order) {
+// holes：更精细各层的范围。粗层落在其内（向内缩两格）的顶点压到地下，
+// 否则粗层平滑过的谷底比精细层高，会从深谷里“冒”出来
+function terrainMesh(g, tex, order, holes = []) {
   const m = g.meta;
+  const mx = 2 * (m.lon1 - m.lon0) / (m.gw - 1), my = 2 * (m.lat1 - m.lat0) / (m.gh - 1);
+  const inHole = (lon, lat) => holes.some(h => lon > h.lon0 + mx && lon < h.lon1 - mx && lat > h.lat0 + my && lat < h.lat1 - my);
   const geo = new THREE.BufferGeometry();
   const n = m.gw * m.gh, pos = new Float32Array(n * 3), uv = new Float32Array(n * 2);
   for (let j = 0; j < m.gh; j++) {
@@ -53,7 +57,7 @@ function terrainMesh(g, tex, order) {
       const k = j * m.gw + i;
       const lon = m.lon0 + (m.lon1 - m.lon0) * i / (m.gw - 1), lat = m.lat1 - (m.lat1 - m.lat0) * j / (m.gh - 1);
       pos[k * 3] = (lon - LON_C) * KX;
-      pos[k * 3 + 1] = (m.hmin + g.data[k] / 65535 * (m.hmax - m.hmin)) / 1000 + g.off;
+      pos[k * 3 + 1] = inHole(lon, lat) ? -50 : (m.hmin + g.data[k] / 65535 * (m.hmax - m.hmin)) / 1000 + g.off;
       pos[k * 3 + 2] = -(lat - LAT_C) * KZ;
       uv[k * 2] = i / (m.gw - 1);
       uv[k * 2 + 1] = 1 - j / (m.gh - 1);
@@ -97,7 +101,7 @@ export async function createWorld(canvas, levels) {
     const g = loaded[i][0];
     g.off = off;
     grids.push(g);
-    const mesh = terrainMesh(g, loaded[i][1], i);
+    const mesh = terrainMesh(g, loaded[i][1], i, loaded.slice(0, i).map(l => l[0].meta));
     mesh.renderOrder = -i;
     meshes.push(mesh);
     scene.add(mesh);

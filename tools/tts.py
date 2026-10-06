@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # 人物 → (声线, 语速, 音调)：毛泽东用庄重的云扬；诸葛亮用云健，压低语速与音调显得沉郁；苏轼用云希，洒脱明快
 VOICES = {
     'mao': ('zh-CN-YunyangNeural', '-6%', '-2Hz'),
-    'zhuge': ('zh-CN-YunjianNeural', '-10%', '-4Hz'),
+    'zhuge': ('zh-CN-YunyangNeural', '-16%', '-6Hz'),   # 用户选定样音 B：放慢压低的云扬
     'sushi': ('zh-CN-YunxiNeural', '-6%', '-1Hz'),
     # 第二批：李白用云希但更快更亮，与苏轼区分；朱元璋用云健，低沉有力；蒋介石用庄重的云扬
     'libai': ('zh-CN-YunxiNeural', '-4%', '+0Hz'),

@@ -41,7 +41,7 @@ export const PEOPLE = {
   zhuge: {
     age: xusui(181),
     name: '诸葛亮', life: '181 — 234', tagline: '鞠躬尽瘁 · 半年一步', color: '#4fc1b0', glow: '#9ff0e2',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: [['zhuge_hi', 0], ['east', -0.03], ['china', -0.06], ['world', -0.15]],   // 活动区 z10 高清层（150 m/像素，卫星底色）
     era: eraFrom([
       ['光和', 178, idx(181, 1)], ['中平', 184, idx(185, 1)], ['初平', 190, idx(190, 1)], ['兴平', 194, idx(194, 1)],
       ['建安', 196, idx(196, 1)], ['章武', 221, idx(221, 1)], ['建兴', 223, idx(223, 2)],
