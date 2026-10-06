@@ -58,7 +58,8 @@
     "kind": "city|town|village|mountain|pass|river|battle|lake|foreign",
     "confidence": "high|medium|low",
     "source": "OSM Nominatim relation 123456 / 考证说明",
-    "note": "可选，例如今址存在争议"
+    "note": "可选，例如今址存在争议",
+    "same_as": "可选：同一地点改名时指向原地点键（如 beiping → beijing），足迹计数只算一处"
   }
 }
 ```

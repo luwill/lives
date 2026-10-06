@@ -334,7 +334,8 @@
   "kind": "city",
   "confidence": "high",
   "source": "OSM Nominatim relation 912940（查询：北京市）",
-  "note": "1928—1949 年间称北平"
+  "note": "1928—1949 年间称北平",
+  "same_as": "beijing"
  },
  "wuhan": {
   "name": "武汉",
@@ -486,7 +487,8 @@
   "kind": "city",
   "confidence": "high",
   "source": "OSM Nominatim relation 4738525（查询：渝中区）",
-  "note": "1940 年 9 月国民政府定重庆为陪都"
+  "note": "1940 年 9 月国民政府定重庆为陪都",
+  "same_as": "chongqing"
  },
  "lashio": {
   "name": "腊戍",
@@ -665,6 +667,7 @@
   "kind": "mountain",
   "confidence": "high",
   "source": "OSM Nominatim node 3517654145（查询：陽明山）",
-  "note": "1950 年由草山改名；中兴宾馆为晚年夏居"
+  "note": "1950 年由草山改名；中兴宾馆为晚年夏居",
+  "same_as": "caoshan"
  }
 }

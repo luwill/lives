@@ -60,8 +60,8 @@ export function makeHud(person, data, places, tl, journey) {
   // 字幕
   const sub = mk('sub');
   // 片尾
-  // 足迹按坐标去重：同一地点改名（草山/阳明山、重庆/陪都、北京/北平）只算一处
-  const spot = k => `${places[k].lat.toFixed(2)},${places[k].lon.toFixed(2)}`;
+  // 足迹去重：同一地点改名时 places.json 用 same_as 指向原键（如草山/阳明山），只算一处
+  const spot = k => places[k].same_as || k;
   const placesSeen = new Set(journey.arrivals.map(a => spot(a.key)));
   const end = mk('endcard', `<div class="nm">${person.name}</div><div class="life">${person.life}</div>
     <div class="nums"><div><b>${(Math.round(journey.totalKm / 100) * 100).toLocaleString('en-US')}</b><em>公里行程（直线距离累计）</em></div><div><b>${placesSeen.size}</b><em>处足迹</em></div><div><b>${msIdx.length}</b><em>个人生节点</em></div></div>

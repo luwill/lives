@@ -11,7 +11,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import edge_tts
 
 ROOT = Path(__file__).resolve().parent.parent
 # 人物 → (声线, 语速, 音调)：毛泽东用庄重的云扬；诸葛亮用云健，压低语速与音调显得沉郁；苏轼用云希，洒脱明快
@@ -33,6 +32,7 @@ def duration(p: Path) -> float:
 
 
 async def synth(text: str, path: Path, voice: tuple) -> list:
+    import edge_tts  # 延迟导入：测试只读 VOICES，不需要联网依赖
     comm = edge_tts.Communicate(text, voice[0], rate=voice[1], pitch=voice[2], boundary='WordBoundary')
     words = []
     with path.open('wb') as f:

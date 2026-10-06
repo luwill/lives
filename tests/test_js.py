@@ -81,4 +81,5 @@ def test_era_edges_second_batch():
     l, z, j = ages('libai'), ages('zhuyz'), ages('jiang')
     assert z['1354H2'][1] == '元 · 至正十四年' and z['1367H2'][1].startswith('吴元年')
     assert l['757H2'][1].endswith('至德二载') and l['758H2'][1].endswith('乾元元年') and l['705H1'][1].startswith('唐')
+    assert l['701H1'][1] == '武周 · 大足元年' and l['761H2'][1] == '唐 · 上元二年' and l['762H1'][1] == '唐 · 宝应元年'
     assert j['1908H2'][1] == '清 · 光绪三十四年' and j['1909H1'][1] == '清 · 宣统元年' and j['1912H1'][1] == '民国元年'
