@@ -68,6 +68,30 @@ def m_wrong_stop(r: Path) -> None:           # C5：里程碑停在半年终点�
     jsave(p, d)
 
 
+def m_negative_age(r: Path) -> None:        # 年龄口径：去掉周岁下限
+    p = r / 'src/people.js'
+    p.write_text(p.read_text().replace('Math.max(0, y - by', '(y - by'))
+
+
+def m_proxy_km(r: Path) -> None:            # C8 片尾里程：按代理点而非真实坐标累计
+    p = r / 'src/journey.js'
+    p.write_text(p.read_text().replace('kmTrue.push(lens[j] / n * scale[j]);', 'kmTrue.push(lens[j] / n);'))
+
+
+def m_ratio(r: Path) -> None:               # C7：非里程碑旁白占比超标
+    p = r / 'src/sushi/timeline.json'; d = jload(p)
+    ms = [s for s in d['narr'] if s['kind'] == 'milestone']
+    for s in ms[:6]:
+        s['kind'] = 'span'
+    jsave(p, d)
+
+
+def m_sub_overlap(r: Path) -> None:         # C7：字幕重叠
+    p = r / 'src/zhuge/timeline.json'; d = jload(p)
+    d['subs'][10][1] = d['subs'][11][0] + 0.5
+    jsave(p, d)
+
+
 MUTANTS = [
     ('C1', '删除毛泽东 1935H1 一步', m_delete_step, 'test_data.py'),
     ('C1', '黄州经度改为 10°', m_bad_coord, 'test_data.py'),
@@ -77,6 +101,10 @@ MUTANTS = [
     ('C5', '庐山会议停留点改到杭州', m_wrong_stop, 'test_timeline.py'),
     ('C6', '苏轼第 4 段配乐前移出 5 s 空档', m_music_gap, 'test_timeline.py'),
     ('C7', '毛泽东第 5、6 段旁白重叠 2 s', m_overlap, 'test_timeline.py'),
+    ('C7', '苏轼 6 段里程碑旁白改记为概述', m_ratio, 'test_timeline.py'),
+    ('C7', '诸葛亮第 11、12 条字幕重叠', m_sub_overlap, 'test_timeline.py'),
+    ('C3', '去掉周岁下限（出生时 −1 岁）', m_negative_age, 'test_js.py'),
+    ('C8', '片尾里程按图外代理点累计', m_proxy_km, 'test_js.py'),
 ]
 
 

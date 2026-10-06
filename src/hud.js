@@ -79,10 +79,10 @@ export function makeHud(person, data, places, tl, journey) {
     stageEl.textContent = t >= tl.steps[0].t0 ? stageOf[st.stage].title : '';
     show(year, lifeOp);
     if (i !== lastStep) {
-      eraEl.textContent = person.era(y, h);
+      eraEl.textContent = i === 0 && person.birth ? person.birth.era : person.era(y, h);
       yEl.textContent = `${y}`;
       hEl.textContent = h === 1 ? '上半年' : '下半年';
-      ageEl.textContent = person.age(y, h);
+      ageEl.textContent = i === 0 && person.birth ? person.birth.age : person.age(y, h);
       const [lab, cls] = CONF[st.confidence];
       evBadge.textContent = lab;
       evBadge.className = `badge ${cls}`;
@@ -115,7 +115,8 @@ export function makeHud(person, data, places, tl, journey) {
     if (ms) {
       if (lastMs !== i) {
         const m = st.milestone, pl = places[m.place || st.places[st.places.length - 1]];
-        cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${person.era(y, h)} · ${person.age(y, h)}`;
+        const b0 = i === 0 && person.birth;
+        cWhen.textContent = `${y} 年${h === 1 ? '上半年' : '下半年'} · ${b0 ? b0.era : person.era(y, h)} · ${b0 ? b0.age : person.age(y, h)}`;
         cH.textContent = m.title;
         // 远途里程碑显示路线起止，其余显示停留地点
         const p0 = places[st.places[0]], p1 = places[st.places[st.places.length - 1]];

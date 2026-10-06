@@ -22,7 +22,7 @@ function eraFrom(table, prefix) {
 const xusui = lunarBirthYear => (y) => `虚岁 ${y - lunarBirthYear + 1}`;
 const zhousui = (by, bm, bd) => (y, h) => {
   const [m, d] = h === 1 ? [4, 1] : [10, 1];
-  return `${y - by - (m < bm || (m === bm && d < bd) ? 1 : 0)} 岁`;
+  return `${Math.max(0, y - by - (m < bm || (m === bm && d < bd) ? 1 : 0))} 岁`;
 };
 
 export const PEOPLE = {
@@ -44,8 +44,9 @@ export const PEOPLE = {
     levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
     era: eraFrom([
       ['光和', 178, idx(181, 1)], ['中平', 184, idx(185, 1)], ['初平', 190, idx(190, 1)], ['兴平', 194, idx(194, 1)],
-      ['建安', 196, idx(196, 1)], ['章武', 221, idx(221, 2)], ['建兴', 223, idx(223, 2)],
+      ['建安', 196, idx(196, 1)], ['章武', 221, idx(221, 1)], ['建兴', 223, idx(223, 2)],
     ], e => (e[1] >= 221 ? '蜀汉 · ' : '东汉 · ')),
+    // 章武元年四月刘备即位：221H1 按事件记为章武元年
     regions: [
       { name: '曹 魏', lon: 114.2, lat: 35.2, from: idx(220, 2) },
       { name: '蜀 汉', lon: 104.6, lat: 30.9, from: idx(221, 2) },
@@ -54,6 +55,7 @@ export const PEOPLE = {
   },
   sushi: {
     age: xusui(1036),   // 生于景祐三年十二月（农历 1036 年）
+    birth: { era: '北宋 · 景祐三年', age: '虚岁 1' },   // 出生一步按生日所在的农历年显示
     name: '苏轼', life: '1037 — 1101', tagline: '一蓑烟雨任平生 · 半年一步', color: '#f0b84a', glow: '#ffe2a0',
     levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
     era: eraFrom([

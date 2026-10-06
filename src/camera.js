@@ -66,7 +66,7 @@ export function buildCamera(tl, journey) {
     if (s.ms && t <= s.ms.t1) {
       // 抵达途中：镜头跟随人物并逐渐推近；抵达后定在里程碑地点
       const p = positionAt(verts, Math.min(t, s.ms.t0));
-      const k = Math.min(1, (t - s.t0) / (s.ms.t0 - s.t0));
+      const k = Math.max(0, Math.min(1, (t - s.t0) / (s.ms.t0 - s.t0)));
       const from = i > 0 ? frame[i - 1].dist : frame[i].dist;
       const d = Math.exp(Math.log(from) + (Math.log(MS_DIST) - Math.log(from)) * k * k);
       return { lon: p[0] + CARD_SHIFT * d * k / (111.32 * Math.cos(p[1] * Math.PI / 180)), lat: p[1], dist: d };

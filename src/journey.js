@@ -8,9 +8,10 @@ export function isOffMap(p) {
 
 // 图外地点 → 从出发点朝它的方向前进 OFF_KM 公里处（画面内可见的“出图”箭头位置）
 const OFF_KM = 900;
-export function proxyOf(p, from) {
+const ANCHOR = [116.4, 39.9];   // 北京：同一图外地点每次都落在同一代理点
+export function proxyOf(p) {
   if (!isOffMap(p)) return [p.lon, p.lat];
-  const [fx, fy] = from || [105, 35];
+  const [fx, fy] = ANCHOR;
   const kx = 111.32 * Math.cos(fy * Math.PI / 180), dx = (p.lon - fx) * kx, dy = (p.lat - fy) * 110.57;
   const d = Math.hypot(dx, dy), s = Math.min(1, OFF_KM / d);
   return [fx + dx * s / kx, fy + dy * s / 110.57];
@@ -22,7 +23,8 @@ const KM = (a, b) => Math.hypot((b[0] - a[0]) * 111.32 * Math.cos((a[1] + b[1]) 
 export function buildJourney(steps, tlSteps, places, stepKm = 12) {
   const verts = [];          // [lon, lat, t]
   const arrivals = [];       // {key, t, step, pos}
-  let prev = null, lastIn = null;   // lastIn：最近一个图内地点（图外代理点的出发参照）
+  let prev = null;
+  const kmTrue = [];          // 每个路径点相对上一点的“真实”公里数（图外段按真实坐标折算）
   // 一段行程：keys 依次经过，在 [t0, t1] 内按距离匀速（首尾缓动）走完
   function leg(keys, t0, t1, i) {
     const seq = (prev ? [prev] : []).concat(keys).filter((k, j, a) => j === 0 || k !== a[j - 1]);
@@ -30,16 +32,17 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
     const pts = [];
     seq.forEach((k, j) => {
       if (j === 0 && prev) { pts.push(verts[verts.length - 1].slice(0, 2)); return; }
-      const q = proxyOf(places[k], lastIn);
-      if (!isOffMap(places[k])) lastIn = q;
-      pts.push(q);
+      pts.push(proxyOf(places[k]));
     });
     if (!prev) {
       verts.push([...pts[0], t0]);
+      kmTrue.push(0);
       arrivals.push({ key: seq[0], t: t0, step: i, pos: pts[0] });
     }
     const lens = pts.slice(1).map((p, j) => KM(pts[j], p));
     const total = lens.reduce((a, b) => a + b, 0);
+    const real = seq.map(k => [places[k].lon, places[k].lat]);
+    const scale = lens.map((l, j) => (l > 0 ? KM(real[j], real[j + 1]) / l : 0));
     let acc = 0;
     for (let j = 0; j < pts.length - 1; j++) {
       const a = pts[j], b = pts[j + 1], n = Math.max(1, Math.ceil(lens[j] / stepKm));
@@ -48,6 +51,7 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
         const u = total > 0 ? d / total : 1;
         const e = u < 0.5 ? 2 * u * u : 1 - (-2 * u + 2) ** 2 / 2;
         verts.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, t0 + (t1 - t0) * e]);
+        kmTrue.push(lens[j] / n * scale[j]);
       }
       acc += lens[j];
       arrivals.push({ key: seq[j + 1], t: t0 + (t1 - t0) * (total > 0 ? acc / total : 1), step: i, pos: pts[j + 1] });
@@ -61,7 +65,7 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
     if (ts.after) leg(st.places.slice(cut), ts.after.t0, ts.after.t0 + ts.after.move, i);
   });
   const cum = [0];
-  for (let i = 1; i < verts.length; i++) cum.push(cum[i - 1] + KM(verts[i - 1], verts[i]));
+  for (let i = 1; i < verts.length; i++) cum.push(cum[i - 1] + kmTrue[i]);
   return { verts, arrivals, cum, totalKm: cum[cum.length - 1] };
 }
 

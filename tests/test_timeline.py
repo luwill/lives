@@ -43,6 +43,10 @@ def test_milestones_hold(who):
     assert set(held) == ms_ids
     for sid, m in held.items():
         assert m['t1'] - m['t0'] >= MIN_HOLD, sid
+    # 远途里程碑：抵达终点后也要停够
+    for s in tl['steps']:
+        if 'ms' in s and s['ms']['travel']:
+            assert s['ms']['t1'] - (s['t0'] + s['move']) >= MIN_HOLD - 1e-6, s['id']
 
 
 def test_narration_no_overlap_and_inside(who):
@@ -53,15 +57,16 @@ def test_narration_no_overlap_and_inside(who):
     assert segs[0]['t0'] >= 0 and segs[-1]['t1'] <= tl['total']
     subs = tl['subs']
     for a, b in zip(subs, subs[1:]):
-        assert a[0] <= b[0], (a, b)
+        assert a[0] <= b[0] and a[1] <= b[0] + 1e-6, (a, b)
 
 
 def test_narration_balance(who):
-    """详略得当：里程碑（含片头片尾）占旁白主体，平淡时期的概述不超过 40%。"""
+    """C7 原文：非里程碑旁白（概述 + 片头 + 片尾）总时长占比 < 40%。"""
     tl = timeline(who)
     dur = lambda k: sum(s['t1'] - s['t0'] for s in tl['narr'] if s['kind'] == k)
     total = sum(s['t1'] - s['t0'] for s in tl['narr'])
-    assert dur('span') / total < 0.40, dur('span') / total
+    non_ms = dur('span') + dur('intro') + dur('outro')
+    assert non_ms / total < 0.40, non_ms / total
     # 一级里程碑平均旁白比二级长
     steps = {s['id']: s for s in load(who, 'steps.json')['steps']}
     script = json.loads((ROOT / 'narration' / who / 'script.json').read_text())

@@ -25,6 +25,7 @@ export async function openPage(who, onError) {
   const srv = await serve();
   const browser = await chromium.launch({ executablePath: CHROME, args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist', '--enable-webgl'] });
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
+  page.setDefaultTimeout(180000);   // 高负载时截图可能超过默认 30 s
   page.on('pageerror', e => onError(`pageerror: ${e.message}`));
   page.on('console', m => { if (m.type() === 'error') onError(`console: ${m.text()}`); });
   await page.goto(`http://localhost:${srv.address().port}/src/index.html?who=${who}`);

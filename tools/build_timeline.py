@@ -169,7 +169,7 @@ def build(who: str) -> dict:
                 move = min(TRAVEL_MAX, max(TRAVEL_MIN, tts[seg['id']]['dur'] * 0.85, km_pre / TRAVEL_SPEED))
                 ms0 = t + 0.6
                 end = say(seg, ms0 + 0.4)
-                ms1 = max(end + MS_TAIL, t + move + 1.5, ms0 + MS_MIN_HOLD)
+                ms1 = max(end + MS_TAIL, t + move + MS_MIN_HOLD, ms0 + MS_MIN_HOLD)
                 travel = True
             else:
                 move = min(4.0, max(MS_APPROACH * 0.85, km_pre / 600))
@@ -220,6 +220,9 @@ def build(who: str) -> dict:
     bounds = [0.0] + [c['t0'] for c in chapters] + [round(outro_t0, 3), total]
     names = ['title'] + [c['stage'] for c in chapters] + ['outro']
     music = [dict(stage=n, t0=a, t1=b) for n, a, b in zip(names, bounds, bounds[1:])]
+    # 字幕：后一条开始前，前一条必须结束
+    for a, b2 in zip(subs, subs[1:]):
+        a[1] = round(min(a[1], b2[0] - 0.02), 3)
     return dict(who=who, total=total, title=title, intro=intro_span, steps=out_steps, narr=narr, subs=subs,
                 chapters=chapters, outro=dict(t0=round(outro_t0, 3), t1=end_card['t0']), end=end_card, music=music)
 
