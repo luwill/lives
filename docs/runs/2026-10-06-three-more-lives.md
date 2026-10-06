@@ -1,6 +1,7 @@
 # 三人人生轨迹视频（第二批）：李白 · 朱元璋 · 蒋介石
 
-- status: flying <!-- planned → flying → landed -->
+- status: landed
+- final render commit: dd22653（三部 mp4 均由此提交渲染）；最终门禁 fddc945：docs/evidence/gate-batch2-final.md <!-- planned → flying → landed -->
 - workspace: lives/ (git, autopilot/three-more-lives，从 autopilot/three-lives 的 200f78a 分出)
 - base: 200f78a
 - contract: docs/autopilot.md
@@ -17,14 +18,14 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 
 | id | criterion | proven by | status | evidence |
 |---|---|---|---|---|
-| C1 | 每人一份半年粒度轨迹数据 `data/<who>/steps.json`，从出生所在半年到去世所在半年连续无缺：李白 701H1–762H2（生月不详，记为 inferred；出生地有争议，取碎叶，并在 contested 中列出“绵州昌隆”说）；朱元璋 1328H2–1398H1；蒋介石 1887H2–1975H1。每步含地点（古名+今名+坐标）、事件、来源、可信度 | pytest `test_data.py`（六人）；变异测试：删一步会变红 | proven | `docs/evidence/gate-stage2.md`（pytest 92 项全过，六人）；mutations（同一门禁第 4 条）：删一步、坐标越界会变红。步数：李白 124、朱元璋 140、蒋介石 176；李白 701H1 标 inferred，出生地两说列入 contested |
+| C1 | 每人一份半年粒度轨迹数据 `data/<who>/steps.json`，从出生所在半年到去世所在半年连续无缺：李白 701H1–762H2（生月不详，记为 inferred；出生地有争议，取碎叶，并在 contested 中列出“绵州昌隆”说）；朱元璋 1328H2–1398H1；蒋介石 1887H2–1975H1。每步含地点（古名+今名+坐标）、事件、来源、可信度 | pytest `test_data.py`（六人）；变异测试：删一步会变红 | proven | `docs/evidence/gate-batch2-final.md`（pytest 99 项全过，六人）；mutations（同一门禁第 4 条，18 个变异全部变红）：删一步、坐标越界会变红，第二批另有“删除李白 750H1”“溪口经度改为 10°”两项。步数：李白 124、朱元璋 140、蒋介石 176；李白 701H1 标 inferred，出生地两说列入 contested |
 | C2 | 史料核验：李白、朱元璋各 ≥10 个里程碑，蒋介石 ≥15 个，每个都有 ≥2 个独立来源；有争议处列入 `contested`，旁白用审慎措辞 | 独立核查报告 `docs/evidence/factcheck-<who>.md`；分歧写入台账 | proven | 里程碑：李白 16、朱元璋 16、蒋介石 20，每个 ≥2 来源（test_milestones）。三份独立核查：`docs/evidence/factcheck-{libai,zhuyz,jiang}.md`，共 52 个里程碑：通过 40、存疑 12、错误 0；“需要修改”逐条落实（F1–F16）。蒋介石核查为每个里程碑补了至少一个非维基来源 |
-| C3 | 视频逐个半年步推进：HUD 显示公元年、上/下半年、纪年与年龄（李白、朱元璋按虚岁，蒋介石按周岁），每步在画面中出现 ≥0.4 s，轨迹线随时间生长 | pytest `test_timeline.py`、`test_js.py`（年龄/纪年锚点）；抽样截图 | proven | gate-stage2.md（test_every_half_year_step_is_shown；test_age_and_era_anchors_second_batch：李白虚岁/天宝称载、朱元璋龙凤/洪武、蒋介石周岁与 1949H2 后无民国纪年）；三个纪年变异都会变红；截图 `docs/evidence/stills/sheet_{libai,zhuyz,jiang}.jpg`（取自最终 mp4） |
-| C4 | 轨迹在中国 3D 地形上展开，标注山河与人物到过的地点（古名与今名）；图外地点（如东京、莫斯科、开罗）用地图边缘代理点，片尾里程仍按真实坐标累计 | 截图拼板（每人 ≥6 张，取自最终 mp4）；`smoke.mjs` 六人无报错；`test_js.py` 代理点测试 | proven | `stills/sheet_{libai,zhuyz,jiang}.jpg`（每人 16–20 帧，取自最终 mp4）；gate-stage2.md 中 smoke 六人 0 报错、整帧非空白；test_offmap_proxy_points_east_and_west（东京→东缘、开罗→西缘）；新增地名注记 8 个（D4） |
-| C5 | 里程碑高亮：每个里程碑有镜头推近、光环、标题卡，停留 ≥3 s，停在事件发生地 | pytest（停留时长、停留地点）；截图 | proven | gate-stage2.md（test_milestones_hold、test_milestone_stays_at_its_place 六人）；截图中卡片、光环、星标可见；远途卡片显示“起点 → 事件地”（D6） |
-| C6 | 分阶段 BGM：每人 ≥4 个人生阶段，情绪依性格与经历设定（`music/<who>_stages.json`），阶段间无空档，全部原创合成 | pytest（覆盖全片）；`docs/evidence/audio-<who>.md` 分阶段响度/频谱 | proven | `music/{libai,zhuyz,jiang}_stages.json`（8/8/8 个阶段，李白 8 种情绪、朱元璋 7 种、蒋介石 8 种）；`docs/evidence/audio-{libai,zhuyz,jiang}.md`（分阶段 dBFS、频谱质心、起音密度，阶段边界无静音）；`stills/spectrogram_*.png`。审美未经试听 |
-| C7 | 讲解详略得当：每个里程碑有旁白；非里程碑旁白（概述+片头+片尾）占比 <40%；旁白、字幕都不重叠；字幕烧录 | pytest；变异测试 | proven | gate-stage2.md（test_narration_balance：非里程碑旁白占比 李白 0.373、朱元璋 0.335、蒋介石 0.310；旁白、字幕不重叠） |
-| C8 | 交付 3 个 mp4：1920×1080、30 fps、H.264+AAC，时长在目标区间（李白 7–10 min，朱元璋 8–11 min，蒋介石 9–13 min），响度 −16±1.5 LUFS，无黑帧 | `check_outputs.py --require` | proven | gate-stage2.md 中 check_outputs --require：李白 475.3 s（7.9 min）、朱元璋 513.0 s（8.6 min）、蒋介石 585.0 s（9.8 min），1920×1080@30、h264+aac、−16.3/−16.1/−16.4 LUFS，抽样无黑帧。朱元璋、蒋介石由 48187df 渲染，李白由 573fd1a 渲染（此后 src/ 与这三人的数据未变） |
+| C3 | 视频逐个半年步推进：HUD 显示公元年、上/下半年、纪年与年龄（李白、朱元璋按虚岁，蒋介石按周岁），每步在画面中出现 ≥0.4 s，轨迹线随时间生长 | pytest `test_timeline.py`、`test_js.py`（年龄/纪年锚点）；抽样截图 | proven | gate-batch2-final.md（test_every_half_year_step_is_shown；test_age_and_era_anchors_second_batch：李白虚岁/天宝称载、朱元璋龙凤/洪武、蒋介石周岁与 1949H2 后无民国纪年）；三个纪年变异都会变红；截图 `docs/evidence/stills/sheet_{libai,zhuyz,jiang}.jpg`（tools/contact_sheet.sh，取自 dd22653 成片） |
+| C4 | 轨迹在中国 3D 地形上展开，标注山河与人物到过的地点（古名与今名）；图外地点（如东京、莫斯科、开罗）用地图边缘代理点，片尾里程仍按真实坐标累计 | 截图拼板（每人 ≥6 张，取自最终 mp4）；`smoke.mjs` 六人无报错；`test_js.py` 代理点测试 | proven | `stills/sheet_{libai,zhuyz,jiang}.jpg`（由 tools/contact_sheet.sh 从 dd22653 成片每 30 秒取一帧，17–20 帧，脚本打印成片 sha256）；gate-batch2-final.md 中 smoke 六人 0 报错、整帧非空白；test_offmap_proxy_points_east_and_west（东京→东缘、开罗→西缘）；新增地名注记 8 个（D4） |
+| C5 | 里程碑高亮：每个里程碑有镜头推近、光环、标题卡，停留 ≥3 s，停在事件发生地 | pytest（停留时长、停留地点）；截图 | proven | gate-batch2-final.md（test_milestones_hold、test_milestone_stays_at_its_place 六人）；截图中卡片、光环、星标可见；远途卡片显示“起点 → 事件地”（D6） |
+| C6 | 分阶段 BGM：每人 ≥4 个人生阶段，情绪依性格与经历设定（`music/<who>_stages.json`），阶段间无空档，全部原创合成 | pytest（覆盖全片）；`docs/evidence/audio-<who>.md` 分阶段响度/频谱 | proven | `music/{libai,zhuyz,jiang}_stages.json`（8/8/8 个阶段，李白 8 种情绪、朱元璋 7 种、蒋介石 8 种）；`docs/evidence/audio-{libai,zhuyz,jiang}.md` 与 gate-batch2-final.md 第 5–7 条（由 run-gate 在 fddc945 生成；分阶段 dBFS、频谱质心、起音密度，阶段边界无静音）；`stills/spectrogram_*.png`。审美未经试听 |
+| C7 | 讲解详略得当：每个里程碑有旁白；非里程碑旁白（概述+片头+片尾）占比 <40%；旁白、字幕都不重叠；字幕烧录 | pytest；变异测试 | proven | gate-batch2-final.md（test_narration_balance：非里程碑旁白占比 李白 0.373、朱元璋 0.333、蒋介石 0.325；旁白、字幕不重叠） |
+| C8 | 交付 3 个 mp4：1920×1080、30 fps、H.264+AAC，时长在目标区间（李白 7–10 min，朱元璋 8–11 min，蒋介石 9–13 min），响度 −16±1.5 LUFS，无黑帧 | `check_outputs.py --require` | proven | gate-batch2-final.md 中 check_outputs --require：李白 480.1 s（8.0 min）、朱元璋 519.3 s（8.7 min）、蒋介石 593.0 s（9.9 min），1920×1080@30、h264+aac、−16.3/−16.1/−16.4 LUFS，抽样无黑帧。三部均由 dd22653 渲染（out/<who>/render_commit.txt，渲染开始前记录） |
 | C9 | 不破坏第一批：毛泽东、诸葛亮、苏轼的数据和时间轴不变，六人测试、smoke 全部通过；三部旧成片不重渲染、不改动 | 机器门禁；`git diff 200f78a -- data/{mao,zhuge,sushi} src/{mao,zhuge,sushi}` 为空 | proven | `git diff 200f78a -- data/{mao,zhuge,sushi} src/{mao,zhuge,sushi} narration/{mao,zhuge,sushi} music/{mao,zhuge,sushi}_stages.json` 为空；test_timeline_is_fresh 对第一批三人仍通过；三部旧 mp4 未改动（修改时间仍为 10-06 09:02–09:13） |
 
 `status` is `open`, `proven` or `parked`.

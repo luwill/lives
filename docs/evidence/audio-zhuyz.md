@@ -1,19 +1,19 @@
 # 配乐客观指标：zhuyz
 
-命令：`python3 tools/audio_report.py zhuyz`（读 out/zhuyz/music.wav，提交 573fd1a 时生成）。每个阶段的响度、频谱质心、起音密度；阶段边界是否有静音。审美效果未经试听。
+命令：`python3 tools/audio_report.py zhuyz`（读 out/zhuyz/music.wav，由 dd22653 渲染时合成；同一输出也在 gate-batch2-final.md 中由 run-gate 记录）。审美效果未经试听。
 
 ```
 stage     mood                t0      t1    dBFS  centroid  onsets/s
-title     title              0.0    21.3   -19.8       631      2.49
-st1       elegy             21.3    83.4   -18.4      1014      1.34
-st2       wander            83.4   118.9   -15.5      1489      3.16
-st3       tension          118.9   153.4   -16.8       945      2.72
-st4       aspire           153.4   205.1   -16.1      1342      2.23
-st5       battle           205.1   336.1   -14.4       764      2.92
-st6       grand            336.1   374.3   -15.8      1307      1.02
-st7       contemplative    374.3   426.9   -18.5       478      1.27
-st8       elegy            426.9   490.8   -18.3       886      1.38
-outro     outro            490.8   513.0   -16.6      1172      2.34
+title     title              0.0    21.3   -20.1       632      2.49
+st1       elegy             21.3    83.4   -18.7      1013      1.27
+st2       wander            83.4   118.9   -15.8      1489      3.13
+st3       tension          118.9   154.8   -17.1       946      2.84
+st4       aspire           154.8   206.5   -16.4      1339      2.17
+st5       battle           206.5   342.4   -14.7       763      2.91
+st6       grand            342.4   380.6   -16.1      1310      0.97
+st7       contemplative    380.6   433.2   -18.7       478      1.26
+st8       elegy            433.2   497.1   -18.5       886      1.46
+outro     outro            497.1   519.3   -16.9      1172      2.29
 silent boundaries: none
-peak 0.862 nan False
+peak 0.846 nan False
 ```
