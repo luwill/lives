@@ -15,14 +15,14 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 
 | id | criterion | proven by | status | evidence |
 |---|---|---|---|---|
-| C1 | 每人一份半年粒度轨迹数据 `data/<who>/steps.json`：从出生所在半年到去世所在半年连续无缺（毛 1893H2–1976H2，诸葛 181–234H2，苏 1036H2/1037H1–1101H2，以史料为准）；每步含地点（古名+今名+坐标）、事件、来源、可信度（documented / inferred / traditional） | pytest `test_data.py`；故意删掉一步时测试变红 | open | |
-| C2 | 史料核验：每人 ≥10 个里程碑，每个都有 ≥2 个独立来源；有争议处列入 `contested` 并在旁白中用审慎措辞 | 独立子代理的事实核查报告 `docs/evidence/factcheck-<who>.md`，分歧写入台账 | open | |
-| C3 | 视频逐个半年步推进：HUD 显示「公元 X 年 上/下半年 · 年龄」，每一步都在画面中出现（≥0.4 s），轨迹线随时间生长，当前位置有标记 | pytest `test_timeline.py`（每步帧数、步序单调）；抽样截图 | open | |
-| C4 | 轨迹在中国 3D 地形上展开（DEM 晕渲 + 垂直夸张 + 倾斜相机，覆盖人物活动范围），标注重要地理名称：大江大河、主要山脉/高原，以及人物到过的地点（古名与今名） | 抽样截图（每人 ≥6 张）；`smoke.mjs` 无报错 | open | |
-| C5 | 里程碑高亮：每个里程碑有镜头推近、脉冲光环、标题卡，停留 ≥3 s | pytest（里程碑停留时长）；截图 | open | |
-| C6 | 分阶段 BGM：每人 ≥4 个人生阶段，情绪依性格与经历设定（映射表写入 `music/<who>_stages.json`）；阶段切换时交叉淡化；全部原创合成，不含版权素材 | pytest（阶段覆盖全片、无空隙）；分阶段 RMS/频谱图 | open | |
-| C7 | 讲解详略得当：里程碑处详讲，平淡时期一两句带过或只给字幕；旁白段之间不重叠；字幕烧录 | pytest（旁白不重叠、每个里程碑有旁白、非里程碑旁白总时长占比 <40%）；脚本人工可读 | open | |
-| C8 | 交付 3 个 mp4：1920×1080、30 fps、H.264 + AAC，时长在目标区间内（毛 9–13 min，诸葛 6–9 min，苏 7–10 min），响度 −16±1.5 LUFS，无黑帧 | `check_outputs.py`；成片抽帧拼板 | open | |
+| C1 | 每人一份半年粒度轨迹数据 `data/<who>/steps.json`：从出生所在半年到去世所在半年连续无缺（毛 1893H2–1976H2，诸葛 181–234H2，苏 1036H2/1037H1–1101H2，以史料为准）；每步含地点（古名+今名+坐标）、事件、来源、可信度（documented / inferred / traditional） | pytest `test_data.py`；故意删掉一步时测试变红 | proven | `docs/evidence/gate-final.md`（pytest 全过）；`docs/evidence/mutations.md`：删除 1935H1 一步、坐标越界两项都会让测试变红。诸葛亮生月不详，181H1 已标为 inferred |
+| C2 | 史料核验：每人 ≥10 个里程碑，每个都有 ≥2 个独立来源；有争议处列入 `contested` 并在旁白中用审慎措辞 | 独立子代理的事实核查报告 `docs/evidence/factcheck-<who>.md`，分歧写入台账 | proven | 里程碑数：毛 22、诸葛 14、苏 16；每个里程碑 ≥2 个来源，由 `test_milestones` 检查（mutations.md 中“只留一个来源”会变红）。三份独立核查报告见 `docs/evidence/factcheck-*.md`，问题已逐条落实（F1–F11）。有争议的地方旁白用了“一说”“据《汉晋春秋》”“难以考证”等措辞 |
+| C3 | 视频逐个半年步推进：HUD 显示「公元 X 年 上/下半年 · 年龄」，每一步都在画面中出现（≥0.4 s），轨迹线随时间生长，当前位置有标记 | pytest `test_timeline.py`（每步帧数、步序单调）；抽样截图 | proven | `docs/evidence/gate-final.md`（test_every_half_year_step_is_shown：每步 ≥0.4 s）；`test_js.py` 校验年龄与纪年（mutations.md：去掉年龄下限会变红）；截图见 `docs/evidence/stills/sheet_*.jpg`（取自最终 mp4） |
+| C4 | 轨迹在中国 3D 地形上展开（DEM 晕渲 + 垂直夸张 + 倾斜相机，覆盖人物活动范围），标注重要地理名称：大江大河、主要山脉/高原，以及人物到过的地点（古名与今名） | 抽样截图（每人 ≥6 张）；`smoke.mjs` 无报错 | proven | `docs/evidence/stills/sheet_*.jpg`（每人 18–25 帧，取自最终 mp4）；`docs/evidence/gate-final.md` 中 smoke 三人 0 报错且整帧非空白。地形分 world/china/east 三级，垂直夸张 3.5–14 倍随镜头变化，标注 57 个地理名称并分层显示 |
+| C5 | 里程碑高亮：每个里程碑有镜头推近、脉冲光环、标题卡，停留 ≥3 s | pytest（里程碑停留时长）；截图 | proven | `docs/evidence/gate-final.md`（test_milestones_hold；远途里程碑抵达后停留 ≥3 s；test_milestone_stays_at_its_place）；mutations.md 中停留 1 s、停留点改到杭州两项都会变红；截图见 `stills/mao_fixed.jpg` |
+| C6 | 分阶段 BGM：每人 ≥4 个人生阶段，情绪依性格与经历设定（映射表写入 `music/<who>_stages.json`）；阶段切换时交叉淡化；全部原创合成，不含版权素材 | pytest（阶段覆盖全片、无空隙）；分阶段 RMS/频谱图 | proven | `music/<who>_stages.json`（毛 8 个阶段 8 种情绪、诸葛 6/6、苏 7/7）；`docs/evidence/audio-*.md` 记录分阶段响度、频谱质心、起音密度，阶段边界无静音；频谱图见 `stills/spectrogram_*.png`；`docs/evidence/gate-final.md`（test_music_covers_film_by_stage）。全部由 numpy 合成。审美效果未经试听 |
+| C7 | 讲解详略得当：里程碑处详讲，平淡时期一两句带过或只给字幕；旁白段之间不重叠；字幕烧录 | pytest（旁白不重叠、每个里程碑有旁白、非里程碑旁白总时长占比 <40%）；脚本人工可读 | proven | `docs/evidence/gate-final.md`（按 C7 原文口径：非里程碑旁白 = 概述 + 片头 + 片尾，占比 <40%；旁白不重叠；字幕不重叠；一级里程碑旁白平均长于二级）；mutations.md 中三项变异都会变红。字幕烧录进画面，见截图 |
+| C8 | 交付 3 个 mp4：1920×1080、30 fps、H.264 + AAC，时长在目标区间内（毛 9–13 min，诸葛 6–9 min，苏 7–10 min），响度 −16±1.5 LUFS，无黑帧 | `check_outputs.py`；成片抽帧拼板 | proven | `docs/evidence/gate-final.md` 中的 check_outputs --require（1920×1080@30、h264+aac、时长与时间轴一致且在目标区间内、−16±1.5 LUFS、抽样无黑帧） |
 
 `status` is `open`, `proven` or `parked`.
 
@@ -34,8 +34,8 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 4. [x] 解说词、TTS、时间轴（半年步 + 里程碑停留）— owns C3, C5, C7（时间轴部分）
 5. [x] 引擎场景：轨迹生长、HUD、里程碑高亮、标注 — owns C3, C4, C5
 6. [x] 配乐：三人分阶段情绪设计与合成 — owns C6
-7. [ ] 渲染、混音、总装与审片 — owns C8
-8. [ ] 落地：整体评审、验收清单
+7. [x] 渲染、混音、总装与审片 — owns C8（最终成片对应提交 fc89e5b）
+8. [x] 落地：整体评审、验收清单
 
 ## Ledger
 
@@ -72,15 +72,38 @@ Frozen at takeoff. A run changes `status` and `evidence`, never the criterion.
 | F9 | 史实核查 | fc-mao | 袁家沟坐标取的是清涧县城，偏差约 30 km | minor-fixed | 改用 OSM 高杰村镇驻地（9cb1fac） |
 | F10 | 史实核查 | fc-mao | 1937H1 写《矛盾论》（8 月作，属 H2）；1966H2 应为“畅游”而非“横渡” | minor-fixed | 修改 event 和副标题（9cb1fac） |
 | F11 | 史实核查 | fc-mao | 1966H2 建议写“七十三岁（虚岁）” | rejected | 毛泽东按周岁计算（D11），1966 年 7 月周岁为 72，与旁白一致 |
+| R1 | 整体评审 r1 | 验收审计 | 毛泽东成片过时（715 s ≠ 731 s），机器门禁复跑失败 | blocking-fixed | 当时正在重新渲染；最终门禁见 docs/evidence/gate-final.md |
+| R2 | 整体评审 r1 | 验收审计 | 运行记录中各准则没有证据 | blocking-fixed | 本次落地补齐 |
+| R3 | 整体评审 r1 | 验收审计 | 有两个里程碑只挂一个来源，且没有测试检查来源数量；诸葛亮 181H1 不应标为 documented | minor-fixed | 086d970（补来源，新增测试检查 ≥2 来源，181H1 改为 inferred） |
+| R4 | 整体评审 r1 | 验收审计 | 缺少 C6 的 RMS/频谱证据，“删一步就变红”也没有记录 | minor-fixed | 086d970（audio-*.md，mutations.md） |
+| R5 | 整体评审 r1 | 对抗复查（Codex 替身） | 毛泽东出生时显示“−1 岁” | blocking-fixed | fc89e5b（周岁下限取 0，新增 test_js 检查） |
+| R6 | 整体评审 r1 | 对抗复查 | C7 测试只计概述，与冻结的条款口径不符；按条款计算毛 0.445、苏 0.418，都超过 40% | blocking-fixed | fc89e5b（测试改为按条款口径；删减毛约 68 s、苏约 35 s 旁白） |
+| R7 | 整体评审 r1 | 对抗复查 | 片头第一章节卡期间镜头先猛推再拉回 | minor-fixed | fc89e5b（camera.js 限制 k ≥ 0） |
+| R8 | 整体评审 r1 | 对抗复查 | 三段旁白没有随事实核查一起修改（斩马谡、水路入越巂、郑州西门） | minor-fixed | fc89e5b |
+| R9 | 整体评审 r1 | 对抗复查 | 苏轼出生卡显示“景祐四年·虚岁 2”；诸葛亮 221H1 显示建安；苏轼娶王弗写成“十八岁” | minor-fixed | fc89e5b（出生步特判，章武从 221H1 起算，改为十九岁） |
+| R10 | 整体评审 r1 | 对抗复查 | 莫斯科段用代理点计算，里程少算约 15%；1957 年的代理点偏离约 950 km | minor-fixed | fc89e5b（代理点固定按北京方向，里程按真实坐标累计，新增 test_js 检查） |
+| R11 | 整体评审 r1 | 对抗复查 | 远途里程碑的停留时长把行进时间也算了进去；字幕有 22 处重叠（最长 0.06 s） | minor-fixed | fc89e5b（抵达后至少停 3 s，字幕去重叠，两项都有测试） |
+| R12 | 整体评审 r1 | 对抗复查 | test_milestone_stays_at_its_place 只是照抄实现里的常量 8 | dispute | 审查方：测试复述了实现。我方：“≥8 个途经点才按远途处理”本身就是规格，测试的作用是锁住规格；mutations.md 证明停留点被改到杭州时它会变红 |
+| R13 | 自查·审片 | 主线程 | 远途镜头期间，事件条的 📍 显示星标所在地（遵义），而不是标记当前所在的位置 | minor-open | 1935H1 本身就是“遵义会议”这一步，这样显示也说得通；未改 |
 | F12 | 自查·审片 | 主线程 | 年龄按年份差计算，毛泽东多算一岁；卡片上写“七十三岁” | blocking-fixed | 85cd963 |
 
 ### Parked
 
 | id | needs | exact action | unblocks | verify afterward |
 |---|---|---|---|---|
+| P2 | 修正 Codex 配置（你的账号） | `~/.codex/config.toml` 中设置的 `model = "gpt-6.1-sol"` 不能用于 ChatGPT 账号登录（返回 400），所以没有运行 Codex 对抗评审，改用同一模型族的对抗复查子代理代替（不是跨模型）。改成你账号可用的模型后，执行 `cd lives && CODEX_REVIEW_HEAD=fc89e5b bash ~/.claude/skills/autopilot/scripts/codex-review.sh . 8d63ddd docs/runs/2026-10-05-three-lives.md docs/evidence/review-codex-r1.md` | 跨模型评审 | 生成 `docs/evidence/review-codex-r1.md`，且 verdict 字段有值 |
 | P1 | 你决定是否保留 | 苏轼史料子代理在 23:06 执行了 `pip install lunar_python`（1.4.8，安装到 ~/Library/Python/3.14 的用户 site-packages），合约未预授权这一操作。只有 `data/_build/sushi_lunar.py`（农历→公历换算）用到它，渲染、测试、成片管线都不依赖它。不想保留就执行 `pip3 uninstall lunar_python` | 无（成片不依赖） | `python3 -c "import lunar_python"` 报 ModuleNotFoundError，且 `python3 -m pytest -q tests` 结果不变 |
 
 ### Not verified
+
+| 项目 | 原因 |
+|---|---|
+| 配乐与配音的听感（旋律是否好听、情绪是否贴合、TTS 断句与读音，例如“鞠躬”“谡”“巂”“儋”等字） | 运行中无法试听，只用客观指标（响度、频谱、起音密度、边界无静音）代替 |
+| 完整逐帧观看三部成片 | 只看了每 30 s 一帧的拼板，以及约 60 张定点截图 |
+| 史料来源本身的真伪与网页原文 | 核查代理抓取了维基文库、党史网站等；两部《毛泽东年谱》和孔凡礼《苏轼年谱》没有拿到原文 |
+| 古地名今址的精度 | 有 11 个毛泽东相关地点、6 个诸葛亮相关地点只能定位到县城或示意点（places.json 中标为 low） |
+| 公开发布前的地图合规（审图号） | 片中没有画国界或省界，片尾注明“地图仅示意地形与行迹”；但在中国大陆公开发布含地图的视频是否需要送审，运行中没有判断 |
+| 毛泽东晚年段落的措辞 | 依据 1981 年《历史决议》的官方表述撰写，表述是否得当仍需你判断 |
 
 ## Acceptance walk
 
