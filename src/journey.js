@@ -6,15 +6,17 @@ export function isOffMap(p) {
   return p.lon < MAP_BOX.lon0 || p.lon > MAP_BOX.lon1 || p.lat < MAP_BOX.lat0 || p.lat > MAP_BOX.lat1;
 }
 
-// 图外地点 → 从出发点朝它的方向前进 OFF_KM 公里处（画面内可见的“出图”箭头位置）
-const OFF_KM = 900;
-const ANCHOR = [116.4, 39.9];   // 北京：同一图外地点每次都落在同一代理点
+// 图外地点 → 从北京朝它的方向延伸到地图边缘（留 3° 边距）的固定代理点：方向正确，且同一地点每次都落在同一处
+const ANCHOR = [116.4, 39.9];
 export function proxyOf(p) {
   if (!isOffMap(p)) return [p.lon, p.lat];
-  const [fx, fy] = ANCHOR;
-  const kx = 111.32 * Math.cos(fy * Math.PI / 180), dx = (p.lon - fx) * kx, dy = (p.lat - fy) * 110.57;
-  const d = Math.hypot(dx, dy), s = Math.min(1, OFF_KM / d);
-  return [fx + dx * s / kx, fy + dy * s / 110.57];
+  const m = 3, [cx, cy] = ANCHOR, dx = p.lon - cx, dy = p.lat - cy;
+  let s = 1;
+  if (dx < 0) s = Math.min(s, (MAP_BOX.lon0 + m - cx) / dx);
+  if (dx > 0) s = Math.min(s, (MAP_BOX.lon1 - m - cx) / dx);
+  if (dy < 0) s = Math.min(s, (MAP_BOX.lat0 + m - cy) / dy);
+  if (dy > 0) s = Math.min(s, (MAP_BOX.lat1 - m - cy) / dy);
+  return [cx + dx * s, cy + dy * s];
 }
 
 const KM = (a, b) => Math.hypot((b[0] - a[0]) * 111.32 * Math.cos((a[1] + b[1]) / 2 * Math.PI / 180), (b[1] - a[1]) * 110.57);

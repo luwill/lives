@@ -49,7 +49,7 @@ export const PEOPLE = {
     // 章武元年四月刘备即位：221H1 按事件记为章武元年
     regions: [
       { name: '曹 魏', lon: 114.2, lat: 35.2, from: idx(220, 2) },
-      { name: '蜀 汉', lon: 104.6, lat: 30.9, from: idx(221, 2) },
+      { name: '蜀 汉', lon: 104.6, lat: 30.9, from: idx(221, 1) },
       { name: '孙 吴', lon: 117.8, lat: 28.4, from: idx(222, 2) },
     ],
   },

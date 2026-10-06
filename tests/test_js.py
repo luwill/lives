@@ -47,3 +47,11 @@ console.log(JSON.stringify(buildJourney(d.steps, tl.steps, p).totalKm));""")
     f = lambda a, b: math.hypot((b['lon'] - a['lon']) * 111.32 * math.cos(math.radians((a['lat'] + b['lat']) / 2)), (b['lat'] - a['lat']) * 110.57)
     true = sum(f(P[a], P[b]) for a, b in zip(seq, seq[1:]))
     assert abs(km - true) / true < 0.02, (km, true)
+
+
+def test_offmap_proxy_points_toward_moscow():
+    """莫斯科、列宁格勒的代理点要落在地图西北边缘，并朝真实方向（防止落在内蒙古、轨迹掉头）。"""
+    pts = node("""import { proxyOf } from './journey.js';
+console.log(JSON.stringify([proxyOf({lon: 37.62, lat: 55.75}), proxyOf({lon: 30.32, lat: 59.94})]));""")
+    for lon, lat in pts:
+        assert lon <= 80 and 44 <= lat <= 52, (lon, lat)

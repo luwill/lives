@@ -148,10 +148,10 @@ export function makeHud(person, data, places, tl, journey) {
       chBar.style.width = `${easeOut((t - chapter.t0) / 1.2) * 520}px`;
     } else show(chap, 0);
     // 字幕
-    const c = tl.subs.find(([a, b]) => t >= a && t < b + 0.1);
+    const c = tl.subs.find(([a, b]) => t >= a && t < b);
     if (c && !inTitle) {
       if (sub.textContent !== c[2]) sub.textContent = c[2];
-      show(sub, Math.min(clamp01((t - c[0]) / 0.15), clamp01((c[1] + 0.1 - t) / 0.15)));
+      show(sub, Math.min(clamp01((t - c[0]) / 0.15), clamp01((c[1] - t) / 0.12)));
     } else show(sub, 0);
     // 片尾
     show(end, win(t, tl.end.t0, tl.total + 5, 0.9));
