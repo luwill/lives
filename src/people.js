@@ -104,11 +104,11 @@ export const PEOPLE = {
       return `明 · 洪武${cnNum(y - 1367)}年`;
     },
     regions: [
-      { name: '元', lon: 112.5, lat: 41.2, from: 0, to: idx(1367, 2) },
+      { name: '元', lon: 112.5, lat: 41.2, from: 0, to: idx(1368, 1) },   // 1368 年八月徐达入大都
       { name: '陈友谅', lon: 115.0, lat: 30.3, from: idx(1360, 1), to: idx(1363, 2) },
-      { name: '张士诚', lon: 120.3, lat: 32.1, from: idx(1356, 1), to: idx(1367, 1) },
+      { name: '张士诚', lon: 120.3, lat: 32.1, from: idx(1356, 1), to: idx(1367, 2) },   // 1367 年九月平江城破
       { name: '方国珍', lon: 121.3, lat: 28.8, from: idx(1356, 1), to: idx(1367, 2) },
-      { name: '明玉珍', lon: 106.6, lat: 30.2, from: idx(1362, 1), to: idx(1371, 1) },
+      { name: '夏（明玉珍）', lon: 106.6, lat: 30.2, from: idx(1362, 1), to: idx(1371, 1) },   // 1371 年六月明昇降
       { name: '北 元', lon: 110.5, lat: 44.5, from: idx(1368, 2) },
     ],
   },

@@ -1,6 +1,7 @@
 // HUD：片名、身份卡、年份/纪年、事件条、人生进度条、里程碑卡、章节卡、字幕、片尾
 import { clamp01, win } from './mapfx.js';
 import { kmAt } from './journey.js';
+import { kmBetween } from './engine.js';
 
 const hud = () => document.getElementById('hud');
 function mk(cls, html = '') {
@@ -59,7 +60,9 @@ export function makeHud(person, data, places, tl, journey) {
   // 字幕
   const sub = mk('sub');
   // 片尾
-  const placesSeen = new Set(journey.arrivals.map(a => a.key));
+  // 足迹按坐标去重：同一地点改名（草山/阳明山、重庆/陪都、北京/北平）只算一处
+  const spot = k => `${places[k].lat.toFixed(2)},${places[k].lon.toFixed(2)}`;
+  const placesSeen = new Set(journey.arrivals.map(a => spot(a.key)));
   const end = mk('endcard', `<div class="nm">${person.name}</div><div class="life">${person.life}</div>
     <div class="nums"><div><b>${(Math.round(journey.totalKm / 100) * 100).toLocaleString('en-US')}</b><em>公里行程（直线距离累计）</em></div><div><b>${placesSeen.size}</b><em>处足迹</em></div><div><b>${msIdx.length}</b><em>个人生节点</em></div></div>
     <div class="src">史料：${data.meta.sources.filter(s => s.kind === 'primary' || s.kind === 'scholarly').slice(0, 6).map(s => esc(s.title)).join(' · ')}</div>
@@ -99,7 +102,7 @@ export function makeHud(person, data, places, tl, journey) {
     year.classList.toggle('pulse', t - tl.steps[i].t0 < 0.25);
     show(stats, lifeOp);
     const np = new Set();
-    for (const a of journey.arrivals) if (a.t <= t) np.add(a.key);
+    for (const a of journey.arrivals) if (a.t <= t) np.add(spot(a.key));
     kmEl.textContent = Math.round(kmAt(journey, t)).toLocaleString('en-US');
     npEl.textContent = np.size;
     show(ev, lifeOp * (chapter ? 0 : 1) * (ms && t > ms.t0 ? 0.35 : 1));
@@ -118,9 +121,9 @@ export function makeHud(person, data, places, tl, journey) {
         const b0 = i === 0 && person.birth;
         cWhen.textContent = [`${y} 年${h === 1 ? '上半年' : '下半年'}`, b0 ? b0.era : person.era(y, h), b0 ? b0.age : person.age(y, h)].filter(Boolean).join(' · ');
         cH.textContent = m.title;
-        // 远途里程碑显示“起点 → 事件地”（未指定 place 时为终点），其余显示停留地点
+        // 远途里程碑显示“起点 → 事件地”（未指定 place 时为终点）；起点与事件地相距不到 50 km（同城往返）或非远途时显示停留地点
         const p0 = places[st.places[0]], p1 = pl;
-        cWhere.textContent = tl.steps[i].ms.travel && p0 !== p1 ? `${p0.name} → ${p1.name}（今${p1.modern}）`
+        cWhere.textContent = tl.steps[i].ms.travel && kmBetween([p0.lon, p0.lat], [p1.lon, p1.lat]) > 50 ? `${p0.name} → ${p1.name}（今${p1.modern}）`
           : `${pl.name}${pl.modern && pl.modern !== pl.name ? ` · 今${pl.modern}` : ''}`;
         cSub.textContent = m.subtitle || '';
         cQ.innerHTML = m.quote ? `${esc(m.quote.text)}<cite>—— ${esc(m.quote.source)}</cite>` : '';

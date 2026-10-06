@@ -108,6 +108,24 @@ def m_zhuyz_longfeng(r: Path) -> None:     # C3：龙凤纪年晚一年开始
     p.write_text(p.read_text().replace('if (y < 1355) return zz;', 'if (y < 1356) return zz;'))
 
 
+def m_delete_step_libai(r: Path) -> None:   # C1：第二批也逐步覆盖（删李白 750H1）
+    p = r / 'data/libai/steps.json'; d = jload(p)
+    d['steps'] = [s for s in d['steps'] if s['id'] != '750H1']
+    jsave(p, d)
+
+
+def m_bad_coord_jiang(r: Path) -> None:     # C1：第二批坐标越界（溪口经度改为 10°）
+    p = r / 'data/jiang/places.json'; d = jload(p)
+    d['xikou']['lon'] = 10.0
+    jsave(p, d)
+
+
+def m_stale_tts(r: Path) -> None:           # C7：改了旁白却没重新配音
+    p = r / 'narration/zhuyz/script.json'; d = jload(p)
+    d[3]['text'] += '据《明史》。'
+    jsave(p, d)
+
+
 MUTANTS = [
     ('C1', '删除毛泽东 1935H1 一步', m_delete_step, 'test_data.py'),
     ('C1', '黄州经度改为 10°', m_bad_coord, 'test_data.py'),
@@ -124,6 +142,9 @@ MUTANTS = [
     ('C3', '蒋介石 1949H2 后仍用民国纪年', m_jiang_minguo, 'test_js.py'),
     ('C3', '李白天宝三载不改称“载”', m_libai_zai, 'test_js.py'),
     ('C3', '朱元璋龙凤纪年晚一年', m_zhuyz_longfeng, 'test_js.py'),
+    ('C1', '删除李白 750H1 一步', m_delete_step_libai, 'test_data.py'),
+    ('C1', '溪口经度改为 10°', m_bad_coord_jiang, 'test_data.py'),
+    ('C7', '朱元璋旁白改了文本未重新配音', m_stale_tts, 'test_timeline.py'),
 ]
 
 

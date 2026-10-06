@@ -15,4 +15,6 @@ for WHO in "$@"; do
   N=$(ls "out/$WHO/frames" | wc -l | tr -d ' ')
   python3 -c "import sys;n=$N;t=round($T*30);sys.exit(0 if n>=t else f'$WHO frames {n} < {t}')"
   zsh tools/assemble.sh "$WHO"
+  # 记录成片来自哪个提交（工作区有改动时标 dirty）
+  echo "$(git rev-parse --short HEAD)$(git diff --quiet HEAD -- src data narration music tools || echo -dirty)" > "out/$WHO/render_commit.txt"
 done

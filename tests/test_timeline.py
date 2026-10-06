@@ -8,6 +8,7 @@ from conftest import ROOT, load
 
 sys.path.insert(0, str(ROOT / 'tools'))
 import build_timeline as BT  # noqa: E402
+import tts as TTS  # noqa: E402
 
 MIN_STEP = 0.4
 MIN_HOLD = 3.0
@@ -131,3 +132,13 @@ def test_milestone_stays_at_its_place(who):
         assert ent['ms']['travel'] == (len(s['places']) >= 8), (s['id'], ent['ms']['travel'])
         if not ent['ms']['travel']:
             assert s['places'][ent['split'] - 1] == m['place'], (s['id'], s['places'][ent['split'] - 1], m['place'])
+
+
+def test_narration_audio_matches_script(who):
+    """每段旁白的配音都由当前文本和声线合成（TTS 失败时会留下旧音频，时间轴就会按旧时长排）。"""
+    import hashlib
+    voice, rate, pitch = TTS.VOICES[who]
+    cache = json.loads((ROOT / 'narration' / who / 'tts.json').read_text())
+    for seg in json.loads((ROOT / 'narration' / who / 'script.json').read_text()):
+        h = hashlib.md5(f"{voice}{rate}{pitch}{seg['text']}".encode()).hexdigest()[:10]
+        assert cache.get(seg['id'], {}).get('hash') == h, f"{who}/{seg['id']}: stale or missing TTS"

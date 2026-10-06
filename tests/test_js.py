@@ -74,3 +74,11 @@ def test_offmap_proxy_points_east_and_west():
 console.log(JSON.stringify([proxyOf({lon: 139.69, lat: 35.69}), proxyOf({lon: 31.24, lat: 30.04})]));""")
     assert tokyo[0] >= 130 and 33 <= tokyo[1] <= 40, tokyo
     assert cairo[0] <= 80 and 30 <= cairo[1] <= 40, cairo
+
+
+def test_era_edges_second_batch():
+    """纪年分支的边界：龙凤元年起点、至德/乾元换称、蒋介石清末与民国元年。"""
+    l, z, j = ages('libai'), ages('zhuyz'), ages('jiang')
+    assert z['1354H2'][1] == '元 · 至正十四年' and z['1367H2'][1].startswith('吴元年')
+    assert l['757H2'][1].endswith('至德二载') and l['758H2'][1].endswith('乾元元年') and l['705H1'][1].startswith('唐')
+    assert j['1908H2'][1] == '清 · 光绪三十四年' and j['1909H1'][1] == '清 · 宣统元年' and j['1912H1'][1] == '民国元年'
