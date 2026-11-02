@@ -143,7 +143,7 @@
 
 规则：
 - 年号表按生效半年升序；特殊纪年（改称"载"、两个年号并列、不再显示纪年）一律用 `era_overrides` 表达，不改代码。
-- 新增人物后先跑 `python3 -m pytest -q tests -k <who>`，校验不过不要渲染。
+- 新增人物后先跑 `python3 -m pytest -q tests/test_data.py tests/test_person.py -k <who>`（数据与配置）；全量 `python3 -m pytest -q tests -k <who>` 要等旁白、时间轴和配乐配置都写好后才能通过，通过后才渲染。
 
 ## 需要新的高清地形层时
 
