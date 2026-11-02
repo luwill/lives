@@ -63,6 +63,8 @@ def validate(cfg: dict, path) -> dict:
     for k in ('name', 'life', 'tagline'):
         if not isinstance(cfg[k], str) or not cfg[k]:
             bad(k, 'must be a non-empty string')
+    if re.search(r'[/\\]', cfg['name']):
+        bad('name', 'must not contain / or \\ (used in the output file name)')
     for k in ('color', 'glow'):
         if not isinstance(cfg[k], str) or not COLOR.match(cfg[k]):
             bad(k, f'must match #RRGGBB, got {cfg[k]!r}')
@@ -92,7 +94,7 @@ def validate(cfg: dict, path) -> dict:
     else:
         bad('age.kind', f'must be xusui or zhousui, got {kind!r}')
 
-    _check_eras(cfg['eras'], s0, bad)
+    _check_eras(cfg['eras'], s0, s1, bad)
     _check_overrides(cfg.get('era_overrides', []), s0, bad)
     _check_regions(cfg.get('regions', []), bad)
 
@@ -115,7 +117,7 @@ def validate(cfg: dict, path) -> dict:
     return cfg
 
 
-def _check_eras(eras, span_start, bad):
+def _check_eras(eras, span_start, span_end, bad):
     if not (isinstance(eras, list) and eras):
         bad('eras', 'must be a non-empty list')
     prev = None
@@ -134,6 +136,12 @@ def _check_eras(eras, span_start, bad):
         prev = k
     if half_idx(eras[0][3]) > span_start:
         bad('eras[0]', 'first era takes effect after span start')
+    # 年号序数上限（cnNum 只支持 1–199）：取该行最后一个生效的半年，不考虑 era_overrides
+    for i, r in enumerate(eras):
+        last = half_idx(eras[i + 1][3]) - 1 if i + 1 < len(eras) else span_end
+        n = last // 2 - r[2] + 1
+        if n > 199:
+            bad(f'eras[{i}]', f'ordinal reaches {n} (> 199) before the next row / span end; add a row or an era_override')
 
 
 def _check_overrides(ovs, span_start, bad):

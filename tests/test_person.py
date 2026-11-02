@@ -14,7 +14,7 @@ BASELINE = ROOT / 'tests' / 'fixtures' / 'era_baseline.json'
 BASE = {
     'name': '测试', 'life': '181–234', 'tagline': '合成数据', 'color': '#aabbcc', 'glow': '#112233',
     'age': {'kind': 'xusui', 'lunar_birth_year': 181},
-    'eras': [['建安', '建安', 1, '181H1'], ['章武', '章武', 1, '221H1']],
+    'eras': [['东汉 · ', '光和', 178, '181H1'], ['东汉 · ', '建安', 196, '196H1'], ['蜀汉 · ', '章武', 221, '221H1']],
     'regions': [{'name': '某地', 'lon': 110.0, 'lat': 30.0, 'from': '200H1', 'to': '230H2'}],
     'voice': {'name': 'zh-CN-YunjianNeural', 'rate': '+0%', 'pitch': '+0Hz'},
     'span': ['181H1', '234H2'],
@@ -134,3 +134,12 @@ def test_validate_rejects_zhousui_birth_after_span_start():
     def m(c):
         c['age'] = {'kind': 'zhousui', 'birth': '0182-01-01'}
     _bad(m, 'age.birth')
+
+
+def test_validate_rejects_era_ordinal_over_199():
+    _bad(lambda c: c['eras'][0].__setitem__(2, -100), r'eras\[0\].*199')
+
+
+def test_validate_rejects_slash_in_name():
+    _bad(lambda c: c.update(name='a/b'), 'name')
+    _bad(lambda c: c.update(name='a\\b'), 'name')
