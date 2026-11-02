@@ -1,11 +1,12 @@
 """person.json 校验，以及迁移前后年龄/纪年逐字一致（tests/fixtures/era_baseline.json）。"""
+import copy
 import json
 import re
 
 import pytest
 
-from conftest import ROOT, ages, load
-from person import load_person
+from conftest import ROOT, ages, load, node
+from person import half_idx, load_person, validate
 
 HALF = re.compile(r'^-?\d+H[12]$')
 BASELINE = ROOT / 'tests' / 'fixtures' / 'era_baseline.json'
@@ -16,7 +17,7 @@ def test_person_config_valid(who):
     assert cfg['age']['kind'] in ('xusui', 'zhousui')
     keys = [r[3] for r in cfg['eras']]
     assert all(HALF.match(k) for k in keys)
-    idx = [int(k[:-2]) * 2 + int(k[-1]) - 1 for k in keys]
+    idx = [half_idx(k) for k in keys]
     assert idx == sorted(idx), 'eras 必须按生效半年升序'
     for o in cfg.get('era_overrides', []):
         assert all(v is None or HALF.match(v) for v in (o['from'], o['to']))
@@ -36,3 +37,52 @@ def test_ages_and_eras_match_baseline(who):
     assert got.pop('birth') == base['birth']
     diff = {k: (got.get(k), v) for k, v in base['rows'].items() if got.get(k) != v}
     assert not diff, dict(list(diff.items())[:5])
+
+
+def _bad(mutate, match):
+    cfg = copy.deepcopy(load_person('zhuge'))
+    mutate(cfg)
+    with pytest.raises(ValueError, match=match):
+        validate(cfg, 'fake/person.json')
+
+
+def test_validate_rejects_unknown_key():
+    _bad(lambda c: c.update(colour='x'), 'unknown fields')
+
+
+def test_validate_rejects_bad_birth_format():
+    def m(c):
+        c['age'] = {'kind': 'zhousui', 'birth': '1893/12/26'}
+    _bad(m, 'age.birth')
+
+
+def test_validate_rejects_to_before_from():
+    _bad(lambda c: c['regions'][0].update({'from': '230H1', 'to': '225H1'}), 'regions.0.*after')
+
+
+def test_validate_rejects_overlapping_overrides():
+    def m(c):
+        c['era_overrides'] = [{'from': '200H1', 'to': '210H2', 'template': 'a'}, {'from': '210H2', 'to': None, 'template': 'b'}]
+    _bad(m, 'overlaps')
+
+
+def test_validate_rejects_first_era_after_span_start():
+    _bad(lambda c: c['eras'][0].__setitem__(3, '182H1'), 'after span start')
+
+
+def test_validate_rejects_nonpositive_template_year():
+    _bad(lambda c: c.update(era_overrides=[{'from': '200H1', 'to': None, 'template': 'x{n:300}'}]), 'non-positive')
+
+
+def test_half_idx_rejects_bad_key():
+    with pytest.raises(ValueError):
+        half_idx('744H3')
+
+
+def test_cn_num_range_and_hundreds():
+    got = node("""import { cnNum } from './person.js';
+const out = {};
+for (const n of [0, 100, 101, 110, 115, 120, 199, 200, 1.5]) { try { out[n] = cnNum(n); } catch (e) { out[n] = 'ERR'; } }
+console.log(JSON.stringify(out));""")
+    assert got == {'0': 'ERR', '100': '一百', '101': '一百〇一', '110': '一百一十', '115': '一百一十五',
+                   '120': '一百二十', '199': '一百九十九', '200': 'ERR', '1.5': 'ERR'}

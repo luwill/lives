@@ -1,4 +1,5 @@
 {
+ "_note": "生于景祐三年十二月（农历 1036 年）；出生一步按生日所在的农历年显示（birth_override）。",
  "name": "苏轼", "life": "1037 — 1101", "tagline": "一蓑烟雨任平生 · 半年一步",
  "color": "#f0b84a", "glow": "#ffe2a0",
  "age": {"kind": "xusui", "lunar_birth_year": 1036},

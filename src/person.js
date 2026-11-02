@@ -1,6 +1,13 @@
 // 人物配置（data/<who>/person.json）→ 运行时对象：年龄、纪年、政权注记、地形层
 const NUM = '〇一二三四五六七八九';
 export function cnNum(n) {
+  if (!Number.isInteger(n) || n < 1 || n > 199) throw new Error('cnNum out of range: ' + n);
+  if (n >= 100) {
+    const r = n - 100;
+    if (r === 0) return '一百';
+    if (r < 10) return '一百〇' + NUM[r];
+    return '一百' + NUM[Math.floor(r / 10)] + '十' + (r % 10 ? NUM[r % 10] : '');
+  }
   if (n === 1) return '元';
   if (n < 10) return NUM[n];
   if (n < 20) return '十' + (n % 10 ? NUM[n % 10] : '');

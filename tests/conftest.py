@@ -7,7 +7,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'tools'))
-from person import load_person, people  # noqa: E402
+from person import people  # noqa: E402
 
 PEOPLE = people()
 
@@ -28,7 +28,7 @@ def ages(who: str) -> dict:
     return node(f"""import {{ makePerson }} from './person.js';
 import fs from 'node:fs';
 const p = makePerson(JSON.parse(fs.readFileSync('../data/{who}/person.json'))), out = {{}};
-for (const id of {json.dumps(ids)}) {{ const [, y, h] = id.match(/^(\\d+)H(\\d)$/); out[id] = [p.age(+y, +h), p.era(+y, +h)]; }}
+for (const id of {json.dumps(ids)}) {{ const [, y, h] = id.match(/^(-?\\d+)H([12])$/); out[id] = [p.age(+y, +h), p.era(+y, +h)]; }}
 out.birth = p.birth || null;
 console.log(JSON.stringify(out));""")
 

@@ -1,4 +1,5 @@
 {
+ "_note": "1949 年下半年起只显示公元年（起飞时人类选定）；extra_levels 的 hi_japan 为留日本州中部高清层（东京、高田）。",
  "name": "蒋介石", "life": "1887 — 1975", "tagline": "一个人的八十七年 · 半年一步",
  "color": "#5b8fd8", "glow": "#a9c6f0",
  "age": {"kind": "zhousui", "birth": "1887-10-31"},

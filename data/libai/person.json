@@ -1,4 +1,5 @@
 {
+ "_note": "天宝三载起改“年”为“载”，至乾元元年复称“年”（天宝、至德两段以 era_overrides 表达）。",
  "name": "李白", "life": "701 — 762", "tagline": "仗剑去国 · 半年一步",
  "color": "#7aa8ff", "glow": "#c4d8ff",
  "age": {"kind": "xusui", "lunar_birth_year": 701},
