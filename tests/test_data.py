@@ -1,26 +1,19 @@
 """C1 数据完整性：半年步覆盖生卒区间、字段齐全、地点可解析。"""
-import re
 
 from conftest import load
-from person import load_person
+from person import HALF, half_idx, load_person
 
 CONF = {'documented', 'inferred', 'traditional'}
-STEP_RE = re.compile(r'^(\d{3,4})H([12])$')
-
-
-def idx(step_id: str) -> int:
-    y, h = STEP_RE.match(step_id).groups()
-    return int(y) * 2 + int(h) - 1
 
 
 def test_steps_cover_life_without_gaps(who):
     steps = load(who, 'steps.json')['steps']
     ids = [s['id'] for s in steps]
-    assert all(STEP_RE.match(i) for i in ids), [i for i in ids if not STEP_RE.match(i)]
+    assert all(HALF.match(i) for i in ids), [i for i in ids if not HALF.match(i)]
     a, b = load_person(who)['span']
     assert ids[0] == a and ids[-1] == b, (ids[0], ids[-1])
-    want = list(range(idx(a), idx(b) + 1))
-    got = [idx(i) for i in ids]
+    want = list(range(half_idx(a), half_idx(b) + 1))
+    got = [half_idx(i) for i in ids]
     missing = sorted(set(want) - set(got))
     assert got == want, f'gaps/dupes/disorder; missing={missing[:10]}'
 

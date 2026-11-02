@@ -4,7 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 WHO=$1
-NAME=$(python3 -c "import sys; sys.path.insert(0, 'tools'); from person import load_person; print(load_person('$WHO')['name'])")
+NAME=$(python3 tools/person.py name "$WHO")
 MP4="${NAME}_人生轨迹.mp4"
 N=$(python3 -c "import json;print(int(json.load(open('src/$WHO/timeline.json'))['total']//30) + 1)")
 ROWS=$(( (N + 3) / 4 ))

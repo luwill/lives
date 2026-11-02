@@ -184,3 +184,10 @@ def load_person(who: str) -> dict:
 def voice_of(who: str) -> tuple[str, str, str]:
     v = load_person(who)['voice']
     return v['name'], v['rate'], v['pitch']
+
+
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) != 3 or not re.fullmatch(r'[a-z0-9_]+', sys.argv[2]):
+        sys.exit('usage: python3 tools/person.py <field> <who>   (who: [a-z0-9_]+)')
+    print(load_person(sys.argv[2])[sys.argv[1]])

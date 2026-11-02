@@ -34,7 +34,8 @@ def frame_means(p: Path, total: float, n: int = 16) -> list[float]:
 
 
 def check(who: str, require: bool) -> list[str]:
-    p = ROOT / f'{load_person(who)["name"]}_人生轨迹.mp4'
+    person = load_person(who)
+    p = ROOT / f'{person["name"]}_人生轨迹.mp4'
     if not p.exists():
         return [f'{p.name} missing'] if require else []
     errs = []
@@ -49,7 +50,7 @@ def check(who: str, require: bool) -> list[str]:
     total = json.loads((ROOT / 'src' / who / 'timeline.json').read_text())['total']
     if abs(dur - total) > 0.6:
         errs.append(f'duration {dur:.2f} != timeline {total:.2f}')
-    lo, hi = load_person(who)['targets']['duration_min']
+    lo, hi = person['targets']['duration_min']
     if not lo * 60 <= dur <= hi * 60:
         errs.append(f'duration {dur / 60:.1f} min outside {lo}-{hi}')
     lufs = loudness(p)
@@ -68,8 +69,14 @@ def main() -> None:
     require = '--require' in sys.argv
     failed = False
     for who in people():
-        errs = check(who, require)
-        if not errs and not (ROOT / f'{load_person(who)["name"]}_人生轨迹.mp4').exists():
+        try:
+            errs = check(who, require)
+            rendered = (ROOT / f'{load_person(who)["name"]}_人生轨迹.mp4').exists()
+        except (ValueError, FileNotFoundError) as e:
+            print(f'{who}: FAIL {e}')
+            failed = True
+            continue
+        if not errs and not rendered:
             print(f'{who}: skipped (not rendered yet)')
         for e in errs:
             print(f'  {who}: FAIL {e}')
