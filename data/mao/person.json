@@ -1,0 +1,11 @@
+{
+ "name": "毛泽东", "life": "1893 — 1976", "tagline": "一个人的八十二年 · 半年一步",
+ "color": "#e8473a", "glow": "#ff8a5c",
+ "age": {"kind": "zhousui", "birth": "1893-12-26"},
+ "eras": [["清 · ", "光绪", 1875, "1875H1"], ["清 · ", "宣统", 1909, "1909H1"], ["", "民国", 1912, "1912H1"]],
+ "era_overrides": [{"from": "1949H2", "to": null, "template": "中华人民共和国"}],
+ "regions": [],
+ "voice": {"name": "zh-CN-YunyangNeural", "rate": "-6%", "pitch": "-2Hz"},
+ "span": ["1893H2", "1976H2"],
+ "targets": {"duration_min": [9, 13], "min_milestones": 15}
+}

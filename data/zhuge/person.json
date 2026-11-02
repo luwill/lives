@@ -1,0 +1,15 @@
+{
+ "name": "诸葛亮", "life": "181 — 234", "tagline": "鞠躬尽瘁 · 半年一步",
+ "color": "#4fc1b0", "glow": "#9ff0e2",
+ "age": {"kind": "xusui", "lunar_birth_year": 181},
+ "eras": [["东汉 · ", "光和", 178, "181H1"], ["东汉 · ", "中平", 184, "185H1"], ["东汉 · ", "初平", 190, "190H1"],
+          ["东汉 · ", "兴平", 194, "194H1"], ["东汉 · ", "建安", 196, "196H1"], ["蜀汉 · ", "章武", 221, "221H1"],
+          ["蜀汉 · ", "建兴", 223, "223H2"]],
+ "era_overrides": [],
+ "regions": [{"name": "曹 魏", "lon": 114.2, "lat": 35.2, "from": "220H2", "to": null},
+             {"name": "蜀 汉", "lon": 104.6, "lat": 30.9, "from": "221H1", "to": null},
+             {"name": "孙 吴", "lon": 117.8, "lat": 28.4, "from": "222H2", "to": null}],
+ "voice": {"name": "zh-CN-YunyangNeural", "rate": "-16%", "pitch": "-6Hz"},
+ "span": ["181H1", "234H2"],
+ "targets": {"duration_min": [13, 17], "min_milestones": 10}
+}

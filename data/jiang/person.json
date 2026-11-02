@@ -1,0 +1,12 @@
+{
+ "name": "蒋介石", "life": "1887 — 1975", "tagline": "一个人的八十七年 · 半年一步",
+ "color": "#5b8fd8", "glow": "#a9c6f0",
+ "age": {"kind": "zhousui", "birth": "1887-10-31"},
+ "eras": [["清 · ", "光绪", 1875, "1875H1"], ["清 · ", "宣统", 1909, "1909H1"], ["", "民国", 1912, "1912H1"]],
+ "era_overrides": [{"from": "1949H2", "to": null, "template": ""}],
+ "regions": [],
+ "extra_levels": [["hi_japan", 0]],
+ "voice": {"name": "zh-CN-YunyangNeural", "rate": "-6%", "pitch": "-3Hz"},
+ "span": ["1887H2", "1975H1"],
+ "targets": {"duration_min": [9, 13], "min_milestones": 15}
+}
