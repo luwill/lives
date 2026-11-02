@@ -141,7 +141,7 @@ def _check_eras(eras, span_start, span_end, bad):
         last = half_idx(eras[i + 1][3]) - 1 if i + 1 < len(eras) else span_end
         n = last // 2 - r[2] + 1
         if n > 199:
-            bad(f'eras[{i}]', f'ordinal reaches {n} (> 199) before the next row / span end; add a row or an era_override')
+            bad(f'eras[{i}]', f'ordinal reaches {n} (> 199) before the next row / span end; add a later era row or fix firstYear')
 
 
 def _check_overrides(ovs, span_start, bad):

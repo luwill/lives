@@ -1,4 +1,4 @@
-"""环境检查：一次列出所有缺失项（不自动安装）。用法：python3 tools/check_env.py；全部就绪时退出码 0。"""
+"""环境检查：一次列出所有缺失项（不自动安装）。用法：python3 tools/check_env.py [--skip-terrain]；全部就绪时退出码 0。"""
 import importlib.util
 import shutil
 import subprocess
@@ -15,7 +15,7 @@ def has_npm_pkg(pkg: str) -> bool:
     return any((d / 'node_modules' / pkg / 'package.json').exists() for d in [ROOT, *ROOT.parents])
 
 
-def missing() -> list[str]:
+def missing(skip_terrain: bool = False) -> list[str]:
     out = [f'命令 {c}' for c in ('ffmpeg', 'ffprobe', 'node', 'curl') if not shutil.which(c)]
     out += [f'Python 包 {m}' for m in PY if importlib.util.find_spec(m) is None]
     for pkg in ('three', 'playwright-core'):
@@ -25,13 +25,13 @@ def missing() -> list[str]:
                        cwd=ROOT, capture_output=True, text=True) if shutil.which('node') else None
     if r is None or r.returncode != 0:
         out.append(f"Chromium（{r.stderr.strip() if r else 'node 缺失'}）")
-    if not (ROOT / 'assets' / 'terrain' / 'world.json').exists():
+    if not skip_terrain and not (ROOT / 'assets' / 'terrain' / 'world.json').exists():
         out.append('地形缓存（运行 zsh ~/.claude/skills/life-trajectory-video/scripts/setup_terrain.sh <项目目录>）')
     return out
 
 
 def main() -> int:
-    miss = missing()
+    miss = missing('--skip-terrain' in sys.argv[1:])
     for m in miss:
         print('缺失：', m)
     for m, why in OPTIONAL_PY.items():
