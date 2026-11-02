@@ -1,8 +1,10 @@
 // 冒烟测试：六个人物页面都能加载，并在抽样时间点 renderAt(t) 无报错，画面非空
 // 用法：node tools/smoke.mjs [who...]
+import fs from 'node:fs';
 import { openPage } from '../render.mjs';
 
-const people = process.argv.slice(2).length ? process.argv.slice(2) : ['mao', 'zhuge', 'sushi', 'libai', 'zhuyz', 'jiang'];
+const all = fs.readdirSync('data').filter(d => fs.existsSync(`data/${d}/person.json`)).sort();
+const people = process.argv.slice(2).length ? process.argv.slice(2) : all;
 let failed = 0;
 for (const who of people) {
   const errors = [];

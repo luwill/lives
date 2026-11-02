@@ -86,3 +86,37 @@ for (const n of [0, 100, 101, 110, 115, 120, 199, 200, 1.5]) { try { out[n] = cn
 console.log(JSON.stringify(out));""")
     assert got == {'0': 'ERR', '100': '一百', '101': '一百〇一', '110': '一百一十', '115': '一百一十五',
                    '120': '一百二十', '199': '一百九十九', '200': 'ERR', '1.5': 'ERR'}
+
+
+def _msg(mutate) -> str:
+    cfg = copy.deepcopy(load_person('zhuge'))
+    mutate(cfg)
+    with pytest.raises(ValueError) as e:
+        validate(cfg, 'fake/person.json')
+    return str(e.value)
+
+
+def test_error_message_has_field_prefix_once():
+    msg = _msg(lambda c: c['regions'][0].update({'from': 'oops'}))
+    assert msg.count('regions[0]') == 1, msg
+    msg = _msg(lambda c: c['regions'][0].update({'from': '230H1', 'to': '225H1'}))
+    assert msg.count('regions[0]') == 1, msg
+    msg = _msg(lambda c: c.update(era_overrides=[{'from': 'oops', 'to': None, 'template': 'a'}]))
+    assert msg.count('era_overrides[0]') == 1, msg
+
+
+def test_validate_rejects_nonpositive_template_year_when_from_is_null():
+    # from=null 时最早显示的是 span 起点（181 年）：{n:300} 会得到负年
+    _bad(lambda c: c.update(era_overrides=[{'from': None, 'to': '200H1', 'template': 'x{n:300}'}]), 'non-positive')
+
+
+def test_validate_rejects_xusui_birth_after_span_start():
+    def m(c):
+        c['age'] = {'kind': 'xusui', 'lunar_birth_year': 182}
+    _bad(m, 'age.lunar_birth_year')
+
+
+def test_validate_rejects_zhousui_birth_after_span_start():
+    def m(c):
+        c['age'] = {'kind': 'zhousui', 'birth': '0182-01-01'}
+    _bad(m, 'age.birth')

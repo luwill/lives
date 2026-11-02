@@ -4,8 +4,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 WHO=$1
-typeset -A NAME=(mao 毛泽东 zhuge 诸葛亮 sushi 苏轼 libai 李白 zhuyz 朱元璋 jiang 蒋介石)
-MP4="${NAME[$WHO]}_人生轨迹.mp4"
+NAME=$(python3 -c "import sys; sys.path.insert(0, 'tools'); from person import load_person; print(load_person('$WHO')['name'])")
+MP4="${NAME}_人生轨迹.mp4"
 N=$(python3 -c "import json;print(int(json.load(open('src/$WHO/timeline.json'))['total']//30) + 1)")
 ROWS=$(( (N + 3) / 4 ))
 ffmpeg -v error -y -i "$MP4" -vf "fps=1/30,scale=480:270,tile=4x${ROWS}" -frames:v 1 -q:v 4 "docs/evidence/stills/sheet_$WHO.jpg"

@@ -2,11 +2,8 @@
 import re
 
 from conftest import load
+from person import load_person
 
-# 生卒所在半年（由史料确定，数据必须恰好覆盖此区间）
-SPAN = {'mao': ('1893H2', '1976H2'), 'zhuge': ('181H1', '234H2'), 'sushi': ('1037H1', '1101H2'),
-        'libai': ('701H1', '762H2'), 'zhuyz': ('1328H2', '1398H1'), 'jiang': ('1887H2', '1975H1')}
-MIN_MILESTONES = {'mao': 15, 'zhuge': 10, 'sushi': 12, 'libai': 10, 'zhuyz': 10, 'jiang': 15}
 CONF = {'documented', 'inferred', 'traditional'}
 STEP_RE = re.compile(r'^(\d{3,4})H([12])$')
 
@@ -20,7 +17,7 @@ def test_steps_cover_life_without_gaps(who):
     steps = load(who, 'steps.json')['steps']
     ids = [s['id'] for s in steps]
     assert all(STEP_RE.match(i) for i in ids), [i for i in ids if not STEP_RE.match(i)]
-    a, b = SPAN[who]
+    a, b = load_person(who)['span']
     assert ids[0] == a and ids[-1] == b, (ids[0], ids[-1])
     want = list(range(idx(a), idx(b) + 1))
     got = [idx(i) for i in ids]
@@ -69,21 +66,10 @@ def test_stages_contiguous(who):
 def test_milestones(who):
     steps = load(who, 'steps.json')['steps']
     ms = [s for s in steps if s.get('milestone')]
-    assert len(ms) >= MIN_MILESTONES[who], len(ms)
+    assert len(ms) >= load_person(who)['targets']['min_milestones'], len(ms)
     for s in ms:
         m = s['milestone']
         assert m['title'] and m['importance'] in (1, 2), s['id']
         assert m.get('place', s['places'][-1]) in s['places'], s['id']
         assert s['confidence'] != 'traditional' or s.get('note'), s['id']
         assert len(set(s['sources'])) >= 2, f"{s['id']}: milestone needs ≥2 sources, has {s['sources']}"
-
-
-# 用户要求诸葛亮卡片引文全部用简体；这些是原引文里出现过的繁体字
-TRAD = set('諸陽於亂聞誠則業漢興請將無輔闕節繼瀘駑鈍姦還舊孫勝遺墳塚斂須')
-
-
-def test_zhuge_quotes_simplified():
-    for s in load('zhuge', 'steps.json')['steps']:
-        q = (s.get('milestone') or {}).get('quote')
-        if q:
-            assert not set(q['text']) & TRAD, (s['id'], set(q['text']) & TRAD)

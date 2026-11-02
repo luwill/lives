@@ -7,9 +7,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+from person import load_person, people
+
 ROOT = Path(__file__).resolve().parent.parent
-NAMES = {'mao': '毛泽东', 'zhuge': '诸葛亮', 'sushi': '苏轼', 'libai': '李白', 'zhuyz': '朱元璋', 'jiang': '蒋介石'}
-TARGET_MIN = {'mao': (9, 13), 'zhuge': (13, 17), 'sushi': (7, 10), 'libai': (7, 10), 'zhuyz': (8, 11), 'jiang': (9, 13)}
 
 
 def probe(p: Path) -> dict:
@@ -34,7 +34,7 @@ def frame_means(p: Path, total: float, n: int = 16) -> list[float]:
 
 
 def check(who: str, require: bool) -> list[str]:
-    p = ROOT / f'{NAMES[who]}_人生轨迹.mp4'
+    p = ROOT / f'{load_person(who)["name"]}_人生轨迹.mp4'
     if not p.exists():
         return [f'{p.name} missing'] if require else []
     errs = []
@@ -49,7 +49,7 @@ def check(who: str, require: bool) -> list[str]:
     total = json.loads((ROOT / 'src' / who / 'timeline.json').read_text())['total']
     if abs(dur - total) > 0.6:
         errs.append(f'duration {dur:.2f} != timeline {total:.2f}')
-    lo, hi = TARGET_MIN[who]
+    lo, hi = load_person(who)['targets']['duration_min']
     if not lo * 60 <= dur <= hi * 60:
         errs.append(f'duration {dur / 60:.1f} min outside {lo}-{hi}')
     lufs = loudness(p)
@@ -67,9 +67,9 @@ def check(who: str, require: bool) -> list[str]:
 def main() -> None:
     require = '--require' in sys.argv
     failed = False
-    for who in NAMES:
+    for who in people():
         errs = check(who, require)
-        if not errs and not (ROOT / f'{NAMES[who]}_人生轨迹.mp4').exists():
+        if not errs and not (ROOT / f'{load_person(who)["name"]}_人生轨迹.mp4').exists():
             print(f'{who}: skipped (not rendered yet)')
         for e in errs:
             print(f'  {who}: FAIL {e}')

@@ -69,7 +69,7 @@ def m_wrong_stop(r: Path) -> None:           # C5：里程碑停在半年终点�
 
 
 def m_negative_age(r: Path) -> None:        # 年龄口径：去掉周岁下限
-    p = r / 'src/people.js'
+    p = r / 'src/person.js'
     p.write_text(p.read_text().replace('Math.max(0, y - by', '(y - by'))
 
 
@@ -93,19 +93,21 @@ def m_sub_overlap(r: Path) -> None:         # C7：字幕重叠
 
 
 def m_jiang_minguo(r: Path) -> None:      # D1：蒋介石 1949H2 以后仍显示民国纪年
-    p = r / 'src/people.js'
-    p.write_text(p.read_text().replace("if (y < 1949 || (y === 1949 && h === 1)) return `民国${cnNum(y - 1911)}年`;\n      return '';",
-                                       "return `民国${cnNum(y - 1911)}年`;"))
+    p = r / 'data/jiang/person.json'; d = jload(p)
+    d['era_overrides'] = []
+    jsave(p, d)
 
 
 def m_libai_zai(r: Path) -> None:          # C3：天宝三载起不改称“载”
-    p = r / 'src/people.js'
-    p.write_text(p.read_text().replace(".replace(/(天宝(?![元二])\\S+|至德\\S+)年$/, '$1载')", ''))
+    p = r / 'data/libai/person.json'; d = jload(p)
+    d['era_overrides'] = [o for o in d['era_overrides'] if '天宝' not in o['template']]
+    jsave(p, d)
 
 
 def m_zhuyz_longfeng(r: Path) -> None:     # C3：龙凤纪年晚一年开始
-    p = r / 'src/people.js'
-    p.write_text(p.read_text().replace('if (y < 1355) return zz;', 'if (y < 1356) return zz;'))
+    p = r / 'data/zhuyz/person.json'; d = jload(p)
+    d['era_overrides'][0]['from'] = '1356H1'
+    jsave(p, d)
 
 
 def m_delete_step_libai(r: Path) -> None:   # C1：第二批也逐步覆盖（删李白 750H1）
@@ -139,9 +141,9 @@ MUTANTS = [
     ('C7', '诸葛亮第 11、12 条字幕重叠', m_sub_overlap, 'test_timeline.py'),
     ('C3', '去掉周岁下限（出生时 −1 岁）', m_negative_age, 'test_js.py'),
     ('C8', '片尾里程按图外代理点累计', m_proxy_km, 'test_js.py'),
-    ('C3', '蒋介石 1949H2 后仍用民国纪年', m_jiang_minguo, 'test_js.py'),
-    ('C3', '李白天宝三载不改称“载”', m_libai_zai, 'test_js.py'),
-    ('C3', '朱元璋龙凤纪年晚一年', m_zhuyz_longfeng, 'test_js.py'),
+    ('C3', '蒋介石 1949H2 后仍用民国纪年', m_jiang_minguo, 'test_lives_specific.py'),
+    ('C3', '李白天宝三载不改称“载”', m_libai_zai, 'test_lives_specific.py'),
+    ('C3', '朱元璋龙凤纪年晚一年', m_zhuyz_longfeng, 'test_lives_specific.py'),
     ('C1', '删除李白 750H1 一步', m_delete_step_libai, 'test_data.py'),
     ('C1', '溪口经度改为 10°', m_bad_coord_jiang, 'test_data.py'),
     ('C7', '朱元璋旁白改了文本未重新配音', m_stale_tts, 'test_timeline.py'),

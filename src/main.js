@@ -1,24 +1,25 @@
 // 帧渲染入口：window.renderAt(t) —— 纯时间函数（相机查表、叠加层按 t 计算）
 import { createWorld, setCamera, setExag } from './engine.js';
-import { PEOPLE } from './people.js';
+import { makePerson } from './person.js';
 import { buildJourney, stepIndexAt } from './journey.js';
 import { buildCamera } from './camera.js';
 import { makeTrail, makeMarkers } from './mapfx.js';
 import { makeHud } from './hud.js';
 
 const who = new URLSearchParams(location.search).get('who');
-const person = PEOPLE[who] || (who === 'demo' ? PEOPLE.sushi : null);
-if (!person) throw new Error(`unknown person: ${who}`);
+if (!who || !/^[a-z0-9_]+$/.test(who)) throw new Error(`bad person key: ${who}`);
 
 const getJson = async url => {
   const r = await fetch(url);
   if (!r.ok) throw new Error(`fetch ${url}: ${r.status}`);
   return r.json();
 };
-const [data, places, tl, geo] = await Promise.all([
+const [cfg, data, places, tl, geo] = await Promise.all([
+  getJson(`../data/${who}/person.json`),
   getJson(`../data/${who}/steps.json`), getJson(`../data/${who}/places.json`),
   getJson(`${who}/timeline.json`), getJson('../data/common/labels.json'),
 ]);
+const person = makePerson(cfg);
 document.title = `${person.name} · 人生轨迹`;
 
 const world = await createWorld(document.getElementById('gl'), person.levels);

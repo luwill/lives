@@ -8,11 +8,10 @@ from conftest import ROOT, load
 
 sys.path.insert(0, str(ROOT / 'tools'))
 import build_timeline as BT  # noqa: E402
-import tts as TTS  # noqa: E402
+from person import load_person, voice_of  # noqa: E402
 
 MIN_STEP = 0.4
 MIN_HOLD = 3.0
-TARGET_MIN = {'mao': (9, 13), 'zhuge': (13, 17), 'sushi': (7, 10), 'libai': (7, 10), 'zhuyz': (8, 11), 'jiang': (9, 13)}
 
 
 def timeline(who: str) -> dict:
@@ -81,7 +80,7 @@ def test_narration_balance(who):
 
 
 def test_duration_in_target(who):
-    lo, hi = TARGET_MIN[who]
+    lo, hi = load_person(who)['targets']['duration_min']
     assert lo * 60 <= timeline(who)['total'] <= hi * 60, timeline(who)['total'] / 60
 
 
@@ -137,7 +136,7 @@ def test_milestone_stays_at_its_place(who):
 def test_narration_audio_matches_script(who):
     """每段旁白的配音都由当前文本和声线合成（TTS 失败时会留下旧音频，时间轴就会按旧时长排）。"""
     import hashlib
-    voice, rate, pitch = TTS.VOICES[who]
+    voice, rate, pitch = voice_of(who)
     cache = json.loads((ROOT / 'narration' / who / 'tts.json').read_text())
     for seg in json.loads((ROOT / 'narration' / who / 'script.json').read_text()):
         h = hashlib.md5(f"{voice}{rate}{pitch}{seg['text']}".encode()).hexdigest()[:10]

@@ -33,18 +33,18 @@ def _is_num(v) -> bool:
     return isinstance(v, (int, float)) and not isinstance(v, bool)
 
 
-def _half_or_none(v, where):
+def _half_or_none(v):
     if v is None:
         return None
     try:
         return half_idx(v)
     except ValueError:
-        raise ValueError(f'{where}: bad half-year key {v!r}') from None
+        raise ValueError(f'bad half-year key {v!r}') from None
 
 
-def _check_range(a, b, where):
+def _check_range(a, b):
     if a is not None and b is not None and a > b:
-        raise ValueError(f'{where}: from is after to')
+        raise ValueError('from is after to')
 
 
 def validate(cfg: dict, path) -> dict:
@@ -82,14 +82,18 @@ def validate(cfg: dict, path) -> dict:
     if kind == 'xusui':
         if not _is_int(age.get('lunar_birth_year')):
             bad('age.lunar_birth_year', 'must be an int')
+        if age['lunar_birth_year'] > s0 // 2:
+            bad('age.lunar_birth_year', 'is after the first year of span')
     elif kind == 'zhousui':
         if not (isinstance(age.get('birth'), str) and DATE.match(age['birth'])):
             bad('age.birth', 'must match YYYY-MM-DD')
+        if int(age['birth'][:4]) > s0 // 2:
+            bad('age.birth', 'is after the first year of span')
     else:
         bad('age.kind', f'must be xusui or zhousui, got {kind!r}')
 
     _check_eras(cfg['eras'], s0, bad)
-    _check_overrides(cfg.get('era_overrides', []), bad)
+    _check_overrides(cfg.get('era_overrides', []), s0, bad)
     _check_regions(cfg.get('regions', []), bad)
 
     for i, lv in enumerate(cfg.get('extra_levels', [])):
@@ -132,7 +136,7 @@ def _check_eras(eras, span_start, bad):
         bad('eras[0]', 'first era takes effect after span start')
 
 
-def _check_overrides(ovs, bad):
+def _check_overrides(ovs, span_start, bad):
     if not isinstance(ovs, list):
         bad('era_overrides', 'must be a list')
     spans = []
@@ -141,14 +145,14 @@ def _check_overrides(ovs, bad):
         if not (isinstance(o, dict) and set(o) == {'from', 'to', 'template'} and isinstance(o['template'], str)):
             bad(w, 'must be {from, to, template:str}')
         try:
-            a, b = _half_or_none(o['from'], w), _half_or_none(o['to'], w)
-            _check_range(a, b, w)
+            a, b = _half_or_none(o['from']), _half_or_none(o['to'])
+            _check_range(a, b)
         except ValueError as e:
             bad(w, str(e))
-        if a is not None:
-            for m in N_REF.finditer(o['template']):
-                if a // 2 - int(m[1]) + 1 < 1:
-                    bad(w, f'{m[0]} gives a non-positive year at its start')
+        lo = span_start if a is None else a   # from=null：最早显示的是 span 起点
+        for m in N_REF.finditer(o['template']):
+            if lo // 2 - int(m[1]) + 1 < 1:
+                bad(w, f'{m[0]} gives a non-positive year at its start')
         spans.append((float('-inf') if a is None else a, float('inf') if b is None else b, i))
     spans.sort()
     for (a1, b1, i1), (a2, b2, i2) in zip(spans, spans[1:]):
@@ -165,7 +169,7 @@ def _check_regions(regions, bad):
                 and isinstance(r['name'], str) and _is_num(r['lon']) and _is_num(r['lat'])):
             bad(w, 'must be {name:str, lon, lat, from, to}')
         try:
-            _check_range(_half_or_none(r['from'], w), _half_or_none(r['to'], w), w)
+            _check_range(_half_or_none(r['from']), _half_or_none(r['to']))
         except ValueError as e:
             bad(w, str(e))
 

@@ -1,7 +1,7 @@
 """逐段合成旁白（edge-tts），记录时长与逐词时间戳。
 用法：python3 tools/tts.py <who> [--force]
 输出：narration/<who>/audio/<id>.mp3，narration/<who>/tts.json {id: {dur, words:[[text, t0, t1]]}}
-声线按人物区分（见 VOICES）。
+声线按人物区分（见 data/<who>/person.json 的 voice）。
 文本变化会自动重合成（按文本哈希缓存）。
 """
 import asyncio
@@ -11,18 +11,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+from person import people, voice_of
 
 ROOT = Path(__file__).resolve().parent.parent
-# 人物 → (声线, 语速, 音调)：毛泽东用庄重的云扬；诸葛亮用云健，压低语速与音调显得沉郁；苏轼用云希，洒脱明快
-VOICES = {
-    'mao': ('zh-CN-YunyangNeural', '-6%', '-2Hz'),
-    'zhuge': ('zh-CN-YunyangNeural', '-16%', '-6Hz'),   # 用户选定样音 B：放慢压低的云扬
-    'sushi': ('zh-CN-YunxiNeural', '-6%', '-1Hz'),
-    # 第二批：李白用云希但更快更亮，与苏轼区分；朱元璋用云健，低沉有力；蒋介石用庄重的云扬
-    'libai': ('zh-CN-YunxiNeural', '-4%', '+0Hz'),
-    'zhuyz': ('zh-CN-YunjianNeural', '-8%', '-5Hz'),
-    'jiang': ('zh-CN-YunyangNeural', '-6%', '-3Hz'),
-}
 
 
 def duration(p: Path) -> float:
@@ -32,7 +23,7 @@ def duration(p: Path) -> float:
 
 
 async def synth(text: str, path: Path, voice: tuple) -> list:
-    import edge_tts  # 延迟导入：测试只读 VOICES，不需要联网依赖
+    import edge_tts  # 延迟导入：测试不需要联网依赖
     comm = edge_tts.Communicate(text, voice[0], rate=voice[1], pitch=voice[2], boundary='WordBoundary')
     words = []
     with path.open('wb') as f:
@@ -46,7 +37,7 @@ async def synth(text: str, path: Path, voice: tuple) -> list:
 
 
 async def main(who: str, force: bool) -> None:
-    VOICE, RATE, PITCH = VOICES[who]
+    VOICE, RATE, PITCH = voice_of(who)
     NAR = ROOT / 'narration' / who
     (NAR / 'audio').mkdir(exist_ok=True)
     cache_p = NAR / 'tts.json'
@@ -75,6 +66,6 @@ async def main(who: str, force: bool) -> None:
 
 if __name__ == '__main__':
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
-    if len(args) != 1 or args[0] not in VOICES:
+    if len(args) != 1 or args[0] not in people():
         sys.exit(__doc__)
     asyncio.run(main(args[0], '--force' in sys.argv))
