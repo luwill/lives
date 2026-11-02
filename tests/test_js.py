@@ -68,11 +68,13 @@ def test_age_and_era_anchors_second_batch():
     assert j['1949H1'][1] == '民国三十八年' and all(v[1] == '' for k, v in j.items() if k != 'birth' and k >= '1949H2')
 
 
-def test_offmap_proxy_points_east_and_west():
-    """东京代理点在地图东缘、开罗在西缘（防止轨迹掉头或落在内陆）。"""
-    tokyo, cairo = node("""import { proxyOf } from './journey.js';
-console.log(JSON.stringify([proxyOf({lon: 139.69, lat: 35.69}), proxyOf({lon: 31.24, lat: 30.04})]));""")
-    assert tokyo[0] >= 130 and 33 <= tokyo[1] <= 40, tokyo
+def test_japan_on_map_and_cairo_at_west_edge():
+    """日本在底图范围内（世界层铺到 178°E）：东京、高田按真实坐标标注，不能被投到日本海上；开罗仍投到西缘。"""
+    tokyo, takada, cairo, off = node("""import { proxyOf, isOffMap } from './journey.js';
+const t = {lon: 139.69, lat: 35.69}, k = {lon: 138.242, lat: 37.1152};
+console.log(JSON.stringify([proxyOf(t), proxyOf(k), proxyOf({lon: 31.24, lat: 30.04}), [isOffMap(t), isOffMap(k)]]));""")
+    assert tokyo == [139.69, 35.69] and takada == [138.242, 37.1152]
+    assert off == [False, False]
     assert cairo[0] <= 80 and 30 <= cairo[1] <= 40, cairo
 
 
@@ -83,3 +85,24 @@ def test_era_edges_second_batch():
     assert l['757H2'][1].endswith('至德二载') and l['758H2'][1].endswith('乾元元年') and l['705H1'][1].startswith('唐')
     assert l['701H1'][1] == '武周 · 大足元年' and l['761H2'][1] == '唐 · 上元二年' and l['762H1'][1] == '唐 · 宝应元年'
     assert j['1908H2'][1] == '清 · 光绪三十四年' and j['1909H1'][1] == '清 · 宣统元年' and j['1912H1'][1] == '民国元年'
+
+
+def test_trail_fade_monotonic_and_floored():
+    v = node("""import { trailFade } from './journey.js';
+console.log(JSON.stringify([0, 10, 90, 600, 1e5, -5].map(a => trailFade(a))));""")
+    assert v[0] == 1 and v[5] == 1
+    assert v[0] > v[1] > v[2] > v[3] > v[4] >= 0.3 - 1e-9 and v[4] < 0.31
+
+
+def test_replay_time_covers_life_in_order(who):
+    """片尾回放：f 从 0 到 1 时，时间轴时刻单调不减，起于第一步、止于最后一步的行程终点。"""
+    tl = json.loads((ROOT / 'src' / who / 'timeline.json').read_text())
+    ts = node(f"""import {{ replayTime }} from './journey.js';
+import fs from 'node:fs';
+const s = JSON.parse(fs.readFileSync('{who}/timeline.json')).steps;
+console.log(JSON.stringify(Array.from({{ length: 2001 }}, (_, k) => replayTime(s, k / 2000))));""")
+    assert all(b >= a - 1e-9 for a, b in zip(ts, ts[1:]))
+    first, last = tl['steps'][0], tl['steps'][-1]
+    assert ts[0] == first['t0']
+    end = last['after']['t0'] + last['after']['move'] if 'after' in last else last['t0'] + last['move']
+    assert math.isclose(ts[-1], end, abs_tol=1e-6)

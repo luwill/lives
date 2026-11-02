@@ -112,6 +112,9 @@ def main(name: str, grid_w: int, use_sat: bool = False) -> None:
     depth = np.clip(-dem, 0, 4000)
     bad = (dem < 0) & ~ocean           # Terrarium 局部负值噪点按陆地修补
     dem = np.where(bad, median_filter(dem, 9), dem)
+    # Terrarium 偶有单像素高程尖峰（华东平原出现 5000 m 以上）：高出 5×5 中值 800 m 以上的点按中值修补
+    med = median_filter(dem, 5)
+    dem = np.where(dem - med > 800, med, dem)
     land = np.clip(dem, 1, None)
     cell = (meta['lon1'] - meta['lon0']) * 111320 * np.cos(np.radians((meta['lat0'] + meta['lat1']) / 2)) / meta['w']
     if use_sat:

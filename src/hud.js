@@ -30,9 +30,10 @@ export function makeHud(person, data, places, tl, journey) {
   // 片名
   const title = mk('title-card', `<div class="nm">${person.name}</div><div class="life">${person.life}</div><div class="tag">${person.tagline}</div>`);
   // 身份卡 + 年份
-  const idc = mk('idcard', `<b>${person.name}</b><em>${person.life}</em><div class="stage"></div>`);
+  // 左上角压成三行：姓名 · 阶段 / 纪年 / 年份 + 半年 + 年龄（生卒年已在片名和进度条两端）
+  const idc = mk('idcard', `<b>${person.name}</b><span class="stage"></span>`);
   const stageEl = idc.querySelector('.stage');
-  const year = mk('year', '<div class="era"></div><div class="row"><b class="y"></b><span class="h"></span></div><div class="age"></div>');
+  const year = mk('year', '<div class="era"></div><div class="row"><b class="y"></b><span class="h"></span><span class="age"></span></div>');
   const [eraEl, yEl, hEl, ageEl] = ['.era', '.y', '.h', '.age'].map(s => year.querySelector(s));
   const stats = mk('stats', '<div><b class="km"></b><em>累计行程（公里）</em></div><div><b class="np"></b><em>足迹所至</em></div>');
   const [kmEl, npEl] = ['.km', '.np'].map(s => stats.querySelector(s));
@@ -105,7 +106,8 @@ export function makeHud(person, data, places, tl, journey) {
     for (const a of journey.arrivals) if (a.t <= t) np.add(spot(a.key));
     kmEl.textContent = Math.round(kmAt(journey, t)).toLocaleString('en-US');
     npEl.textContent = np.size;
-    show(ev, lifeOp * (chapter ? 0 : 1) * (ms && t > ms.t0 ? 0.35 : 1));
+    // 里程碑卡与事件条内容重复：卡片在时事件条完全让开
+    show(ev, lifeOp * (chapter ? 0 : 1) * (1 - (ms ? win(t, ms.t0 - 0.3, ms.t1 + 0.3, 0.5) : 0)));
     // 进度条
     show(bar, lifeOp);
     const stepT = tl.steps[i], frac = (i + clamp01((t - stepT.t0) / (stepT.t1 - stepT.t0))) / n;

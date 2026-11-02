@@ -1,6 +1,6 @@
 // 地图叠加层：轨迹线、当前位置、到访地点、里程碑星标、地理注记（含碰撞避让）
-import { makeLine, setLinePts, toWorld, project, kmBetween } from './engine.js';
-import { trailUpTo, positionAt, isOffMap } from './journey.js';
+import { makeLine, setLinePts, toWorld, project, kmBetween, THREE } from './engine.js';
+import { trailUpTo, positionAt, isOffMap, trailFade, replayTime } from './journey.js';
 
 export const clamp01 = x => Math.max(0, Math.min(1, x));
 export const win = (t, t0, t1, fade = 0.5) => Math.min(clamp01((t - t0) / fade), clamp01((t1 - t) / fade));
@@ -15,22 +15,52 @@ function el(cls, html) {
 }
 
 // ---------- 轨迹线 ----------
-export function makeTrail(scene, journey, person) {
-  const past = makeLine(person.color, 2.0, { opacity: 0.4, renderOrder: 10 });
+// 已走过的轨迹逐点着色：平时按“走过多久”变暗；片尾按人生先后由暗到亮，看得出时间方向
+const OUTRO_FLOOR = 0.4;
+function shadeColors(pts, ts, base, shade) {
+  const out = new Float32Array(pts.length * 3);
+  for (let k = 0; k < pts.length; k++) {
+    const s = shade(ts[k]) ** 2.2;   // 感知亮度 → 线性空间（顶点色按线性存储）
+    out[k * 3] = base.r * s; out[k * 3 + 1] = base.g * s; out[k * 3 + 2] = base.b * s;
+  }
+  return out;
+}
+
+export function makeTrail(scene, journey, person, tl) {
+  const past = makeLine('#ffffff', 2.4, { opacity: 0.8, renderOrder: 10, vertexColors: true });
   const glow = makeLine(person.glow, 12, { opacity: 0.22, renderOrder: 11 });
   const recent = makeLine(person.color, 5, { renderOrder: 12 });
   const core = makeLine('#fffaf0', 1.6, { opacity: 0.9, renderOrder: 13 });
   [past, glow, recent, core].forEach(l => scene.add(l));
+  const base = new THREE.Color(person.color);
   const RECENT = 7;   // 秒：最近这段路高亮
+  const { verts } = journey;
+  const vt0 = verts[0][2], vt1 = verts[verts.length - 1][2];
+  // 片尾回放占 outro 的 [1 s, 末尾前 2.5 s]
+  const rp0 = tl.outro.t0 + 1, rp1 = Math.max(rp0 + 4, tl.outro.t1 - 2.5);
+  const REPLAY_VERTS = 70;   // 回放光带长度：约 70 个路径点（≈ 800 km）
   return (t, cam, fadeAll = 1) => {
     const lift = cam.dist * 0.004;
-    const all = trailUpTo(journey.verts, t);
-    const rec = trailUpTo(journey.verts, t, t - RECENT);
-    setLinePts(past, all, lift);
+    const inOutro = t >= tl.outro.t0;
+    const all = trailUpTo(verts, t);
+    // trailUpTo 末尾可能多一个插值点（时刻 t）
+    const ts = verts.slice(0, all.length).map(v => v[2]);
+    if (ts.length < all.length) ts.push(t);
+    const shade = inOutro ? (vt => OUTRO_FLOOR + (1 - OUTRO_FLOOR) * clamp01((vt - vt0) / (vt1 - vt0))) : (vt => trailFade(t - vt));
+    setLinePts(past, all, lift, shadeColors(all, ts, base, shade));
+    let rec;
+    if (inOutro) {   // 一生回放：一道光沿全程从出生地走到终点
+      const e = clamp01((t - rp0) / (rp1 - rp0)), f = e < 0.5 ? 2 * e * e : 1 - (-2 * e + 2) ** 2 / 2;
+      const tr = replayTime(tl.steps, f);
+      const head = trailUpTo(verts, tr), k0 = Math.max(0, head.length - REPLAY_VERTS);
+      rec = t < rp0 ? [] : head.slice(k0);
+    } else rec = trailUpTo(verts, t, t - RECENT);
     setLinePts(glow, rec, lift);
     setLinePts(recent, rec, lift);
     setLinePts(core, rec, lift);
-    past.material.opacity = 0.4 * fadeAll;
+    const outroK = inOutro ? clamp01((t - tl.outro.t0) / 1.5) : 0;
+    past.material.linewidth = 2.4 + 1.2 * outroK;
+    past.material.opacity = 0.8 * fadeAll;
     glow.material.opacity = 0.22 * fadeAll;
     recent.material.opacity = fadeAll;
     core.material.opacity = 0.85 * fadeAll;
@@ -40,12 +70,12 @@ export function makeTrail(scene, journey, person) {
 // ---------- 碰撞避让：按优先级贪心放置 ----------
 // HUD 占用的屏幕区域：地图注记不放进去
 const HUD_ZONES = [
-  { x0: 30, x1: 560, y0: 24, y1: 330 },        // 身份卡 + 年份
+  { x0: 30, x1: 640, y0: 24, y1: 250 },        // 身份卡 + 年份
   { x0: 1360, x1: 1900, y0: 24, y1: 120 },     // 行程统计
-  { x0: 0, x1: 1920, y0: 900, y1: 1080 },      // 事件条 + 进度条
+  { x0: 0, x1: 1920, y0: 880, y1: 1080 },      // 事件条 + 进度条
 ];
 const CARD_ZONE = { x0: 1290, x1: 1890, y0: 160, y1: 700 };
-const SUB_ZONE = { x0: 260, x1: 1660, y0: 800, y1: 860 };
+const SUB_ZONE = { x0: 260, x1: 1660, y0: 770, y1: 836 };
 
 function placeLabels(items, reserved) {
   items.sort((a, b) => b.pri - a.pri);

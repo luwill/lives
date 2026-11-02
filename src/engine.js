@@ -129,7 +129,8 @@ export function setCamera(camera, { lon, lat, dist, pitch, heading }) {
 
 // ---------- 线 ----------
 export function makeLine(color, widthPx, opts = {}) {
-  const mat = new LineMaterial({ color, linewidth: widthPx, transparent: true, opacity: opts.opacity ?? 1, depthTest: false, worldUnits: false });
+  const mat = new LineMaterial({ color, linewidth: widthPx, transparent: true, opacity: opts.opacity ?? 1, depthTest: false, worldUnits: false,
+    vertexColors: !!opts.vertexColors });
   mat.resolution.set(W, H);
   const line = new Line2(new LineGeometry(), mat);
   line.renderOrder = opts.renderOrder ?? 10;
@@ -137,8 +138,8 @@ export function makeLine(color, widthPx, opts = {}) {
   return line;
 }
 
-// 用经纬度点列（贴地 + lift）设置线几何；少于 2 点则隐藏
-export function setLinePts(line, lonlats, lift) {
+// 用经纬度点列（贴地 + lift）设置线几何；少于 2 点则隐藏。colors：可选逐点 RGB（线性空间，长度 = 点数 × 3）
+export function setLinePts(line, lonlats, lift, colors = null) {
   if (lonlats.length < 2) { line.visible = false; return; }
   const arr = new Float32Array(lonlats.length * 3);
   lonlats.forEach(([lo, la], i) => {
@@ -150,6 +151,7 @@ export function setLinePts(line, lonlats, lift) {
   line.geometry.dispose();
   line.geometry = new LineGeometry();
   line.geometry.setPositions(arr);
+  if (colors) line.geometry.setColors(colors);
 }
 
 // 世界坐标 → 屏幕像素

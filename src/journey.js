@@ -1,5 +1,6 @@
 // 行程：把半年步 + 时间轴展开为带时间戳的路径点（纯函数，不依赖 three.js）
-export const MAP_BOX = { lon0: 72, lon1: 136, lat0: 16, lat1: 54 };   // 地图可见范围（境外地点投到边缘）
+// 地图可见范围（之外的地点投到边缘）。东界放到 146°E：世界底图铺到 178°E，日本本州在画面里，东京、高田应按真实坐标标注
+export const MAP_BOX = { lon0: 72, lon1: 146, lat0: 16, lat1: 54 };
 const CENTER = [105, 35];
 
 export function isOffMap(p) {
@@ -109,4 +110,18 @@ export function stepIndexAt(tlSteps, t) {
 export function kmAt(journey, t) {
   const i = vertIndexAt(journey.verts, t);
   return i < 0 ? 0 : journey.cum[i];
+}
+
+// 轨迹亮度：走过越久越暗（指数衰减到 floor），近景里多年前的长直线不再抢眼
+export function trailFade(age, tau = 90, floor = 0.3) {
+  return floor + (1 - floor) * Math.exp(-Math.max(0, age) / tau);
+}
+
+// 片尾回放：f∈[0,1] 按“人生半年步”匀速映射到时间轴时刻（跳过里程碑讲解的停留，回放速度与年岁成正比）
+// 每步内：有后续行程（after）时前后两半各走一段；无移动的步停在原地
+export function replayTime(tlSteps, f) {
+  const n = tlSteps.length, x = Math.max(0, Math.min(1, f)) * n;
+  const i = Math.min(n - 1, Math.floor(x)), u = x - i, s = tlSteps[i];
+  if (s.after) return u < 0.5 ? s.t0 + s.move * u * 2 : s.after.t0 + s.after.move * (u - 0.5) * 2;
+  return s.t0 + s.move * u;
 }

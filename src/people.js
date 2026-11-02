@@ -25,11 +25,17 @@ const zhousui = (by, bm, bd) => (y, h) => {
   return `${Math.max(0, y - by - (m < bm || (m === bm && d < bd) ? 1 : 0))} 岁`;
 };
 
+// 活动区高清层（z10，约 150 m/像素，卫星底色），各人物共用：华中西南（原为诸葛亮所建）、华北、华东沿海、华南。
+// 同级层按先后互相让位（后者在前者范围内下沉），再往下是全国与世界粗层
+const HI = [['zhuge_hi', 0], ['hi_north', 0], ['hi_east', 0], ['hi_south', 0]];
+const BASE = [['east', -0.03], ['china', -0.06], ['world', -0.15]];
+const LEVELS = [...HI, ...BASE];
+
 export const PEOPLE = {
   mao: {
     age: zhousui(1893, 12, 26),
     name: '毛泽东', life: '1893 — 1976', tagline: '一个人的八十二年 · 半年一步', color: '#e8473a', glow: '#ff8a5c',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: LEVELS,
     era: (y, h) => {
       if (y < 1909) return `清 · 光绪${cnNum(y - 1874)}年`;
       if (y < 1912) return `清 · 宣统${cnNum(y - 1908)}年`;
@@ -41,7 +47,7 @@ export const PEOPLE = {
   zhuge: {
     age: xusui(181),
     name: '诸葛亮', life: '181 — 234', tagline: '鞠躬尽瘁 · 半年一步', color: '#4fc1b0', glow: '#9ff0e2',
-    levels: [['zhuge_hi', 0], ['east', -0.03], ['china', -0.06], ['world', -0.15]],   // 活动区 z10 高清层（150 m/像素，卫星底色）
+    levels: LEVELS,
     era: eraFrom([
       ['光和', 178, idx(181, 1)], ['中平', 184, idx(185, 1)], ['初平', 190, idx(190, 1)], ['兴平', 194, idx(194, 1)],
       ['建安', 196, idx(196, 1)], ['章武', 221, idx(221, 1)], ['建兴', 223, idx(223, 2)],
@@ -57,7 +63,7 @@ export const PEOPLE = {
     age: xusui(1036),   // 生于景祐三年十二月（农历 1036 年）
     birth: { era: '北宋 · 景祐三年', age: '虚岁 1' },   // 出生一步按生日所在的农历年显示
     name: '苏轼', life: '1037 — 1101', tagline: '一蓑烟雨任平生 · 半年一步', color: '#f0b84a', glow: '#ffe2a0',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: LEVELS,
     era: eraFrom([
       ['景祐', 1034, idx(1037, 1)], ['宝元', 1038, idx(1039, 1)], ['康定', 1040, idx(1040, 1)], ['庆历', 1041, idx(1042, 1)],
       ['皇祐', 1049, idx(1049, 1)], ['至和', 1054, idx(1054, 1)], ['嘉祐', 1056, idx(1056, 2)], ['治平', 1064, idx(1064, 1)],
@@ -73,7 +79,7 @@ export const PEOPLE = {
   libai: {
     age: xusui(701),
     name: '李白', life: '701 — 762', tagline: '仗剑去国 · 半年一步', color: '#7aa8ff', glow: '#c4d8ff',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: LEVELS,
     // 天宝三载起改“年”为“载”，至乾元元年复称“年”
     era: (y, h) => eraFrom([
       ['大足', 701, idx(701, 1)], ['长安', 701, idx(702, 1)], ['神龙', 705, idx(705, 1)], ['景龙', 707, idx(707, 2)],
@@ -91,7 +97,7 @@ export const PEOPLE = {
   zhuyz: {
     age: xusui(1328),   // 生于天历元年九月十八日
     name: '朱元璋', life: '1328 — 1398', tagline: '布衣天子 · 半年一步', color: '#e0a030', glow: '#ffd27a',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: LEVELS,
     // 1355 年起郭子兴部奉韩林儿“龙凤”年号，1367 年称吴元年，1368 年改元洪武
     era: (y, h) => {
       const zz = eraFrom([
@@ -115,7 +121,7 @@ export const PEOPLE = {
   jiang: {
     age: zhousui(1887, 10, 31),
     name: '蒋介石', life: '1887 — 1975', tagline: '一个人的八十七年 · 半年一步', color: '#5b8fd8', glow: '#a9c6f0',
-    levels: [['east', 0], ['china', -0.06], ['world', -0.15]],
+    levels: [...HI, ['hi_japan', 0], ...BASE],   // 留日：本州中部高清层（东京、高田）
     // 1949 年下半年起只显示公元年（起飞时人类选定）
     era: (y, h) => {
       if (y < 1909) return `清 · 光绪${cnNum(y - 1874)}年`;
