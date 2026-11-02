@@ -1,6 +1,6 @@
 // 帧渲染入口：window.renderAt(t) —— 纯时间函数（相机查表、叠加层按 t 计算）
 import { createWorld, setCamera, setExag } from './engine.js';
-import { makePerson } from './person.js';
+import { makePerson, parseStepId } from './person.js';
 import { buildJourney, stepIndexAt } from './journey.js';
 import { buildCamera } from './camera.js';
 import { makeTrail, makeMarkers } from './mapfx.js';
@@ -41,7 +41,7 @@ window.renderAt = t => {
   world.scene.fog.near = cam.dist * 1.6;
   world.scene.fog.far = cam.dist * 5;
   const stepIdx = stepIndexAt(tl.steps, t);
-  const [, y, h] = data.steps[stepIdx].id.match(/^(\d+)H([12])$/);
+  const [y, h] = parseStepId(data.steps[stepIdx].id);
   const s = tl.steps[stepIdx];
   const ms = s.ms && t >= s.t0 && t <= s.t1 + 0.6 ? s.ms : null;
   const chapter = tl.chapters.find(c => t >= c.t0 && t < c.t1) || null;

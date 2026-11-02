@@ -2,6 +2,7 @@
 import { clamp01, win } from './mapfx.js';
 import { kmAt } from './journey.js';
 import { kmBetween } from './engine.js';
+import { parseStepId } from './person.js';
 
 const hud = () => document.getElementById('hud');
 function mk(cls, html = '') {
@@ -19,7 +20,7 @@ const show = (d, op, tf = '') => {
 const easeOut = x => 1 - Math.pow(1 - clamp01(x), 3);
 const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 const CONF = { documented: ['史载', 'c-doc'], inferred: ['推断', 'c-inf'], traditional: ['传说', 'c-tra'] };
-const parse = id => { const [, y, h] = id.match(/^(\d+)H([12])$/); return [+y, +h]; };
+const parse = parseStepId;
 
 export function makeHud(person, data, places, tl, journey) {
   const steps = data.steps, stages = data.stages;

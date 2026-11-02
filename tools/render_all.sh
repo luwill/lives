@@ -6,6 +6,7 @@ cd "$(dirname "$0")/.."
 REV="$(git rev-parse --short HEAD)$([ -z "$(git status --porcelain -- src data narration music tools)" ] || echo -dirty)"
 for WHO in "$@"; do
   python3 tools/person.py name "$WHO" >/dev/null   # 校验人物键（[a-z0-9_]+ 且 person.json 可加载），先于任何删除
+  mkdir -p "out/$WHO"
   python3 tools/build_timeline.py "$WHO"
   python3 music/score.py "$WHO" > "out/$WHO/score.log"
   rm -rf "out/$WHO/frames"

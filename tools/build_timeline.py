@@ -41,7 +41,7 @@ PUNCT = '，。；：！？、'
 
 
 def step_index(sid: str) -> int:
-    y, h = re.match(r'^(\d+)H([12])$', sid).groups()
+    y, h = re.match(r'^(-?\d+)H([12])$', sid).groups()
     return int(y) * 2 + int(h) - 1
 
 

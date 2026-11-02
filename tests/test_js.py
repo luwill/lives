@@ -30,3 +30,21 @@ console.log(JSON.stringify(Array.from({{ length: 2001 }}, (_, k) => replayTime(s
     assert ts[0] == first['t0']
     end = last['after']['t0'] + last['after']['move'] if 'after' in last else last['t0'] + last['move']
     assert math.isclose(ts[-1], end, abs_tol=1e-6)
+
+
+def test_parse_step_id_accepts_negative_years():
+    got = node("""import { parseStepId, halfIdx } from './person.js';
+const bad = [];
+for (const s of ['x', '12H3', '-H1', '1.5H1']) { try { parseStepId(s); bad.push(s); } catch (e) {} }
+console.log(JSON.stringify([parseStepId('-221H2'), parseStepId('744H1'), halfIdx('-221H2'), bad]));""")
+    assert got == [[-221, 2], [744, 1], -221 * 2 + 1, []]
+
+
+def test_step_index_matches_half_idx_for_negative_years():
+    import sys
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import build_timeline as BT
+    from person import half_idx
+    for sid in ('-221H1', '-221H2', '-1H2', '1H1', '744H2'):
+        assert BT.step_index(sid) == half_idx(sid)
+    assert BT.step_index('-221H1') < BT.step_index('-221H2') < BT.step_index('-220H1')

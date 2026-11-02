@@ -14,6 +14,13 @@ export function cnNum(n) {
   return NUM[Math.floor(n / 10)] + '十' + (n % 10 ? NUM[n % 10] : '');
 }
 
+// 步 id "-221H2" → [-221, 2]（年可为负：公元前）
+export function parseStepId(id) {
+  const m = /^(-?\d+)H([12])$/.exec(id);
+  if (!m) throw new Error(`bad step id: ${id}`);
+  return [+m[1], +m[2]];
+}
+
 // "744H1" → 半年序号 744*2+0
 export function halfIdx(key) {
   const m = /^(-?\d+)H([12])$/.exec(key);
