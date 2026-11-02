@@ -11,6 +11,16 @@ from person import half_idx, load_person, validate
 HALF = re.compile(r'^-?\d+H[12]$')
 BASELINE = ROOT / 'tests' / 'fixtures' / 'era_baseline.json'
 
+BASE = {
+    'name': '测试', 'life': '181–234', 'tagline': '合成数据', 'color': '#aabbcc', 'glow': '#112233',
+    'age': {'kind': 'xusui', 'lunar_birth_year': 181},
+    'eras': [['建安', '建安', 1, '181H1'], ['章武', '章武', 1, '221H1']],
+    'regions': [{'name': '某地', 'lon': 110.0, 'lat': 30.0, 'from': '200H1', 'to': '230H2'}],
+    'voice': {'name': 'zh-CN-YunjianNeural', 'rate': '+0%', 'pitch': '+0Hz'},
+    'span': ['181H1', '234H2'],
+    'targets': {'duration_min': [3, 5], 'min_milestones': 1},
+}
+
 
 def test_person_config_valid(who):
     cfg = load_person(who)
@@ -39,8 +49,12 @@ def test_ages_and_eras_match_baseline(who):
     assert not diff, dict(list(diff.items())[:5])
 
 
+def test_base_config_is_valid():
+    validate(copy.deepcopy(BASE), 'fake/person.json')
+
+
 def _bad(mutate, match):
-    cfg = copy.deepcopy(load_person('zhuge'))
+    cfg = copy.deepcopy(BASE)
     mutate(cfg)
     with pytest.raises(ValueError, match=match):
         validate(cfg, 'fake/person.json')
@@ -89,7 +103,7 @@ console.log(JSON.stringify(out));""")
 
 
 def _msg(mutate) -> str:
-    cfg = copy.deepcopy(load_person('zhuge'))
+    cfg = copy.deepcopy(BASE)
     mutate(cfg)
     with pytest.raises(ValueError) as e:
         validate(cfg, 'fake/person.json')

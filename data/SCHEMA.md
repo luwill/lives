@@ -1,6 +1,6 @@
 # 人生轨迹数据规范
 
-每个人物一个目录：`data/<who>/`，`who` ∈ `mao` | `zhuge` | `sushi` | `libai` | `zhuyz` | `jiang`。坐标一律为 WGS84 十进制度。
+每个人物一个目录：`data/<who>/`，`who` 为拼音小写键（`[a-z0-9_]+`，如 `sushi`）。坐标一律为 WGS84 十进制度。
 
 ## 半年步的定义
 
@@ -68,3 +68,40 @@
 - 每个地点键都必须在 `places.json` 中存在。坐标通过 Nominatim（不超过 1 次/秒，带 User-Agent）或 Overpass 核验，古地名取学界公认的今址。
 - 查不到确切今址时取所属县城，`confidence` 写 low 并在 `note` 中说明。不得臆造。
 - 境外地点（如莫斯科）照常给坐标，`kind` 写 `foreign`。
+
+## `person.json`
+
+每个人物的配置，由 `src/person.js`（浏览器端）和 `tools/person.py`（`validate()`，严格校验：缺字段、未知字段、类型或顺序不对都会抛错）读取。半年键写作 `YYYYH1`/`YYYYH2`（如 `744H1`，负数表示公元前）。
+
+```json
+{
+  "name": "苏轼",                       // 必填，非空字符串，片头与成片文件名使用
+  "life": "1037–1101",                  // 必填，非空字符串，生卒年显示
+  "tagline": "一句话概括",              // 必填，非空字符串
+  "color": "#d4a24c",                   // 必填，#RRGGBB，轨迹主色
+  "glow": "#ffd98a",                    // 必填，#RRGGBB，光晕色
+  "age": {"kind": "xusui", "lunar_birth_year": 1037},   // 必填；或 {"kind": "zhousui", "birth": "1893-12-26"}
+  "birth_override": {"era": "…", "age": "…"},           // 可选，出生步的纪年/年龄文字覆盖，两个字段都是字符串
+  "eras": [["宋", "景祐", 1034, "1037H1"]],             // 必填，非空
+  "era_overrides": [{"from": "1100H1", "to": null, "template": "元符三年"}],  // 可选
+  "regions": [{"name": "…", "lon": 113.0, "lat": 34.0, "from": "1000H1", "to": null}],  // 可选
+  "extra_levels": [["hi_north", 0]],    // 可选
+  "voice": {"name": "zh-CN-YunjianNeural", "rate": "+0%", "pitch": "+0Hz"},   // 必填，edge-tts，三项均为字符串
+  "span": ["1037H1", "1101H2"],         // 必填，[第一步, 最后一步]，必须等于 steps.json 首尾 id
+  "targets": {"duration_min": [4.5, 6], "min_milestones": 8},   // 必填
+  "_note": "自由备注，不参与校验"        // 可选
+}
+```
+
+字段规则：
+- `age`：`xusui`（虚岁，古人）显示 `虚岁 N`，N = 年 − `lunar_birth_year` + 1，`lunar_birth_year` 为整数且不晚于 span 起始年；`zhousui`（周岁，近人）要 `birth`（`YYYY-MM-DD`，不晚于 span 起始年），按半年中点 4/1 与 10/1 计算。
+- `eras`：每行 `[前缀, 年号名, 元年(整数), 生效半年]`，显示为 `前缀+年号名+中文序数+年`，序数 = 年 − 元年 + 1（1 → 元，范围 1–199）。元年不得晚于生效半年所在年；第一行生效半年不得晚于 span 起点。取"最后一个已生效的行"。
+- `era_overrides`：`{from, to, template}`，`from`/`to` 含端点，`null` 表示无界；命中时整串替换纪年。`template` 中的 `{n:Y}` 替换为 (年 − Y + 1) 的中文序数，在区间起点（`from` 为 null 时取 span 起点）处必须为正；各区间不得重叠，`from` 不晚于 `to`。
+- `regions`：`{name, lon, lat, from, to}` 五项齐全，画面上在该时段内于地图上标注政权/地域名；`from`/`to` 可为 `null`。
+- `extra_levels`：`[图层名, 偏移]`，插入到高清层之后、粗层之前的额外地形层（图层需存在于 `assets/terrain`）。
+- `span`：`[first, last]`，first 不晚于 last。
+- `targets.duration_min`：成片时长范围 `[lo, hi]`（分钟，lo < hi）；`targets.min_milestones`：里程碑最少个数（整数 ≥ 1）。
+
+规则：
+- 年号表按生效半年升序；特殊纪年（改称"载"、两个年号并列、不再显示纪年）一律用 `era_overrides` 表达，不改代码。
+- 新增人物后先跑 `python3 -m pytest -q tests -k <who>`，校验不过不要渲染。
