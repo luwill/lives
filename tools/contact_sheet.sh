@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 WHO=$1
 NAME=$(python3 tools/person.py name "$WHO")
 MP4="${NAME}_人生轨迹.mp4"
-N=$(python3 -c "import json;print(int(json.load(open('src/$WHO/timeline.json'))['total']//30) + 1)")
+N=$(python3 -c 'import json,sys;print(int(json.load(open(sys.argv[1]))["total"]//30) + 1)' "src/$WHO/timeline.json")
 ROWS=$(( (N + 3) / 4 ))
 ffmpeg -v error -y -i "$MP4" -vf "fps=1/30,scale=480:270,tile=4x${ROWS}" -frames:v 1 -q:v 4 "docs/evidence/stills/sheet_$WHO.jpg"
 echo "$WHO sheet from $MP4 sha256=$(shasum -a 256 "$MP4" | cut -c1-12) render=$(cat "out/$WHO/render_commit.txt" 2>/dev/null || echo unknown)"

@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 WHO=$1
 NAME=$(python3 tools/person.py name "$WHO")
 OUT="${NAME}_人生轨迹.mp4"
-TOTAL=$(python3 -c "import json;print(json.load(open('src/$WHO/timeline.json'))['total'])")
+TOTAL=$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["total"])' "src/$WHO/timeline.json")
 python3 tools/mix.py "$WHO"
 ffmpeg -v error -y -framerate 30 -start_number 0 -i "out/$WHO/frames/%05d.jpg" -i "out/$WHO/mix.wav" \
   -t "$TOTAL" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart \

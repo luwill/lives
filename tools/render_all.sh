@@ -5,17 +5,18 @@ cd "$(dirname "$0")/.."
 # 成片来自哪个提交：开始渲染前记录（工作区有改动或未跟踪文件时标 dirty）
 REV="$(git rev-parse --short HEAD)$([ -z "$(git status --porcelain -- src data narration music tools)" ] || echo -dirty)"
 for WHO in "$@"; do
+  python3 tools/person.py name "$WHO" >/dev/null   # 校验人物键（[a-z0-9_]+ 且 person.json 可加载），先于任何删除
   python3 tools/build_timeline.py "$WHO"
   python3 music/score.py "$WHO" > "out/$WHO/score.log"
   rm -rf "out/$WHO/frames"
-  T=$(python3 -c "import json;print(json.load(open('src/$WHO/timeline.json'))['total'])")
+  T=$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["total"])' "src/$WHO/timeline.json")
   for k in 0 1 2 3; do
-    a=$(python3 -c "print(round($T/4*$k,3))"); b=$(python3 -c "print(round($T/4*($k+1)+0.05,3))")
+    a=$(python3 -c 'import sys;T,k=float(sys.argv[1]),int(sys.argv[2]);print(round(T/4*k,3))' "$T" "$k"); b=$(python3 -c 'import sys;T,k=float(sys.argv[1]),int(sys.argv[2]);print(round(T/4*(k+1)+0.05,3))' "$T" "$k")
     node render.mjs "$WHO" frames "$a" "$b" > "out/$WHO/render_$k.log" 2>&1 &
   done
   wait
   N=$(ls "out/$WHO/frames" | wc -l | tr -d ' ')
-  python3 -c "import sys;n=$N;t=round($T*30);sys.exit(0 if n>=t else f'$WHO frames {n} < {t}')"
+  python3 -c 'import sys;n=int(sys.argv[1]);t=round(float(sys.argv[2])*30);sys.exit(0 if n>=t else f"{sys.argv[3]} frames {n} < {t}")' "$N" "$T" "$WHO"
   zsh tools/assemble.sh "$WHO"
   echo "$REV" > "out/$WHO/render_commit.txt"
 done

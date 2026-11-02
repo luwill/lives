@@ -16,7 +16,8 @@ export function findChrome() {
   }
   const caches = [path.join(process.env.HOME, 'Library/Caches/ms-playwright'), path.join(process.env.HOME, '.cache/ms-playwright')];
   const rel = ['chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
-    'chrome-mac/Chromium.app/Contents/MacOS/Chromium', 'chrome-linux/chrome'];
+    'chrome-mac-x64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
+    'chrome-mac/Chromium.app/Contents/MacOS/Chromium', 'chrome-linux/chrome', 'chrome-linux64/chrome'];
   for (const cache of caches) {
     const dirs = fs.existsSync(cache) ? fs.readdirSync(cache).filter(d => /^chromium-\d+$/.test(d))
       .sort((a, b) => +b.split('-')[1] - +a.split('-')[1]) : [];
@@ -24,7 +25,6 @@ export function findChrome() {
   }
   throw new Error('Chromium not found: set LTV_CHROME or run `npx playwright install chromium`');
 }
-export const CHROME = findChrome();
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png', '.bin': 'application/octet-stream', '.geojson': 'application/json' };
 
 export function serve() {
@@ -39,7 +39,7 @@ export function serve() {
 
 export async function openPage(who, onError) {
   const srv = await serve();
-  const browser = await chromium.launch({ executablePath: CHROME, args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist', '--enable-webgl'] });
+  const browser = await chromium.launch({ executablePath: findChrome(), args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist', '--enable-webgl'] });
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   page.setDefaultTimeout(180000);   // 高负载时截图可能超过默认 30 s
   page.on('pageerror', e => onError(`pageerror: ${e.message}`));

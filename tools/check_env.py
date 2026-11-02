@@ -21,7 +21,7 @@ def missing() -> list[str]:
     for pkg in ('three', 'playwright-core'):
         if not has_npm_pkg(pkg):
             out.append(f'npm 包 {pkg}（在项目根目录运行 npm install）')
-    r = subprocess.run(['node', '-e', "import('./render.mjs').then(m=>console.log(m.CHROME)).catch(e=>{console.error(e.message);process.exit(1)})"],
+    r = subprocess.run(['node', '-e', "import('./render.mjs').then(m=>console.log(m.findChrome())).catch(e=>{console.error(e.message);process.exit(1)})"],
                        cwd=ROOT, capture_output=True, text=True) if shutil.which('node') else None
     if r is None or r.returncode != 0:
         out.append(f"Chromium（{r.stderr.strip() if r else 'node 缺失'}）")
