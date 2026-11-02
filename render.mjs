@@ -8,7 +8,23 @@ import { chromium } from 'playwright-core';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const FPS = 30;
-export const CHROME = path.join(process.env.HOME, 'Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing');
+// Chromium：优先环境变量 LTV_CHROME，否则在 Playwright 缓存里取版本号最大的 chromium-*
+export function findChrome() {
+  if (process.env.LTV_CHROME) {
+    if (!fs.existsSync(process.env.LTV_CHROME)) throw new Error(`LTV_CHROME not found: ${process.env.LTV_CHROME}`);
+    return process.env.LTV_CHROME;
+  }
+  const caches = [path.join(process.env.HOME, 'Library/Caches/ms-playwright'), path.join(process.env.HOME, '.cache/ms-playwright')];
+  const rel = ['chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
+    'chrome-mac/Chromium.app/Contents/MacOS/Chromium', 'chrome-linux/chrome'];
+  for (const cache of caches) {
+    const dirs = fs.existsSync(cache) ? fs.readdirSync(cache).filter(d => /^chromium-\d+$/.test(d))
+      .sort((a, b) => +b.split('-')[1] - +a.split('-')[1]) : [];
+    for (const d of dirs) for (const r of rel) { const p = path.join(cache, d, r); if (fs.existsSync(p)) return p; }
+  }
+  throw new Error('Chromium not found: set LTV_CHROME or run `npx playwright install chromium`');
+}
+export const CHROME = findChrome();
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png', '.bin': 'application/octet-stream', '.geojson': 'application/json' };
 
 export function serve() {
