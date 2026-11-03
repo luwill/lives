@@ -1,6 +1,6 @@
 // 地图叠加层：轨迹线、当前位置、到访地点、里程碑星标、地理注记（含碰撞避让）
 import { makeLine, setLinePts, toWorld, project, kmBetween, THREE } from './engine.js';
-import { trailUpTo, positionAt, isOffMap, trailFade, trailFloor, replayTime } from './journey.js';
+import { trailUpTo, positionAt, isOffMap, trailFade, trailFloor, trailTau, replayTime, stepIndexAt } from './journey.js';
 
 export const clamp01 = x => Math.max(0, Math.min(1, x));
 export const win = (t, t0, t1, fade = 0.5) => Math.min(clamp01((t - t0) / fade), clamp01((t1 - t) / fade));
@@ -39,15 +39,24 @@ export function makeTrail(scene, journey, person, tl) {
   // 片尾回放占 outro 的 [1 s, 末尾前 2.5 s]
   const rp0 = tl.outro.t0 + 1, rp1 = Math.max(rp0 + 4, tl.outro.t1 - 2.5);
   const REPLAY_VERTS = 70;   // 回放光带长度：约 70 个路径点（≈ 800 km）
+  const vStep = verts.map(v => stepIndexAt(tl.steps, v[2]));   // 每个路径点属于哪个半年步
   return (t, cam, fadeAll = 1) => {
     const lift = cam.dist * 0.004;
     const inOutro = t >= tl.outro.t0;
     const all = trailUpTo(verts, t);
-    // trailUpTo 末尾可能多一个插值点（时刻 t）
-    const ts = verts.slice(0, all.length).map(v => v[2]);
-    if (ts.length < all.length) ts.push(t);
-    const shade = inOutro ? (vt => OUTRO_FLOOR + (1 - OUTRO_FLOOR) * clamp01((vt - vt0) / (vt1 - vt0))) : (vt => trailFade(t - vt, 90, trailFloor(cam.zoom)));
-    setLinePts(past, all, lift, shadeColors(all, ts, base, shade));
+    // 每个点的着色依据：片尾按时间轴位置（人生先后），平时按“走过了几个半年步”；trailUpTo 末尾可能多一个插值点（当前时刻）
+    let vals, shade;
+    if (inOutro) {
+      vals = verts.slice(0, all.length).map(v => v[2]);
+      if (vals.length < all.length) vals.push(t);
+      shade = vt => OUTRO_FLOOR + (1 - OUTRO_FLOOR) * clamp01((vt - vt0) / (vt1 - vt0));
+    } else {
+      const now = stepIndexAt(tl.steps, t), tau = trailTau(cam.zoom), floor = trailFloor(cam.zoom);
+      vals = vStep.slice(0, all.length).map(k => now - k);
+      if (vals.length < all.length) vals.push(0);
+      shade = age => trailFade(age, tau, floor);
+    }
+    setLinePts(past, all, lift, shadeColors(all, vals, base, shade));
     let rec;
     if (inOutro) {   // 一生回放：一道光沿全程从出生地走到终点
       const e = clamp01((t - rp0) / (rp1 - rp0)), f = e < 0.5 ? 2 * e * e : 1 - (-2 * e + 2) ** 2 / 2;

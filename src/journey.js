@@ -120,6 +120,12 @@ export function trailFloor(zoom) {
   return 0.08 + 0.22 * Math.max(0, Math.min(1, zoom));
 }
 
+// 旧轨迹衰减的时间常数（单位：半年步）：近景 3 步，全景 12 步。按人生年岁而不是视频秒数衰减——
+// 早年每步只占 0.55 s，按秒算时“三年前”的长途路线在近景里几乎不变暗（粟裕 1927 南下潮汕的南北直线）
+export function trailTau(zoom) {
+  return 3 + 9 * Math.max(0, Math.min(1, zoom));
+}
+
 export function trailFade(age, tau = 90, floor = 0.3) {
   return floor + (1 - floor) * Math.exp(-Math.max(0, age) / tau);
 }

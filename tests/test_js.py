@@ -66,3 +66,10 @@ const steps = [{ places: ['nj'] }, { places: ['nj', 'msk'] }, { places: ['msk', 
 const tl = steps.map((_, i) => ({ t0: i * 2, move: 1 }));
 console.log(JSON.stringify(buildJourney(steps, tl, places).offSteps));""")
     assert flags == [False, True, True, False]
+
+
+def test_trail_tau_shorter_in_close_ups():
+    """旧轨迹按半年步衰减：近景 3 步、全景 12 步，单调增加并截断。"""
+    v = node("""import { trailTau } from './journey.js';
+console.log(JSON.stringify([-1, 0, 0.5, 1, 3].map(trailTau)));""")
+    assert v[0] == v[1] == 3 and v[3] == v[4] == 12 and v[1] < v[2] < v[3]
