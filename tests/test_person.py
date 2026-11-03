@@ -162,8 +162,9 @@ def test_validate_rejects_bad_values(mutate):
         validate(cfg, 'x.json')
 
 
-def test_cli_unknown_field_is_clean_error():
+def test_cli_unknown_field_is_clean_error(who):
+    """对项目里实际存在的人物检查（模板项目里不一定有某个固定人物）。"""
     import subprocess
     import sys
-    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'person.py'), 'nope', 'sushi'], capture_output=True, text=True)
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'person.py'), 'nope', who], capture_output=True, text=True)
     assert r.returncode != 0 and 'Traceback' not in r.stderr and 'unknown field' in r.stderr
