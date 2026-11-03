@@ -69,7 +69,9 @@ export function buildJourney(steps, tlSteps, places, stepKm = 12) {
   });
   const cum = [0];
   for (let i = 1; i < verts.length; i++) cum.push(cum[i - 1] + kmTrue[i]);
-  return { verts, arrivals, cum, totalKm: cum[cum.length - 1] };
+  // 每一步是否到过图外地点（镜头据此拉远，让图外标注落在画面里）
+  const offSteps = steps.map(st => st.places.some(k => isOffMap(places[k])));
+  return { verts, arrivals, cum, totalKm: cum[cum.length - 1], offSteps };
 }
 
 // 二分查找：t 时刻已走过的路径点下标（verts[i].t <= t 的最大 i）
@@ -113,6 +115,11 @@ export function kmAt(journey, t) {
 }
 
 // 轨迹亮度：走过越久越暗（指数衰减到 floor），近景里多年前的长直线不再抢眼
+// 旧轨迹的亮度下限随镜头远近变化：近景压到 0.08，避免多年前的长直线横穿近景、两端都不在画内；全景回到 0.3
+export function trailFloor(zoom) {
+  return 0.08 + 0.22 * Math.max(0, Math.min(1, zoom));
+}
+
 export function trailFade(age, tau = 90, floor = 0.3) {
   return floor + (1 - floor) * Math.exp(-Math.max(0, age) / tau);
 }

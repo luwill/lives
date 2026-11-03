@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def probe(p: Path) -> dict:
-    out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'stream=codec_type,codec_name,width,height,r_frame_rate:format=duration',
+    out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'stream=codec_type,codec_name,width,height,r_frame_rate,pix_fmt,color_range,color_space:format=duration',
                           '-of', 'json', str(p)], capture_output=True, text=True, check=True).stdout
     return json.loads(out)
 
@@ -44,6 +44,9 @@ def check(who: str, require: bool) -> list[str]:
     a = [s for s in info['streams'] if s['codec_type'] == 'audio']
     if (v['codec_name'], v['width'], v['height'], v['r_frame_rate']) != ('h264', 1920, 1080, '30/1'):
         errs.append(f"video stream {v}")
+    # 标准范围 BT.709：全范围（pc/yuvj420p）在部分播放器和平台上会偏色
+    if (v.get('pix_fmt'), v.get('color_range'), v.get('color_space')) != ('yuv420p', 'tv', 'bt709'):
+        errs.append(f"color {v.get('pix_fmt')}/{v.get('color_range')}/{v.get('color_space')} (want yuv420p/tv/bt709; re-run tools/assemble.sh)")
     if not a or a[0]['codec_name'] != 'aac':
         errs.append(f'audio stream {a}')
     dur = float(info['format']['duration'])

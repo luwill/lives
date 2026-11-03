@@ -7,6 +7,7 @@ const OVERVIEW = { lon: 106.5, lat: 33.0, dist: 4800 };
 const MS_DIST = 260;
 const CARD_SHIFT = 0.17;   // 里程碑停留时目标点东移（×距离），把地点让到信息卡左边
 const MIN_D = 520, MAX_D = 3600;
+const OFF_MIN_D = 3200, OFF_MAX_D = 5400;   // 图外行程的取景范围
 
 function bboxDist(pts) {
   const lons = pts.map(p => p[0]), lats = pts.map(p => p[1]);
@@ -24,7 +25,9 @@ export function buildCamera(tl, journey) {
     const mid = (s.t0 + s.t1) / 2, pts = [];
     for (let dt = -4; dt <= 4; dt += 0.5) pts.push(positionAt(verts, mid + dt));
     const b = bboxDist(pts);
-    return { lon: b.lon, lat: b.lat, dist: Math.min(MAX_D, Math.max(MIN_D, b.ext * 2.3 + 380)) };
+    // 到过图外地点的一步：放宽视距上限，让图外代理点和它的标注一起进画面（否则镜头只跟着人物小点横穿西部）
+    const off = journey.offSteps && journey.offSteps[steps.indexOf(s)];
+    return { lon: b.lon, lat: b.lat, dist: Math.min(off ? OFF_MAX_D : MAX_D, Math.max(off ? OFF_MIN_D : MIN_D, b.ext * 2.3 + 380)) };
   });
   // 远途里程碑：整段路线的取景
   const travelFrame = steps.map(s => {

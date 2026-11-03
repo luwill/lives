@@ -1,6 +1,6 @@
 // 地图叠加层：轨迹线、当前位置、到访地点、里程碑星标、地理注记（含碰撞避让）
 import { makeLine, setLinePts, toWorld, project, kmBetween, THREE } from './engine.js';
-import { trailUpTo, positionAt, isOffMap, trailFade, replayTime } from './journey.js';
+import { trailUpTo, positionAt, isOffMap, trailFade, trailFloor, replayTime } from './journey.js';
 
 export const clamp01 = x => Math.max(0, Math.min(1, x));
 export const win = (t, t0, t1, fade = 0.5) => Math.min(clamp01((t - t0) / fade), clamp01((t1 - t) / fade));
@@ -46,7 +46,7 @@ export function makeTrail(scene, journey, person, tl) {
     // trailUpTo 末尾可能多一个插值点（时刻 t）
     const ts = verts.slice(0, all.length).map(v => v[2]);
     if (ts.length < all.length) ts.push(t);
-    const shade = inOutro ? (vt => OUTRO_FLOOR + (1 - OUTRO_FLOOR) * clamp01((vt - vt0) / (vt1 - vt0))) : (vt => trailFade(t - vt));
+    const shade = inOutro ? (vt => OUTRO_FLOOR + (1 - OUTRO_FLOOR) * clamp01((vt - vt0) / (vt1 - vt0))) : (vt => trailFade(t - vt, 90, trailFloor(cam.zoom)));
     setLinePts(past, all, lift, shadeColors(all, ts, base, shade));
     let rec;
     if (inOutro) {   // 一生回放：一道光沿全程从出生地走到终点
@@ -72,10 +72,12 @@ export function makeTrail(scene, journey, person, tl) {
 const HUD_ZONES = [
   { x0: 30, x1: 640, y0: 24, y1: 250 },        // 身份卡 + 年份
   { x0: 1360, x1: 1900, y0: 24, y1: 120 },     // 行程统计
-  { x0: 0, x1: 1920, y0: 880, y1: 1080 },      // 事件条 + 进度条
+  { x0: 0, x1: 1920, y0: 845, y1: 1080 },      // 事件条（最多两行）+ 进度条
 ];
 const CARD_ZONE = { x0: 1290, x1: 1890, y0: 160, y1: 700 };
 const SUB_ZONE = { x0: 260, x1: 1660, y0: 770, y1: 836 };
+// 图外标注可贴边的安全区：避开左上身份块、右上统计、底部字幕与事件条
+const EDGE = { x0: 70, x1: 1850, y0: 290, y1: 740 };
 
 function placeLabels(items, reserved) {
   items.sort((a, b) => b.pri - a.pri);
@@ -84,7 +86,9 @@ function placeLabels(items, reserved) {
   for (const it of items) {
     const r = it.rect;
     // HUD 区域对所有注记生效；当前地点可压过其他注记
-    if (overlaps(r, reserved) || (overlaps(r, boxes) && !it.force)) { it.d.style.display = 'none'; continue; }
+    // 注记超出画面（如图外代理点落在画面最上缘）时整条隐藏，不显示半截
+    const outside = r.x0 < 0 || r.y0 < 0 || r.x1 > 1920 || r.y1 > 1080;
+    if (outside || overlaps(r, reserved) || (overlaps(r, boxes) && !it.force)) { it.d.style.display = 'none'; continue; }
     boxes.push(r);
     it.d.style.display = 'block';
     it.d.style.opacity = it.op;
@@ -116,7 +120,8 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
     const name = off ? `${p.name} ➚` : p.name;
     const sub = off ? `图外 · 距北京约 ${Math.round(kmBetween([116.4, 39.9], [p.lon, p.lat]) / 100) * 100} 公里` : (p.modern !== p.name ? p.modern : '');
     const d = el(`place${off ? ' foreign' : ''}`, `<i></i><span><b>${name}</b>${sub ? `<em>${sub}</em>` : ''}</span>`);
-    return { key: k, lon, lat, d, w: name.length * 26 + 30, important: stayCount[k] >= 2 || k in msPlace || off, first: firstAt[k], arr: lastAt[k] };
+    return { key: k, lon, lat, d, off, w: name.length * 26 + 30, wFull: name.length * 26 + 30 + (sub ? sub.length * 17 + 10 : 0),
+      important: stayCount[k] >= 2 || k in msPlace || off, first: firstAt[k], arr: lastAt[k] };
   });
   const stars = Object.keys(msPlace).filter(k => k in firstAt).map(k => {
     const s = steps[msPlace[k]], [lon, lat] = firstPos[k];
@@ -138,10 +143,16 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
     for (const p of P) {
       if (t < p.first || ctx.hideMap) { p.d.style.display = 'none'; continue; }
       const sp = project(camera, toWorld(p.lon, p.lat, cam.dist * 0.004));
+      const isCur = p.key === curKey;
+      // 人在图外时，图外标注贴到画面安全区边缘（代理点常在地图西北角，落进左上 HUD 或画外就会被藏掉）
+      if (isCur && p.off && sp.front) {
+        sp.x = Math.max(EDGE.x0, Math.min(EDGE.x1 - p.wFull, sp.x));
+        sp.y = Math.max(EDGE.y0, Math.min(EDGE.y1, sp.y));
+        sp.visible = true;
+      }
       if (!sp.visible) { p.d.style.display = 'none'; continue; }
       const lastArr = p.arr.filter(x => x <= t).pop();
       const recent = t - lastArr < 3.5;
-      const isCur = p.key === curKey;
       const fresh = clamp01((t - p.first) / 0.4);
       let pri = isCur ? 100 : recent ? 70 : p.important ? 50 : 0;
       p.d.classList.toggle('cur-place', isCur);
@@ -152,7 +163,7 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
         p.d.style.transform = `translate(${sp.x.toFixed(1)}px, ${sp.y.toFixed(1)}px)`;
         continue;
       }
-      items.push({ d: p.d, x: sp.x, y: sp.y, pri, op: fresh, force: isCur, rect: rectOf(sp.x, sp.y, p.w, 34, 'r') });
+      items.push({ d: p.d, x: sp.x, y: sp.y, pri, op: fresh, force: isCur, rect: rectOf(sp.x, sp.y, p.off ? p.wFull : p.w, 34, 'r') });
     }
     for (const s of stars) {
       const on = t >= s.t && !ctx.hideMap;
@@ -184,7 +195,9 @@ export function makeMarkers(person, data, places, journey, tl, geoLabels) {
     placeLabels(items, [...HUD_ZONES, SUB_ZONE, ...(ctx.ms ? [CARD_ZONE] : [])]);
     // 当前位置标记
     const cp = project(camera, toWorld(curPos[0], curPos[1], cam.dist * 0.004));
-    cur.style.display = ctx.hideMap ? 'none' : 'block';
+    // 当前位置落进 HUD 区（图外代理点常在左上角）时不画，避免红点压在姓名、年份上
+    const inHud = HUD_ZONES.some(z => cp.x >= z.x0 && cp.x <= z.x1 && cp.y >= z.y0 && cp.y <= z.y1);
+    cur.style.display = ctx.hideMap || inHud ? 'none' : 'block';
     cur.style.transform = `translate(${cp.x.toFixed(1)}px, ${cp.y.toFixed(1)}px)`;
     cur.style.setProperty('--ph', ((t * 0.9) % 1).toFixed(3));
     cur.style.setProperty('--ph2', ((t * 0.9 + 0.5) % 1).toFixed(3));

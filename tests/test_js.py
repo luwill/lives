@@ -48,3 +48,21 @@ def test_step_index_matches_half_idx_for_negative_years():
     for sid in ('-221H1', '-221H2', '-1H2', '1H1', '744H2'):
         assert BT.step_index(sid) == half_idx(sid)
     assert BT.step_index('-221H1') < BT.step_index('-221H2') < BT.step_index('-220H1')
+
+
+def test_trail_floor_dims_old_trail_in_close_ups():
+    """近景（zoom=0）旧轨迹压到 0.08，全景（zoom=1）回到 0.3；随镜头拉远单调增加，越界时截断。"""
+    v = node("""import { trailFloor } from './journey.js';
+console.log(JSON.stringify([-1, 0, 0.5, 1, 2].map(trailFloor)));""")
+    assert v[0] == v[1] == 0.08 and abs(v[3] - 0.3) < 1e-9 and v[4] == v[3]
+    assert v[1] < v[2] < v[3]
+
+
+def test_journey_flags_steps_that_go_off_map():
+    """到过图外地点（如莫斯科）的半年步要被标记，镜头据此拉远；图内步不标记。"""
+    flags = node("""import { buildJourney } from './journey.js';
+const places = { nj: { lon: 118.8, lat: 32.1 }, msk: { lon: 37.6, lat: 55.8 } };
+const steps = [{ places: ['nj'] }, { places: ['nj', 'msk'] }, { places: ['msk', 'nj'] }, { places: ['nj'] }];
+const tl = steps.map((_, i) => ({ t0: i * 2, move: 1 }));
+console.log(JSON.stringify(buildJourney(steps, tl, places).offSteps));""")
+    assert flags == [False, True, True, False]

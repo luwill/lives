@@ -158,7 +158,7 @@ export function setLinePts(line, lonlats, lift, colors = null) {
 const _v = new THREE.Vector3();
 export function project(camera, p) {
   _v.copy(p).project(camera);
-  return { x: (_v.x + 1) / 2 * W, y: (1 - _v.y) / 2 * H, visible: _v.z < 1 && Math.abs(_v.x) < 1.15 && Math.abs(_v.y) < 1.15 };
+  return { x: (_v.x + 1) / 2 * W, y: (1 - _v.y) / 2 * H, front: _v.z < 1, visible: _v.z < 1 && Math.abs(_v.x) < 1.15 && Math.abs(_v.y) < 1.15 };
 }
 
 export function kmBetween(a, b) {
