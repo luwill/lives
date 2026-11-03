@@ -18,7 +18,7 @@ Status: in force since 2026-10-05 (confirmed by human at takeoff); amended 2026-
 | Python 依赖 | `python3 -c "import edge_tts, numpy, scipy, PIL"` | exit 0 |
 | pytest | `python3 -m pytest --version` | exit 0 |
 | TTS 联网 | `edge-tts --voice zh-CN-YunyangNeural --text 测试 --write-media t.mp3` | 生成非空 mp3 |
-| Chromium | `ls ~/Library/Caches/ms-playwright/chromium-1243` | 存在 |
+| Chromium | `python3 tools/check_env.py` | 输出“环境就绪” |
 | DEM 瓦片 | `curl -o /dev/null -w %{http_code} https://s3.amazonaws.com/elevation-tiles-prod/terrarium/4/12/6.png` | 200 |
 | Nominatim | `curl … nominatim.openstreetmap.org/search?q=Meishan&format=json` | 200 |
 | codex | `codex --version` | exit 0 |

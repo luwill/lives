@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 # 成片来自哪个提交：开始渲染前记录（工作区有改动或未跟踪文件时标 dirty）
-REV="$(git rev-parse --short HEAD)$([ -z "$(git status --porcelain -- src data narration music tools)" ] || echo -dirty)"
+REV="$(git rev-parse --short HEAD)$([ -z "$(git status --porcelain -- src data narration music tools render.mjs tests)" ] || echo -dirty)"
 for WHO in "$@"; do
   python3 tools/person.py name "$WHO" >/dev/null   # 校验人物键（[a-z0-9_]+ 且 person.json 可加载），先于任何删除
   mkdir -p "out/$WHO"

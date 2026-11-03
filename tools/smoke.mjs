@@ -6,6 +6,7 @@ import { openPage } from '../render.mjs';
 const DATA = new URL('../data/', import.meta.url);
 const all = fs.readdirSync(DATA).filter(d => fs.existsSync(new URL(`${d}/person.json`, DATA))).sort();
 const people = process.argv.slice(2).length ? process.argv.slice(2) : all;
+if (!people.length) { console.error('no people found (data/*/person.json)'); process.exit(1); }
 let failed = 0;
 for (const who of people) {
   const errors = [];

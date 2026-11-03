@@ -140,7 +140,7 @@ MUTANTS = [
     ('C7', '苏轼 6 段里程碑旁白改记为概述', m_ratio, 'test_timeline.py'),
     ('C7', '诸葛亮第 11、12 条字幕重叠', m_sub_overlap, 'test_timeline.py'),
     ('C3', '去掉周岁下限（出生时 −1 岁）', m_negative_age, 'test_js.py'),
-    ('C8', '片尾里程按图外代理点累计', m_proxy_km, 'test_js.py'),
+    ('C8', '片尾里程按图外代理点累计', m_proxy_km, 'test_lives_specific.py'),
     ('C3', '蒋介石 1949H2 后仍用民国纪年', m_jiang_minguo, 'test_lives_specific.py'),
     ('C3', '李白天宝三载不改称“载”', m_libai_zai, 'test_lives_specific.py'),
     ('C3', '朱元璋龙凤纪年晚一年', m_zhuyz_longfeng, 'test_lives_specific.py'),
@@ -151,29 +151,41 @@ MUTANTS = [
 
 
 def run(mutate) -> tuple[int, str]:
+    """在临时副本上注入缺陷后跑 pytest（不含 env 标记的测试）；返回 (退出码, 失败的测试 id 列表)。"""
     with tempfile.TemporaryDirectory() as tmp:
         r = Path(tmp)
         for d in ('data', 'src', 'tests', 'tools', 'narration', 'music'):
             shutil.copytree(ROOT / d, r / d, ignore=shutil.ignore_patterns('audio', '_build', '*.mp3', '__pycache__'))
+        for f in ('pytest.ini', 'render.mjs'):
+            shutil.copy2(ROOT / f, r / f)
         mutate(r)
-        out = subprocess.run([sys.executable, '-m', 'pytest', '-q', 'tests', '-p', 'no:cacheprovider'], cwd=r, capture_output=True, text=True)
-        failed = [ln for ln in out.stdout.splitlines() if ln.startswith('FAILED')]
-        return out.returncode, '; '.join(f.split(' - ')[0].replace('FAILED ', '') for f in failed[:3])
+        out = subprocess.run([sys.executable, '-m', 'pytest', '-q', 'tests', '-m', 'not env', '-p', 'no:cacheprovider'], cwd=r, capture_output=True, text=True)
+        failed = [ln.split(' - ')[0].replace('FAILED ', '') for ln in out.stdout.splitlines() if ln.startswith('FAILED')]
+        return out.returncode, '; '.join(failed)
+
+
+def is_red_for(code: int, failed: str, expected: str) -> bool:
+    """变异被捕获 = pytest 失败，且失败项包含预期的测试文件（防止因无关原因变红）。"""
+    return code != 0 and any(f.split('::')[0].endswith(expected) for f in failed.split('; ') if f)
 
 
 def main() -> None:
     rows, ok = [], True
-    base, _ = run(lambda r: None)
-    rows.append(f'| — | 未注入缺陷（对照） | {"green" if base == 0 else "RED"} | — |')
-    ok &= base == 0
-    for crit, desc, fn, _ in MUTANTS:
+    base, failed = run(lambda r: None)
+    if base != 0:
+        sys.exit(f'对照组（未注入缺陷）不是绿色，无法做变异检查，失败项：{failed or "（pytest 非零退出，无 FAILED 行）"}')
+    rows.append('| — | 未注入缺陷（对照） | green | — |')
+    for crit, desc, fn, expected in MUTANTS:
         code, failed = run(fn)
-        rows.append(f'| {crit} | {desc} | {"red ✔" if code else "GREEN ✘"} | {failed} |')
-        ok &= code != 0
+        red = is_red_for(code, failed, expected)
+        short = '; '.join(failed.split('; ')[:3])
+        rows.append(f'| {crit} | {desc} | {"red ✔" if red else "GREEN/未命中 ✘"} | {short} |')
+        ok &= red
     table = '| 准则 | 注入的缺陷 | pytest 结果 | 变红的测试 |\n|---|---|---|---|\n' + '\n'.join(rows)
     print(table)
+    print(f'\n{sum(r.count("red ✔") for r in rows)}/{len(MUTANTS)} 个变异被预期的测试捕获')
     if len(sys.argv) > 1:
-        Path(sys.argv[1]).write_text('# 反向验证（变异测试）\n\n每行在仓库数据副本上注入一个缺陷，期望测试变红。命令：`python3 tools/mutation_checks.py`\n\n' + table + '\n')
+        Path(sys.argv[1]).write_text('# 反向验证（变异测试）\n\n每行在仓库数据副本上注入一个缺陷，期望预期的测试文件变红。命令：`python3 tools/mutation_checks.py`\n\n' + table + '\n')
     sys.exit(0 if ok else 1)
 
 

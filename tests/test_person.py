@@ -143,3 +143,27 @@ def test_validate_rejects_era_ordinal_over_199():
 def test_validate_rejects_slash_in_name():
     _bad(lambda c: c.update(name='a/b'), 'name')
     _bad(lambda c: c.update(name='a\\b'), 'name')
+
+
+@pytest.mark.parametrize('mutate', [
+    lambda c: c.update(extra_levels=[['Bad-Layer', 1.0]]),
+    lambda c: c['voice'].update(rate='fast'),
+    lambda c: c['voice'].update(rate='6%'),
+    lambda c: c['voice'].update(pitch='+0'),
+    lambda c: c['voice'].update(pitch='+3hz'),
+    lambda c: c['age'].update(birht='x'),
+    lambda c: c['regions'][0].update(lon=190.0),
+    lambda c: c['regions'][0].update(lat=-91),
+], ids=['layer-name', 'rate-word', 'rate-nosign', 'pitch-nounit', 'pitch-case', 'age-unknown-key', 'lon-range', 'lat-range'])
+def test_validate_rejects_bad_values(mutate):
+    cfg = copy.deepcopy(BASE)
+    mutate(cfg)
+    with pytest.raises(ValueError):
+        validate(cfg, 'x.json')
+
+
+def test_cli_unknown_field_is_clean_error():
+    import subprocess
+    import sys
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'person.py'), 'nope', 'sushi'], capture_output=True, text=True)
+    assert r.returncode != 0 and 'Traceback' not in r.stderr and 'unknown field' in r.stderr

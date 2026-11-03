@@ -29,10 +29,10 @@ export function makeHud(person, data, places, tl, journey) {
   const n = steps.length;
 
   // 片名
-  const title = mk('title-card', `<div class="nm">${person.name}</div><div class="life">${person.life}</div><div class="tag">${person.tagline}</div>`);
+  const title = mk('title-card', `<div class="nm">${esc(person.name)}</div><div class="life">${esc(person.life)}</div><div class="tag">${esc(person.tagline)}</div>`);
   // 身份卡 + 年份
   // 左上角压成三行：姓名 · 阶段 / 纪年 / 年份 + 半年 + 年龄（生卒年已在片名和进度条两端）
-  const idc = mk('idcard', `<b>${person.name}</b><span class="stage"></span>`);
+  const idc = mk('idcard', `<b>${esc(person.name)}</b><span class="stage"></span>`);
   const stageEl = idc.querySelector('.stage');
   const year = mk('year', '<div class="era"></div><div class="row"><b class="y"></b><span class="h"></span><span class="age"></span></div>');
   const [eraEl, yEl, hEl, ageEl] = ['.era', '.y', '.h', '.age'].map(s => year.querySelector(s));
@@ -65,7 +65,7 @@ export function makeHud(person, data, places, tl, journey) {
   // 足迹去重：同一地点改名时 places.json 用 same_as 指向原键（如草山/阳明山），只算一处
   const spot = k => places[k].same_as || k;
   const placesSeen = new Set(journey.arrivals.map(a => spot(a.key)));
-  const end = mk('endcard', `<div class="nm">${person.name}</div><div class="life">${person.life}</div>
+  const end = mk('endcard', `<div class="nm">${esc(person.name)}</div><div class="life">${esc(person.life)}</div>
     <div class="nums"><div><b>${(Math.round(journey.totalKm / 100) * 100).toLocaleString('en-US')}</b><em>公里行程（直线距离累计）</em></div><div><b>${placesSeen.size}</b><em>处足迹</em></div><div><b>${msIdx.length}</b><em>个人生节点</em></div></div>
     <div class="src">史料：${data.meta.sources.filter(s => s.kind === 'primary' || s.kind === 'scholarly').slice(0, 6).map(s => esc(s.title)).join(' · ')}</div>
     <div class="note">地图仅示意地形与行迹，不表示任何行政或国家界线<br>卫星影像：EOxCloudless by EOX IT Services GmbH（含经修改的 Copernicus Sentinel 2022 数据）· 高程：AWS Terrain Tiles</div>`);

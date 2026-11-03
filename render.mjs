@@ -4,9 +4,10 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
 
-const ROOT = path.dirname(new URL(import.meta.url).pathname);
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const FPS = 30;
 // Chromium：优先环境变量 LTV_CHROME，否则在 Playwright 缓存里取版本号最大的 chromium-*
 export function findChrome() {
@@ -29,12 +30,13 @@ const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css
 
 export function serve() {
   const srv = http.createServer((req, res) => {
-    const p = path.join(ROOT, decodeURIComponent(req.url.split('?')[0]));
-    if (!p.startsWith(ROOT) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); res.end(); return; }
+    let p;
+    try { p = path.join(ROOT, decodeURIComponent(req.url.split('?')[0])); } catch { res.writeHead(400); res.end(); return; }
+    if (!(p === ROOT || p.startsWith(ROOT + path.sep)) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); res.end(); return; }
     res.writeHead(200, { 'Content-Type': MIME[path.extname(p)] || 'application/octet-stream' });
     fs.createReadStream(p).pipe(res);
   });
-  return new Promise(r => srv.listen(0, () => r(srv)));
+  return new Promise(r => srv.listen(0, '127.0.0.1', () => r(srv)));
 }
 
 export async function openPage(who, onError) {
@@ -44,7 +46,7 @@ export async function openPage(who, onError) {
   page.setDefaultTimeout(180000);   // 高负载时截图可能超过默认 30 s
   page.on('pageerror', e => onError(`pageerror: ${e.message}`));
   page.on('console', m => { if (m.type() === 'error') onError(`console: ${m.text()}`); });
-  await page.goto(`http://localhost:${srv.address().port}/src/index.html?who=${who}`);
+  await page.goto(`http://127.0.0.1:${srv.address().port}/src/index.html?who=${who}`);
   await page.waitForFunction(() => window.ready === true, null, { timeout: 180000 });
   return { page, close: async () => { await browser.close(); srv.close(); } };
 }
@@ -75,4 +77,4 @@ async function main() {
   await close();
 }
 
-if (process.argv[1] === new URL(import.meta.url).pathname) main();
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

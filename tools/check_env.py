@@ -18,12 +18,13 @@ def has_npm_pkg(pkg: str) -> bool:
 def missing(skip_terrain: bool = False) -> list[str]:
     out = [f'命令 {c}' for c in ('ffmpeg', 'ffprobe', 'node', 'curl') if not shutil.which(c)]
     out += [f'Python 包 {m}' for m in PY if importlib.util.find_spec(m) is None]
-    for pkg in ('three', 'playwright-core'):
-        if not has_npm_pkg(pkg):
-            out.append(f'npm 包 {pkg}（在项目根目录运行 npm install）')
-    r = subprocess.run(['node', '-e', "import('./render.mjs').then(m=>console.log(m.findChrome())).catch(e=>{console.error(e.message);process.exit(1)})"],
+    npm_missing = [pkg for pkg in ('three', 'playwright-core') if not has_npm_pkg(pkg)]
+    out += [f'npm 包 {pkg}（在项目根目录运行 npm install）' for pkg in npm_missing]
+    r = None if 'playwright-core' in npm_missing else subprocess.run(['node', '-e', "import('./render.mjs').then(m=>console.log(m.findChrome())).catch(e=>{console.error(e.message);process.exit(1)})"],
                        cwd=ROOT, capture_output=True, text=True) if shutil.which('node') else None
-    if r is None or r.returncode != 0:
+    if 'playwright-core' in npm_missing:
+        pass   # 缺 playwright-core 时 Chromium 探测必然失败，不重复报告
+    elif r is None or r.returncode != 0:
         out.append(f"Chromium（{r.stderr.strip() if r else 'node 缺失'}）")
     if not skip_terrain and not (ROOT / 'assets' / 'terrain' / 'world.json').exists():
         out.append('地形缓存（运行 zsh ~/.claude/skills/life-trajectory-video/scripts/setup_terrain.sh <项目目录>）')

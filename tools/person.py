@@ -6,6 +6,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED = ('name', 'life', 'tagline', 'color', 'glow', 'age', 'eras', 'voice', 'span', 'targets')
 OPTIONAL = ('era_overrides', 'regions', 'extra_levels', 'birth_override', '_note')
+LAYER = re.compile(r'^[a-z0-9_]+$')
+RATE = re.compile(r'^[+-]\d+%$')
+PITCH = re.compile(r'^[+-]\d+Hz$')
 HALF = re.compile(r'^(-?\d+)H([12])$')
 COLOR = re.compile(r'^#[0-9a-fA-F]{6}$')
 DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
@@ -81,6 +84,9 @@ def validate(cfg: dict, path) -> dict:
 
     age = cfg['age']
     kind = age.get('kind') if isinstance(age, dict) else None
+    allowed = {'xusui': {'kind', 'lunar_birth_year'}, 'zhousui': {'kind', 'birth'}}.get(kind)
+    if allowed is not None and set(age) - allowed:
+        bad('age', f'unknown keys {sorted(set(age) - allowed)}')
     if kind == 'xusui':
         if not _is_int(age.get('lunar_birth_year')):
             bad('age.lunar_birth_year', 'must be an int')
@@ -101,6 +107,8 @@ def validate(cfg: dict, path) -> dict:
     for i, lv in enumerate(cfg.get('extra_levels', [])):
         if not (isinstance(lv, list) and len(lv) == 2 and isinstance(lv[0], str) and _is_num(lv[1])):
             bad(f'extra_levels[{i}]', 'must be [str, number]')
+        if not LAYER.match(lv[0]):
+            bad(f'extra_levels[{i}]', f'layer name must match [a-z0-9_]+, got {lv[0]!r}')
     if 'birth_override' in cfg:
         b = cfg['birth_override']
         if not (isinstance(b, dict) and set(b) == {'era', 'age'} and all(isinstance(v, str) for v in b.values())):
@@ -108,6 +116,10 @@ def validate(cfg: dict, path) -> dict:
     v = cfg['voice']
     if not (isinstance(v, dict) and all(isinstance(v.get(k), str) for k in ('name', 'rate', 'pitch'))):
         bad('voice', 'needs string name/rate/pitch')
+    if not RATE.match(v['rate']):
+        bad('voice.rate', f'must match [+-]N%, got {v["rate"]!r}')
+    if not PITCH.match(v['pitch']):
+        bad('voice.pitch', f'must match [+-]NHz, got {v["pitch"]!r}')
     t = cfg['targets']
     d = t.get('duration_min') if isinstance(t, dict) else None
     if not (isinstance(d, list) and len(d) == 2 and all(_is_num(x) for x in d) and d[0] < d[1]):
@@ -176,6 +188,8 @@ def _check_regions(regions, bad):
         if not (isinstance(r, dict) and set(r) == {'name', 'lon', 'lat', 'from', 'to'}
                 and isinstance(r['name'], str) and _is_num(r['lon']) and _is_num(r['lat'])):
             bad(w, 'must be {name:str, lon, lat, from, to}')
+        if not (-180 <= r['lon'] <= 180 and -90 <= r['lat'] <= 90):
+            bad(w, f'lon/lat out of range: {r["lon"]}, {r["lat"]}')
         try:
             _check_range(_half_or_none(r['from']), _half_or_none(r['to']))
         except ValueError as e:
@@ -198,4 +212,9 @@ if __name__ == '__main__':
     import sys
     if len(sys.argv) != 3 or not re.fullmatch(r'[a-z0-9_]+', sys.argv[2]):
         sys.exit('usage: python3 tools/person.py <field> <who>   (who: [a-z0-9_]+)')
-    print(load_person(sys.argv[2])[sys.argv[1]])
+    try:
+        print(load_person(sys.argv[2])[sys.argv[1]])
+    except KeyError:
+        sys.exit(f'unknown field {sys.argv[1]!r}; available: {sorted(load_person(sys.argv[2]))}')
+    except (ValueError, FileNotFoundError, json.JSONDecodeError) as e:
+        sys.exit(f'error: {e}')

@@ -68,6 +68,8 @@ def check(who: str, require: bool) -> list[str]:
 def main() -> None:
     require = '--require' in sys.argv
     failed = False
+    if require and not people():
+        sys.exit('no people found (data/*/person.json)')
     for who in people():
         try:
             errs = check(who, require)
