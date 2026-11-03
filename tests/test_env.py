@@ -22,6 +22,6 @@ def test_check_env_ready():
 
 @pytest.mark.env
 def test_check_env_reports_bad_chrome():
-    r = run_check(LTV_CHROME='/nope')
+    r = run_check(LIFETRAIL_CHROME='/nope')
     assert r.returncode == 1, r.stdout + r.stderr
-    assert 'LTV_CHROME not found' in r.stdout
+    assert 'LIFETRAIL_CHROME not found' in r.stdout

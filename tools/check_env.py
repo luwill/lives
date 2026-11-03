@@ -27,7 +27,7 @@ def missing(skip_terrain: bool = False) -> list[str]:
     elif r is None or r.returncode != 0:
         out.append(f"Chromium（{r.stderr.strip() if r else 'node 缺失'}）")
     if not skip_terrain and not (ROOT / 'assets' / 'terrain' / 'world.json').exists():
-        out.append('地形缓存（运行 zsh ~/.claude/skills/life-trajectory-video/scripts/setup_terrain.sh <项目目录>）')
+        out.append('地形缓存（运行 zsh ~/.claude/skills/lifetrail/scripts/setup_terrain.sh <项目目录>）')
     return out
 
 
